@@ -197,10 +197,10 @@ print(5.0 // 3.0)  # => 1.0
 #############
 
 """
-Une expression est une combinaison de calculs à exécuter, qui peut être
-évaluée pour retourner une valeur.
+Une expression est une combinaison de calculs qui peut être évaluée pour
+retourner une valeur.
 """
-print(2 + 3)  # => 5
+print(2 + 3)  # => l'expression "2 + 3" est évaluée et retourne 5
 
 """
 Dans une expression, l'ordre dans lequel les opérations sont évaluées par

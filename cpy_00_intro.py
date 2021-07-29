@@ -109,26 +109,41 @@ Python est à la fois :
 
 IMPT : Il y a quatre façons de programmer avec Python :
 
-    1. soit directement via l'interpréteur (ou "shell") Python,
+    1. soit directement via l'interpréteur Python,
     2. soit en lançant un fichier contenant du code Python,
     3. soit depuis un programme externe, comme un éditeur de texte,
     4. soit via une interface Web.
+
+Les deux premières méthodes supposent que l'on a accès à un terminal,
+c'est-à-dire une interface en ligne de commande, ou "shell" (Powershell sur
+Windows, Terminal.app sur macOS, ou n'importe quel terminal sur Linux).
 """
 
 # Via l'interpréteur Python
 ############################
 
 """
-L'interpréteur permet de tester des commandes Python et d'y exécuter
-de petits programmes. Les commandes tapées ne sont pas enregistrées,
-donc on ne pourra pas y écrire de programmes sophistiqués.
+L'interpréteur (ou "shell") Python permet de tester des commandes Python et d'y
+exécuter de petits programmes (les commandes tapées ne seront pas enregistrées,
+donc on ne va pas y écrire de longs programmes très sophistiqués).
 
-Pour lancer l'interpréteur depuis une ligne de commandes :
+On lance le shell Python depuis le shell de l'ordinateur :
 > python
 Python 3.9.1 (default, Dec 24 2020, 15:57:37)
 >>> <votre code suivi de return>
 
-Vous pouvez alors lancer des commandes Python directement
+IMPT : il faut utiliser Python 3 pour vos projets. Tapez cette commande dans
+un terminal pour connaître votre version
+> python --version
+
+Si la version retournée est 2.X.YY, essayez de lancer Python 3 avec
+> python3
+
+Si Python3 n'est pas installé, installez-le ! Vous perdrez beaucoup moins de
+temps qu'en devant gérer les différences entre Python 2 et Python 3...
+
+
+Une fois l'interpréteur Python lancé, vous pourrez lancer vos commandes Python :
 >>> x = 2
 >>> print(3 + x)
 5
@@ -137,12 +152,12 @@ On appelle ce signe ">>>" une "invite de commande" (ou "prompt" en anglais).
 Il signifie que l'exécution du code précédent est achevée et que vous
 pouvez maintenant taper du nouveau code à exécuter.
 
-Note : Pour quitter l'interpréteur Python, on utilise quit()
->>> quit()
-...et on revient au shell !
-
 Attention à ne pas confondre le shell de l'ordinateur et le shell Python : le
 shell Python a un prompt caractéristique : ">>> ".
+
+Note : Pour quitter l'interpréteur Python, on utilise quit()
+>>> quit()
+...et on revient au shell de l'ordinateur.
 """
 
 
@@ -153,18 +168,9 @@ shell Python a un prompt caractéristique : ">>> ".
 Le code Python se trouve dans des fichiers avec le suffixe ".py" : engine.py,
 questionnaire.py, etc.
 
-Pour lancer un programme contenant du code Python, on l'appelle avec :
+Pour lancer un programme contenant du code Python, on l'appelle (depuis le
+shell) avec :
 > python mon_fichier.py
-
-IMPT : il faut utiliser Python 3 pour vos projets. Tapez cette
-commande dans un terminal pour connaître votre version
-> python --version
-
-Si la version retournée est 2.X.YY, essayez de lancer Python 3 avec
-> python3
-
-Si Python3 n'est pas installé, installez-le ! Vous perdrez beaucoup moins de
-temps qu'en devant gérer les différences entre Python 2 et Python 3...
 """
 
 
@@ -225,16 +231,16 @@ Ce tutoriel a vocation a être lu sur un ordinateur, pour pouvoir exécuter et
 tester directement le code proposé. Il vous faut donc un ordinateur, idéalement
 sous Linux, BSD ou Mac.
 
-Il est aussi pensé pour être ouvert depuis un éditeur de texte proposant une
-coloration syntaxique (vim, Emacs, Sublime Text, PyCharm, VS Code, Notepad++,
-gedit, etc.). Nous recommandons Sublime Text.
+Le tutoriel est aussi pensé pour être ouvert depuis un éditeur de texte
+proposant une coloration syntaxique (vim, Emacs, Sublime Text, PyCharm, VS
+Code, Notepad++, gedit, etc.). Nous recommandons Sublime Text.
 
 Nous rappelons que Microsoft Word n'est pas un éditeur de texte, mais un
 éditeur de mise en forme de texte. Vous ne pouvez pas vous en servir pour
 écrire du code.
 
 Les fichiers de ce cours sont exécutables, càd que vous pouvez les lancer avec
-un interpréteur Python (mode 2, voir plus haut) via la commande :
+un interpréteur Python (voir le mode 2 plus haut) via la commande :
 ?> python ce_fichier.py
 
 Enfin tout le cours utilise Python 3.6+ (c'est-à-dire la version 3, et au moins
@@ -286,7 +292,7 @@ identifier plus tard dans la console.
 
 Note 3 : les points importants sont notés "IMPT" et vous devez absolument les
 connaître. Les points hors-programme de NSI sont notés "HP" : ils sont laissés
-pour votre curiosité uniquement.
+pour votre curiosité.
 """
 
 
