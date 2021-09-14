@@ -131,17 +131,17 @@ import time      # heure, date et chronomètre
 import datetime  # pour mesurer le temps, créer des intervalles
 import turtle    # la tortue Python (équivalent de Scratch)
 import re        # pour utiliser les expressions régulières ("regex")
-import timeit    # mesurer le temps d’exécution d’une fonction.
+import timeit    # mesurer le temps d’exécution d’une fonction.
 
-# import matplotlib  # tracer des graphiques et visualiser des données
+# import matplotlib  # tracer des graphiques et visualiser des données
 
 
 # Le module random
 ###################
 
 """
-On rappelle que le module random permet de générer des nombres de façon
-pseudo-aléatoire.
+On rappelle que le module random permet de générer des nombres de façon
+pseudo-aléatoire.
 
 On va importer ici les fonctions qui nous intéressent pour ce cours.
 """
@@ -170,7 +170,7 @@ from random import randrange, choice, shuffle, sample
 # ajouter un pas (intervalle entre les valeurs)
 print(randrange(1, 6, 2))  # Peut renvoyer 1, 3 ou 5
 
-# HP : choice(liste) tire au hasard un élément de la liste
+# HP : choice(liste) tire au hasard un élément de la liste
 entiers = [1, 2, 3, 4, 5]
 print(choice(entiers))  # => 3
 print(choice(entiers))  # => 2
@@ -178,7 +178,7 @@ print(choice(entiers))  # => 3
 print(choice(entiers))  # => 3
 print(choice(entiers))  # => 5
 
-# HP : shuffle(liste) mélange la liste "sur place", et ne retourne rien
+# HP : shuffle(liste) mélange la liste "sur place", et ne retourne rien
 shuffle(entiers)
 print(entiers)          # => [5, 4, 2, 1, 3]
 shuffle(entiers)

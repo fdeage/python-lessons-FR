@@ -120,7 +120,8 @@ Quelques options de .strftime() pour l'heure :
 %S : secondes
 %f : microsecondes
 """
-print(t2.strftime(" %H  %h  %I:%M %m %S %p %f"))  # => ' 14  Jan 02:11 01 37 PM 358144'
+print(t2.strftime(" %H  %h  %I:%M %m %S %p %f"))
+# => ' 14  Jan 02:11 01 37 PM 358144'
 
 
 # Chronométrage

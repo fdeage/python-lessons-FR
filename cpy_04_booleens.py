@@ -153,7 +153,8 @@ def ma_fonction():
 1 == 1 or ma_fonction()   # => ma_fonction() ne sera jamais appelée...
 """
 Explication :
-la 1ère condition ("1 == 1") est suffisante pour que toute l'expression soit évaluée à True, donc ma_fonction() n'est pas appelée.
+la 1ère condition ("1 == 1") est suffisante pour que toute l'expression soit
+évaluée à True, donc ma_fonction() n'est pas appelée.
 """
 
 #   - avec "and" :

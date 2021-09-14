@@ -44,7 +44,8 @@ comportement normal du programme.
 Une fonction peut avoir plusieurs effets sur le comportement d'un programme,
 il y aura donc plusieurs façons de la tester.
 
-On utilisera le mot-clé assert suivie d'une expression booléenne pour tester ses programmes.
+On utilisera le mot-clé assert suivie d'une expression booléenne pour tester ses
+programmes.
 """
 assert 2 + 2 == 4  # pas d'erreur
 

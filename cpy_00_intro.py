@@ -87,7 +87,8 @@ En conséquence, il y aura dans ce tutoriel trois types d'apprentissage :
     2. sur la programmation en général
     3. sur d'autres langages (SQL, JavaScript, HTML/CSS...)
 
-Nous verrons que beaucoup de constructions que nous verrons avec Python cette année sont en fait communes à tous les langages.
+Nous verrons que beaucoup de constructions que nous verrons avec Python cette
+année sont en fait communes à tous les langages.
 """
 
 
@@ -300,14 +301,15 @@ pour votre curiosité.
 #######################
 
 """
-Vous aurez souvent besoin de vous repasser mentalement le "film" du programme, pas à pas. Prenez l'habitude de simuler DANS VOTRE TÊTE son fonctionnement :
+Vous aurez souvent besoin de vous repasser mentalement le "film" du programme,
+pas à pas. Prenez l'habitude de simuler DANS VOTRE TÊTE son fonctionnement :
 
     - Identifiez le flux du programme : y a-t-il des conditionnels (chap. 12) ?
       des boucles (chap. 13) ? des appels de fonctions (chap. 14) ?
     - Déterminez la valeur de chaque variable utilisée à chaque ligne du
       programme, y compris pour des types construits (chap. 16).
-    - Demandez-vous, à chaque appel de fonction, ce que valent ses paramètres.
-      Remplacez mentalement les paramètres de fonction par les valeurs utilisées.
+    - Demandez-vous, à chaque appel de fonction, ce que valent ses paramètres :
+      remplacez mentalement ses paramètres par les valeurs utilisées.
     - Après être passé dans la fonction, déterminez sa valeur de retour. Cette
       valeur est-elle conservée par la fonction appelante ?
     - Au besoin, modifiez le programme proposé : testez avec d'autres valeurs,
@@ -319,7 +321,8 @@ moins. Un·e bon·ne programmeur·se doit pouvoir remplacer l'ordinateur et fair
 "tourner" un programme de tête !
 
 Concernant le cours : prenez l'habitude de piocher au cas par cas dans chaque
-chapitre, en prenant ce dont vous avez besoin. N'hésitez pas à lire le cours en diagonale, tester un morceau de code, puis revenir au cours pour revoir un
+chapitre, en prenant ce dont vous avez besoin. N'hésitez pas à lire le cours en
+diagonale, tester un morceau de code, puis revenir au cours pour revoir un
 détail ou un exemple.
 
 Python a beaucoup de fonctionnalités : n'essayez pas de tout apprendre tout de

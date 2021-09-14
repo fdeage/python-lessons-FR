@@ -67,8 +67,9 @@ Il y a deux issues possibles à la survenue d'une erreur :
     1. soit l'erreur est interceptée (avec try: ... except: ...)
     2. soit l'erreur n'est pas interceptée et crashe le programme.
 
-Il n'y a pas de "meilleure" solution pour gérer l'erreur : en fonction de la situation et du programme, il peut être souhaitable de laisser crasher
-("live or let die").
+Attention : il n'y a pas de "meilleure" solution pour gérer l'erreur ! en
+fonction de la situation, il peut être souhaitable de laisser crasher
+("let it crash").
 """
 
 

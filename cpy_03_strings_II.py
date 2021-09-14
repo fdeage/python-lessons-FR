@@ -40,7 +40,7 @@
 
 
 """
-    2. La méthode .find() renvoie le rang auquel la sous-chaîne a été trouvée
+    2. La méthode .find() renvoie le rang auquel la sous-chaîne a été trouvée
        (et -1 si la sous-chaîne ne figure pas dans la chaîne)
 """
 s = "abcdefgh"
@@ -59,8 +59,8 @@ s.find("hi")  # => -1
 # D'autres méthodes sur les strings
 ####################################
 
-#   1. La méthode .split(<separateur>) sépare une chaîne en une liste de
-#      sous-chaînes (par défaut, le séparateur est l’espace)
+#   1. La méthode .split(<separateur>) sépare une chaîne en une liste de
+#      sous-chaînes (par défaut, le séparateur est l’espace)
 "Il reste du fromage ?".split()  # => ['Il', 'reste', 'du', 'fromage', '?']
 "12.5;17.5;18".split(";")  # => ['12.5', '17.5', '18']
 
@@ -158,8 +158,8 @@ Il y a deux méthodes pour interpoler une chaîne de caractères :
 "Une string et {}".format(5)  # => "Une string et 5"
 
 # HP : on peut aussi référencer les variables par leur index
-"Je m'appelle {1} et j'ai {0} ans.".format(age, nom)  # => "Je m'appelle Michelle
-#                                                          et j'ai 15 ans."
+"Je m'appelle {1} et j'ai {0} ans.".format(age, nom)  # => "Je m'appelle
+#                                                     Michelle et j'ai 15 ans."
 
 """
     2. Depuis Python 3.6, on peut aussi utiliser les "f-strings" pour
@@ -175,13 +175,13 @@ f"Je m'appelle {nom} et j'ai {age} ans."  # => "Je m'appelle Michelle et j'ai
 
 # On peut convertir chaque caractère en son indice Unicode, et inversement :
 
-#   1. chr() renvoie le caractère associé à un indice Unicode
+#   1. chr() renvoie le caractère associé à un indice Unicode
 chr(65)     # => "A"
 chr(97)     # => "a"
 chr(233)    # => 'é'
 chr(128561) # => "😱"
 
-#   2. Inversement, ord() renvoie un indice Unicode associé à un caractère
+#   2. Inversement, ord() renvoie un indice Unicode associé à un caractère
 ord("A")    # => 65
 ord("a")    # => 97
 ord("à")    # => 224

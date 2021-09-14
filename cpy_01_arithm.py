@@ -321,7 +321,8 @@ print(type(hex(3)))  # => <class 'str'>
 # HP : attention, on ne peut pas combiner ces deux fonctions, car hex() et bin()
 # n'acceptent que des int en paramètre
 try:
-    print(hex(bin(5)))  # => TypeError: 'str' object cannot be interpreted as an integer
+    print(hex(bin(5)))  # => TypeError: 'str' object cannot be interpreted as an
+    integer
 except TypeError as err:
     print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
 

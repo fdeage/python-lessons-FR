@@ -48,7 +48,8 @@ structures pour créer des boucles :
 
     2. la structure "for" (pour tout ... dans ...) permet d'itérer (= répéter à
        l'identique) un nombre connu de fois. On peut itérer sur les valeurs
-       d'un ensemble (liste, dictionnaire, p-uplet...), ou bien itérer sur une suite d'entiers choisis.
+       d'un ensemble (liste, dictionnaire, p-uplet...), ou bien itérer sur une
+       suite d'entiers choisis.
 
 Note : les deux types de boucles sont interchangeables, c'est-à-dire que l'on
 pourra toujours exprimer une boucle "while" avec une structure "for", et
@@ -64,7 +65,8 @@ l'autre pour chaque situation.
 La structure "while" crée une boucle qui va "tourner" jusqu'à ce qu'une
 condition devienne fausse. Le code dans la boucle sera exécuté à chaque fois.
 
-La condition sera souvent de type : tant que <x> est inférieur à 0... Le nombre d'itérations est souvent inconnu au départ.
+La condition sera souvent de type : tant que <x> est inférieur à 0... Le nombre
+d'itérations est souvent inconnu au départ.
 """
 
 # Exemple : on initialise une variable x à 4

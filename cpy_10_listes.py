@@ -393,12 +393,14 @@ On a deux options ici :
     2. retourner une nouvelle valeur qui contient la liste triée avec sorted()
 """
 
-#   1. On utilise .sort() pour trier une liste "sur place"
+#   1. On utilise .sort() pour trier une liste "sur place", sans rien retourner...
 desordre = [2, 3, 7, 1, 9, 4]
-desordre.sort()  # ne retourne rien !
+s = desordre.sort()
+print(s)  # => None. .sort() ne retourne rien !
 desordre  # => [1, 2, 3, 4, 7, 9], la liste de départ est modifiée
 
-#   2. On utilise sorted() pour retourner une liste triée sans changer l'original
+#   2. ... et on utilise sorted() pour retourner une liste triée sans changer
+# l'original
 desordre2 = [2, 3, 7, 1, 9, 4]
 sorted(desordre2)  # => [1, 2, 3, 4, 7, 9]
 desordre  # => [2, 3, 7, 1, 9, 4], la liste de départ n'est pas modifiée

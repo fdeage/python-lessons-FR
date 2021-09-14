@@ -185,7 +185,8 @@ def somme_3_entiers(a, b, c):
     print(a + b + c)
 
 try:
-    # ...cet appel générera une erreur TypeError: somme_3_entiers() takes 3 positional arguments but 4 were given
+    # ...cet appel générera une erreur TypeError: somme_3_entiers() takes 3
+    # positional arguments but 4 were given
     somme_3_entiers(1, 2, 3, 4)
 except TypeError as err:
     print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")

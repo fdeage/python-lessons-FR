@@ -46,7 +46,7 @@ Au moment où on exécute le programme, ce mot-clé "return" :
 
 # Exemple 1 : une fonction qui retourne toujours 5
 def fonction_sans_parametre():
-    print(f"Cette fonction retourne toujours 5. Elle n'est pas très intéressante...")
+    print(f"Cette fonction n'est pas très intéressante... elle retourne toujours 5.")
     return 5
 
 

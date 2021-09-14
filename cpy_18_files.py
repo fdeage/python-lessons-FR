@@ -92,8 +92,8 @@ sortant de "with". Attention aux ":" et à l'indentation.
 
 """
 Python propose plusieurs modes d'ouverture, dont voici les principaux :
-    - "r" (read) : mode lecture seule, le pointeur de lecture est placé en début de
-      fichier. C'est le mode par défaut.
+    - "r" (read) : mode lecture seule, le pointeur de lecture est placé en début
+      de fichier. C'est le mode par défaut.
     - "w" (write) : mode écriture/remplacement. Écrase le fichier s'il existe,
       en crée un nouveau autrement
     - "a" (append) : mode ajout. Le pointeur est placé en fin de fichier,
@@ -239,7 +239,8 @@ os.rename(old_name, new_name)
 
 #   - Pour supprier un fichier, on utilise remove() :
 
-# WARNING WARNING WARNING - à décommenter avec soin !
+# WARNING WARNING WARNING - à décommenter avec soin : ceci peut supprimer des
+# fichiers sur votre ordinateur...
 # os.remove("nouveau.txt")
 # os.remove("nouveau_3.txt")
 
@@ -312,7 +313,8 @@ print(cinemas)
 """
 
 """
-On peut maintenant fermer le fichier .csv : nos données sont en lieu sûr dans un dictionnaire.
+On peut maintenant fermer le fichier .csv : nos données sont en lieu sûr dans un
+dictionnaire.
 """
 cinemas_fo.close()
 
