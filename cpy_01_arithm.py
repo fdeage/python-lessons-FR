@@ -86,7 +86,7 @@ La PS5 de Sony (2020) est presque un milliard de fois plus puissante (!), avec
 une capacité de 10,3 teraFLOPS (1,03 × 10^13 FLOPS).
 
 Mais c'est 40.000 fois moins que Fugaku, l'ordinateur le plus rapide du monde
-(au 01/04/21), qui est capable de 415 petaFLOPS (4,15 × 10^17 FLOPS)...
+(au 01/04/21), qui est capable de 415 petaFLOPS (4,15 × 10^17 FLOPS)…
 
 Au sujet de la représentation interne des floats, on pourra voir la norme
 IEEE 754, qui est très intéressante mais est tout à fait hors-programme de NSI.
@@ -125,22 +125,22 @@ print(type(True) == bool)  # => False
 ###################################
 
 # L'arithmétique de base avec des entiers est sans surprise : les calculs avec
-# des ints retournent en général un int...
+# des ints retournent en général un int…
 print(12 + 1)  # => 13
 print(38 - 1)  # => 37
 print(10 * 2)  # => 20
 
-# ...seule la division d'ints retournera un float
+# …seule la division d'ints retournera un float
 print(35 / 5)  # => 7.0
 
-# Les calculs avec des floats recèlent quelques surprises...
+# Les calculs avec des floats recèlent quelques surprises…
 print(0.1 + 0.2)  # => 0.30000000000000004
 
 """
 Explication : ceci est tout à fait HP, mais les floats ne peuvent
 en fait stocker que des valeurs approchées de nombres décimaux. Cela peut
 entraîner d'étranges problèmes d'arrondis (c'est un problème bien connu de la
-norme IEEE-754...).
+norme IEEE-754…).
 """
 
 # Quand on utilise un float dans un calcul, le résultat sera aussi un float
@@ -178,7 +178,7 @@ print(5 // 3)  # => 1
 print(-5 // 3)  # => -2
 print(-5.0 // 3.0)  # => -2.0
 
-# Diviser par un float retournera un float... tout en troquant quand même le
+# Diviser par un float retournera un float… tout en troquant quand même le
 # quotient à l'entier (c'est rarement ce que l'on cherche)
 print(5.0 // 3.0)  # => 1.0
 
@@ -247,10 +247,10 @@ whitespace en DÉBUT de ligne est particulièrement important en Python.
 """
 
 # Les espaces et tabulations ("whitespace") en milieu de ligne n'importent pas
-4 - 3  # C'est la présentation recommandée mais...
-4- 3   # ... fonctionne aussi
-4 -3   # ... fonctionne aussi
-4            -   3  # ... aussi !
+4 - 3  # C'est la présentation recommandée mais…
+4- 3   # … fonctionne aussi
+4 -3   # … fonctionne aussi
+4            -   3  # … aussi !
 
 # Débat : espaces ou tabulations ?
 ###################################
@@ -287,9 +287,9 @@ bien formater automatiquement votre code. Vous les découvrirez par vous-même !
 # (et comme presque tous les langages de programmation existants)
 print(10)  # => 10. Ce 10 est décimal, comme vos 10 doigts
 
-# On peut écrire un nombre en binaire avec le préfixe "0b"...
+# On peut écrire un nombre en binaire avec le préfixe "0b"…
 print(0b1011)  # => 11
-# ...et Python fera automatiquement la conversion en base 10
+# …et Python fera automatiquement la conversion en base 10
 print(0b01001101)  # => 77
 
 # De même, on peut écrire de l'hexadécimal avec le préfixe "0x"
@@ -324,7 +324,7 @@ try:
     print(hex(bin(5)))  # => TypeError: 'str' object cannot be interpreted as an
     integer
 except TypeError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # HP : pour convertir en base 10 une string représentant un nombre depuis une
 # base arbitraire, on utilise int(string, base)

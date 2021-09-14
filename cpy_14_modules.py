@@ -52,12 +52,12 @@ peut ensuite utiliser : on devra juste "préfixer" l'appel avec le nom du module
 """
 print(math.sqrt(16))  # => 4.0 (racine carrée, ou "square root")
 
-# On peut importer toutes les fonctions d'un module avec "from ... import *"...
+# On peut importer toutes les fonctions d'un module avec "from … import *"…
 from math import *
 
-# ...mais c'est déconseillé : cela va importer plein de fonctions
+# …mais c'est déconseillé : cela va importer plein de fonctions
 
-# On utilisera plutôt "from ... import ..."
+# On utilisera plutôt "from … import …"
 from math import sin, pi, log
 
 # Ceci importera seulement les fonctions désirées.
@@ -121,12 +121,12 @@ print(dir(math))
 # Quelques modules utiles
 ##########################
 
-import math      # maths classiques (sinus, log/exp, racines...)
+import math      # maths classiques (sinus, log/exp, racines…)
 import random    # pour générer des nombres aléatoires
 import os        # pour accéder aux commandes du système d'exploitation
 import sys       # pour gérer des paramètres que l'on passe au programme
 import zlib      # pour la compression de données
-import tkinter   # pour afficher des fenêtres graphiques, faire des jeux...
+import tkinter   # pour afficher des fenêtres graphiques, faire des jeux…
 import time      # heure, date et chronomètre
 import datetime  # pour mesurer le temps, créer des intervalles
 import turtle    # la tortue Python (équivalent de Scratch)
@@ -161,7 +161,7 @@ print(randint(2, 4))  # => 2
 print(randint(2, 4))  # => 4
 print(randint(2, 4))  # => 2
 print(randint(2, 4))  # => 3
-print(randint(2, 4))  # => ...
+print(randint(2, 4))  # => …
 
 # Fonctions utiles du module random
 from random import randrange, choice, shuffle, sample
@@ -220,8 +220,8 @@ if len(sys.argv) > 3:
     print(float(sys.argv[3]))  # => 2.4
 
 """
-Précaution utile en début de programme...
+Précaution utile en début de programme…
 if len(sys.argv) > 3:
-    ...
-...pour éviter d'accéder aux éléments d'une liste qui n'existent pas !
+    …
+…pour éviter d'accéder aux éléments d'une liste qui n'existent pas !
 """

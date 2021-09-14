@@ -42,7 +42,7 @@ ces deux valeurs.
 
 Les booléens sont TRÈS utilisés en informatique (on peut même dire que
 toute l'informatique est juste une utilisation massive et judicieuse des
-booléens...).
+booléens…).
 """
 
 # Voici les deux valeurs booléennes fondamentales :
@@ -50,11 +50,11 @@ True
 False
 
 # Les booléens sont "sensibles à la casse" (càd aux majuscules et minuscules)
-# Ainsi le booléen True et la variable true sont deux choses différentes...
+# Ainsi le booléen True et la variable true sont deux choses différentes…
 try:
     true  # => NameError: name 'true' is not defined
 except NameError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # IMPT: les booléens ne sont pas des strings !
 print(True == "True")  # => False
@@ -80,7 +80,7 @@ a = 5   # => On met 5 dans la variable a
 a == 5  # => On teste si a vaut 5, ce qui ici est vrai (évalue à True)
 
 
-#   2. On teste une différence ("... est différent de ... ?") avec
+#   2. On teste une différence ("… est différent de … ?") avec
 #      l'opérateur "!="
 1 != 1  # => False
 2 != 1  # => True
@@ -97,7 +97,7 @@ a == 5  # => On teste si a vaut 5, ce qui ici est vrai (évalue à True)
 1 < 3 < 2  # => False, car au moins une comparaison est fausse
 
 
-#   4. Il y a d'autres opérateurs booléens, comme "... in ...", "... is ...",
+#   4. Il y a d'autres opérateurs booléens, comme "… in …", "… is …",
 #      que l'on verra plus loin
 "ab" in "abcd"     # => True
 "ab" in "def"      # => False
@@ -150,7 +150,7 @@ def ma_fonction():
 
 #   - avec "or" :
 1 == 2 or ma_fonction()   # => "Pouet"
-1 == 1 or ma_fonction()   # => ma_fonction() ne sera jamais appelée...
+1 == 1 or ma_fonction()   # => ma_fonction() ne sera jamais appelée…
 """
 Explication :
 la 1ère condition ("1 == 1") est suffisante pour que toute l'expression soit
@@ -201,7 +201,7 @@ Table de vérité de l'opérateur "not" (ne prend qu'un paramètre) :
 """
 On peut écrire des expressions très sophistiquées avec les opérateurs booléens.
 Essayez de comprendre pourquoi les expressions ci-dessous retournent la valeur
-en commentaire à droite...
+en commentaire à droite…
 """
 A = True
 B = False
@@ -222,7 +222,7 @@ A or 1 == 2           # => True
 
 """
 Attention : si vous utilisez True ou False dans un calcul arithmétique (avec
-"+", "-", "*"...), ils seront automatiquement convertis ("casted") en entiers.
+"+", "-", "*"…), ils seront automatiquement convertis ("casted") en entiers.
 
 True et False valent en fait 1 et 0.
 """
@@ -246,7 +246,7 @@ Explication : ici l'opérateur "+" va entraîner une conversion de
 True et False en leur équivalent numérique (1 et 0).
 
 Conclusion : n'utilisez pas de booléens avec des opérateurs arithmétiques :
-utilisez... les opérateurs booléens vus plus haut !
+utilisez… les opérateurs booléens vus plus haut !
 """
 
 # HP : all() et any()

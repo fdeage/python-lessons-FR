@@ -104,16 +104,16 @@ nombre_voitures  # => 5
 try:
     une_variable_inconnue  # => NameError
 except NameError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 """
 Note : l'affectation utilise le symbole "=", mais il est différent du "=" en
 mathématiques : c'est un égal d'affectation.
 """
 
-# Ainsi, cette équation n'a aucune solution en mathématiques...
+# Ainsi, cette équation n'a aucune solution en mathématiques…
 nombre_voitures = nombre_voitures + 1
-# ...mais en Python c'est une expression tout à fait valide, qui veut dire :
+# …mais en Python c'est une expression tout à fait valide, qui veut dire :
 # ajoute 1 à la variable nombre_voitures.
 
 # Note : on peut utiliser un raccourci pour l'expression précédente grâce à
@@ -178,7 +178,7 @@ try:
     int("4.3")  # => ValueError: invalid literal for int()
 #                                            with base 10: '4.3'
 except ValueError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # Il faudra utiliser float() si la réponse attendue est un décimal/réel
 taille = float(input("> Combien mesures-tu (en m) ? "))
@@ -212,4 +212,4 @@ try:
     int(0.2)
 # => ValueError: invalid literal for int() with base 10: '0.2'
 except ValueError as err:
-    print(f"3: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")

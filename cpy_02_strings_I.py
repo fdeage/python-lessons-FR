@@ -44,7 +44,7 @@ print(s1)  # => "Ceci est une chaîne."
 print(s2)  # => 'Et ceci est une chaîne aussi.'
 print(s3)  # => ""
 
-# Si on utilise des doubles quotes ("..."), on pourra y insérer des
+# Si on utilise des doubles quotes ("…"), on pourra y insérer des
 # simples quotes
 "J'aime l'aligot d'Émile"
 # Inversement, si on utilise des simples quotes ('   '), on pourra y insérer
@@ -71,13 +71,13 @@ l'inverse, il faudra ÉCHAPPER ces quotes avec le caractère "backslash" : \
 # chap. 16 sur les listes)
 s4 = "Ceci est une chaîne"
 
-# On peut accéder à chaque valeur de la liste avec la syntaxe "[...]"
+# On peut accéder à chaque valeur de la liste avec la syntaxe "[…]"
 s4[0]   # => 'C'
 s4[1]   # => 'e'
 s4[2]   # => 'c'
 s4[3]   # => 'i'
 s4[4]   # => ' '
-# ...
+# …
 s4[15]  # => 'a'
 s4[16]  # => 'î'
 s4[17]  # => 'n'
@@ -89,7 +89,7 @@ s4[18]  # => 'e'
 try:
     s4[2] = "u"  # => TypeError: 'str' object does not support item assignment
 except TypeError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # HP : Caractères spéciaux et échappement
 ##########################################
@@ -101,7 +101,7 @@ différent de leur rendu visuel dans le code.
 
 # Exemple :
 s5 = "abc\ndef\nghi"  # => Ce "\n" est en fait un saut de ligne sur Linux/Mac
-print(s5)             # => ... que l'on peut voir en imprimant la variable s5
+print(s5)             # => … que l'on peut voir en imprimant la variable s5
 """
 Résultat
 
@@ -122,7 +122,7 @@ Ces caractères spéciaux utilisent souvent le caractère backslash : \
 # caractère qui le suit immédiatement.
 
 # Quand on souhaite vraiment avoir un backslash à l'écran, il faut "échapper" ce
-# caractère avec... un autre backslash
+# caractère avec… un autre backslash
 print("\\")  # => "\"
 
 # Imprimer avec print()
@@ -131,8 +131,8 @@ print("\\")  # => "\"
 # Python a une fonction intégrée print() pour imprimer du texte à l'écran
 print("Salut, monde !") # => "Salut, monde !"
 
-# ...mais print() peut imprimer absolument tout et n'importe quoi : entiers,
-# floats, strings, listes, booléens, range...
+# …mais print() peut imprimer absolument tout et n'importe quoi : entiers,
+# floats, strings, listes, booléens, range…
 
 print([True, "pouet", 150, 2.3, range(4), [1]])  # => [True, 'pouet', 150, 2.3,
 #                                                       range(0, 4), [1]]
@@ -180,7 +180,7 @@ print("toto", end='')  # => pas de saut en fin de ligne
 try:
     "Hello " + 42  # => TypeError: can only concatenate str (not "int") to str
 except TypeError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 #   2. On utilise l'opérateur "*" pour dupliquer une chaîne (string * int)

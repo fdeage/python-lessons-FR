@@ -50,10 +50,10 @@ s.find("hi")  # => -1
 
 
 """
-    3. .replace() permet de remplacer un caractère par un autre...
+    3. .replace() permet de remplacer un caractère par un autre…
 """
 "J'aime les pommes".replace("e", "z")  # => "J'aimz lzs pommzs"
-#       ...ou de le supprimer complètement (on passe une chaîne vide)
+#       …ou de le supprimer complètement (on passe une chaîne vide)
 "J'aime les pommes".replace("e", "")  # => "J'aim ls pomms"
 
 # D'autres méthodes sur les strings
@@ -139,7 +139,7 @@ print("Je m'appelle " + nom + " et j'ai " + str(age) + " ans.")
 # => Je m'appelle Michelle et j'ai 15 ans.
 
 """
-...mais c'est complexe : il faut bien penser aux espaces entre les mots, à
+…mais c'est complexe : il faut bien penser aux espaces entre les mots, à
 convertir les nombres en strings, etc.
 
 L'interpolation règle la plupart de ces difficultés.

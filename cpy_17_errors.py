@@ -18,7 +18,7 @@
 """
 Note : ce fichier n'est pas exécutable, car le code ci-dessous va créer EXPRÈS
 des erreurs à l'exécution, dont certaines ne sont pas "interceptables" avec
-"try... except".
+"try… except".
 """
 
 ##################################################
@@ -27,7 +27,7 @@ des erreurs à l'exécution, dont certaines ne sont pas "interceptables" avec
 #
 #  - Le mécanisme des erreurs en Python
 #  - Sources d'erreurs fréquentes
-#  - Gérer les erreurs avec try: ... except: ...
+#  - Gérer les erreurs avec try: … except: …
 #  - Quand laisser crasher ?
 #
 ##################################################
@@ -64,7 +64,7 @@ raise IndexError("Ne dépasse pas l'indice de la liste plz 😡")
 
 """
 Il y a deux issues possibles à la survenue d'une erreur :
-    1. soit l'erreur est interceptée (avec try: ... except: ...)
+    1. soit l'erreur est interceptée (avec try: … except: …)
     2. soit l'erreur n'est pas interceptée et crashe le programme.
 
 Attention : il n'y a pas de "meilleure" solution pour gérer l'erreur ! en
@@ -118,10 +118,10 @@ d[2]           # => KeyError: 2
 """
 Il y a des dizaines d'autres erreurs et il ne sert à rien de toutes les
 connaître. Mais il faut BIEN LIRE LES MESSAGES D'ERREURS : ils vous sauveront
-souvent...
+souvent…
 """
 
-# Gérer les erreurs avec try: ... except: ...
+# Gérer les erreurs avec try: … except: …
 ##############################################
 
 """
@@ -196,13 +196,13 @@ va, par défaut, interrompre le programme. Si l'on souhaite empêcher cette
 interruption, il faut demander à Python "d'intercepter" l'erreur.
 
 Savoir quelle erreur intercepter et laquelle faire crasher le programme
-n'est pas évident... ce sera à vous de décider à chaque fois !
+n'est pas évident… ce sera à vous de décider à chaque fois !
 
 Certains programmes critiques ne doivent JAMAIS être interrompus
 (pacemakers, centrales nucléaires, ordinateur de bord d'avion, réseaux
-électriques...).
+électriques…).
 
-Pour beaucoup d'autres (serveurs web, ordinateurs personnels, jeux...), il
+Pour beaucoup d'autres (serveurs web, ordinateurs personnels, jeux…), il
 est plus simple de laisser le programme crasher et le relancer ensuite.
 """
 

@@ -76,7 +76,7 @@ Remarques :
     - Tous les fichiers laissés ouverts seront fermés d'office, à la fin de
       l'exécution du programme Python.
     - Il y a une syntaxe alternative à connaître pour ouvrir un fichier :
-      with open(file, "r") as ...:
+      with open(file, "r") as …:
 """
 with open("exemple.txt", "r") as fo:
     print(fo)  # <_io.TextIOWrapper name='exemple.txt' mode='r' encoding='UTF-8'>
@@ -112,7 +112,7 @@ try:
     fo3.close()
 except FileExistsError as err:
     # Une erreur est levée car le fichier existe déjà
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 # Lecture d'un fichier
@@ -139,7 +139,7 @@ print(r, end="")  # => "aaaa"
 
 #      Note : sans paramètre à .read(), la méthode va lire jusqu'à la fin du
 #      fichier
-print(fo.read())  # => "bbb..."
+print(fo.read())  # => "bbb…"
 
 """
 HP :
@@ -156,9 +156,9 @@ fo.seek(0)  # On remet la tête de lecture au début
        automatiquement jusqu'à la fin de la ligne (càd jusqu'au prochain
        caractère de saut de ligne)
 """
-line = fo.readline()  # On lit la première ligne...
+line = fo.readline()  # On lit la première ligne…
 
-# ...puis on itère tant que line ne contient pas la ligne vide (fin de fichier)
+# …puis on itère tant que line ne contient pas la ligne vide (fin de fichier)
 while line:
     line = fo.readline()
     print(line, end="")
@@ -170,7 +170,7 @@ fo.readlines(3)  # => retourne 3 lignes
 """
     3. La dernière façon est aussi ligne à ligne et n'utilise aucune méthode de
        fo : elle consiste à itérer sur le contenu du fichier avec une boucle
-       "for ... in ...".
+       "for … in …".
 
        La variable line contiendra successivement chaque ligne du fichier.
 """
@@ -227,7 +227,7 @@ path = "/Users/fd"  # => Sur macOS
 # path = "C://Documents"      # => Sur Windows
 
 fichiers = os.listdir(path)
-print(fichiers)  # => ['.config', 'Music', 'Movies', 'Documents', ...]
+print(fichiers)  # => ['.config', 'Music', 'Movies', 'Documents', …]
 
 #   - Pour renommer un fichier, on utilise rename() :
 
@@ -240,7 +240,7 @@ os.rename(old_name, new_name)
 #   - Pour supprier un fichier, on utilise remove() :
 
 # WARNING WARNING WARNING - à décommenter avec soin : ceci peut supprimer des
-# fichiers sur votre ordinateur...
+# fichiers sur votre ordinateur…
 # os.remove("nouveau.txt")
 # os.remove("nouveau_3.txt")
 
@@ -297,7 +297,7 @@ cinemas_fo.seek(0)  # On rembobine la tête de lecture
 cinemas_dr = csv.DictReader(cinemas_fo, delimiter=",")
 """
 (Notez que si le fichier utilise des virgules comme séparateur, on n'est alors
-pas obligé de préciser "delimiter=...")
+pas obligé de préciser "delimiter=…")
 """
 
 # On itère ensuite sur cinemas_dr

@@ -42,21 +42,21 @@ Les p-uplets fonctionnent exactement comme des listes. Ils sont moins utilisés
 qu'elles, mais il faut les connaître.
 """
 
-# On les déclare avec des parenthèses autour d'une séquence de valeurs...
+# On les déclare avec des parenthèses autour d'une séquence de valeurs…
 tuple_vide = ()
 tup = (1, 2, 3, 4)
 tup  # => (1, 2, 3, 4)
 
 type(tup)  # => <class 'tuple'>
 
-# ...mais il est fréquent de rencontrer aussi cette écriture sans parenthèses
+# …mais il est fréquent de rencontrer aussi cette écriture sans parenthèses
 tup_alternatif = 4, 5, 6
 tup_alternatif  # => 4, 5, 6
 
 # Pour un tuple à une seule valeur, il faut ajouter une virgule finale (pour
 # éviter la confusion avec un entier entre parenthèses)
-(1)  # le nombre 1 entre parenthèses...
-(1,)  # ...un tuple à une seule valeur
+(1)  # le nombre 1 entre parenthèses…
+(1,)  # …un tuple à une seule valeur
 
 type((1))  # => <class 'int'>
 type((1,))  # => <class 'tuple'>
@@ -108,7 +108,7 @@ tup[0]  # => 1, comme une liste
 try:
     tup[6]  # => IndexError: tuple index out of range (cf. liste)
 except IndexError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # On peut utiliser la plupart des opérations des listes sur des tuples
 len(tup)  # => 4
@@ -131,12 +131,12 @@ y, x = x, y  # y vaut maintenant 2 et y vaut 3
 try:
     tup[0] = 1  # => TypeError: 'tuple' object does not support item assignment
 except TypeError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 try:
     tup.append(4)  # => AttributeError: 'tuple' object has no attribute 'append'
 except AttributeError as err:
-    print(f"3: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # Cependant, certaines modifications sont quand même possibles :
 

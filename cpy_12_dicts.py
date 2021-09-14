@@ -51,7 +51,7 @@ numéro de téléphone.
 
 HP : Dans d'autres langages, on appellera aussi parfois le dictionnaire un
 "hash", une "map", une "lookup table" (table d'indexation), un "associative
-array" (tableau associatif)...
+array" (tableau associatif)…
 """
 
 
@@ -117,7 +117,7 @@ Rappel :
 # Indexation de valeurs et opérations de base
 ##############################################
 
-# En Python, on utilise la syntaxe {clé1: valeur1, ...} pour déclarer un
+# En Python, on utilise la syntaxe {clé1: valeur1, …} pour déclarer un
 # dictionnaire :
 mon_super_dictionnaire = {"hop": 14, "pouet": True, "tut": "pouet"}
 
@@ -128,16 +128,16 @@ mon_super_dictionnaire["hop"]  # => 14
 try:
     mon_super_dictionnaire[0]  # => KeyError: 0, car 0 n'est pas une clé
 except KeyError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # Un dictionnaire ressemble finalement beaucoup à une liste : une liste
-# associe un indice à une valeur...
+# associe un indice à une valeur…
 l = ["a", "b", "c"]
 l[0] = "a"
 l[1] = "b"
 l[2] = "c"
 
-# ...mais on peut en faire autant avec un dictionnaire :
+# …mais on peut en faire autant avec un dictionnaire :
 d = {0: "a", 1: "b", 2: "c"}
 d[0] = "a"
 d[1] = "b"
@@ -171,7 +171,7 @@ Ceci exclut : les listes, les dictionnaires et les ensembles (voir chap. 22)
 try:
     dict_avec_mauvaise_cle = {[1, 2]: 2}  # => TypeError: unhashable type: 'list'
 except TypeError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # En revanche, les VALEURS peuvent être absolument tout ce que l'on veut,
 # sans restriction
@@ -181,10 +181,10 @@ valeurs_variees = {0: [1, 2, 3], 1: {1: "pouet"}, 2: {1, 2, 3}}
 # D'autres méthodes sur les dictionnaires
 ##########################################
 
-# On peut créer un dictionnaire vide avec {}...
+# On peut créer un dictionnaire vide avec {}…
 dict_vide = {}
 
-# ...puis le remplir avec des couples clé/valeur
+# …puis le remplir avec des couples clé/valeur
 dict_vide["zéro"] = 0
 dict_vide  # => {"zéro": 0}
 
@@ -192,7 +192,7 @@ dict_vide  # => {"zéro": 0}
 try:
     dict_vide["?"]  # => KeyError: '?'
 except KeyError as err:
-    print(f"3: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # HP : on peut utiliser .get() pour éviter cette erreur
 dict_vide.get("?")             # => None
@@ -226,7 +226,7 @@ dict_avec_memes_valeurs = {0: "Pouet", 1: "Pouet", 2: "Pouet"}
 try:
     dict_avec_doublons["quatre"]  # KeyError
 except KeyError as err:
-    print(f"4: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # On vérifie la présence d'une clé dans un dictionnaire avec "in"
 "un" in dict_avec_doublons  # => True
@@ -282,9 +282,9 @@ v = calories.values()
 print(k)  # => dict_keys(['pomme', 'banane', 'chocolat'])
 print(v)  # => dict_values([52, 89, 546])
 
-# On modifie ensuite notre dictionnaire...
+# On modifie ensuite notre dictionnaire…
 calories["burger"] = 1_000
 
-# ...et k et v sont modifiés dynamiquement
+# …et k et v sont modifiés dynamiquement
 print(k)  # => dict_keys(['pomme', 'banane', 'chocolat', 'burger'])
 print(v)  # => dict_values([52, 89, 546, 1000])

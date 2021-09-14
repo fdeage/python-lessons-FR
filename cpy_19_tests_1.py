@@ -52,7 +52,7 @@ assert 2 + 2 == 4  # pas d'erreur
 try:
     assert 2 + 2 == 3  # l'égalité est fausse : assert soulève une erreur
 except AssertionError:
-    print("1: (Sans ce try: ... except ..., cette ligne créerait une erreur)")
+    print("1: (Sans ce try: … except …, cette ligne créerait une erreur)")
 
 
 # Les 5 effets d'une fonction
@@ -65,7 +65,7 @@ programme :
 
     2. en imprimant une valeur (avec print())
 
-    3. en modifiant le ou les types construits (listes, dicts...) passés en
+    3. en modifiant le ou les types construits (listes, dicts…) passés en
        paramètre : on appelle ça un "effet de bord", ou "side effect".
        Attention, cela peut être source de confusion et de bugs.
 
@@ -106,7 +106,7 @@ def compute_and_print_result_2(a, b):
 
 """
 Ce découpage permet de tester la fonction de calcul : la fonction d'affichage
-ne fait plus... qu'afficher !
+ne fait plus… qu'afficher !
 """
 
 
@@ -150,7 +150,7 @@ On va donc devoir appeler assert avant et après les appels de fonction.
 Note : reponse1 == reponse2 retourne toujours un booléen.
 """
 def test_my_pop(pop_native, pop_custom):
-    print("Test: my_pop()...", end="")
+    print("Test: my_pop()…", end="")
 
     for _ in range(len(pop_native)):
         # Listes égales avant appels ?
@@ -172,7 +172,7 @@ def test_my_pop(pop_native, pop_custom):
     try:
         ret_native = pop_native.pop()    # IndexError: pop from empty list
     except IndexError as err:
-        print("2: (Sans ce try: ... except ..., cette ligne créerait une erreur)")
+        print("2: (Sans ce try: … except …, cette ligne créerait une erreur)")
         error_raised_native = True
 
     assert error_raised_native == True
@@ -182,7 +182,7 @@ def test_my_pop(pop_native, pop_custom):
     try:
         ret_custom = my_pop(pop_custom)  # IndexError: pop from empty list
     except IndexError as err:
-        print("3: (Sans ce try: ... except ..., cette ligne créerait une erreur)")
+        print("3: (Sans ce try: … except …, cette ligne créerait une erreur)")
         error_raised_custom = True
 
     assert error_raised_custom == True
@@ -214,14 +214,14 @@ code.
    ce que vos tests passent au vert. Ne vous souciez pas de faire du code joli
    au début, juste fonctionnel. Assurez-vous que vos tests couvrent tout !
    Pensez aux cas-limites, bizarres, etc. : listes vides, valeurs négatives,
-   None, string vide...
+   None, string vide…
 
 4. "Refactor" : une fois les tests passés, on commence à se soucie de la qualité
    du code.
    D'abord, allez faire un tour, soufflez, prenez du recul sur votre code.
    Ensuite, réfléchissez ! Renommez vos variables et vos fonctions, harmonisez
    leurs noms, utilisez des structures de données plus adaptées, voyez si vous
-   pouvez simplifier certaines parties, ou isoler du code dans une fonction...
+   pouvez simplifier certaines parties, ou isoler du code dans une fonction…
 
    Ce processus s'appelle le "refactoring" : on ne modifie plus le comportement
    de la fonction (le "quoi"), mais le "comment". À chaque modification, vous
@@ -293,7 +293,7 @@ print(comparer_listes([2, 5, 8], [3, 7]))  # => True
 
 """
 Remarque : une annotation de type suppose que votre fonction retourne des
-valeurs de type homogène...
+valeurs de type homogène…
 
 Ainsi, cette fonction n'est pas annotable :
 """

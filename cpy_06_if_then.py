@@ -43,13 +43,13 @@ de contrôle :
 ####################
 
 """
-Voici une condition "si ... alors ...". On l'exprime avec le mot-clé "if" :
+Voici une condition "si … alors …". On l'exprime avec le mot-clé "if" :
 if <condition>:
-    code... (Notez l'indentation en début de ligne)
+    code… (Notez l'indentation en début de ligne)
 
 La <condition> doit être :
-    - un booléen...
-    - ...ou une expression qui retourne un booléen (comme une comparaison ou un
+    - un booléen…
+    - …ou une expression qui retourne un booléen (comme une comparaison ou un
       test d'égalité)
 """
 
@@ -60,7 +60,7 @@ if une_variable > 10:
 print("Ceci n'est pas dans le bloc if et sera toujours affiché !")
 """
 Le 1er print() ne sera pas exécuté car la condition n'est pas remplie.
-Ce code affichera donc juste le 2e print ("Ceci n'est pas dans le bloc if...")
+Ce code affichera donc juste le 2e print ("Ceci n'est pas dans le bloc if…")
 """
 
 """
@@ -78,7 +78,7 @@ if une_variable > 3 and 3 == 3 and not (une_variable < 2):
 ####################
 
 # On peut faire plus sophistiqué et rajouter un bloc exécuté si la condition
-# N'EST PAS remplie. On utilisera alors "if ...: ... else: ...""
+# N'EST PAS remplie. On utilisera alors "if …: … else: …""
 une_variable = 12
 
 if une_variable > 10:
@@ -107,7 +107,7 @@ f : x → -  3  − x   si 0 ≤ x < 2
          \\ x² − 3   si x ≥ 2
 """
 
-# On peut reproduire cette fonction avec if ...: else if: ... else: ...
+# On peut reproduire cette fonction avec if …: else if: … else: …
 def f(x):
     if x < 0:  # si x est négatif
         return 2 * x + 3
@@ -140,7 +140,7 @@ subtilement le sens du programme !
 
 def lancer_missile():
     print("Boom !")
-    # ...
+    # …
     # du code qui lance des missiles
 
 

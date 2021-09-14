@@ -61,7 +61,7 @@ vraiment construit.
 """
 Les listes (similaires aux tableaux en Python) sont des variables qui
 permettent de stocker des séquences d'éléments, de toute nature : strings,
-ints... ou même d'autres listes !
+ints… ou même d'autres listes !
 
 On peut y ranger simultanément des valeurs de nature différente.
 """
@@ -72,7 +72,7 @@ voiture_1 = "bleue"
 voiture_2 = "rouge"
 voiture_3 = "jaune"
 voiture_4 = "verte"
-# ...
+# …
 
 """
 Si l'on souhaite conserver plus de voitures, il faudra créer une nouvelle
@@ -85,7 +85,7 @@ Heureusement Python, comme la plupart des langages, nous propose un type pour
 "ranger" différentes valeurs dans une seule : la liste.
 """
 
-# On la déclare avec la syntaxe "[...]"
+# On la déclare avec la syntaxe "[…]"
 voitures = [voiture_1, voiture_2, voiture_3]
 # ou directement :
 voitures = ["bleue", "rouge", "jaune"]
@@ -142,7 +142,7 @@ liste_variee[-1]  # => [1, 2, 3]
 try:
     liste_variee[7]  # => Lève une IndexError
 except IndexError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # La liste vide ne contient, par définition, aucune valeur. Même l'indice 0
 # n'existe pas !
@@ -150,11 +150,11 @@ liste_vide = []
 try:
     liste_vide[0]  # => Lève aussi une IndexError
 except IndexError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 """
-Pour tester si une valeur est dans une liste, on peut utiliser "... in ..." et
-son complément "... not in ..."
+Pour tester si une valeur est dans une liste, on peut utiliser "… in …" et
+son complément "… not in …"
 """
 print(1 in liste_pre_remplie)      # => False
 print(1 not in liste_pre_remplie)  # => True
@@ -236,9 +236,9 @@ print(max(liste_entiers_croissants)) # => 4
 print(min(liste_entiers_croissants)) # => 0
 print(sum(liste_entiers_croissants)) # => 10
 
-# Ainsi, pour calculer la moyenne des notes suivantes...
+# Ainsi, pour calculer la moyenne des notes suivantes…
 notes = [17, 12, 14, 9, 19, 11, 14, 14]
-# ...il suffira de faire :
+# …il suffira de faire :
 moyenne = sum(notes) / len(notes)
 print(f"Ma moyenne est de {moyenne}")  # => 'Ma moyenne est de 13.75'
 
@@ -292,11 +292,11 @@ print(liste) # => [10, 0, 30]
 
 """
     - La création d'une liste Python se fait souvent par accumulation : on peut
-      partir d'une liste vide...
+      partir d'une liste vide…
 """
 liste = []
 """
-      ...et lui ajouter des éléments, le plus souvent "par la droite" (ou
+      …et lui ajouter des éléments, le plus souvent "par la droite" (ou
       "par la fin"). Il y a plusieurs possibilités pour cela :
          1. la méthode .append()
 """
@@ -378,10 +378,10 @@ des autres lignes.
 
 """
 HP : il n'y a pas de limites au niveau d'imbrication que l'on peut atteindre !
-Voici par exemple une très belle matrice 3D...
+Voici par exemple une très belle matrice 3D…
 """
 liste_3d = [[[0, 1], [2, 3]], [[4, 5], [6, 7]]]
-# ...mais en pratique on ira rarement au-delà de 2.
+# …mais en pratique on ira rarement au-delà de 2.
 
 
 # Tri de listes
@@ -393,13 +393,13 @@ On a deux options ici :
     2. retourner une nouvelle valeur qui contient la liste triée avec sorted()
 """
 
-#   1. On utilise .sort() pour trier une liste "sur place", sans rien retourner...
+#   1. On utilise .sort() pour trier une liste "sur place", sans rien retourner…
 desordre = [2, 3, 7, 1, 9, 4]
 s = desordre.sort()
 print(s)  # => None. .sort() ne retourne rien !
 desordre  # => [1, 2, 3, 4, 7, 9], la liste de départ est modifiée
 
-#   2. ... et on utilise sorted() pour retourner une liste triée sans changer
+#   2. … et on utilise sorted() pour retourner une liste triée sans changer
 # l'original
 desordre2 = [2, 3, 7, 1, 9, 4]
 sorted(desordre2)  # => [1, 2, 3, 4, 7, 9]

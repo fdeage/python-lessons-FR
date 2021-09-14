@@ -46,13 +46,13 @@ Au moment où on exécute le programme, ce mot-clé "return" :
 
 # Exemple 1 : une fonction qui retourne toujours 5
 def fonction_sans_parametre():
-    print(f"Cette fonction n'est pas très intéressante... elle retourne toujours 5.")
+    print(f"Cette fonction n'est pas très intéressante… elle retourne toujours 5.")
     return 5
 
 
 # On appelle ensuite la fonction : l'exécution "passe dans la fonction"
 a = fonction_sans_parametre()
-# => "Cette fonction retourne toujours 5. Elle n'est pas très intéressante..."
+# => "Cette fonction retourne toujours 5. Elle n'est pas très intéressante…"
 print(a)  # => 5 (l'appel de la fonction est remplacé par la valeur qu'elle retourne)
 
 # Exemple 2 : on va essayer de faire retourner une valeur différente qui varie
@@ -109,7 +109,7 @@ print(y)  # => False
 #################
 
 """
-None est un mot particulier en Python : il désigne... l'absence de valeur.
+None est un mot particulier en Python : il désigne… l'absence de valeur.
 
 On obtient la valeur None quand une fonction ne retourne rien :
     - soit quand il manque le mot-clé "return" à là fin d'une fonction,
@@ -118,13 +118,13 @@ On obtient la valeur None quand une fonction ne retourne rien :
 
 # Exemple :
 def fonction_sans_retour():
-    2 + 3  # on oublie "return" devant 2 + 3...
+    2 + 3  # on oublie "return" devant 2 + 3…
 
 
 print(fonction_sans_retour())  # => None
 
-# Pour tester si une fonction retourne None, on utilisera "... is None" au lieu
-# de "... == None"
+# Pour tester si une fonction retourne None, on utilisera "… is None" au lieu
+# de "… == None"
 fonction_sans_retour() is None  # => True
 
 """
@@ -143,9 +143,9 @@ def fonction_avec_retour_vide(a):
 print(fonction_avec_retour_vide(17))  # => 17
 print(fonction_avec_retour_vide(-4))  # => None
 
-# Remarquez que None est différent de 0...
+# Remarquez que None est différent de 0…
 print(None == 0)  # => False
-# ... et None est aussi différent de False
+# … et None est aussi différent de False
 print(None == False)  # => False
 
 # HP : si None est testé dans une expression booléenne, il sera converti en
@@ -182,9 +182,9 @@ def un_calcul(x, y, z):
 Ici la fonction un_calcul() n'imprime rien car elle ne contient aucun appel
 à print(). Elle se contente de retourner un résultat.
 """
-resultat = un_calcul(2, 3, 5)  # rien n'est imprimé à l'écran...
+resultat = un_calcul(2, 3, 5)  # rien n'est imprimé à l'écran…
 
-# ...donc il faudra ensuite utiliser print() pour imprimer ce résultat
+# …donc il faudra ensuite utiliser print() pour imprimer ce résultat
 print(resultat)  # => 11
 
 # On aurait pu aussi gagner du temps en mettant le print() dans la fonction

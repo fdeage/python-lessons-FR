@@ -48,10 +48,10 @@ from datetime import date
 # On obtient la date du jour avec date.today()
 t = date.today()
 
-# t est un type date...
+# t est un type date…
 print(type(t))  # => <class 'datetime.date'>
 
-# ...que l'on peut l'imprimer normalement avec print()
+# …que l'on peut l'imprimer normalement avec print()
 print(t)  # => 2020-11-05
 
 # On peut affecter une date à une variable
@@ -134,7 +134,7 @@ pour cela la fonction time() du module time.
 import time
 
 def fonction_lente():
-    # Cette fonction retourne la somme des nombres de 1 à... beaucoup
+    # Cette fonction retourne la somme des nombres de 1 à… beaucoup
     return sum([i for i in range(10_000_000)])
 
 avant = time.time()

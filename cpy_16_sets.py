@@ -40,24 +40,24 @@ Deux propriétés importantes :
     - les valeurs ne sont pas triées à l'intérieur de l'ensemble
 """
 
-# On utilise une syntaxe qui resssemble à celle des dictionnaires... sauf
+# On utilise une syntaxe qui resssemble à celle des dictionnaires… sauf
 # qu'il n'y a que des clés !
 un_ensemble = {1, 1, 2, 2, 3, 4}  # => {1, 2, 3, 4} (les doublons "sautent")
 
 # Comme {} désigne déjà le dictionnaire vide, on crée un set vide avec set()
 ensemble_vide = set()
 
-# Un set peut stocker presque n'importe quel type de valeur...
+# Un set peut stocker presque n'importe quel type de valeur…
 ensemble_varie = {"abc", 13, False, 4.2}
 
-# ...sauf les habituelles valeurs à problèmes, mutables, comme les listes et les
+# …sauf les habituelles valeurs à problèmes, mutables, comme les listes et les
 # dictionnaires ("non-hashable values")
 ensemble_ok = {(1, 2), 1}  # valide car les tuples sont immuables
 
 try:
     ensemble_ko = {[1, 2], 1}  # => TypeError: unhashable type: 'list'
 except TypeError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 # Opérations sur les ensembles
@@ -66,15 +66,15 @@ except TypeError as err:
 #   1. On peut bien sûr utiliser len() sur un ensemble
 len( un_ensemble)       # => 4
 
-#   2. On utilise la méthode .add() pour ajouter un élément à un set...
+#   2. On utilise la méthode .add() pour ajouter un élément à un set…
 un_ensemble.add(5)     # => {1, 2, 3, 4, 5}
 len( un_ensemble)       # => 5
 
-# ...mais les sets ne peuvent pas avoir de doublons
+# …mais les sets ne peuvent pas avoir de doublons
 un_ensemble.add(5)     # toujours {1, 2, 3, 4, 5}
 len( un_ensemble)       # => toujours 5
 
-#   3. On vérifie la présence d'un objet dans un set avec "... in ..."
+#   3. On vérifie la présence d'un objet dans un set avec "… in …"
 2 in un_ensemble    # => True
 149 in un_ensemble  # => False
 
@@ -84,7 +84,7 @@ un_ensemble.remove(5)  # {1, 2, 3, 4}
 try:
     un_ensemble.remove(37)
 except KeyError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # HP : pour enlever une valeur sans risquer d'erreur, on peut utiliser la
 # méthode .discard()
@@ -108,11 +108,11 @@ print(set1.union(set2))  # => {1, 2, 3, '1', '2', '3'}
 ##############################
 
 # Les ensembles pernettent de dire très rapidement si deux strings sont des
-# anagrammes (càd sont constituées des mêmes lettres)...
+# anagrammes (càd sont constituées des mêmes lettres)…
 def sont_anagrammes(s1, s2):
     return set(s1) == set(s2)
 
-# ...car set() ne va garder qu'une instance de chaque lettre, et que l'ordre
+# …car set() ne va garder qu'une instance de chaque lettre, et que l'ordre
 # n'importe pas
 sont_anagrammes("elvis", "live") # => False
 sont_anagrammes("elvis", "lives") # => True

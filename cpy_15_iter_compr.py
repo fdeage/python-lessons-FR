@@ -121,7 +121,7 @@ iiiii
 """
 
 """
-On peut utiliser la syntaxe  "... in ..." avec tous les itérables, sauf
+On peut utiliser la syntaxe  "… in …" avec tous les itérables, sauf
 les fichiers. "in" retourne True si l'élément est dans l'itérable, et False
 sinon.
 """
@@ -179,7 +179,7 @@ print(l5)  # => [16, 15, 16]
 
 """
 Les compréhensions sont un outil très puissant et parfois assez complexe
-à visualiser... il est donc recommandé de beaucoup s'entraîner !
+à visualiser… il est donc recommandé de beaucoup s'entraîner !
 
 Note : les compréhensions sont un raccourci pour créer une liste rapidement,
 mais on pourra toujours générer la même liste avec une boucle.
@@ -235,7 +235,7 @@ listes (aussi appelées matrices).
 matrice = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 """
-On peut ensuite utiliser la syntaxe [... for ...] sur cette matrice
+On peut ensuite utiliser la syntaxe [… for …] sur cette matrice
 """
 
 #   - Pour prendre la deuxième valeur de chaque sous-liste :
@@ -291,10 +291,10 @@ print(super_comprehension)  # => [(1, 0),(2, 0), (2, 1)]
 # HP : compréhensions avancées
 ###############################
 
-# Il est possible de partir des clés d'un dictionnaire...
+# Il est possible de partir des clés d'un dictionnaire…
 poids_voitures = {"clio": 790, "406": 1230, "X5": 2170}
 
-# ...pour créer une liste à partir de ce dictionnaire
+# …pour créer une liste à partir de ce dictionnaire
 [v[::-1] for v in poids_voitures]  # => ['oilc', '604', '5X']
 
 # On peut aussi créer un nouveau dictionnaire à partir de ce dictionnaire

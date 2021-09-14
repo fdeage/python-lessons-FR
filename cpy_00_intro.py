@@ -52,11 +52,11 @@ Les objectifs du langage, d'après GVR :
 
 C'est un des langage les plus populaires au monde, utilisé dans énormément
 de domaines : sciences, statistiques, finance, robotique, scripting, réseau,
-Web, traitement d'images, IA...
+Web, traitement d'images, IA…
 
 La plupart des grandes organisations (CERN, NASA, Google, gouvernements)
 l'utilisent pour l'un ou l'autre de leurs projets. Instagram, DropBox, Spotify,
-Pinterest, Youtube... sont des sites qui sont ou ont commencé en Python ! [0][1]
+Pinterest, Youtube… sont des sites qui sont ou ont commencé en Python ! [0][1]
 
 [0] https://djangostars.com/blog/10-popular-sites-made-on-django
 [1] https://thenewstack.io/instagram-makes-smooth-move-python-3
@@ -65,7 +65,7 @@ Même si l'interpréteur Python est lui-même programmé en C (un des langages l
 plus rapides qui soient), l'exécution de Python est plus lente que celle
 d'autres langages. Qu'importe ! sa simplicité compense largement ce point. Et
 de toute façon, on verra que la plupart des programmes n'ont pas besoin d'une
-exécution immédiate pour être utiles...
+exécution immédiate pour être utiles…
 """
 
 
@@ -85,7 +85,7 @@ universels de programmation.
 En conséquence, il y aura dans ce tutoriel trois types d'apprentissage :
     1. sur le langage Python
     2. sur la programmation en général
-    3. sur d'autres langages (SQL, JavaScript, HTML/CSS...)
+    3. sur d'autres langages (SQL, JavaScript, HTML/CSS…)
 
 Nous verrons que beaucoup de constructions que nous verrons avec Python cette
 année sont en fait communes à tous les langages.
@@ -105,8 +105,8 @@ année sont en fait communes à tous les langages.
 
 """
 Python est à la fois :
-    - un langage de programmation...
-    - ...et un programme qui va exécuter du code écrit dans ce langage.
+    - un langage de programmation…
+    - …et un programme qui va exécuter du code écrit dans ce langage.
 
 IMPT : Il y a quatre façons de programmer avec Python :
 
@@ -141,7 +141,7 @@ Si la version retournée est 2.X.YY, essayez de lancer Python 3 avec
 > python3
 
 Si Python3 n'est pas installé, installez-le ! Vous perdrez beaucoup moins de
-temps qu'en devant gérer les différences entre Python 2 et Python 3...
+temps qu'en devant gérer les différences entre Python 2 et Python 3…
 
 
 Une fois l'interpréteur Python lancé, vous pourrez lancer vos commandes Python :
@@ -158,7 +158,7 @@ shell Python a un prompt caractéristique : ">>> ".
 
 Note : Pour quitter l'interpréteur Python, on utilise quit()
 >>> quit()
-...et on revient au shell de l'ordinateur.
+…et on revient au shell de l'ordinateur.
 """
 
 
@@ -204,7 +204,7 @@ Avantages :
 Inconvénients :
     1. on a besoin d'une connexion internet,
     2. l'exécution peut être plus lente que sur son propre ordinateur (mauvaise
-       connexion, latence...)
+       connexion, latence…)
     3. pour conserver le code écrit sur son ordinateur, il faudra ensuite le
        copier/coller dans des fichiers locaux
 
@@ -258,7 +258,7 @@ shell Python.
 
 Cela semble long, mais c'est taper du code qui vous donnera de la pratique :
 rapidité, fluidité et acquisition d'automatismes. À la fin de l'année, les
-meilleurs élèves ne seront pas les plus doués, mais... ceux qui auront le plus
+meilleurs élèves ne seront pas les plus doués, mais… ceux qui auront le plus
 pratiqué.
 
 Taper les exemples dans une console vous permettra de vérifier les appels à
@@ -277,15 +277,15 @@ print(["une", "liste"])  # => ['une', 'liste']
 """
 Note 2 : dans certains fichiers, des erreurs intentionnelles ont été laissées
 dans le code. Elles sont signalées dans le code. On utilise un mécanisme de
-gestion d'erreurs ("try ... except ...") pour empêcher ces erreurs
+gestion d'erreurs ("try … except …") pour empêcher ces erreurs
 d'interrompre le programme. Ce mécanisme n'est pas à connaître au début : il
 sera abordé en détail au chap. 23.
 """
 try:
-    1 / 0   # la division par 0 va créer une erreur...
+    1 / 0   # la division par 0 va créer une erreur…
 except ZeroDivisionError as err:
-    # ... mais cette erreur est "interceptée" : le programme continue.
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    # … mais cette erreur est "interceptée" : le programme continue.
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 """
 Notez que les affichages d'erreurs sont numérotés : vous pourrez donc les

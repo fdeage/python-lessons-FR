@@ -42,13 +42,13 @@ de fois. Les structures pour créer ces répétitions s'appellent des boucles
 
 Python, comme la plupart des langages de programmation, propose deux
 structures pour créer des boucles :
-    1. la structure while ("tant que...") permet de boucler TANT QU'UNE
+    1. la structure while ("tant que…") permet de boucler TANT QU'UNE
        CONDITION EST REMPLIE. On ne sait pas à l'avance combien de fois le code
        dans la boucle sera exécuté
 
-    2. la structure "for" (pour tout ... dans ...) permet d'itérer (= répéter à
+    2. la structure "for" (pour tout … dans …) permet d'itérer (= répéter à
        l'identique) un nombre connu de fois. On peut itérer sur les valeurs
-       d'un ensemble (liste, dictionnaire, p-uplet...), ou bien itérer sur une
+       d'un ensemble (liste, dictionnaire, p-uplet…), ou bien itérer sur une
        suite d'entiers choisis.
 
 Note : les deux types de boucles sont interchangeables, c'est-à-dire que l'on
@@ -65,7 +65,7 @@ l'autre pour chaque situation.
 La structure "while" crée une boucle qui va "tourner" jusqu'à ce qu'une
 condition devienne fausse. Le code dans la boucle sera exécuté à chaque fois.
 
-La condition sera souvent de type : tant que <x> est inférieur à 0... Le nombre
+La condition sera souvent de type : tant que <x> est inférieur à 0… Le nombre
 d'itérations est souvent inconnu au départ.
 """
 
@@ -92,7 +92,7 @@ devient fausse : le programme quitte alors la boucle.
 # expression qui sera toujours vraie :
 while True:
     print("Cette boucle ne s'arrêtera jamais")
-# C'est logique, puisque True... est toujours vrai !
+# C'est logique, puisque True… est toujours vrai !
 
 # Idem avec une expression booléenne :
 while 1 < 4:
@@ -102,7 +102,7 @@ while 1 < 4:
 """
 IMPT: attention, il est fréquent quand on commence la programmation d'écrire
 des boucles infinies involontaires ! Si vous ne modifiez pas de variable
-dans la boucle, celle-ci n'a aucune chance de s'arrêter...
+dans la boucle, celle-ci n'a aucune chance de s'arrêter…
 """
 
 # Exemple :
@@ -115,7 +115,7 @@ while i < 4:
 """
 IMPT : Pour interrompre un programme, il faut presser "ctrl + C". Autrement, une
 boucle infinie dans votre programme prendra tout le CPU disponible sur votre
-ordinateur... jusqu'à ce que celui-ci crashe !
+ordinateur… jusqu'à ce que celui-ci crashe !
 """
 
 
@@ -131,7 +131,7 @@ UNE SEULE chaque terme d'un ensemble que l'on devra lui fournir.
 
 Il y a deux façons d'itérer avec for :
     1. avec un ensemble de valeurs contenu dans une variable (liste,
-       dictionnaire, n-uplet...), qu'on appellera une "collection"
+       dictionnaire, n-uplet…), qu'on appellera une "collection"
     2. avec une liste de valeurs retournée par la fonction range()
 
 On s'intéresse ici au premier cas : avec une collection, c'est-à-dire un
@@ -139,7 +139,7 @@ ensemble de valeurs.
 
 La syntaxe utilisée sera :
 for une_variable in <ensemble>:
-    code...
+    code…
 
 Exemple :
 """
@@ -232,7 +232,7 @@ Ceci affichera :
 """
 
 """
-On peut combiner range() avec input() pour des résultats intéressants...
+On peut combiner range() avec input() pour des résultats intéressants…
 Ainsi le code ci-dessous affichera tous les anniversaires, en commençant par 1
 """
 age = int(input("> Quel est ton âge ?"))
@@ -240,7 +240,7 @@ age = int(input("> Quel est ton âge ?"))
 for i in range(1, age + 1):
     print(f"Joyeux anniversaire, tu as {i} ans !")
 
-# HP : un range() n'est pas une liste, même s'il y ressemble...
+# HP : un range() n'est pas une liste, même s'il y ressemble…
 type(range(5))  # => <class 'range'>
 
 # Pour résumer :
@@ -258,19 +258,19 @@ list(range(1, 0))       # => []
 
 """
 Une boucle "for" est en réalité un raccourci pour une boucle "while".
-Ainsi...
+Ainsi…
 """
 i = 0
 while i < 5:
     print(i)
     i = i + 1
 
-# ...peut-il s'écrire plus simplement :
+# …peut-il s'écrire plus simplement :
 for i in range(5):
     print(i)
 
 # Exercice : passez le temps suffisant pour comprendre pourquoi ces deux
-# boucles font la même chose...
+# boucles font la même chose…
 
 """
 "for" est donc plus "expressif" puisqu'il gère automatiquement la création et
@@ -290,7 +290,7 @@ while True:
 
 for i in range(6):
     print("On devrait avoir 6 print mais ceci sera imprimé une seule fois")
-    break  # On sort de la boucle for après une itération...
+    break  # On sort de la boucle for après une itération…
 #            ce qui a peu d'intérêt
 
 # L'instruction "continue" permet d'aller à la fin d'une boucle sans exécuter
@@ -308,6 +308,6 @@ while True:
 
 """
 Ces instructions, break et continue, sont peu utilisées, car on peut souvent
-les remplacer par une autre structure... mais il faut savoir les comprendre
+les remplacer par une autre structure… mais il faut savoir les comprendre
 dans un programme.
 """

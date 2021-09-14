@@ -47,7 +47,7 @@ une zone de la mémoire qui contient une valeur :
 try:
     une_variable["test"] = 1
 except NameError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 une_variable = {}
 
 """
@@ -108,14 +108,14 @@ def une_fonction_avec_parametre(super_parametre):
     print(super_parametre)
 
 
-# super_parametre est remplacé par 3 à l'exécution : ceci imprimera 3...
+# super_parametre est remplacé par 3 à l'exécution : ceci imprimera 3…
 une_fonction_avec_parametre(3)
 
-# ... mais ceci créera une erreur ("... not defined"). Pourquoi ?
+# … mais ceci créera une erreur ("… not defined"). Pourquoi ?
 try:
     print(super_parametre)  # Erreur
 except NameError as err:
-    print(f"2: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 # Réponse : super_parametre n'a pas d'existence hors de la fonction.
 
 """
@@ -153,16 +153,16 @@ try:
     print(l)  # => NameError: name 'l' is not defined
     print(i)  # => NameError: name 'i' is not defined
 except NameError as err:
-    print(f"3: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 """
     4. Enfin, les variables de boucle n'existent que dans la boucle. Dans
-       l'exemple plus haut, la variable i existe dans la boucle for...
+       l'exemple plus haut, la variable i existe dans la boucle for…
 
        for i in range(2):
-            ...
+            …
 
-       ...mais ni au-dessus ni en-dessous de cette boucle.
+       …mais ni au-dessus ni en-dessous de cette boucle.
 """
 
 

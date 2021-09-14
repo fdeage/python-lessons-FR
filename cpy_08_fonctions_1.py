@@ -39,7 +39,7 @@ La fonction est un des deux concepts absolument essentiels pour structurer un
 programme que vous verrez en NSI (l'autre concept étant l'objet, vu en Tle).
 
 Le concept est tellement repandu qu'on lui a trouvé plein de synonymes :
-method, sub-routine, co-routine, procedure, block, lambda, macro, callable...
+method, sub-routine, co-routine, procedure, block, lambda, macro, callable…
 
 La fonction est une brique fondamentale de la programmation, quel que soit le
 langage. Prenez votre temps pour bien comprendre leur intérêt et leur usage :
@@ -73,7 +73,7 @@ Python propose des fonctions intégrées, accessibles depuis n'importe où dans
 le programme : on les appelle aussi "built-ins".
 """
 
-# On a vu certains de ces built-ins : input(), print(), range()...
+# On a vu certains de ces built-ins : input(), print(), range()…
 # nom = input("Quel est ton nom ? ")
 # print(nom)
 range(3)
@@ -140,7 +140,7 @@ IMPT : on rappelle que ce code ne fait que définir une fonction : tant qu'on
 ne l'aura pas appelée, le code contenu à l'intérieur ne sera pas exécuté !
 """
 
-# Prenez quelques secondes pour imaginer ce que fera l'appel suivant...
+# Prenez quelques secondes pour imaginer ce que fera l'appel suivant…
 ma_deuxieme_fonction(2, 3)
 
 """
@@ -180,16 +180,16 @@ passées en arguments lors de l'appel de la fonction doivent correspondre à
 ses paramètres !
 """
 
-# Ainsi, avec la fonction suivante...
+# Ainsi, avec la fonction suivante…
 def somme_3_entiers(a, b, c):
     print(a + b + c)
 
 try:
-    # ...cet appel générera une erreur TypeError: somme_3_entiers() takes 3
+    # …cet appel générera une erreur TypeError: somme_3_entiers() takes 3
     # positional arguments but 4 were given
     somme_3_entiers(1, 2, 3, 4)
 except TypeError as err:
-    print(f"1: (Sans ce try: ... except ..., cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 # Conventions de nommage
@@ -217,7 +217,7 @@ def FonctionTrèsMoche():
 cf. https://docs.python.org/3/faq/programming.html#what-is-the-difference-between-arguments-and-parameters
 
 Quelle différence existe-t-il entre arguments ou paramètres ? Vous entendrez
-et lirez parfois les deux... Il y a en fait une confusion à éviter : on parle
+et lirez parfois les deux… Il y a en fait une confusion à éviter : on parle
 de paramètres pendant la définition de la fonction, et d'arguments au moment
 de l'appel.
 
@@ -227,7 +227,7 @@ fonction peut accepter.
 Exemple :
 
 def test(argA, argB):
-    ...
+    …
 => argA et argB sont les paramètres de la fonction
 
 test(1, 2)
@@ -241,12 +241,12 @@ test(1, 2)
 def test_adresse():
     print("yolo")
 
-# On pourra être décontenancé si l'on oublie les parenthèses lors d'un appel...
+# On pourra être décontenancé si l'on oublie les parenthèses lors d'un appel…
 print(test_adresse)  # => <function test_adresse at 0x1097679d0>
 
 """
 Explication : sans les parenthèses, on n'imprimera pas la valeur retourné par la
-fonction au moment de l'appel, mais... l'adresse en mémoire où est stockée la
+fonction au moment de l'appel, mais… l'adresse en mémoire où est stockée la
 fonction ! (par convention cette adresse est écrite en hexadécimal)
 """
 
@@ -255,7 +255,7 @@ fonction ! (par convention cette adresse est écrite en hexadécimal)
 a = test_adresse
 print(a)     # => <function test_adresse at 0x1097679d0>
 
-# a est une variable contenant une fonction...
+# a est une variable contenant une fonction…
 type(a)  # => <class 'function'>
-# ...et cette fonction peut être exécutée !
+# …et cette fonction peut être exécutée !
 a()      # => 'yolo'
