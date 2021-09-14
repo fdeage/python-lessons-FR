@@ -231,7 +231,7 @@ print(fichiers)  # => ['.config', 'Music', 'Movies', 'Documents', ...]
 
 #   - Pour renommer un fichier, on utilise rename() :
 
-path = "/Users/fd/Documents/enseignement/ens_pascal_NSI/theme_B_F_types_construits_langs_python"
+path = "/usr/someone/python"
 
 old_name = "nouveau_2.txt"
 new_name = "nouveau_3.txt"
