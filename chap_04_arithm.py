@@ -57,11 +57,7 @@ print(-2.3e-04)  # -0.00023
 
 
 """
-<<<<<<< HEAD
-Complément sur les floats
-=======
 Bonus : un complément sur les floats
->>>>>>> 1cf4a31 (wip2)
 
 On appelle aussi les décimaux des "nombres à virgule flottante" ("floating-point
 numbers").
