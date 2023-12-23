@@ -29,7 +29,7 @@ Une variable est un espace mémoire où l'utilisateur peut stocker une valeur.
 Cet espace mémoire est nommé par l'utilisateur pour pouvoir être référencé
 plus tard.
 
-L'utilisateur peut ensuite lire le contenu de la variable et la modifier
+L'utilisateur peut ensuite lire le contenu de la variable et le modifier
 pendant l'exécution du programme.
 """
 
@@ -38,27 +38,36 @@ pendant l'exécution du programme.
 #########################
 
 """
-On peut nommer sa variable comme on le souhaite, ou presque. La convention
-Python est de nommer ses variables avec des minuscules_et_underscores, et sans
-accents.
-"""
-une_belle_variable = 5  # 👍
-uneVariableMoche = 2    # moche
-uNeVrAIEMocheté = 7     # atroce : jamais d'accents dans vos noms de variables
+On peut nommer sa variable comme on le souhaite, ou presque. Cela ne signifie
+pas qu'il est bien de faire n'importe quoi !
 
-# Exception : on utilisera des capitales pour les variables globales (voir
-# chap. 19)
+Il y a deux styles principaux (ou conventions) :
+    1. le "Snake Case" (minuscules et underscores),
+    2. le "Camel Case" (majuscules)
+
+Il est fortement recommandé de se tenir à un seul style. Ce tutoriel utilise la
+convention "Snake Case". Quelle que soit votre convention, tenez-vous y !
+(c'est le but d'une convention)
+"""
+une_variable_en_snake_case = 5  # 👍
+uneVariableEnCamelCase = 7      # 👍
+une_Variable_Moche = 2          # moche
+uNeVrAIEMocheté = 666           # atroce
+
+# On n'utilisera que des majuscules pour les variables globales (voir chap. 19)
 VARIABLE_GLOBALE = "Des majuscules partout !"
 
-# Python accepte tous les caractères pour les variables, mais il est
-# déconseillé de s'écarter des caractères ASCII : prenez l'habitude d'écrire
-# avec les 26 lettres minuscules, les 10 chiffres, et les underscore ("_")
+"""
+Python accepte tous les caractères pour les variables, mais il est
+déconseillé de s'écarter des caractères ASCII : prenez l'habitude d'écrire
+avec les 26 lettres minuscules, les 10 chiffres, et les underscore ("_")
+"""
 àêïœú = 34              # ça fonctionne mais c'est moche
 
 """
 Pourquoi est-ce dangereux ? Parce que ces caractères ne font pas partie du jeu
 de caractères "ASCII" (American Standard Code for Information Interchange) :
-ce jeu est composé d'une centaine de caractères "de base" garantis d'être
+ce jeu réduit est composé d'une centaine de caractères "de base" garantis d'être
 reconnus partout.
 """
 
@@ -134,7 +143,7 @@ On verra plus loin que la valeur à droite est un "tuple" (chap. 17).
 
 
 # Quelques fonctions sur les variables
-############################
+#######################################
 
 # Prenons des variables toute bêtes :
 a = 2
@@ -153,19 +162,9 @@ print(str(c))  # => 'False'
 
 # Note : print() appelle toujours str() sur les variables passées en paramètre :
 
-#   3. La fonction id() retourne l'identifiant interne de la variable :
-print(id(a))  # => 4466972408
-print(id(b))  # => 4460299696
-print(id(c))  # => 4466971336
-
-#   4. La fonction hash() retourne son hash (s'il en a un) :
-print(hash(a))  # => 2
-print(hash(b))  # => 8482357589469416518
-print(hash(c))  # => 0
-
-#   5. La fonction dir() retourne toutes les méthodes que l'on peut appeler sur
-#      l'objet a
+#   3. La fonction dir() est extrêmement pratique : elle retourne toutes les
+#      méthodes que l'on peut appeler sur l'objet a !
 print(dir(a))
 
-#   6. La fonction help() retourne une aide sur le type de l'objet
-help(a)  # => Help on int object:
+#   4. La fonction help() retourne une aide sur le type de l'objet
+help(a)  # => Help on int object: ...

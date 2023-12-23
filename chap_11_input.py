@@ -62,18 +62,16 @@ utilisée en Python3
 ##################################
 
 # Attention, tenter une conversion avec int() ou float() peut créer une erreur
+a = "3,25"
 try:
-    float(input("> Entrer un float valide : "))
-    "> Entrer un float valide : "
-    float("3,25")
+    float(a)
 except ValueError:
-    pass
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 # => ValueError: could not convert string to float: '3,25'
 
+b = "0.2"
 try:
-    float(input("> Entrer un float valide : "))
-    "> Entrer un int valide : "
-    int(0.2)
-# => ValueError: invalid literal for int() with base 10: '0.2'
+    int(b)
 except ValueError as err:
-    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
+# => ValueError: invalid literal for int() with base 10: '0.2'

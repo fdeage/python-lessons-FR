@@ -28,12 +28,11 @@ de contrôle :
     1. soit pour exécuter un bloc de code seulement sous certaines conditions
        (avec le mot-clé "if", comme on le verra dans ce chapitre)
 
-    2. soit pour exécuter un bloc de code plusieurs fois (avec "while" et "for",
-       cf. chap. suivant)
+    2. soit pour exécuter un bloc de code plusieurs fois via une "boucle" (avec
+       "while" et "for", cf. chap. suivant)
 """
 
 # TODO: https://www.learnbyexample.org/python-if-else-elif-statement/
-
 
 
 # La structure "if"
@@ -70,6 +69,10 @@ if une_variable > 3 and 3 == 3 and not (une_variable < 2):
     print("Voilà une condition bien compliquée")
 # Le print() ci-dessus sera-t-il affiché ? Pourquoi ?
 
+
+# Attention : si l'expression n'est pas booléenne, le programme se débrouillera
+# pour transformer ("caster") le résultat en booléen... avec des risques de bug.
+# Donc utilisez toujours des booléens avec "if" !
 
 # Le mot-clé "else"
 ####################

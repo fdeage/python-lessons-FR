@@ -43,11 +43,12 @@ s.find("hi")  # => -1
 
 
 """
-    3. .replace() permet de remplacer un caractère par un autre…
+    3. .replace() permet de remplacer une chaîne de caractères par une autre…
 """
 "J'aime les pommes".replace("e", "z")  # => "J'aimz lzs pommzs"
 #       …ou de le supprimer complètement (on passe une chaîne vide)
 "J'aime les pommes".replace("e", "")  # => "J'aim ls pomms"
+"Les chiens sont adorables.".replace("chiens", "lapins") # => "Les lapins sont adorables."
 
 # D'autres méthodes sur les strings
 ####################################
@@ -106,7 +107,12 @@ s2.capitalize()  # => 'Abcdefgh'
 "abc".rjust(8)  # => '     abc'
 "abc".ljust(8)  # => 'abc     '
 
-# TODO
+
+"""
+    7. La méthodes .count(str) compte le nombre de sous-chaîne dans une chaîne.
+"""
+"Python est un langage Pythonique et puissant. Ô Python !".count("Python") # => 3
+
 
 # Interpoler une chaîne
 ########################
@@ -202,8 +208,8 @@ vont jusqu'à 127 seulement.
 # Chaînes longues
 ########################
 
-# La syntaxe utilisée pour les commentaires longs peut aussi servir pour les
-# chaînes de plusieurs lignes !
+# La syntaxe utilisée pour les commentaires longs peut aussi servir pour créer
+# des chaînes de plusieurs lignes !
 s = """Ceci est
 une chaîne
 vraiment très longue"""
@@ -215,6 +221,13 @@ Ceci est
 une chaîne
 vraiment très longue
 """
+
+# On peut s'en servir pour de la documentation :
+documentation = """
+Ce bloc de texte sert à documenter le code.
+Il peut contenir des explications détaillées sur le fonctionnement du programme.
+"""
+
 
 # Note : les chaînes longues sont très utilisées pour documenter du code.
 

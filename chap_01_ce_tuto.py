@@ -39,7 +39,7 @@ Les fichiers de ce cours sont exécutables, càd que vous pouvez les lancer avec
 un interpréteur Python (voir le mode 2 plus haut) via la commande :
 ?> python ce_fichier.py
 
-Enfin tout le cours utilise Python 3.6+ (c'est-à-dire la version 3, et au moins
+Enfin, tout ce cours utilise Python 3.6+ (c'est-à-dire la version 3, et au moins
 la sous-version 6).
 """
 
@@ -52,9 +52,8 @@ La meilleure façon est de lire le cours et de retaper le code proposé dans un
 shell Python.
 
 Cela semble long, mais c'est taper du code qui vous donnera de la pratique :
-rapidité, fluidité et acquisition d'automatismes. À la fin de l'année, les
-meilleurs élèves ne seront pas les plus doués, mais… ceux qui auront le plus
-pratiqué.
+rapidité, fluidité et acquisition d'automatismes. À la fin de ce cours, les
+meilleurs ne seront pas les plus doués, mais… ceux qui auront le plus pratiqué.
 
 Taper les exemples dans une console vous permettra de vérifier les appels à
 print(). Vous pourrez ensuite exécuter le fichier du cours pour comparer ce qui
@@ -129,22 +128,45 @@ vite et avec moins d'efforts.
 #################################
 
 """
+Utiliser sa souris pour programmer est lent et inefficient : utilisez votre
+clavier autant que possible !
+
 Quel que soit l'éditeur que vous choisissez, il est indispensable de le
-maîtriser. Par "maîtriser" on entend "pouvoir traiter toutes les tâches simples
-de façon efficiente".
+maîtriser. Par "maîtriser", on entend "pouvoir traiter toutes les tâches simples
+de façon efficiente", ce qui implique de savoir le faire au clavier grâce à une
+combinaison de touches. On appelle ces combinaisons des "raccourcis clavier".
+Connaître beaucoup de raccourcis clavier fera de vous un.e meilleur.e
+programmeur.se.
 
 Vous devriez petit à petit avoir des raccourcis clavier pour TOUTES les tâches
 suivantes :
+-   déplacer le curseur en début/fin de mot,
 -   déplacer le curseur en début/fin de ligne,
 -   déplacer le curseur en début/fin de fichier,
+-   supprimer le texte avant ou après le curseur jusqu'à la fin du mot,
 -   supprimer le texte après le curseur jusqu'à la fin de la ligne,
 -   déplacer verticalement une ligne ou un ensemble de ligne,
 -   sélectionner du texte et étendre la sélection dans toutes les directions,
--   faire une sélection multiple,
--   commenter/décommenter du code,
--   changer l'indentation du code (cf. chap. 12).
--   chercher du texte dans le fichier courant,
--   chercher du texte dans un projet entier,
--   remplacer du texte par un autre texte (idéalement en utilisant des regex),
-    dans le fichier courant ou dans tout le projet.
+-   étendre une sélection jusqu'au curseur,
+-   ajouter une sélection à la sélection courante,
+-   faire une sélection multiple (avec plusieurs curseurs),
+-   commenter/décommenter la sélection ou la ligne courante,
+-   changer l'indentation d'un bloc de code (cf. chap. 12).
+-   exécuter le code du fichier courant,
+-   afficher/masquer la console pour voir les erreurs d'exécution,
+-   rechercher du texte dans le fichier courant,
+-   rechercher du texte dans un projet entier,
+-   remplacer du texte par un autre texte, dans le fichier courant ou dans tout
+    le projet.
+
+C'est un minimum, vous êtes bien sûr invités à y ajouter vos propres raccourcis.
+
+Plus vous maitriserez de raccourcis, plus vous serez rapides et vous prendrez
+confiance en vous. L'objectif est de ne pas être limité par vos mains, mais par
+votre vitesse de réflexion. Codez à la vitesse de votre pensée, pas de votre
+souris !
+
+Notez enfin que l'environnemet Jupyter n'offre pas autant de raccourcis qu'un
+véritable éditeur : pour cette raison, il est peu pratique pour éditer du code
+long et complexe, où il sera préférable d'utiliser votre éditeur.
 """

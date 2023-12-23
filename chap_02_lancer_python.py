@@ -145,6 +145,6 @@ Inconvénients :
        copier/coller dans des fichiers locaux.
 
 Si l'on peut, il est conseillé de coder "en local", c'est-à-dire directement sur
-son ordinateur sans passer par internet, et de n'utiliser Repl.it que pour
+son ordinateur, sans passer par internet, et de n'utiliser Repl.it que pour
 dépanner.
 """

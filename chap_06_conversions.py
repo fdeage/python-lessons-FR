@@ -21,18 +21,19 @@
 ##############################
 
 # Python s'exprime nativement en décimal (base 10), comme vous et moi
-# (et comme presque tous les langages de programmation existants)
+# (et comme presque tous les langages de programmation existants).
 print(10)  # => 10. Ce 10 est décimal, comme vos 10 doigts
 
-# On peut écrire un nombre en binaire avec le préfixe "0b"…
-print(0b1011)  # => 11
+# On peut aussi écrire un nombre en binaire avec le préfixe "0b"…
+0b01001101
 # …et Python fera automatiquement la conversion en base 10
 print(0b01001101)  # => 77
 
 # De même, on peut écrire de l'hexadécimal avec le préfixe "0x"
 print(0xA0)  # => 160 (base 10)
 print(0xDF40E)  # => 914446
-print(0xDF40E)  # => 914446 (les majuscules n'ont pas d'importance)
+print(0xdf40e)  # => 914446 (les majuscules n'ont pas d'importance)
+
 
 # Conversions depuis le décimal
 ################################

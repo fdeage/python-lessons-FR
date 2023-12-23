@@ -116,6 +116,13 @@ def fonction_sans_retour():
 
 print(fonction_sans_retour())  # => None
 
+# Exemple :
+def fonction_sans_valeur_de_retour():
+    2 + 3
+    return
+
+print(fonction_sans_valeur_de_retour())  # => None
+
 """
 Attention : pour tester si une fonction retourne None, on utilisera
 "… is None" au lieu # de "… == None"

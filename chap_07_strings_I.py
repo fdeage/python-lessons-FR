@@ -81,7 +81,8 @@ s4[16]  # => 'î'
 s4[17]  # => 'n'
 s4[18]  # => 'e'
 
-# IMPT : l'indexation commence toujours, toujours à 0 en Python !
+# Très important :l'indexation commence toujours, toujours à 0 en Python !
+# (comme dans la quasi-totalité des langages)
 
 # On peut accéder à une lettre mais pas la modifier une fois la chaîne créée :
 try:
@@ -114,6 +115,7 @@ Ces caractères spéciaux utilisent souvent le caractère backslash : \
 \r\n  => saut de ligne (Windows)
 \t    => tabulation
 """
+print("Colonne 1\tColonne 2\nValeur 1\tValeur 2") # => Intercale des tabulations
 
 
 # Ce \ est appelé un caractère d'échappement : il transforme la signification du
@@ -129,8 +131,8 @@ print("\\")  # => "\"
 # Python a une fonction intégrée print() pour imprimer du texte à l'écran
 print("Salut, monde !") # => "Salut, monde !"
 
-# …mais print() peut imprimer absolument tout et n'importe quoi : entiers,
-# floats, strings, listes, booléens, range…
+# print() peut imprimer absolument n'importe quoi : entiers, floats, strings,
+# listes, booléens, range…
 
 print([True, "pouet", 150, 2.3, range(4), [1]])  # => [True, 'pouet', 150, 2.3,
 #                                                       range(0, 4), [1]]
@@ -147,8 +149,8 @@ Ceci ne fonctionne pas si on lance un programme depuis son shell (mode 2) avec
 "Tut tut"             # => 'Tut tut'
 variable = "Tut tut"  # => (pas d'impression)
 
-# On se servira souvent de print() pour afficher le résultat d'un calcul.
-# (cf. le chap. 14 sur les fonctions)
+# On se servira souvent de print() pour afficher le résultat d'un calcul
+# (cf. le chap. 14 sur les fonctions).
 def ma_super_fonction(a, b):
     print("Du texte")
     return a + b
@@ -193,11 +195,11 @@ except TypeError as err:
 
 #   3. On utilise la fonction intégrée len() pour afficher la longueur d'une
 #      chaîne
-len("Ceci est une chaîne")  # => 19
-len("")  # => 0
+print(len("Ceci est une chaîne"))  # => 19
+print(len(""))  # => 0
 
 
 #   4. On utilise la fonction intégrée str() pour convertir une valeur en string
-"Hello " + str(42)             # => "Hello 42"
-"This is " + str(False)        # => "This is False"
-"I like brackets: " + str([])  # => "I like brackets: []"
+print("Hello " + str(42))             # => "Hello 42"
+print("This is " + str(False))        # => "This is False"
+print("I like brackets: " + str([]))  # => "I like brackets: []"

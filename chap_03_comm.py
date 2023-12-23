@@ -20,7 +20,7 @@
 # Commentaires simples
 #######################
 
-# Un commentaire de ligne commence par un dièse (#), souvent suivi
+# Un commentaire de ligne commence par un dièse ou hashtag (#), souvent suivi
 # d'une espace. On peut commenter une ligne de code en insérant un "#" au début.
 # La ligne ne sera alors plus considérée comme du code, mais comme du texte.
 # Elle ne sera plus exécutée.
@@ -52,8 +52,9 @@ Ces chaînes ne sont pas des commentaires à proprement parler, mais peuvent êt
 utilisées comme telles, notamment pour expliquer ("documenter") certaines
 parties de son programme.
 
-Ce format de commentaire est fréquent en introduction de fonction, pour annoncer
-ce que fait le code introduit. On l'appelle alors une "docstring".
+Ce format de commentaire est fréquent en introduction de fonction
+(cf. chap. 14), pour annoncer ce que fait le code introduit. On l'appelle alors
+une "docstring".
 
 Grâce à ces trois guillemets, on ne sera plus obligé de répéter # à chaque début
 de ligne. On finira ensuite le commentaire avec trois guillemets de la même

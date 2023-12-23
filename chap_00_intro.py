@@ -13,6 +13,7 @@
 ################################################################################
 #
 #  - Le langage Python
+#  - Un langage interprété
 #  - Python en Data Science
 #  - Que faut-il pour commencer ?
 #
@@ -22,8 +23,8 @@
 ####################
 
 """
-Python est un langage de programmation interprété créé à la fin des années 80
-par Guido van Rossum (GVR). Il a été rendu public en 1991, sous license
+Python est un langage de programmation créé à la fin des années 80 par
+Guido van Rossum (GVR). Il a été rendu public en 1991, sous license
 open-source (n'importe qui peut lire le code de Python puis le modifier pour
 lui-même, le redistribuer, etc.).
 
@@ -43,14 +44,29 @@ La plupart des grandes organisations (CERN, NASA, Google, gouvernements)
 l'utilisent pour l'un ou l'autre de leurs projets. Instagram, DropBox, Spotify,
 Pinterest, Youtube… sont des sites qui sont ou ont commencé en Python ! [0][1]
 
+Python utilise la Python Software Foundation License, qui est une licence open source, mais il pourrait être utile de donner plus de détails pour une compréhension approfondie.
+
 [0] https://djangostars.com/blog/10-popular-sites-made-on-django
 [1] https://thenewstack.io/instagram-makes-smooth-move-python-3
+"""
 
-Même si l'interpréteur Python est lui-même programmé en C (un des langages les
-plus rapides qui soient), l'exécution de Python est plus lente que celle
-d'autres langages. Qu'importe ! sa simplicité compense largement ce point. Et
-de toute façon, on verra que la plupart des programmes n'ont pas besoin d'une
-exécution immédiate pour être utiles…
+
+# Un langage interprété
+########################
+
+"""
+Python est un langage dit "interprété" : il est parcouru ligne à ligne par un
+programme (l'"interpréteur") qui va lire le code-source et l'exécuter en même
+temps. Cela permet plus de flexibilité, au détriment de la performance.
+
+Ainsi, même si l'interpréteur Python est lui-même programmé en C (un des
+langages les plus rapides qui soient), l'exécution de Python est plus lente que
+celle d'autres langages, notamment des langages compilés. Mais :
+    - cette différence est négligeable dans de nombreuses applications,
+    - il est possible d'appeler du code écrit en C pour les parties critiques,
+    - sa simplicité compense largement ce point
+    - de toute façon, on verra que la plupart des programmes n'ont pas besoin
+      d'une exécution immédiate pour être utiles…
 """
 
 
@@ -80,7 +96,7 @@ En conséquence, il y aura dans ce tutoriel trois types d'apprentissage :
 """
 Vous avez besoin, au minimum :
     - d'un ordinateur (avec clavier/souris/écran)
-    - d'un système d'exploitatioin (Linux/macOS/Windows/autre) : préférez les
+    - d'un système d'exploitation (Linux/macOS/Windows/autre) : préférez les
       OS de type UNIX, comme Linux ou macOS (sur Windows, essayer de travailler
       dans un environnement POSIX avec MinGW ou docker)
     - d'un éditeur de texte
@@ -90,6 +106,9 @@ Idéalement, vous aurez aussi besoin d'un gestionnaire de packages : `pip` ou
 `conda`, par exemple. Assurez-vous que les packages installés sont utilisables
 depuis votre éditeur de texte !
 """
+# Ex : importation de la bibliothèque numpy pour le calcul scientifique
 import numpy
 
-print(numpy.array([1, 2, 3]))
+# Si tout va bien, on pourra utiliser ce package et, par exemple, imprimer sa
+# version :
+print(numpy.__version__) # => 1.23.3
