@@ -48,6 +48,7 @@ IMPT : voici l'ordre décroissant d'évaluation des opérations :
 # On peut, bien sûr, utiliser des parenthèses pour changer cette précédence
 print((5 - 1) * ((7 + 1) / (3 - 1)))  # => 16.0
 
+
 # Whitespace
 #############
 
@@ -76,6 +77,7 @@ whitespace en DÉBUT de ligne est particulièrement important en Python.
 4- 3   # … fonctionne aussi
 4 -3   # … fonctionne aussi
 4            -   3  # … aussi !
+
 
 # Débat : espaces ou tabulations ?
 ###################################

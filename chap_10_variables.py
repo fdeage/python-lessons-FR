@@ -167,4 +167,4 @@ print(str(c))  # => 'False'
 print(dir(a))
 
 #   4. La fonction help() retourne une aide sur le type de l'objet
-help(a)  # => Help on int object: ...
+help(a)  # => Help on int object: …

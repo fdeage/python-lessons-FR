@@ -28,18 +28,17 @@ print(32)   # imprime 32
 a = 7       # affecte l'entier 7 à la variable a
 # etc.
 
-# TODO:
-# mais on cherche parfois des choses repetitives
+# mais on cherche parfois à faire des choses repetitives
 a = 1
 a += 1
 a += 1
 a += 1
 a += 1
 a += 1
-
+# etc.
 
 """
-Mais il pourrait être intéressant de répéter une instruction un certain nombre
+Ici il pourrait être intéressant de répéter une instruction un certain nombre
 de fois. Les structures pour créer ces répétitions s'appellent des boucles
 ("loops").
 

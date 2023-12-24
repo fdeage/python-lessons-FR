@@ -17,10 +17,8 @@
 #  - Fonctions Python intégrées
 #  - Fonctions définies par l'utilisateur
 #  - Fonctions avec paramètres
+#  - Le mot-clé "return"
 #  - Prototype d'une fonction
-#  - Conventions de nommage
-#  - Arguments vs paramètres
-#  - L'adresse d'une fonction
 #
 #########################################################
 
@@ -33,6 +31,7 @@ programme (l'autre concept étant l'objet).
 
 Le concept est tellement repandu qu'on lui a trouvé plein de synonymes :
 method, sub-routine, co-routine, procedure, block, lambda, macro, callable…
+nous retiendrons le nom "fonction".
 
 La fonction est une brique fondamentale de la programmation, quel que soit le
 langage. Prenez votre temps pour bien comprendre leur intérêt et leur usage :
@@ -75,7 +74,7 @@ len("Une chaîne")
 
 """
 L'utilisateur peut utiliser ces fonctions sans savoir comment elles sont
-écrites (codées).
+écrites ("implémentées").
 """
 
 
@@ -126,8 +125,7 @@ avoir toujours le même comportement. Mais on peut rendre sa fonction
 def ma_deuxieme_fonction(parametre1, parametre2):
     print(f"1er paramètre : {parametre1}, 2ème : {parametre2}")
     print(f"Leur somme vaut : {parametre1 + parametre2}")
-    produit = parametre1 * parametre2
-    print(f"Leur produit vaut : {produit}")
+    print(f"Leur produit vaut : {parametre1 * parametre2}")
 """
 IMPT : on rappelle que ce code ne fait que définir une fonction : tant qu'on
 ne l'aura pas appelée, le code contenu à l'intérieur ne sera pas exécuté !
@@ -160,6 +158,84 @@ différent pour chaque appel.
 ma_deuxieme_fonction(3, 5)
 
 
+# Le mot-clé "return"
+######################
+
+"""
+Le mot-clé "return" est la dernière brique conceptuelle pour comprendre les
+fonctions. C'est aussi la plus "magique", et celle qui pose le plus de
+difficultés au début !
+
+En bref :
+Toute fonction a la possibilité de "retourner" une valeur avec "return".
+
+Au moment où on exécute le programme, ce mot-clé "return" :
+    1. quitte la fonction en cours,
+    2. revient au code qui a appelé la fonction,
+    3. remplace l'appel de fonction par la valeur donnée à "return"
+"""
+
+# Exemple 1 : une fonction qui retourne toujours 5
+def fonction_sans_parametre():
+    print(f"Cette fonction n'est pas très intéressante… elle retourne toujours 5.")
+    return 5
+
+
+# On appelle ensuite la fonction : l'exécution "passe dans la fonction"
+a = fonction_sans_parametre()
+# => "Cette fonction retourne toujours 5. Elle n'est pas très intéressante…"
+print(a)  # => 5 (l'appel de la fonction est remplacé par la valeur qu'elle retourne)
+
+# Exemple 2 : on va essayer de faire retourner une valeur différente qui varie
+# suivant les paramètres qui sont passés à la fonction
+def ajouter_nombres(x, y):
+    print(f"On ajoute les nombres {x} et {y}")
+    return x + y
+
+
+# On appelle la fonction dans notre code, avec 5 et 6 en paramètre
+somme = ajouter_nombres(5, 6)
+
+"""
+À ce moment-là, le programme va "rentrer" dans la fonction et remplacer x et
+y par 5 et 6.
+
+L'appel à print() deviendra :
+"On ajoute les nombres 5 et 6"
+
+Enfin, l'appel de fonction est remplacé à l'exécution par 11.
+"""
+print(somme)  # => 11
+
+"""
+IMPT : il faut noter que "return" interrompt toujours l'exécution de la
+fonction : les lignes situées en-dessous ne seront pas exécutées !
+
+Exemple 3 : du code inutile (non-exécuté)
+"""
+
+def dire_si_negatif(a):
+    if a < 0:
+        return True
+        print(f"{a} est négatif")  # Ce print() ne sera jamais exécuté
+    else:
+        return False
+        print(f"{a} est positif ou nul")  # Celui-ci est inutile aussi
+    print(
+        'Comme chaque branche du "if" ci-dessus contient un return, ce \
+    code ne sera jamais exécuté'
+    )
+
+
+# Les deux appels ci-dessous n'imprimeront rien
+x = dire_si_negatif(-7)
+y = dire_si_negatif(13)
+
+# Il faudra donc imprimer le contenu de x et y avec print()
+print(x)  # => True
+print(y)  # => False
+
+
 # Prototype d'une fonction
 ###########################
 
@@ -184,71 +260,3 @@ try:
 except TypeError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
-
-# Conventions de nommage
-#########################
-
-# Comme pour les variables, on peut appeler sa fonction comme on veut,
-# mais on a tendance à suivre certaines conventions :
-def jolie_fonction():
-    print("Minuscules et underscores, tout va bien.")
-
-
-def jolie_fonction_2():
-    print("On peut ajouter des chiffres à la fin, après un underscore")
-
-
-def FonctionTrèsMoche():
-    print("Moche ! Il faut éviter les majuscules et les accents")
-    print("Il faut aussi séparer les mots par des underscores")
-
-
-# Arguments vs paramètres
-###############################
-
-"""
-cf. https://docs.python.org/3/faq/programming.html#what-is-the-difference-between-arguments-and-parameters
-
-Quelle différence existe-t-il entre arguments ou paramètres ? Vous entendrez
-et lirez parfois les deux… Il y a en fait une confusion à éviter : on parle
-de paramètres pendant la définition de la fonction, et d'arguments au moment
-de l'appel.
-
-En bref, les paramètres d'une fonction définissent le type d'arguments qu'une
-fonction peut accepter.
-
-Exemple :
-
-def test(argA, argB):
-    …
-=> argA et argB sont les paramètres de la fonction
-
-test(1, 2)
-=> 1 et 2 sont les arguments de l'appel
-"""
-
-
-# L'adresse d'une fonction
-################################
-
-def test_adresse():
-    print("yolo")
-
-# On pourra être décontenancé si l'on oublie les parenthèses lors d'un appel…
-print(test_adresse)  # => <function test_adresse at 0x1097679d0>
-
-"""
-Explication : sans les parenthèses, on n'imprimera pas la valeur retourné par la
-fonction au moment de l'appel, mais… l'adresse en mémoire où est stockée la
-fonction ! (par convention cette adresse est écrite en hexadécimal)
-"""
-
-# On découvrira plus tard que cette adresse peut être affectée à une variable,
-# comme n'importe quelle valeur !
-a = test_adresse
-print(a)     # => <function test_adresse at 0x1097679d0>
-
-# a est une variable contenant une fonction…
-type(a)  # => <class 'function'>
-# …et cette fonction peut être exécutée !
-a()      # => 'yolo'

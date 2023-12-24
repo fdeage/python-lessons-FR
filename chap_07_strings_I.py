@@ -58,6 +58,7 @@ accents, diacritiques, emojis, alphabets non-latins, etc.
 weird_string = "¡¢£¤¥¦§ àêïœú ÇßÐÞðƓ 中野区 💅😭💉📧🚭🥺 ᠮᠣᠩᠭᠣᠯᠴᠤᠳ ‽̃ͦ"
 print(weird_string)
 
+
 # Accéder à un caractère
 #########################
 
@@ -89,6 +90,7 @@ try:
     s4[2] = "u"  # => TypeError: 'str' object does not support item assignment
 except TypeError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
+
 
 # Caractères spéciaux et échappement
 ##########################################
@@ -124,6 +126,7 @@ print("Colonne 1\tColonne 2\nValeur 1\tValeur 2") # => Intercale des tabulations
 # Quand on souhaite vraiment avoir un backslash à l'écran, il faut "échapper" ce
 # caractère avec… un autre backslash
 print("\\")  # => "\"
+
 
 # Imprimer avec print()
 ########################
@@ -168,6 +171,7 @@ impression. Les sauts de ligne se notent "\n".
 Pour empêcher ce fonctionnement, il faut passer en paramètre la chaîne vide
 """
 print("toto", end='')  # => pas de saut en fin de ligne
+
 
 # Opérations de base
 #####################

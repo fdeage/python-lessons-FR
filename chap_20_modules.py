@@ -192,7 +192,7 @@ import timeit    # mesurer le temps d’exécution d’une fonction.
 
 
 # TODO: comparer avec les packages
-# python -m ...
+# python -m …
 
 # Le module random
 ###################
@@ -207,7 +207,7 @@ On va importer ici les fonctions qui nous intéressent pour ce cours.
 # Les deux fonctions à connaître sont random et randint
 
 
-# TODO : choice, sample..., shuffle
+# TODO : choice, sample…, shuffle
 from random import random, randint
 
 # Attention à ne pas confondre le module random et la fonction random()

@@ -67,6 +67,7 @@ La plupart des bons éditeurs de texte proposent aussi des plugins pour formater
 automatiquement votre code. Vous les découvrirez par vous-même !
 """
 
+
 # Formatter son code
 #####################
 

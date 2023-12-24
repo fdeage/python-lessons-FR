@@ -50,6 +50,7 @@ s.find("hi")  # => -1
 "J'aime les pommes".replace("e", "")  # => "J'aim ls pomms"
 "Les chiens sont adorables.".replace("chiens", "lapins") # => "Les lapins sont adorables."
 
+
 # D'autres méthodes sur les strings
 ####################################
 
@@ -183,10 +184,10 @@ f"Je m'appelle {nom} et j'ai {age} ans."  # => "Je m'appelle Michelle et j'ai
 # On peut convertir chaque caractère en son indice Unicode, et inversement :
 
 #   1. chr() renvoie le caractère associé à un indice Unicode
-chr(65)     # => "A"
-chr(97)     # => "a"
-chr(233)    # => 'é'
-chr(128561) # => "😱"
+chr(65)      # => "A"
+chr(97)      # => "a"
+chr(233)     # => 'é'
+chr(128561)  # => "😱"
 
 #   2. Inversement, ord() renvoie un indice Unicode associé à un caractère
 ord("A")    # => 65
@@ -204,6 +205,7 @@ On remarque que les codes ASCII des majuscules/minuscules sont décalés de 32.
 On rappelle que les caractères ASCII sont aussi des caractères Unicode, et
 vont jusqu'à 127 seulement.
 """
+
 
 # Chaînes longues
 ########################

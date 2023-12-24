@@ -39,6 +39,7 @@ Windows, Terminal.app sur macOS, ou n'importe quel terminal sur Linux).
 Nous privilégions les méthodes 3. et 4.
 """
 
+
 # Via l'interpréteur Python
 ############################
 

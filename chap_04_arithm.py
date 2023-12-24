@@ -43,6 +43,7 @@ print(999999999999999999999999)  # => 999999999999999999999999
 print(12_345)      # => 12345
 print(12_345_678)  # => 12345678
 
+
 # Les floats
 #############
 
@@ -167,10 +168,10 @@ print(abs(3))     # => 3
 # spécifique "//" (appelé "floor division" en anglais).
 print(35 // 5)  # => 7
 
-# Les résultats de divisions entières sont tronqués à l'entier inférieur...
+# Les résultats de divisions entières sont tronqués à l'entier inférieur…
 print(5 // 3)  # => 1
 
-# ...y compris pour les nombres négatifs !
+# …y compris pour les nombres négatifs !
 print(-5 // 3)  # => -2
 
 # Diviser par un float retournera toujours un float… tout en tronquant quand même le
