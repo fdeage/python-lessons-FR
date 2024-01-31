@@ -8,15 +8,57 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 5      #  Wwhitespace et formattage                                   #
+#  Chap. 5      #  Ordre des opérations (précédence), whitespace               #
 #               #                                                              #
 ################################################################################
 #
+#  - Précédence des opérateurs
 #  - Whitespace
 #  - Espaces ou tabulations ?
-#  - Formatter son code
 #
 ###################################
+
+# Précédence des opérateurs
+############################
+
+"""
+DÉFINITION :
+Une EXPRESSION est une combinaison de calculs qui peut être évaluée pour
+retourner une valeur.
+"""
+print(2 + 3)  # => l'expression "2 + 3" est évaluée et retourne 5
+print(1 + 1 ==  2)  # => l'expression est évaluée et retourne True
+
+"""
+Dans une expression, l'ordre dans lequel les opérations sont évaluées par
+Python (on appelle cela la "précédence") suit grosso modo celui des opérateurs
+mathématiques :
+"""
+print(2 + 3 * 6)    # => 2 + 18 => 20
+print((2 + 3) * 6)  # => 5 * 6  => 30
+
+"""
+Voici l'ordre décroissant d'évaluation des opérations :
+    1. exponentiation (puissance)
+    2. les opérateurs *, /, //, and %, de gauche à droite
+    3. les opérateurs + et -, de gauche à droite
+    4. les opérateurs de comparaison, inégalité et inégalité (==, !=, <, >)
+    5. l'opérateur d'assignation (a = 3)
+    6. in, not in
+    7. and, or, not (cf. chap. 9)
+
+On peut, bien sûr, utiliser des parenthèses pour changer cette précédence :
+"""
+print((5 - 1) * ((7 + 1) / (3 - 1)))  # => 16.0
+
+"""
+L'ordre n'est pas à connaître, il faut juste savoir qu'il y en a un. En cas
+de doute, utilisez des parenthèses !
+
+Par défaut, les opérations au sein du même niveau de précédence sont
+évaluées de gauche à droite.
+"""
+
 
 # Whitespace
 #############
@@ -29,8 +71,9 @@ sauts de ligne, etc.
 À la différence de beaucoup de langages, le whitespace en Python peut changer
 le sens du programme : on dit qu'il est "sémantique" (il porte une
 signification).
+
+Exemple :
 """
-# Exemple :
 a = 2
 if a + 1 == 3:
     print("a = 2")
@@ -54,8 +97,7 @@ whitespace en DÉBUT de ligne est particulièrement important en Python.
 """
 Il y a parfois confusion entre tabulations et espaces multiples en début de
 ligne. Il est fortement conseillé de ne jamais mélanger les deux et de s'en
-tenir à 4 espaces pour les tabulations. C'est ce que recommande la norme
-officielle dite "PEP-8" (cf. https://peps.python.org/pep-0008).
+tenir à 4 espaces pour les tabulations.
 
 La plupart des bons éditeurs de texte proposent d'afficher le whitespace pour
 repérer d'un coup d'oeil celui qui est utilisé (sur Sublime Text, c'est la
@@ -63,12 +105,6 @@ ligne :
 "draw_white_space": "all"
 dans votre fichier de configuration).
 
-La plupart des bons éditeurs de texte proposent aussi des plugins pour formater
-automatiquement votre code. Vous les découvrirez par vous-même !
+La plupart des bons éditeurs de texte proposent aussi des plugins pour
+bien formater automatiquement votre code. Vous les découvrirez par vous-même !
 """
-
-
-# Formatter son code
-#####################
-
-# TODO

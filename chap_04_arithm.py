@@ -14,10 +14,9 @@
 #
 #  - Les ints
 #  - Les floats
-#  - La fonction intégrée type()
 #  - Arithmétique avec ints et floats
+#  - La fonction intégrée type()
 #  - La division entière
-#  - Précédence des opérateurs
 #
 ###########################################
 
@@ -83,38 +82,6 @@ floats.
 """
 
 
-# La fonction intégrée type()
-##############################
-
-# On peut utiliser la fonction intégrée type() pour déterminer le type d'une
-# valeur
-print(type(3))    # => <class 'int'>
-print(type(3.0))  # => <class 'float'>
-print(type("3"))  # => <class 'str'> (cf. les chaînes de caractères plus loin)
-
-# 3 et 3.0 expriment différemment le même nombre
-print(3 == 3.0)     # => True
-print(3 == 3.0001)  # => False
-
-"""
-IMPT : ce signe "==" sert à tester une égalité. La ligne entière s'appelle une
-"expression booléenne" : c'est un type particulier de calcul que Python va
-transformer (évaluer) en "Oui" ou "Non", "Vrai" ou "Faux".
-
-Pour tester si une variable est d'un certain type, on peut faire :
-type(variable) == <le type testé>
-
-Les principaux types sont :
--  types simples : bool, int, float
--  types construits : str, tuple, list, dict
-
-(Nous les verrons plus en détail au chap. 10)
-"""
-print(type("3") == str)    # => True
-print(type(3) == str)      # => False
-print(type(True) == bool)  # => False
-
-
 # Arithmétique avec ints et floats
 ###################################
 
@@ -147,6 +114,10 @@ print(3 * 2.0)    # => 6.0
 # modulo "%"
 print(7 % 3)      # => 1 (en effet 7 = 3 * 2 + 1)
 
+# Cet opérateur est très intéressant notamment pour les tests de parité (savoir
+# si un nombre est pair ou impair) : si le reste est 0, le nombre est pair
+print(7 % 2 == 0) # => False (7 est impair, donc le rste)
+
 # L'exponentiation s'écrit x ** y ("x élevé à la puissance y")
 print(2 ** 5)     # => 32
 
@@ -154,11 +125,43 @@ print(2 ** 5)     # => 32
 print(pow(2, 5))  # => 32 aussi
 
 # Attention : l'opérateur ^ n'a rien à voir avec l'exponentiation !
-print(2 ^ 5)      # => 7 (c'est l'opérateur XOR, cf. chap. 9)
+print(2 ^ 5)      # => 7 (c'est l'opérateur XOR, cf. chap. 21)
 
 # On obtient la valeur absolue d'un nombre avec abs()
 print(abs(-5))    # => 5
 print(abs(3))     # => 3
+
+
+# La fonction intégrée type()
+##############################
+
+# On peut utiliser la fonction intégrée type() pour déterminer le type d'une
+# valeur
+print(type(3))    # => <class 'int'>
+print(type(3.0))  # => <class 'float'>
+print(type("3"))  # => <class 'str'> (cf. les chaînes de caractères plus loin)
+
+# 3 et 3.0 expriment différemment le même nombre
+print(3 == 3.0)     # => True
+print(3 == 3.0001)  # => False
+
+"""
+IMPT : ce signe "==" sert à tester une égalité. La ligne entière s'appelle une
+"expression booléenne" : c'est un type particulier de calcul que Python va
+transformer (évaluer) en "Oui" ou "Non", "Vrai" ou "Faux".
+
+Pour tester si une variable est d'un certain type, on peut faire :
+type(variable) == <le type testé>
+
+Les principaux types sont :
+-  types simples : bool, int, float
+-  types construits : str, tuple, list, dict
+
+(Nous les verrons plus en détail au chap. 10)
+"""
+print(type("3") == str)    # => True
+print(type(3) == str)      # => False
+print(type(True) == bool)  # => False
 
 
 # La division entière
@@ -166,7 +169,8 @@ print(abs(3))     # => 3
 
 # Pour une division entière (= qui retourne un int), on utilisera un opérateur
 # spécifique "//" (appelé "floor division" en anglais).
-print(35 // 5)  # => 7
+print(35 // 5)        # => 7
+print(type(35 // 5))  # => <class 'int'>
 
 # Les résultats de divisions entières sont tronqués à l'entier inférieur…
 print(5 // 3)  # => 1
@@ -178,43 +182,3 @@ print(-5 // 3)  # => -2
 # quotient à l'entier (c'est rarement ce que l'on cherche !)
 print(5.0 // 3.0)  # => 1.0
 print(-5.0 // 3.0)  # => -2.0
-
-
-# Précédence des opérateurs
-############################
-
-"""
-Une expression est une combinaison de calculs qui peut être évaluée pour
-retourner une valeur.
-"""
-print(2 + 3)  # => l'expression "2 + 3" est évaluée et retourne 5
-
-"""
-Dans une expression, l'ordre dans lequel les opérations sont évaluées par
-Python (on appelle cela la "précédence") suit grosso modo celui des opérateurs
-mathématiques :
-"""
-print(2 + 3 * 6)    # => 2 + 18 => 20
-print((2 + 3) * 6)  # => 5 * 6  => 30
-
-"""
-Voici l'ordre décroissant d'évaluation des opérations :
-    1. exponentiation (puissance)
-    2. les opérateurs *, /, //, and %, de gauche à droite
-    3. les opérateurs + et -, de gauche à droite
-    4. les opérateurs de comparaison, inégalité et inégalité (==, !=, <, >)
-    5. l'opérateur d'assignation (a = 3)
-    6. in, not in
-    7. and, or, not (cf. chap. 9)
-
-On peut, bien sûr, utiliser des parenthèses pour changer cette précédence :
-"""
-print((5 - 1) * ((7 + 1) / (3 - 1)))  # => 16.0
-
-"""
-L'ordre n'est pas à connaître, il faut juste savoir qu'il y en a un. En cas
-de doute, utilisez des parenthèses !
-
-Par défaut, les opérations au sein du même niveau de précédence sont
-évaluées de gauche à droite.
-"""

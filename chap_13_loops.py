@@ -18,7 +18,7 @@
 #  - La boucle "for" avec la fonction range()
 #  - Les mots-clés "break" et "continue"
 #
-###########################################################
+################################################
 
 # Utilité des boucles
 ######################
@@ -92,13 +92,13 @@ devient fausse : le programme quitte alors la boucle.
 
 # Note : pour créer une boucle qui tourne à l'infini, il suffit de passer une
 # expression qui sera toujours vraie :
-while True:
-    print("Cette boucle ne s'arrêtera jamais")
+# while True:
+    # print("Cette boucle ne s'arrêtera jamais")
 # C'est logique, puisque True… est toujours vrai !
 
 # Idem avec une expression booléenne :
-while 1 < 4:
-    print("Cette boucle ne s'arrêtera jamais")
+# while 1 < 4:
+    # print("Cette boucle ne s'arrêtera jamais")
 # En effet, 1 < 4 est toujours vrai. On peut même écrire directement :
 
 """
@@ -109,8 +109,8 @@ dans la boucle, celle-ci n'a aucune chance de s'arrêter…
 
 # Exemple :
 i = 0
-while i < 4:
-    print("Cette boucle ne s'arrêtera jamais car on ne modifie pas i")
+# while i < 4:
+    # print("Cette boucle ne s'arrêtera jamais car on ne modifie pas i")
     # i = i + 1      # On oublie d'incrémenter i
 # Cette boucle tournera à l'infini.
 
@@ -148,6 +148,8 @@ Exemple :
 mammiferes = ["chien", "chat", "souris"]
 for animal in mammiferes:
     print(f"{animal} est un mammifère")
+
+
 """
 Ce programme affichera :
 
@@ -158,8 +160,16 @@ souris est un mammifère
 
 # Autre exemple avec une string (c'est un itérable !) :
 s = "abcdef"
+
 for c in s:
     print(c)
+
+
+test = [[3, 4, 5], True, "abcd", 6.4]
+
+for i in test:
+    print(i)
+
 """
 Ce programme affichera :
 
@@ -174,7 +184,7 @@ f
 """
 IMPT : "for" ne fonctionne qu'avec un itérable.
 
-Pour plus de détails sur les itérables, voir le chap. 21 de ce cours plus loin.
+Pour plus de détails sur les itérables, voir le chap. 23 de ce cours plus loin.
 """
 
 

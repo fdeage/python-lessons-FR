@@ -8,35 +8,37 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 12     #  if, then, else et elif : exercices                          #
+#  Chap. 30     #  Pandas I                                                    #
 #               #                                                              #
 ################################################################################
-
-##############
-#  FizzBuzz  #
-##############
+#
+#  -
+#
+##############################
 
 """
-Cet exercice se compose de cinq parties.
+NaN : "Not a Number". Quand une valeur n'a pas
 
-0. écrire du code qui affiche si un nombre est pair, et sinon ne fait rien.
-
-1. écrire du code qui teste si un nombre est un multiple de 3 ou de 5, et affiche le texte correspondant ("... est multiple de ...")
-
-2. écrire du code qui teste si un nombre est un multiple de 3, de 5 ou de 15.
-Concernant le texte affiché :
-  - au lieu de "est multiple de 3", on affiche "Fizz"
-  - au lieu de "est multiple de 5", on affiche "Buzz"
-  - au lieu de "est multiple de 15", on affiche "FizzBuzz"
-
-De combien de conditions avez-vous besoin ?
-
-3. Écrire du code qui teste les entiers de 1 à 100, et affiche :
-    - Fizz si le nombre est multiple de 3,
-    - Buzz si le nombre est multiple de 5,
-    - FizzBuzz si le nombre est multiple de 15,
-    - le nombre lui-même dans les autres cas.
-
-4. écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100 qui
-sont multiples de 3, 5 ou 15.
+pandas est le TCD (Tableau Croisé Dynamique) de la donnée
 """
+import sys
+site_packages = next(p for p in sys.path if 'site-packages' in p)
+print(site_packages)
+
+
+"""
+Il peut être intéressant de créer un DataFrame basique avec des données
+littérales. Cet objet pourra ensuite être manipulé à des fins de tests, ou pour
+un PoC.
+
+Il suffit d'utiliser la méthode .from_dict() :
+"""
+# import pandas as pd
+
+# data = {'pokemon': ['Charmander', 'Squirtle', 'Bulbasaur'], 'type': ['Fire', 'Water', 'Grass']}
+# pd.DataFrame.from_dict(data)
+
+"""
+This creates a two column DataFrame with a pokemon header and a type header. The two lists of value will be matched up positionally, so squirtle will be paired with water.
+"""
+

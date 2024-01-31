@@ -20,7 +20,7 @@
 #  - Le mot-clé "return"
 #  - Prototype d'une fonction
 #
-#########################################################
+##############################################
 
 # Introduction
 ###############
@@ -37,6 +37,18 @@ La fonction est une brique fondamentale de la programmation, quel que soit le
 langage. Prenez votre temps pour bien comprendre leur intérêt et leur usage :
 ce temps ne sera jamais perdu.
 """
+
+
+def afficher_gagnant(name, score):
+    print(f"bravo {name} tu as gagné !")
+    print("Ton score est :")
+    print(score)
+    print("tu es le meilleur !")
+
+a = afficher_gagnant("olivier", 34)
+print(a)
+
+
 
 
 # Définition et utilité d'une fonction
@@ -70,8 +82,8 @@ le programme : on les appelle aussi "built-ins".
 # print(nom)
 range(3)
 hex(3)
-len("Une chaîne")
-
+a = len("Une chaîne")
+print(a)
 """
 L'utilisateur peut utiliser ces fonctions sans savoir comment elles sont
 écrites ("implémentées").
@@ -189,9 +201,9 @@ print(a)  # => 5 (l'appel de la fonction est remplacé par la valeur qu'elle ret
 # Exemple 2 : on va essayer de faire retourner une valeur différente qui varie
 # suivant les paramètres qui sont passés à la fonction
 def ajouter_nombres(x, y):
-    print(f"On ajoute les nombres {x} et {y}")
-    return x + y
-
+    # print(f"On ajoute les nombres {x} et {y}")
+    # return x + y
+    return (x + y, "On ajoute les nombres {x} et {y}")
 
 # On appelle la fonction dans notre code, avec 5 et 6 en paramètre
 somme = ajouter_nombres(5, 6)

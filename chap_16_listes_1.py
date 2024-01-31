@@ -34,7 +34,7 @@ Les principaux types construits de Python sont :
     - les listes (chap. 16),
     - les tuples (chap. 17),
     - les dictionnaires (chap. 18),
-    - les ensembles (chap. 22)
+    - les ensembles (chap. 25)
 
 Note : les strings sont un cas particulier, de type ni vraiment simple ni
 vraiment construit.

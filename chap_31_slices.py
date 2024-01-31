@@ -8,7 +8,7 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 29     #  Slices                                                      #
+#  Chap. 31     #  Slices                                                      #
 #               #                                                              #
 ################################################################################
 #
@@ -17,11 +17,13 @@
 #  - Indexation négative
 #  - Exemples de Slices
 #  - Pas (Step) dans les Slices
-#  - Slices avec des Listes, des Tuples et des Chaînes de Caractères
-#  - Copie de Séquences avec Slices
+#  - Slices avec d'autres types construits
+#  - Copie de séquences avec slices
 #  - Conclusion
 #
-##############################
+############################################
+
+# TODO
 
 """
 Les slices sont une technique pour extraire des portions de séquences (listes,

@@ -8,35 +8,26 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 12     #  if, then, else et elif : exercices                          #
+#  Chap. 4      #  Arithmétique                                                #
 #               #                                                              #
 ################################################################################
 
-##############
-#  FizzBuzz  #
-##############
-
 """
-Cet exercice se compose de cinq parties.
+Écrivez un programme qui...
 
-0. écrire du code qui affiche si un nombre est pair, et sinon ne fait rien.
-
-1. écrire du code qui teste si un nombre est un multiple de 3 ou de 5, et affiche le texte correspondant ("... est multiple de ...")
-
-2. écrire du code qui teste si un nombre est un multiple de 3, de 5 ou de 15.
-Concernant le texte affiché :
-  - au lieu de "est multiple de 3", on affiche "Fizz"
-  - au lieu de "est multiple de 5", on affiche "Buzz"
-  - au lieu de "est multiple de 15", on affiche "FizzBuzz"
-
-De combien de conditions avez-vous besoin ?
-
-3. Écrire du code qui teste les entiers de 1 à 100, et affiche :
-    - Fizz si le nombre est multiple de 3,
-    - Buzz si le nombre est multiple de 5,
-    - FizzBuzz si le nombre est multiple de 15,
-    - le nombre lui-même dans les autres cas.
-
-4. écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100 qui
-sont multiples de 3, 5 ou 15.
+1. affiche la somme de deux nombres entiers positifs
+2. calcule la moyenne de trois nombres entiers
+2. calcule la somme des entiers de 1 à 5
+3. affiche la différence de deux nombres décimaux
+4. affiche le produit d'un nombre immense et d'un décimal
+5. calcule la température en degrés Celsius depuis une valeur en Fahrenheit (formule : F = (9/5) * C + 32
+6. calcule 2 à la puissance 16 moins 4 à la puissance 3
+7. utilise la notation scientifique pour représenter la distance Terre-Soleil en
+   kms (distance : cent cinquante millions de kms)
+8. calcule la division entière de 15 par 2 et affiche son type
+9. affiche le type du produit de 5.0 par 14
+10. affiche les valeurs absolues de 4.3, -14.8, et 4.3 - 14.8 (dans le même print)
+11. affiche la valeur absolue d'un entier négatif
+12. détermine si un nombre est pair ou impair
+13. convertit un nombre de minutes en minutes
 """

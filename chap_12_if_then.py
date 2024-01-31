@@ -19,7 +19,7 @@
 #  - Remarques sur l'indentation
 #  - Les "one-liner" avec if
 #
-###########################################################
+###################################
 
 """
 Normalement, un programme Python est exécuté de haut en bas, ligne à ligne.
@@ -189,7 +189,7 @@ lancer_missile()  # => Êtes-vous sûr de l'indentation de cette ligne ?
 
 """
 Il est tout à fait possible d'imbriquer des if, c'est-à-dire d'avoir des "if
-dans des if". Mais on peut souvent les éviter en se débrouillant autrement…
+dans des if". Mais on peut parfois les éviter en se débrouillant autrement…
 """
 
 # Ex :
@@ -198,16 +198,14 @@ x, y, z = 7, 4, 2
 if x > y:
     print(x, " est plus grand que ", y)
     if x > z:
-        print(x, " est plus grand que ", y, " et ", z)
+        print(x, " est aussi plus grand que ", z)
+# Notez que des if imbriqués nécessitent de bien surveiller l'indentation…
 
 """
-On aurait pu se débrouiller avec un seul if, de la façon suivante :
+Ça fonctionne très bien, mais on aurait pu se débrouiller avec un seul if, de
+la façon suivante :
 """
 if x > y and x > z:
-    print(x, " est plus grand que ", y)
     print(x, " est plus grand que ", y, " et ", z)
 elif x > y:
     print(x, " est plus grand que ", y)
-
-# …mais les deux fonctionnent !
-# Notez que des if imbriqués nécessitent de bien surveiller l'indentation…

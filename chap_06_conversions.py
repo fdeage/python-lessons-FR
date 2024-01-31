@@ -14,8 +14,9 @@
 #
 #  - Conversions vers le décimal
 #  - Conversions depuis le décimal
+#  - Conversions depuis une base arbitraire
 #
-########################################################
+############################################
 
 # Conversions vers le décimal
 ##############################
@@ -64,8 +65,18 @@ try:
 except TypeError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
-# Pour convertir en base 10 une string représentant un nombre depuis une
-# base arbitraire, on utilise int(string, base)
+
+# Conversions depuis une base arbitraire
+#########################################
+
+"""
+Pour convertir en base 10 une string représentant un nombre depuis une
+base arbitraire, on utilise int(string, base).
+
+C'est un besoin rare, car les principales bases utilisées sont les bases 2, 8,
+10 et 16, pour lesquels des fonctions intégrées existent déjà. Mais on ne sait
+jamais !
+"""
 print(int("22", 3))  # 8 en base 10
 print(int("221021", 5))  # 7636 en base 10
 print(int("776", 8))  # 510 en base 10

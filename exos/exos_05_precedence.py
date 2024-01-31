@@ -8,37 +8,36 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 29     #  Pandas I                                                    #
+#  Chap. 5      #  Précédence                                                  #
 #               #                                                              #
 ################################################################################
-#
-#  -
-#
-##############################
 
 """
-NaN : "Not a Number". Quand une valeur n'a pas
+1. Sans l'exécuter, comment s'évalue l'expression suivante ?
+3 + 5 * 2
 
-pandas est le TCD (Tableau Croisé Dynamique) de la donnée
+2. Ajoutez des parenthèses pour rendre cette expression plus lisible :
+10 - 2 * 3 / 4
+
+3. Que renvoient les deux expressions suivantes ? Quel est le type du résultat ?
+5 - 1 * 7 + 1 / 3 - 1
+((5 - 1) * ((7 + 1) / (3 - 1)))
+
+4. Le formattage des expressions suivantes est-il correct ?
+2*  (5 + 3)
+(7-3)//2
+
+5. Expliquez pourquoi ces deux expressions donnent des résultats différents :
+8 / 2 * 2
+8 / (2 * 2)
+
+6. Quelle est la valeur de cette expression ?
+2 ** 3 * 4
+
+7. Expliquez pourquoi ces deux expressions sont équivalentes :
+not True or False
+(not True) or False
+
+8. Quelle est la valeur de cette expression ? Pourquoi ?
+True and 2 > 3
 """
-import sys
-site_packages = next(p for p in sys.path if 'site-packages' in p)
-print(site_packages)
-
-
-"""
-Il peut être intéressant de créer un DataFrame basique avec des données
-littérales. Cet objet pourra ensuite être manipulé à des fins de tests, ou pour
-un PoC.
-
-Il suffit d'utiliser la méthode .from_dict() :
-"""
-# import pandas as pd
-
-# data = {'pokemon': ['Charmander', 'Squirtle', 'Bulbasaur'], 'type': ['Fire', 'Water', 'Grass']}
-# pd.DataFrame.from_dict(data)
-
-"""
-This creates a two column DataFrame with a pokemon header and a type header. The two lists of value will be matched up positionally, so squirtle will be paired with water.
-"""
-

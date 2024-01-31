@@ -73,7 +73,7 @@ Note 2 : dans certains fichiers, des erreurs intentionnelles ont été laissées
 dans le code. Elles sont signalées dans le code. On utilise un mécanisme de
 gestion d'erreurs ("try … except …") pour empêcher ces erreurs
 d'interrompre le programme. Ce mécanisme n'est pas à connaître au début : il
-sera abordé en détail au chap. 23.
+sera abordé en détail au chap. 26.
 """
 try:
     1 / 0   # la division par 0 va créer une erreur…

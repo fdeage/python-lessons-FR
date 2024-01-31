@@ -284,7 +284,7 @@ print(test_adresse)  # => <function test_adresse at 0x1097679d0>
 """
 Explication : sans les parenthèses, on n'imprimera pas la valeur retourné par la
 fonction au moment de l'appel, mais… l'adresse en mémoire où est stockée la
-fonction ! (par convention cette adresse est écrite en hexadécimal)
+fonction ! (par convention, cette adresse est écrite en hexadécimal)
 """
 
 # On découvrira plus tard que cette adresse peut être affectée à une variable,
