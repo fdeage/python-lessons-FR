@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -111,7 +111,8 @@ Pour définir une fonction, il faut dans l'ordre :
 # Exemple :
 def ma_premiere_fonction():
     print("Cette première fonction imprime toujours la même chaîne")
-
+    print("Super !")
+print("Ce print s'affiche tout le tems")
 
 # Puis, comme en maths, on va "appeler" notre fonction en écrivant son nom suivi
 # de "()"
@@ -123,6 +124,10 @@ ma_premiere_fonction()
 
 # On note que ma_premiere_fonction ne prend aucun paramètre et ne retourne rien.
 
+
+# TODO la fonction s'errete a la fin de l'identation
+# TODO notion de SST : un seul endroit
+# TODO avantages des fnctions : speed, concision, consistency. n'a d'interet que dans la nmesure ou le code est lu et remodifié
 
 # Fonctions avec paramètres
 ############################
@@ -189,7 +194,7 @@ Au moment où on exécute le programme, ce mot-clé "return" :
 
 # Exemple 1 : une fonction qui retourne toujours 5
 def fonction_sans_parametre():
-    print(f"Cette fonction n'est pas très intéressante… elle retourne toujours 5.")
+    print("Cette fonction n'est pas très intéressante… elle retourne toujours 5.")
     return 5
 
 
@@ -201,9 +206,10 @@ print(a)  # => 5 (l'appel de la fonction est remplacé par la valeur qu'elle ret
 # Exemple 2 : on va essayer de faire retourner une valeur différente qui varie
 # suivant les paramètres qui sont passés à la fonction
 def ajouter_nombres(x, y):
-    # print(f"On ajoute les nombres {x} et {y}")
-    # return x + y
-    return (x + y, "On ajoute les nombres {x} et {y}")
+    print(f"On ajoute les nombres {x} et {y}")
+    return x + y
+    print("Ceci n'est jamais affiché")
+
 
 # On appelle la fonction dans notre code, avec 5 et 6 en paramètre
 somme = ajouter_nombres(5, 6)

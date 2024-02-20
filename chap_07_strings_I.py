@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -16,7 +16,7 @@
 #  - Accéder à un caractère
 #  - Caractères spéciaux et échappement
 #  - Imprimer avec print()
-#  - Opérations de base
+#  - Fonctions de base
 #
 ###########################################
 
@@ -93,7 +93,7 @@ except TypeError as err:
 
 
 # Caractères spéciaux et échappement
-##########################################
+#####################################
 
 """
 Dans une chaîne de caractères, on peut rencontrer des caractères qui ont un sens
@@ -101,7 +101,7 @@ différent de leur rendu visuel dans le code.
 """
 
 # Exemple :
-s5 = "abc\ndef\nghi"  # => Ce "\n" est en fait un saut de ligne sur Linux/Mac
+s5 = "abc\ndef\nghi"  # => Ce "\n" encode un saut de ligne (sur Linux/Mac)
 print(s5)             # => … que l'on peut voir en imprimant la variable s5
 """
 Résultat
@@ -120,21 +120,23 @@ Ces caractères spéciaux utilisent souvent le caractère backslash : \
 print("Colonne 1\tColonne 2\nValeur 1\tValeur 2") # => Intercale des tabulations
 
 
-# Ce \ est appelé un caractère d'échappement : il transforme la signification du
-# caractère qui le suit immédiatement.
+"""
+Ce `\` est appelé un caractère d'échappement : il change la signification du
+caractère qui le suit.
 
-# Quand on souhaite vraiment avoir un backslash à l'écran, il faut "échapper" ce
-# caractère avec… un autre backslash
+Quand on souhaite vraiment avoir un backslash à l'écran, il faut "échapper" ce
+caractère avec… un autre backslash
+"""
 print("\\")  # => "\"
 
 
-# Imprimer avec print()
-########################
+# Imprimer avec `print()`
+##########################
 
-# Python a une fonction intégrée print() pour imprimer du texte à l'écran
+# Python propose la fonction intégrée `print()` pour imprimer du texte à l'écran
 print("Salut, monde !") # => "Salut, monde !"
 
-# print() peut imprimer absolument n'importe quoi : entiers, floats, strings,
+# `print()` peut imprimer absolument n'importe quoi : entiers, floats, strings,
 # listes, booléens, range…
 
 print([True, "pouet", 150, 2.3, range(4), [1]])  # => [True, 'pouet', 150, 2.3,
@@ -146,48 +148,58 @@ affectée dans une variable, alors Python l'imprimera même si on n'a pas appel�
 print().
 
 Ceci ne fonctionne pas si on lance un programme depuis son shell (mode 2) avec
-?> python fichier.py
+`?> python fichier.py`
 
 """
 "Tut tut"             # => 'Tut tut'
 variable = "Tut tut"  # => (pas d'impression)
 
-# On se servira souvent de print() pour afficher le résultat d'un calcul
+# On se servira souvent de `print()` pour afficher le résultat d'un calcul
 # (cf. le chap. 14 sur les fonctions).
 def ma_super_fonction(a, b):
     print("Du texte")
     return a + b
 
-# Appeler la fonction imprimera la valeur du print(), puis la valeur
+# Appeler la fonction imprimera la valeur du `print()`, puis la valeur
 # retournée par la fonction
 ma_super_fonction(2, 3)
 # => "Du texte"
 # => 5
 
 """
-IMPT : print() rajoute par défaut un saut de ligne à la fin de chaque
-impression. Les sauts de ligne se notent "\n".
+IMPT : `print()` rajoute par défaut un saut de ligne à la fin de chaque
+impression. Les sauts de ligne se notent `\n`.
 
-Pour empêcher ce fonctionnement, il faut passer en paramètre la chaîne vide
+Pour empêcher ce fonctionnement, il faut utiliser end='' :
 """
-print("toto", end='')  # => pas de saut en fin de ligne
+print("test1", end='')
+print("test2", end='')
+print("test3")
+# => imprime 'test1test2test3'
+
+# Fonctions de base
+####################
+
+#   1. On utilise la fonction intégrée `len()` pour afficher la longueur d'une
+#      chaîne
+print(len("Ceci est une chaîne"))  # => 19
+print(len(""))  # => 0
 
 
-# Opérations de base
-#####################
-
-#   1. On utilise l'opérateur "+" pour lier des chaînes entre elles
+"""
+    2. On utilise l'opérateur `+` pour lier des chaînes entre elles. Cette
+       opération s'appelle une "concaténation".
+"""
 print("Hello " + "world!")  # => "Hello world!"
-# IMPT : cette opération s'appelle une "concaténation"
 
-# Attention, on ne peut concaténer que des strings
+# Attention, on ne peut concaténer que des strings.
 try:
     "Hello " + 42  # => TypeError: can only concatenate str (not "int") to str
 except TypeError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
-#   2. On utilise l'opérateur "*" pour dupliquer une chaîne (string * int)
+#   3. On utilise l'opérateur `*` pour dupliquer une chaîne (string * int)
 "Pouet" * 5  # => 'PouetPouetPouetPouetPouet'
 
 # Attention, on ne peut dupliquer qu'avec des ints
@@ -197,13 +209,58 @@ except TypeError as err:
     print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
-#   3. On utilise la fonction intégrée len() pour afficher la longueur d'une
-#      chaîne
-print(len("Ceci est une chaîne"))  # => 19
-print(len(""))  # => 0
+"""
+    4. `.lower()` et `.upper()` servent à mettre en majuscules/minuscules, et
+       `.capitalize()` met une majuscule au premier mot seulement.
+"""
+s = "Salut, Monde!"
+
+print(s.lower())       # => salut, monde!
+print(s.upper())       # => SALUT, MONDE!
+print(s.capitalize())  # => Salut, monde!
 
 
-#   4. On utilise la fonction intégrée str() pour convertir une valeur en string
+"""
+    5. `.count(str)` compte les occurrences d'une chaîne dans une autre.
+       Attention, les majuscules comptent.
+"""
+s = "Salut, salut, salut !"
+print(s.count("salut"))  # => 2
+print(s.count("alut"))   # => 7
+
+
+"""
+    6. `.find(str)` retourne l'index (ou rang) de la première occurrence d'une
+       chaîne dans une autre (et -1 si la chaîne n'existe pas).
+"""
+s = "Salut, Monde !"
+print(s.find("Salut"))  # => 0
+print(s.find("Monde"))  # => 0
+
+
+"""
+    7. `.replace(str)` remplace une chaîne par une autre
+       chaîne dans une autre (et -1 si la chaîne n'existe pas).
+"""
+s = "Salut, Monde !"
+print(s.replace("Monde", "Python"))
+
+
+"""
+    8. `.strip()` retire le whitespace (espaces, tabs...) en début et fin de
+       ligne d'une chaîne. `.lstrip()` et `.rstrip()` les enlèvent à gauche et à
+       droite respectivement.
+"""
+s = "   Salut, Monde !         "
+print(s.strip())  # => 'Salut, Monde !'
+print(s.lstrip())  # => 'Salut, Monde !         '
+print(s.rstrip())  # => '   Salut, Monde !'
+
+
+"""
+  9. Enfin, on utilise la fonction intégrée `str()` pour convertir une valeur
+     en string.
+"""
 print("Hello " + str(42))             # => "Hello 42"
 print("This is " + str(False))        # => "This is False"
 print("I like brackets: " + str([]))  # => "I like brackets: []"

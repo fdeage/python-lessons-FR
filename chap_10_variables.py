@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -86,6 +86,7 @@ le type de valeur stockée.
 nombre_voitures = 7.51
 nombre_voitures = True
 nombre_voitures = 2
+nombre_voitures = "abc"
 # ...
 
 """

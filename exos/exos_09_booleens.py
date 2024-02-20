@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -23,7 +23,11 @@
 5 >= 5
 32 % 2 == 1
 33 % 3 > 0
-
+7 < 9 < 15
+85 < 32 < 127
+"abc" == "abc"
+"abc" == "abd"
+"2" == "2"
 
 # 2. tests avec des variables de type distinct :
 
@@ -35,6 +39,8 @@
 3 + 0.000000000001 == 3
 3 + 0.00000000000000001 == 3
 True != "True"
+True == 1
+True != 2
 
 
 # 3. tests entre littéraux booléens (True et False) :
@@ -63,9 +69,11 @@ not "test" == "test"
 # 5. expressions avec l'opérateur booléen `in`
 1 in [1, 2, 3, 4]
 1 in [2, 3, 4, 5]
+2.0 in [1, 2, 3]
 "n" in "anne"
 "test" == "testing"
 "test" in "testing"
+"testing" in "test"
 
 
 # 6. tests avec des variables booléennes

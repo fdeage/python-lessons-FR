@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -32,7 +32,7 @@ proposant une coloration syntaxique (vim, Emacs, Sublime Text, PyCharm, VS
 Code, Notepad++, gedit, etc.). Nous recommandons Sublime Text.
 
 Nous rappelons que Microsoft Word n'est pas un éditeur de texte, mais un
-éditeur de mise en forme de texte. Vous ne pouvez pas vous en servir pour
+éditeur de MISE EN FORME de texte. Vous ne pouvez pas vous en servir pour
 écrire du code.
 
 Les fichiers de ce cours sont exécutables, càd que vous pouvez les lancer avec

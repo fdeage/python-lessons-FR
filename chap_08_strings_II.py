@@ -1,14 +1,14 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. 8      #  Manipuler des strings                                       #
+#  Chap. 8      #  Manipuler les strings                                       #
 #               #                                                              #
 ################################################################################
 #
@@ -24,7 +24,7 @@
 ########################################
 
 """
-    1. "in" et "not in" permettent de tester si une sous-chaîne figure dans une
+    1. `in` et `not in` permettent de tester si une sous-chaîne figure dans une
        chaîne
 """
 "ab" in "abcd"     # => True
@@ -33,7 +33,7 @@
 
 
 """
-    2. La méthode .find() renvoie le rang auquel la sous-chaîne a été trouvée
+    2. La méthode `.find()` renvoie le rang auquel la sous-chaîne a été trouvée
        (et -1 si la sous-chaîne ne figure pas dans la chaîne)
 """
 s = "abcdefgh"
@@ -61,7 +61,7 @@ s.find("hi")  # => -1
 
 
 """
-    2. La méthode .join() permet de convertir une liste de strings en une
+    2. La méthode `.join()` permet de convertir une liste de strings en une
        seule string
 """
 lettres = ["p", "o", "u", "e", "t"]

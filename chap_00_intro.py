@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -56,15 +56,17 @@ Python utilise la Python Software Foundation License, qui est une licence open s
 
 """
 Python est un langage dit "interprété" : il est parcouru ligne à ligne par un
-programme (l'"interpréteur") qui va lire le code-source et l'exécuter en même
-temps. Cela permet plus de flexibilité, au détriment de la performance.
+programme (l'"interpréteur") qui va lire les instructions (le "code-source" et
+l'exécuter en même temps. Cela permet plus de flexibilité, au détriment de la
+performance.
 
 Ainsi, même si l'interpréteur Python est lui-même programmé en C (un des
 langages les plus rapides qui soient), l'exécution de Python est plus lente que
 celle d'autres langages, notamment des langages compilés. Mais :
     - cette différence est négligeable dans de nombreuses applications,
-    - il est possible d'appeler du code écrit en C pour les parties critiques,
-    - sa simplicité compense largement ce point
+    - il est possible d'appeler du code écrit en C pour les parties critiques
+      (NumPy, par exemple),
+    - sa simplicité compense largement ce point,
     - de toute façon, on verra que la plupart des programmes n'ont pas besoin
       d'une exécution immédiate pour être utiles…
 """

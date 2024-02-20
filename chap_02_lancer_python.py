@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -12,10 +12,11 @@
 #               #                                                              #
 ################################################################################
 #
-#  - Via l'interpréteur Python
-#  - Depuis un fichier
-#  - Depuis un éditeur de texte
-#  - Via un site Web
+#  1. Via l'interpréteur Python
+#  2. Depuis un shell
+#  3. Depuis un éditeur de texte
+#  4. Depuis un notebook
+#  5. Via un site Web
 #
 ###################################
 
@@ -40,7 +41,7 @@ Nous privilégions les méthodes 3. et 4.
 """
 
 
-# Via l'interpréteur Python
+# 1. Via l'interpréteur Python
 ############################
 
 """
@@ -82,8 +83,8 @@ Note : Pour quitter l'interpréteur Python, on utilise quit()
 """
 
 
-# En lançant un fichier depuis le shell
-########################################
+# 2. En lançant un fichier depuis le shell
+###########################################
 
 """
 Le code Python se trouve dans des fichiers avec le suffixe ".py" : `engine.py`,
@@ -95,8 +96,8 @@ shell) avec :
 """
 
 
-# Depuis un éditeur de texte
-#############################
+# 3. Depuis un éditeur de texte
+################################
 
 """
 Il est aussi possible de lancer Python depuis un éditeur de texte : Sublime
@@ -109,8 +110,8 @@ de l'exécution apparaîtra dans une console à part.
 """
 
 
-# Depuis un notebook Jupyter/Lab
-#################################
+# 4. Depuis un notebook Jupyter/Lab
+####################################
 
 """
 C'est une option en plein essor depuis quelques années, qui allie le meilleur
@@ -126,17 +127,17 @@ clavier que sur un éditeur graphique "complet" (type Sublime Text ou VS Code)
 """
 
 
-# Via un site Web
-##################
+# 5. Via un site Web
+#####################
 
 """
-Dernière possibilité : coder en utilisant une plate-forme en ligne, type Repl.it
-(https://repl.it). On codera alors sans quitter son navigateur Web, et sans
-avoir besoin d'installer Python sur son ordinateur.
+Dernière possibilité : coder en utilisant une plate-forme en ligne, comme
+Repl.it (https://repl.it). On codera alors sans quitter son navigateur Web,
+et sans avoir besoin d'installer Python sur son ordinateur.
 
 Avantages :
     1. pas besoin d'avoir Python sur son ordinateur,
-    2. la version est forcément la bonne.
+    2. les packages sont déjà installés, la version de Python est bonne.
 
 Inconvénients :
     1. on a besoin d'une connexion internet permanente,

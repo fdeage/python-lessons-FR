@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -15,7 +15,7 @@
 #  - Définition et intérêt
 #  - Déclarer une liste
 #  - Accéder à une valeur de la liste
-#  - .append(), .pop(), del et +
+#  - `.append()`, `.pop()`, `del` et `+`
 #  - En bref
 #
 ###########################################
@@ -31,14 +31,16 @@ Les types construits permettent de stocker non pas une seule valeur, mais
 plusieurs valeurs en même temps.
 
 Les principaux types construits de Python sont :
+    - les strings (chap. 7),
     - les listes (chap. 16),
     - les tuples (chap. 17),
     - les dictionnaires (chap. 18),
     - les ensembles (chap. 25)
 
-Note : les strings sont un cas particulier, de type ni vraiment simple ni
-vraiment construit.
+Les strings ressemblent à un type simple, mais supportent des opérateurs de
+types construits. Elles sont en fait très similaires à des listes de caractères.
 """
+
 
 # Définition et intérêt
 ########################
@@ -97,13 +99,13 @@ liste_variee = ["pouet", 3, 4.5, True, [], "Hop", [1, 2, 3]]
 
 """
 liste_variee contient 7 valeurs, dans l'ordre :
-    0. une string : "pouet"
-    1. un entier : 3
-    2. un float : 4.5
-    3. un booléen True
-    4. une liste (vide)
-    5. encore une string
-    6. et enfin une autre liste : [1, 2, 3]
+    0. une `string` : "pouet"
+    1. un `int` : 3
+    2. un `float` : 4.5
+    3. un `bool` True
+    4. une `list` (vide)
+    5. encore une `string`
+    6. et enfin une autre `list` : [1, 2, 3]
 """
 
 
@@ -145,45 +147,47 @@ print(1 in liste_pre_remplie)      # => False
 print(1 not in liste_pre_remplie)  # => True
 
 
-# .append(), .pop(), del et +
-##############################
+# `len()`, `.append()`, `.pop()`, `del` et `+`
+###############################################
 
-#   1. On ajoute des objets à la fin d'une liste avec la méthode .append()
+#   1. On ajoute des objets à la fin d'une liste avec la méthode `.append()`
 
-# (On rappelle que li est vide)
+# On vérifie que `li` est vide au départ
 print(li)  # []
 
-li.append(1)  # li vaut maintenant [1]
-li.append(2)  # li vaut maintenant [1, 2]
-li.append(4)  # li vaut maintenant [1, 2, 4]
-li.append(3)  # li vaut maintenant [1, 2, 4, 3]
+li.append(1)  # `li` vaut maintenant `[1]`
+li.append(2)  # `li` vaut maintenant `[1, 2]`
+li.append(4)  # `li` vaut maintenant `[1, 2, 4]`
+li.append(3)  # `li` vaut maintenant `[1, 2, 4, 3]`
 
 
-#   2. On enlève le dernier élément d'une liste avec la méthode .pop()
-dernier = li.pop()  # => dernier vaut 3, li vaut maintenant [1, 2, 4]
+#   2. On enlève le dernier élément d'une liste avec la méthode `.pop()`
+dernier = li.pop()  # => `dernier` vaut 3, `li` vaut maintenant `[1, 2, 4]`
 
 # On peut ensuite le remettre en place
-li.append(dernier)  # li vaut de nouveau [1, 2, 4, 3]
+li.append(dernier)  # `li` vaut de nouveau `[1, 2, 4, 3]`
 
-
-#   3. Pour supprimer un élément à un rang arbitraire, on utilise "del". C'est
-#      utile car .pop() ne peut enlever que le dernier élément (càd le plus à
-#      droite de la liste)
-del li[2]  # On enlève l'élément de rang 2, li vaut maintenant [1, 2, 3]
 
 """
-Attention, del ne retourne rien ! On ne peut donc pas écrire :
+    3. Pour supprimer un élément à un rang arbitraire, on utilise `del`. C'est
+       utile car `.pop()` ne peut enlever que le dernier élément (càd le plus à
+       droite de la liste)
+"""
+del li[2]  # On enlève l'élément de rang 2, `li` vaut maintenant `[1, 2, 3]`
+
+"""
+Attention, `del` ne retourne rien ! On ne peut donc pas écrire :
 
 valeur = del li[2]  # Soulève une erreur
 """
 
 """
-    4. On peut additionner des listes ensemble avec l'opérateur "+", comme pour
+    4. On peut additionner des listes ensemble avec l'opérateur `+`, comme pour
      les strings
 """
 print(li + liste_pre_remplie)  # => [1, 2, 3, 4, 5, 6]
 
-# Note: les valeurs de li et liste_pre_remplie ne sont pas modifiées
+# Note: les valeurs de `li` et `liste_pre_remplie` ne sont pas modifiées
 print(li)                      # => [1, 2, 3]
 print(liste_pre_remplie)       # => [4, 5, 6]
 
@@ -200,7 +204,7 @@ liste = [10, 20, 30]
 print(liste[0]) # => 10
 print(liste[2]) # => 30
 
-#   - Python calcule la longueur de la liste avec l'instruction len(liste)
+#   - Python calcule la longueur de la liste avec l'instruction `len(liste)`
 len(liste) # => 3
 
 #   - Une liste Python est un objet modifiable (ou "mutable") :
@@ -215,7 +219,7 @@ liste = []
 """
       …et lui ajouter des éléments, le plus souvent "par la droite" (ou
       "par la fin"). Il y a plusieurs possibilités pour cela :
-         1. la méthode .append()
+         1. la méthode `.append()` :
 """
 liste.append(2)
 print(liste) # => [2]
@@ -227,5 +231,5 @@ print(liste) # => [2, 4]
 # (on peut donc ajouter "par la gauche" des éléments à une liste avec cette
 # technique)
 
-#        3. l'extension par une autre liste avec .extend() :
+#        3. l'extension par une autre liste avec `.extend()` :
 liste.extend([6, 8])  # => [2, 4, 6, 8]

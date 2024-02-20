@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -60,8 +60,8 @@ La portée d'une variable est, en gros, l'espace dans lequel elle est associée
 à une valeur : c'est donc l'espace où elle est reconnue et utilisable. En
 anglais, on l'appellera son "scope".
 
-Il y a 4 types de portée pour une variable, que l'on listera ici avec leur
-portée respective (par portée décroissante) :
+Il y a 4 types de portée pour une variable, que l'on listera ici par portée
+décroissante :
 
     1. Variable globale : tout le fichier, depuis sa déclaration
     2. Argument de fonction : toute la fonction

@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 # ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2023                    #
+# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -30,12 +30,11 @@ modifier une fois créées.
 À l'inverses des listes, dont la taille peut varier à l'infini, les tuples
 sont utilisées quand on souhaite manipuler des ensembles de taille fixe de
 valeurs : un vecteur, une ligne de base de données, etc. On a ensuite la
-garantie que le nombre de valeurs et leur emplacement ne changera jamais.
+garantie que le nombre de valeurs et leur emplacement dans le tuple ne changera
+jamais.
 
-À part ça, les tuples fonctionnent exactement comme des listes. Ils sont moins
-utilisés qu'elles, mais il faut les connaître.
-
-En français, on les appelle parfois "p-uplets".
+À part ça, les tuples fonctionnent exactement comme des listes. En français, on
+les appelle parfois "p-uplets".
 """
 
 # On les déclare avec des parenthèses autour d'une séquence de valeurs…
@@ -65,9 +64,9 @@ type((1,))  # => <class 'tuple'>
 Question : quel intérêt de ne pas pouvoir faire autant de choses qu'avec une
 liste normale ?
 
-Réponse : les tuples offrent simplement la garantie qu'on ne va pas
-modifier une valeur dans un programme. Ils permettent ainsi de simuler
-l'exécution du programme plus facilement.
+Réponse : les tuples offrent simplement la garantie qu'on ne va pas modifier
+une valeur dans un programme. Ils permettent ainsi de simuler l'exécution du
+programme plus facilement.
 
 Les tuples n'ont aucune autre particularité par rapport aux listes.
 """
@@ -87,31 +86,44 @@ def retours_multiples(parametre):
     return valeur1, valeur2, valeur3
 
 l = retours_multiples(2)
-type(l)  # => <class 'tuple'>
+print(type(l))  # => <class 'tuple'>
+
+# On peut aussi directement affecter plusieurs valeurs :
+a, b, c = retours_multiples(3)
+print(type(a))  # => <class 'int'>
+
+# Attention, il faut avoir le même nombre de paramètres :
+try:
+    a, b, c, d = retours_multiples(4)
+except ValueError as err:
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 # Opérations de base
 #####################
 
-# Comme dans une liste, on peut ranger n'importe quoi dans un tuple, et en
-# autant d'exemplaires qu'on veut
-pouet = (3.5, ("autre", "tuple!"), False, [2, 5, True], 42)
+"""
+Comme dans une liste, on peut ranger n'importe quoi dans un tuple, et en
+autant d'exemplaires qu'on veut :
+"""
+pouet = (3.5, ("autre", "tuple!"), False, [2, 5, True], 42, 42)
 
 # À part les parenthèses, la syntaxe est la même pour accéder à un
 # élément de la liste
-tup[0]  # => 1, comme une liste
+print(pouet[0])  # => 3.5, comme une liste
 
 try:
-    tup[6]  # => IndexError: tuple index out of range (cf. liste)
+    pouet[6]  # => IndexError: tuple index out of range (cf. liste)
 except IndexError as err:
-    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # On peut utiliser la plupart des opérations des listes sur des tuples
-len(tup)  # => 4
-tup[:2]  # => (1, 2)
-2 in tup  # => True
-tup.index(4)  # => 3 (indice de la première apparition de 4)
-tup.count(4)  # => 1 (nombre d'apparitions de 4 dans le tuple)
+print(len(pouet))  # => 6
+print(pouet[:2])  # => (3.5, ('autre', 'tuple!'))
+print(pouet[-1])  # => 42
+print(42 in pouet)  # => True
+print(pouet.index(False))  # => 2 (indice de la première apparition de False)
+print(pouet.count(42))  # => 2 (nombre d'apparitions de 4 dans le tuple)
 
 # IMPT : on peut intervertir le contenu de deux variables avec la
 # syntaxe a, b = b, a
@@ -127,22 +139,22 @@ y, x = x, y  # y vaut maintenant 2 et y vaut 3
 try:
     tup[0] = 1  # => TypeError: 'tuple' object does not support item assignment
 except TypeError as err:
-    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 try:
     tup.append(4)  # => AttributeError: 'tuple' object has no attribute 'append'
 except AttributeError as err:
-    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # Cependant, certaines modifications sont quand même possibles :
 
-# 1. On peut toujours modifier le CONTENU d'un élément dans un tuple
-pouet  # => (3.5, ("autre", "tuple!"), False, [2, 5, True], 42)
+# 1. On peut toujours modifier le CONTENU d'un type construit dans un tuple
+print(pouet)  # => (3.5, ('autre', 'tuple!'), False, [2, 5, True], 42, 42)
+print(pouet[3])  # => [2, 5, True]
 
-pouet[3]  # => [2, 5, True]
 pouet[3][0] = 15  # => le tuple contient toujours la même liste, c'est le
 # CONTENU de cette dernière qui change
-pouet[3]  # => [15, 5, True]
+print(pouet[3])  # => [15, 5, True]
 
 # 2. On peut réaffecter le nom d'un tuple à une autre valeur
 pouet = "pouet"  # => Pas d'erreur, car le tuple auquel la variable pouet
