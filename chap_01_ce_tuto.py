@@ -23,7 +23,7 @@
 ################
 
 """
-Ce tutoriel a vocation a être lu sur un ordinateur, pour pouvoir exécuter et
+Ce tutoriel a vocation à être lu sur un ordinateur, pour pouvoir exécuter et
 tester directement le code proposé. Il vous faut donc un ordinateur, idéalement
 sous Linux, BSD ou Mac.
 
@@ -36,7 +36,7 @@ Nous rappelons que Microsoft Word n'est pas un éditeur de texte, mais un
 écrire du code.
 
 Les fichiers de ce cours sont exécutables, càd que vous pouvez les lancer avec
-un interpréteur Python (voir le mode 2 plus haut) via la commande :
+un interpréteur Python (cf. chap. 2, méthode 2) via la commande :
 ?> python ce_fichier.py
 
 Enfin, tout ce cours utilise Python 3.6+ (c'est-à-dire la version 3, et au moins
@@ -88,7 +88,28 @@ identifier plus tard dans la console.
 Note 3 : les points importants sont notés "IMPT" et vous devez absolument les
 connaître. Certains points ne sont pas indispensables, mais ils sont laissés
 pour votre curiosité.
+
+Note 4 : dans les explications, deux "invites de commande" (cf. chap. 2)
+apparaissent :
+    - `?> commande` (ou `> commande`) : une commande à taper dans le terminal de
+      votre ordinateur (le "shell" du système), PAS dans Python ;
+    - `>>> code` : du code à taper dans l'interpréteur Python interactif.
+Ne tapez jamais les symboles `?>` ou `>>>` eux-mêmes !
+
+Note 5 : certains chapitres (à partir du chap. 11) vous demandent de saisir du
+texte au clavier pendant l'exécution. Si le programme semble "bloqué", c'est
+probablement qu'il attend que vous tapiez quelque chose, puis Entrée.
+
+Note 6 : les chapitres se renvoient les uns aux autres avec la mention
+"cf. chap. N" ("cf." signifie "confer", c'est-à-dire "se reporter à"). Si une
+notion n'est pas encore claire, c'est souvent qu'elle sera expliquée plus loin :
+n'hésitez pas à aller jeter un œil au chapitre indiqué.
 """
+
+# Exemple : cette ligne affiche un texte suivi d'un calcul. print() accepte
+# plusieurs valeurs séparées par des virgules et les affiche séparées par une
+# espace.
+print("Le résultat de 6 × 7 est", 6 * 7)  # => Le résultat de 6 × 7 est 42
 
 
 # Comment travailler ?
@@ -160,14 +181,15 @@ suivantes :
 -   remplacer du texte par un autre texte, dans le fichier courant ou dans tout
     le projet.
 
-C'est un minimum, vous êtes bien sûr invités à y ajouter vos propres raccourcis.
+C'est un minimum : vous êtes bien sûr invité·e·s à y ajouter vos propres
+raccourcis.
 
 Plus vous maitriserez de raccourcis, plus vous serez rapides et vous prendrez
 confiance en vous. L'objectif est de ne pas être limité par vos mains, mais par
 votre vitesse de réflexion. Codez à la vitesse de votre pensée, pas de votre
 souris !
 
-Notez enfin que l'environnemet Jupyter n'offre pas autant de raccourcis qu'un
+Notez enfin que l'environnement Jupyter n'offre pas autant de raccourcis qu'un
 véritable éditeur : pour cette raison, il est peu pratique pour éditer du code
 long et complexe, où il sera préférable d'utiliser votre éditeur.
 """
