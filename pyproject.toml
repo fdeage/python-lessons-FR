@@ -1,0 +1,31 @@
+[project]
+name = "data-science-with-python"
+version = "1.0.0"
+description = "Cours de Python pour débutants, de zéro à la Data Science et au Machine Learning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "CC-BY-SA-4.0"
+authors = [
+    { name = "Félix Déage" },
+    { name = "Claude Opus 5.5" },
+]
+# Paquets utilisés par les chapitres de Data Science (chap. 38 à 51)
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "requests",
+]
+
+[dependency-groups]
+# Outils utilisés par les chap. 37 (pytest) et 46 (mypy)
+dev = [
+    "pytest",
+    "mypy",
+]
+
+[tool.uv]
+# Ce dépôt est un ensemble de scripts, pas un paquet à installer
+package = false

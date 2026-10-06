@@ -35,18 +35,20 @@ Conventions utilisées dans le code :
 - `print(1 + 2)  # => 3` : ce qui suit `=>` est la sortie attendue.
 - Les erreurs volontaires sont interceptées par un `try … except …`, pour que le fichier s'exécute jusqu'au bout. Leurs messages sont numérotés (`1: (Sans ce try: …`).
 - `IMPT` signale un point essentiel, à connaître absolument.
+- `HP` (« hors programme ») signale un point facultatif, à sauter en première lecture.
 
 ## Installation
 
-Il faut **Python 3.10 ou plus récent** (le cours est testé avec Python 3.14). Les chap. 00 à 37 et 41 à 47 n'utilisent que la bibliothèque standard.
+Il faut **Python 3.10 ou plus récent** (le cours est testé avec Python 3.14). Hormis quelques démonstrations facultatives, les chap. 00 à 37 et 41 à 47 n'utilisent que la bibliothèque standard.
 
-Les chapitres de Data Science utilisent des paquets externes. Le cours recommande [uv](https://docs.astral.sh/uv/) (cf. chap. 47) :
+Les chapitres de Data Science utilisent des paquets externes (numpy, pandas, matplotlib, seaborn, scikit-learn, requests), et les chap. 37 et 46 des outils de développement (pytest, mypy). Ils sont tous déclarés dans `pyproject.toml`. Le cours recommande [uv](https://docs.astral.sh/uv/) (cf. chap. 47) :
 
 ```bash
-uv run --with numpy --with pandas --with matplotlib python chaps/chap_40_matplotlib.py
+uv sync                                       # crée .venv/ et installe tout
+uv run python chaps/chap_40_matplotlib.py     # exécute un fichier dans cet environnement
 ```
 
-ou, dans un environnement virtuel :
+Sans uv, dans un environnement virtuel :
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn requests pytest mypy

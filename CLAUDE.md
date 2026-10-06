@@ -4,12 +4,12 @@ Ce fichier guide Claude Code (claude.ai/code) lorsqu'il travaille sur le code de
 
 ## Contenu du dépôt
 
-Un cours pour débutants en français, « Data Science with Python » (v.1.0, 2026, CC BY-SA 4.0 FR, inspiré de learnxinyminutes.com). Auteurs : Félix Déage pour les chap. 00 à 31, Claude Opus 5.5 pour les chap. 32 à 51. Chaque leçon est un simple script Python exécutable. Les élèves le lisent dans un éditeur de texte, retapent les exemples dans un shell Python, puis exécutent le fichier pour comparer la sortie. Il n'y a ni package, ni système de build, ni fichier de dépendances, ni configuration de linter, ni suite de tests. Le `README.md` contient le plan complet du cours.
+Un cours pour débutants en français, « Data Science with Python » (v.1.0, 2026, CC BY-SA 4.0 FR, inspiré de learnxinyminutes.com). Auteurs : Félix Déage pour les chap. 00 à 31, Claude Opus 5.5 pour les chap. 32 à 51. Chaque leçon est un simple script Python exécutable. Les élèves le lisent dans un éditeur de texte, retapent les exemples dans un shell Python, puis exécutent le fichier pour comparer la sortie. Il n'y a ni package, ni système de build, ni configuration de linter, ni suite de tests. Les paquets tiers utilisés par le cours sont déclarés dans `pyproject.toml` (géré par uv, `package = false`, groupe `dev` pour pytest et mypy) et figés dans `uv.lock`. Le `README.md` contient le plan complet du cours.
 
 - `chaps/chap_NN_<sujet>.py` : un chapitre par fichier, numérotés dans l'ordre pédagogique (de 00 à 51). Ne jamais renuméroter un chapitre sans mettre à jour tous les renvois `cf. chap. N`, les fichiers correspondants dans `exos/` et `corrs/`, et le plan du `README.md`.
 - `exos/exos_NN_<sujet>.py` : les énoncés d'exercices du chapitre NN. Chaque énoncé indique le chemin de son corrigé (`corrs/corr_NN_<sujet>.py`).
 - `corrs/corr_NN_<sujet>.py` : les corrigés commentés.
-- Les chap. 00 et 01 n'ont pas d'exercices. Il manque actuellement les énoncés 07, 08, 10, 11 et 13 à 17, et les corrigés 06 à 11 et 13 à 17.
+- Les chap. 00 et 01 n'ont pas d'exercices ; tous les autres (02 à 51) ont un énoncé et un corrigé.
 - `chaps/my_module.py` et `chaps/my_package/` sont importés par le chap. 22 (et par `corrs/corr_22_modules.py`, qui ajoute `chaps/` à `sys.path` à partir de `__file__`).
 
 ## Exécution
@@ -23,7 +23,8 @@ Chaque fichier doit s'exécuter jusqu'au bout (code de sortie 0) avec un `python
 
 ```bash
 for f in chaps/chap_*.py exos/*.py corrs/*.py; do yes 12 | head -100 | python3 -W error::SyntaxWarning "$f" >/dev/null 2>&1 || echo "FAIL $f"; done
-for f in chaps/chap_3[7-9]*.py chaps/chap_4[0-9]*.py chaps/chap_5*.py; do uv run --with numpy --with pandas --with matplotlib --with seaborn --with scikit-learn --with requests --with pytest --with mypy python "$f" >/dev/null || echo "FAIL $f"; done   # paquets tiers
+uv sync   # installe les paquets déclarés dans pyproject.toml (groupe dev compris)
+for f in chaps/*.py exos/*.py corrs/*.py; do yes 12 | head -100 | uv run python "$f" >/dev/null 2>&1 || echo "FAIL $f"; done   # avec les paquets tiers
 ```
 
 - Il faut Python 3.10 ou plus récent : le chap. 46 (typing) utilise `X | None` et `list[int]`. D'autres exemples signalent la version qu'ils demandent dans leur commentaire (`f"{x=}"` 3.8, le `|` des dictionnaires 3.9).
@@ -47,5 +48,5 @@ for f in chaps/chap_3[7-9]*.py chaps/chap_4[0-9]*.py chaps/chap_5*.py; do uv run
       print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
   ```
   Le `try`/`except` n'est enseigné formellement qu'au chap. 26 ; les chapitres précédents ne l'utilisent que sous cette forme.
-- **`IMPT`** signale un point que les élèves doivent absolument connaître.
+- **`IMPT`** signale un point que les élèves doivent absolument connaître ; **`HP`** (« hors programme ») un point facultatif, à sauter en première lecture.
 - Les chapitres se renvoient les uns aux autres par numéro (`cf. chap. 9`, `voir chap. 26`). Un chapitre n'utilise que des notions déjà vues, ou renvoie explicitement au chapitre qui les détaille. En ajoutant un chapitre, ajouter aussi les renvois vers lui dans les anciens chapitres concernés.
