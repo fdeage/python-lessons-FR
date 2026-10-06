@@ -133,6 +133,7 @@ Remarques :
       parfois réellement enregistré sur le disque qu'à sa fermeture.
     - IMPT : il y a une syntaxe alternative à connaître pour ouvrir un fichier :
       with open(file, "r") as …:
+      (on verra au chap. 36 comment écrire ses propres blocs "with")
 """
 with open("exemple.txt", "r") as fo:
     print(fo)
@@ -781,7 +782,7 @@ peu différents de ceux de nos autres fichiers, mais cela ne se voit pas à
 l'affichage.
 
 Remarque : en Data Science, on utilisera souvent la bibliothèque pandas pour
-lire et écrire des fichiers CSV en une seule ligne (cf. chap. xx).
+lire et écrire des fichiers CSV en une seule ligne (cf. chap. 39).
 """
 
 

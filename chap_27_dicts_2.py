@@ -419,7 +419,8 @@ presenter(**personne)                   # => Alan a 41 ans
 
 À l'inverse, dans la DÉFINITION d'une fonction, un paramètre précédé de "**"
 récupère tous les arguments nommés sous forme de dictionnaire. Par
-convention, on l'appelle "kwargs" ("keyword arguments").
+convention, on l'appelle "kwargs" ("keyword arguments"). Son pendant pour les
+arguments positionnels, "*args", est vu au chap. 32.
 """
 def fiche(**kwargs):
     print(type(kwargs))  # c'est un simple dictionnaire

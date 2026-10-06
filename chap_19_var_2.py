@@ -279,7 +279,8 @@ print(y)  # => 25 : la variable globale a bien été modifiée
 
 """
 De même, le mot-clé "nonlocal" permet de modifier une variable de la fonction
-englobante (le "E" de LEGB) depuis une fonction imbriquée :
+englobante (le "E" de LEGB) depuis une fonction imbriquée (c'est la base des
+"closures", cf. chap. 32) :
 """
 
 def compter_jusqua_trois():

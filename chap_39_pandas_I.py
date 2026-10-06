@@ -8,7 +8,7 @@
 #                                                                              #
 ################################################################################
 #               #                                                              #
-#  Chap. xx     #  Pandas I                                                    #
+#  Chap. 39     #  Pandas I                                                    #
 #               #                                                              #
 ################################################################################
 #
@@ -795,7 +795,7 @@ for nom_fichier in ["cinemas.csv", "cinemas_paris.csv"]:
 Pour aller plus loin :
     - la documentation officielle, et son tutoriel "10 minutes to pandas" :
       https://pandas.pydata.org/docs/user_guide/10min.html
-    - pandas fonctionne main dans la main avec NumPy (calcul numérique) et
-      matplotlib (graphiques) : df["places"].plot() trace directement un
-      graphique, si matplotlib est installé.
+    - pandas fonctionne main dans la main avec NumPy (calcul numérique, cf.
+      chap. 38) et matplotlib (graphiques, cf. chap. 40) : df["places"].plot()
+      trace directement un graphique, si matplotlib est installé.
 """

@@ -539,6 +539,7 @@ gen = (x ** 2 for x in range(5))
 print(type(gen))  # => <class 'generator'>
 print(list(gen))  # => [0, 1, 4, 9, 16]
 print(list(gen))  # => [] : comme tout itérateur, il est maintenant épuisé
+# Pour écrire ses propres générateurs avec "yield", cf. chap. 36.
 
 # C'est très pratique avec sum(), max(), any(), all() (cf. chap. 21)… : on
 # peut même omettre les parenthèses quand le générateur est le seul argument.

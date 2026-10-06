@@ -44,7 +44,7 @@ def jolie_fonction():
 def JolieFonction2():
     print("On peut ajouter des chiffres à la fin")
 # Ça fonctionne, mais en Python ce style est réservé aux noms de classes
-# (notion que l'on verra plus tard) : on l'évite pour les fonctions.
+# (cf. chap. 34) : on l'évite pour les fonctions.
 
 
 def FonctION_TRÈS_Moche():
@@ -476,7 +476,7 @@ fonction au moment de l'appel, mais… l'adresse en mémoire où est stockée la
 fonction ! (par convention, cette adresse est écrite en hexadécimal)
 """
 
-# On découvrira plus tard que cette adresse peut être affectée à une variable,
+# On verra (cf. chap. 32) que cette adresse peut être affectée à une variable,
 # comme n'importe quelle valeur !
 a = test_adresse
 print(a)     # => <function test_adresse at 0x1097679d0>

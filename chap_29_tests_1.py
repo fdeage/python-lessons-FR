@@ -412,6 +412,8 @@ print("Tests de est_palindrome() après refactoring : OK")
 """
 (Note : on a redéfini trois fois la fonction est_palindrome() : à chaque fois,
 la nouvelle définition remplace l'ancienne, cf. chap. 14.)
+
+Au chap. 37 (Tests II), on verra comment automatiser ces tests avec pytest.
 """
 
 

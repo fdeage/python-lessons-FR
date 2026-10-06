@@ -353,7 +353,7 @@ Voici par exemple une très belle matrice 3D…
 liste_3d = [[[0, 1], [2, 3]], [[4, 5], [6, 7]]]
 print(liste_3d[1][0][1])  # => 5
 # …mais en pratique on ira rarement au-delà de 2. Pour du calcul sur de grandes
-# matrices, on utilisera plutôt la bibliothèque numpy (cf. chap. 0 et 22).
+# matrices, on utilisera plutôt la bibliothèque numpy (cf. chap. 38).
 
 """
 IMPT : piège classique ! Pour créer une matrice remplie de 0, on pourrait être
@@ -427,6 +427,8 @@ mots = ["kiwi", "ananas", "fraise", "noix"]
 print(sorted(mots, key=len))  # => ['kiwi', 'noix', 'ananas', 'fraise']
 # Note : en cas d'égalité, l'ordre de départ est conservé (on dit que le tri
 # est "stable") : kiwi reste avant noix.
+# On verra au chap. 32 comment écrire ces petites fonctions sur place, avec
+# le mot-clé lambda.
 
 # Avec une fonction définie par l'utilisateur :
 def derniere_lettre(mot):

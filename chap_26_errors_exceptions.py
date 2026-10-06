@@ -357,6 +357,7 @@ def sans_fin():
 
 
 try:
+    # (la récursivité est détaillée au chap. 33)
     sans_fin()       # => RecursionError: maximum recursion depth exceeded
 except RecursionError as err:
     print(f"23: (Sans ce try: … except …, cette ligne créerait : {err})")
@@ -727,7 +728,7 @@ Problème lors de la conversion de 'dix'
 
 """
 Note : on peut même créer ses propres types d'erreurs, mais cela nécessite la
-notion de "classe", qui dépasse le cadre de ce cours.
+notion de "classe" : on le verra au chap. 35.
 """
 
 

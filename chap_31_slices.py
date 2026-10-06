@@ -412,5 +412,5 @@ print(mon_tuple[:] is mon_tuple)  # => True
 
 Les slices sont omniprésentes en Data Science : on les retrouve, avec une
 syntaxe très proche, dans les bibliothèques NumPy et pandas pour sélectionner
-des lignes et des colonnes de tableaux (cf. chap. xx).
+des lignes et des colonnes de tableaux (cf. chap. 38 et 39).
 """

@@ -34,7 +34,7 @@ programme (l'autre concept étant l'objet).
 Le concept est tellement répandu qu'on lui a trouvé plein de synonymes :
 méthode, sous-programme ("sub-routine"), procédure, bloc, lambda, macro,
 "callable"… Ces mots ont des nuances selon les langages, mais nous retiendrons
-le nom "fonction".
+le nom "fonction". (Les "lambda" de Python sont vues au chap. 32.)
 
 La fonction est une brique fondamentale de la programmation, quel que soit le
 langage. Prenez votre temps pour bien comprendre leur intérêt et leur usage :

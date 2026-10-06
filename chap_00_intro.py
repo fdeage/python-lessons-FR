@@ -137,9 +137,9 @@ Un "package" (ou "bibliothèque", "library" en anglais) est un ensemble de code
 écrit par d'autres, que l'on peut réutiliser dans ses propres programmes. Le
 fonctionnement des packages sera détaillé au chap. 22. Pour la Data Science,
 les plus connus sont :
-    - NumPy : calcul scientifique, tableaux de nombres,
-    - pandas : manipulation de tableaux de données (cf. le chapitre sur pandas),
-    - Matplotlib : graphiques,
+    - NumPy : calcul scientifique, tableaux de nombres (cf. chap. 38),
+    - pandas : manipulation de tableaux de données (cf. chap. 39),
+    - Matplotlib : graphiques (cf. chap. 40),
     - scikit-learn : Machine Learning.
 
 Ils ne sont pas fournis avec Python : il faut les installer, par exemple avec

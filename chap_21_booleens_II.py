@@ -267,7 +267,8 @@ print(not "")  # => True
 #####################################
 
 """
-On a rencontré l'opérateur "is" au chap. 9 et au chap. 15 avec None.
+On a rencontré l'opérateur "is" au chap. 9 et au chap. 15 avec None. (Pour vos
+propres objets, on pourra redéfinir "==" avec __eq__, cf. chap. 35.)
 
     - "a == b" teste si a et b ont la même VALEUR
     - "a is b" teste si a et b sont le MÊME OBJET en mémoire (même identité,

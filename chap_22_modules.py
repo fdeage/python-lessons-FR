@@ -502,9 +502,9 @@ except ImportError:
 
 # Et parmi les paquets externes les plus connus en Data Science (à installer
 # avec pip, cf. plus haut) :
-#   numpy       : calcul numérique sur des tableaux de nombres
-#   pandas      : manipulation de tableaux de données (cf. le chap. sur pandas)
-#   matplotlib  : tracer des graphiques et visualiser des données
+#   numpy       : calcul numérique sur des tableaux de nombres (cf. chap. 38)
+#   pandas      : manipulation de tableaux de données (cf. chap. 39)
+#   matplotlib  : tracer des graphiques (cf. chap. 40)
 #   scikit-learn: Machine Learning
 #   requests    : télécharger des pages et des données sur le Web
 
