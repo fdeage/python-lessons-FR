@@ -79,9 +79,13 @@ seulement au moment où la division par 0 est tentée, et tout ce qui suit
        erreur avec le mot-clé "raise" :
 """
 try:
-    raise ZeroDivisionError     # => soulève la même erreur manuellement
+    raise ZeroDivisionError     # soulève la même erreur, manuellement
 except ZeroDivisionError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err!r})")
+# => 2: (Sans ce try: … except …, cette ligne créerait :
+#    ZeroDivisionError())
+# (Cette erreur n'a pas de message : {err} afficherait une chaîne vide. Le "!r"
+# affiche aussi son type ; on l'explique dans la section sur la hiérarchie.)
 
 # Les deux codes plus haut ont exactement la même conséquence : créer une
 # erreur qui va interrompre le fil normal du programme.
@@ -97,7 +101,7 @@ IMPT : il y a deux issues possibles à la survenue d'une erreur :
     1. soit l'erreur est interceptée (avec try: … except: …)
     2. soit l'erreur n'est pas interceptée et crashe le programme.
 
-Attention : il n'y a pas de "meilleure" solution pour gérer l'erreur ! en
+Attention : il n'y a pas de "meilleure" solution pour gérer l'erreur ! En
 fonction de la situation, il peut être souhaitable de laisser crasher
 (philosophie du "let it crash", voir la dernière section).
 
@@ -420,7 +424,11 @@ BaseException
       └── ValueError
 
 IMPT : intercepter une erreur intercepte aussi toutes ses "descendantes".
-Ainsi "except LookupError" intercepte les IndexError ET les KeyError :
+Ainsi "except LookupError" intercepte les IndexError ET les KeyError.
+
+(Dans l'exemple ci-dessous, {cle!r} dans la f-string affiche la valeur telle
+qu'on l'écrirait en Python, avec ses guillemets si c'est une string : 'z' et
+non z. C'est la fonction intégrée repr(), revue au chap. 34.)
 """
 for collection, cle in [([1, 2], 5), ({"a": 1}, "z")]:
     try:
@@ -523,7 +531,8 @@ def diviser_element(liste, indice, diviseur):
 diviser_element([10, 20], 1, 4)    # => Résultat : 5.0
 diviser_element([10, 20], 1, 0)    # => Division par 0 !
 diviser_element([10, 20], 7, 2)    # => L'indice 7 n'existe pas
-diviser_element([10, 20], 0, "2")  # => Mauvais type : unsupported operand type(s) for /: 'int' and 'str'
+diviser_element([10, 20], 0, "2")
+# => Mauvais type : unsupported operand type(s) for /: 'int' and 'str'
 
 """
 Attention à l'ordre : comme la première clause qui correspond gagne, il faut
@@ -565,7 +574,7 @@ while True:
     except ValueError:
         print('Vous devez utiliser des chiffres.')
     else:
-        break # Ceci permet de sortir de la boucle while
+        break  # Ceci permet de sortir de la boucle while
 print(f"Vous avez {age} ans.")
 
 """
@@ -737,7 +746,7 @@ notion de "classe" : on le verra au chap. 35.
 #############################################
 
 """
-Que l'erreur ait été soulevée par le programme ou par "raise", cette erreur
+Que l'erreur ait été soulevée par Python ou par "raise", cette erreur
 va, par défaut, interrompre le programme. Si l'on souhaite empêcher cette
 interruption, il faut demander à Python "d'intercepter" l'erreur.
 

@@ -106,8 +106,8 @@ Les corrigés sont dans le fichier corrs/corr_05_precedence.py.
 ##################################
 
 """
-17. Le calcul suivant est trop long pour tenir sur une ligne de 79
-    caractères. Récrivez-le sur trois lignes, de deux façons : avec des
+17. Imaginons que le calcul suivant soit trop long pour tenir sur une ligne
+    de 79 caractères. Récrivez-le sur trois lignes, de deux façons : avec des
     parenthèses (recommandé), puis avec des backslashs.
         print(1000 + 2000 + 3000 + 4000 + 5000 + 6000 + 7000 + 8000 + 9000)
 

@@ -87,7 +87,7 @@ tester s'ils sont différents avec "!=" :
 """
 fromage = True
 dessert = True
-print(fromage != dessert)  # => False : "fromage OU dessert", mais pas les deux !
+print(fromage != dessert)  # => False : "fromage OU dessert", pas les deux !
 
 
 # Les lois de De Morgan
@@ -289,9 +289,11 @@ print(liste1)            # => [1, 2, 3, 4] : modifier liste3 modifie liste1 !
 print(liste2)            # => [1, 2, 3]
 
 """
-IMPT : utilisez "is" UNIQUEMENT pour comparer à None (et éventuellement à
-True/False). Pour comparer des nombres ou des chaînes, utilisez toujours "==" :
-le résultat de "is" sur ces valeurs dépend de détails internes de Python.
+IMPT : utilisez "is" UNIQUEMENT pour comparer à None, ou pour savoir si deux
+noms désignent le même objet (comme liste1 et liste3 ci-dessus). Pour comparer
+des nombres, des chaînes ou des booléens, n'utilisez jamais "is" : le résultat
+dépend de détails internes de Python (et pour les booléens, cf. chap. 20 :
+on écrit directement "if est_valide:").
 """
 
 
@@ -319,7 +321,7 @@ print(any(li) == (True or False or 2 == 2))    # => True
 # conversion en booléen vue plus haut
 print(all((1, 2, 3)))     # => True : aucun zéro
 print(all([1, 0, 3]))     # => False : 0 est "faux"
-print(any(["", "", "a"])) # => True : "a" est une chaîne non vide
+print(any(["", "", "a"]))  # => True : "a" est une chaîne non vide
 
 # Cas particulier des listes vides : all([]) vaut True (aucun élément n'est
 # faux) et any([]) vaut False (aucun élément n'est vrai)
@@ -341,9 +343,11 @@ print(all(notes_valides))  # => False : la note 21 est invalide
 
 """
 Il arrive qu'on ait besoin de manipuler directement les bits constituant les
-nombres, par exemple dans la programmation bas niveau, la cryptographie, la conception de protocoles réseau…
+nombres, par exemple dans la programmation bas niveau, la cryptographie, la
+conception de protocoles réseau…
 
-On utilise alors les opérateurs bit à bit (ou bitwise), pour effectuer des opérations comme le décalage de bits, l'ET, l'OU, le OU exclusif, etc.
+On utilise alors les opérateurs bit à bit (ou "bitwise"), pour effectuer des
+opérations comme le décalage de bits, l'ET, l'OU, le OU exclusif, etc.
 """
 
 # Ex :
@@ -372,14 +376,14 @@ print(a & b)  # => 1 (0001 en binaire)
 
 
 """
-    2. Le OU Bitwise (|) fait la même chose avec l'opération OU (= "l'un ou
+    2. Le OU bitwise (|) fait la même chose avec l'opération OU (= "l'un ou
     l'autre est activé")
 """
 print(a | b)  # => 7 (0111 en binaire)
 
 
 """
-    3. Le OU exclusif Bitwise (^) fait la même chose avec l'opération OU
+    3. Le OU exclusif bitwise (^) fait la même chose avec l'opération OU
     exclusif (= "l'un ou l'autre est activé mais pas les deux")
 """
 print(a ^ b)  # => 6 (0110 en binaire)
@@ -387,10 +391,11 @@ print(a ^ b)  # => 6 (0110 en binaire)
 
 """
     4. Le décalage à gauche (<<) ou à droite (>>) déplace les bits d'un nombre
-    vers la gauche ou la droite, remplissant les positions libres avec des zéros.
+    vers la gauche ou la droite, en remplissant les positions libres avec des
+    zéros.
 """
-print(a << 1)  # => 10 (binaire: 1010)
-print(a >> 1)  # => 2 (binaire: 0010)
+print(a << 1)  # => 10 (binaire : 1010)
+print(a >> 1)  # => 2 (binaire : 0010)
 
 # Décaler de n bits vers la gauche revient à multiplier par 2 ** n, et vers la
 # droite à faire une division entière par 2 ** n (cf. chap. 4)
@@ -434,7 +439,8 @@ Ainsi pour extraire les 4 bits de droite d'un nombre, on fera :
 """
 nomb = 0b11101
 mask = 0b01111
-print(nomb & mask)  # => 13 (binaire: 01101), seuls les 4 bits à droite sont gardés
+print(nomb & mask)  # => 13 (binaire : 01101) : seuls les 4 bits de droite
+#                     sont gardés
 
 """
     Et avec | , on peut "allumer" un bit. Exemple classique : les droits d'un

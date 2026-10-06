@@ -236,7 +236,7 @@ print(CompteBancaire("Bob", 20))  # => CompteBancaire('Bob', 20)
 ###############################
 
 """
-isinstance(objet, Classe) (cf. chap. 34) tient compte de l'héritage : un
+isinstance(objet, Classe) (cf. chap. 33) tient compte de l'héritage : un
 objet est une instance de sa classe, mais aussi de toutes ses classes
 parentes.
 """
@@ -267,7 +267,8 @@ hérite d'Exception… C'était déjà de l'héritage de classes !
 print(issubclass(ZeroDivisionError, ArithmeticError))  # => True
 print(issubclass(ZeroDivisionError, Exception))        # => True
 print(ZeroDivisionError.__mro__)
-# => (<class 'ZeroDivisionError'>, <class 'ArithmeticError'>, <class 'Exception'>, <class 'BaseException'>, <class 'object'>)
+# => (<class 'ZeroDivisionError'>, <class 'ArithmeticError'>,
+#     <class 'Exception'>, <class 'BaseException'>, <class 'object'>)
 
 """
 C'est pour cela que "except ArithmeticError" intercepte aussi les
@@ -453,8 +454,9 @@ print(un_tiers < un_demi)      # => True (grâce à __lt__)
 print(un_demi > un_tiers)      # => True (Python essaie un_tiers < un_demi)
 
 """
-Avec __lt__, nos objets deviennent TRIABLES : sorted(), min() et max()
-utilisent "<" pour comparer (cf. chap. 24).
+Avec __lt__, nos objets deviennent TRIABLES : sorted() et min() utilisent
+"<" pour comparer (cf. chap. 24), et max() utilise ">", que Python obtient
+ici grâce à __lt__, comme on vient de le voir.
 """
 fractions = [Fraction(3, 4), un_tiers, un_demi, Fraction(1, 10)]
 print(sorted(fractions))

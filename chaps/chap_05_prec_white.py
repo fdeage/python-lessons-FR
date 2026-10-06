@@ -52,7 +52,7 @@ moins prioritaire) :
     5. les opérateurs `+` et `-` (addition et soustraction)
     6. les opérateurs de comparaison, d'égalité et d'inégalité (`==`, `!=`,
        `<`, `>`, `<=`, `>=`), ainsi que `in`, `not in`, `is` et `is not`
-       (cf. chap. 9, 16 et 19)
+       (cf. chap. 9, 16 et 21)
     7. `not`, puis `and`, puis `or` (cf. chap. 9)
 
 Remarque : l'affectation `=` (comme dans `a = 3`, cf. chap. 10) ne fait PAS
@@ -258,12 +258,10 @@ print(
     3 + 4,
 )  # => 3 7
 
-"""
-2. Terminer la ligne par une barre oblique inversée `\\` (un "backslash"), qui
-   signifie "l'instruction continue à la ligne suivante". C'est moins
-   recommandé : un simple espace après le `\\` provoque une erreur, invisible à
-   l'œil nu.
-"""
+# 2. Terminer la ligne par une barre oblique inversée \ (un "backslash"), qui
+#    signifie "l'instruction continue à la ligne suivante". C'est moins
+#    recommandé : une simple espace après le \ provoque une erreur, invisible
+#    à l'œil nu.
 total = 1 + 2 + 3 \
     + 4 + 5
 print(total)  # => 15
@@ -285,7 +283,7 @@ autres. Voici ses principales recommandations sur le whitespace :
           x = 2 + 3       plutôt que    x=2+3
     - on peut toutefois "coller" les opérateurs les plus prioritaires pour
       faire ressortir la précédence :
-          y = x*2 + 1     (plutôt que y = x * 2 + 1, au choix)
+          y = x*2 + 1     (ou y = x * 2 + 1, au choix)
     - pas d'espace juste à l'intérieur des parenthèses, ni avant une virgule ;
       une espace après la virgule :
           print(1, 2)     plutôt que    print( 1 , 2 )

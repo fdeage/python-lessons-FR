@@ -235,6 +235,7 @@ def fonction_lente():
     # Cette fonction retourne la somme des nombres de 0 à… beaucoup
     return sum([i for i in range(10_000_000)])
 
+
 avant = time.time()
 _ = fonction_lente()
 apres = time.time()
@@ -250,12 +251,14 @@ Notes :
       chronomètre plus précis (sa valeur seule n'a pas de sens, seule la
       différence entre deux appels en a une).
     - Pour comparer la vitesse de petits bouts de code, le module timeit les
-      exécute de nombreuses fois et donne un résultat plus fiable (cf. chap. 22).
+      exécute de nombreuses fois et donne un résultat plus fiable (cf. chap. 22
+      et 45).
 """
 avant = time.perf_counter()
 _ = sum([i for i in range(1_000_000)])
 duree = time.perf_counter() - avant
-print(f"Durée d'exécution : {duree:.4f}s")  # => Durée d'exécution : 0.0412s (variable)
+print(f"Durée d'exécution : {duree:.4f}s")
+# => Durée d'exécution : 0.0412s (variable)
 
 """
 La fonction time.sleep(n) met le programme en pause pendant n secondes (n peut
@@ -372,7 +375,7 @@ IMPT : l'intérêt principal des durées est de faire des calculs avec les dates
     - date - durée => date
     - date - date  => durée
 """
-# Quelle date serons-nous dans 100 jours après le 12 mars 1989 ?
+# Quelle date serons-nous 100 jours après le 12 mars 1989 ?
 print(d + timedelta(days=100))  # => 1989-06-20
 
 # Python gère tout seul les fins de mois et les années bissextiles :

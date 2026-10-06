@@ -91,7 +91,7 @@ print(voitures)  # => ['bleue', 'rouge', 'jaune']
 
 """
 On voit déjà ses intérêts :
-    - on centralise dans la même variable de valeurs qui "vont ensemble"
+    - on centralise dans la même variable des valeurs qui "vont ensemble"
     - on évite toute confusion sur la numérotation des valeurs, qui est gérée
       par la liste (on le verra plus loin)
 """
@@ -151,20 +151,20 @@ IMPT: cet ordre commence toujours à 0.
 On écrit le nom de la liste, suivi de l'indice entre crochets : c'est la même
 syntaxe que pour accéder à un caractère d'une string (cf. chap. 7).
 """
-liste_variee[0]  # => "pouet"
+liste_variee[0]  # => 'pouet'
 liste_variee[3]  # => True
 liste_variee[6]  # => [1, 2, 3]
 
 # La valeur obtenue s'utilise comme n'importe quelle autre valeur :
 print(liste_variee[1] + 10)       # => 13
-print(liste_variee[0].upper())    # => POUET (méthode de string, cf. chap. 8)
+print(liste_variee[0].upper())    # => POUET (méthode de string, cf. chap. 7)
 
 # Pour une liste dans une liste, on enchaîne les crochets :
 print(liste_variee[6][0])  # => 1 (le 1er élément de la liste [1, 2, 3])
 
 # L'accès au dernier élément peut aussi se faire "par la fin" avec "-n"
 liste_variee[-1]  # => [1, 2, 3]
-liste_variee[-2]  # => "Hop" (l'avant-dernier élément)
+liste_variee[-2]  # => 'Hop' (l'avant-dernier élément)
 
 """
 Résumé des indices pour la liste ["a", "b", "c", "d"] :
@@ -260,11 +260,11 @@ print(voitures[len(voitures) - 1])  # => grise (équivalent à voitures[-1])
 """
 Une liste dispose de "méthodes", c'est-à-dire de fonctions qui lui sont
 propres. On les appelle avec la syntaxe liste.methode(…), comme les méthodes
-des strings (cf. chap. 8).
+des strings (cf. chap. 7 et 8).
 
-Différence importante avec les strings : les méthodes des listes MODIFIENT
-DIRECTEMENT la liste (on dit qu'elles agissent "en place"), et retournent en
-général None.
+Différence importante avec les strings : les méthodes qui modifient une liste
+la MODIFIENT DIRECTEMENT (on dit qu'elles agissent "en place"), au lieu de
+retourner une nouvelle liste. Elles retournent en général None.
 """
 
 #   1. On ajoute des objets à la fin d'une liste avec la méthode `.append()`
@@ -410,15 +410,15 @@ valeurs, avec enumerate()…) seront détaillées au chap. 24.
       indice), compté à partir de 0. Ainsi :
 """
 liste = [10, 20, 30]
-print(liste[0]) # => 10
-print(liste[2]) # => 30
+print(liste[0])  # => 10
+print(liste[2])  # => 30
 
 #   - Python calcule la longueur de la liste avec l'instruction `len(liste)`
-len(liste) # => 3
+len(liste)  # => 3
 
 #   - Une liste Python est un objet modifiable (ou "mutable") :
 liste[1] = 0
-print(liste) # => [10, 0, 30]
+print(liste)  # => [10, 0, 30]
 
 """
     - La création d'une liste Python se fait souvent par accumulation : on peut
@@ -431,14 +431,14 @@ liste = []
          1. la méthode `.append()` :
 """
 liste.append(2)
-print(liste) # => [2]
+print(liste)  # => [2]
 
 #        2. la fusion de deux listes :
 
 liste = liste + [4]
-print(liste) # => [2, 4]
-# (on peut donc ajouter "par la gauche" des éléments à une liste avec cette
-# technique)
+print(liste)  # => [2, 4]
+# (avec cette technique, on peut aussi ajouter des éléments "par la gauche" :
+# [0] + liste vaut [0, 2, 4])
 
 #        3. l'extension par une autre liste avec `.extend()` :
 liste.extend([6, 8])

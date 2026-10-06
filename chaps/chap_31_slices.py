@@ -15,8 +15,8 @@
 #  - Introduction
 #  - Syntaxe
 #  - Indexation négative
-#  - Exemples de Slices
-#  - Pas (Step) dans les Slices
+#  - Exemples de slices
+#  - Le pas (step) dans les slices
 #  - Modifier une liste avec les slices
 #  - Slices avec d'autres types construits
 #  - Copie de séquences avec slices
@@ -65,7 +65,7 @@ print(ma_liste)  # => ['a', 'b', 'c', 'd', 'e'] (inchangée)
 ##########
 
 """
-La syntaxe générale d'un slice est la suivante :
+La syntaxe générale d'une slice est la suivante :
 
 sequence[begin:stop:step]
 
@@ -127,10 +127,11 @@ print(ma_liste[-3:])    # => [7, 8, 9] (les 3 derniers éléments)
 print(ma_liste[:-3])    # => [0, 1, 2, 3, 4, 5, 6] (tout sauf les 3 derniers)
 
 # On peut même mélanger indices positifs et négatifs :
-print(ma_liste[2:-2])  # => [2, 3, 4, 5, 6, 7] (sans les 2 premiers ni les 2 derniers)
+print(ma_liste[2:-2])  # => [2, 3, 4, 5, 6, 7]
+# (sans les 2 premiers ni les 2 derniers)
 
 
-# Exemples de Slices
+# Exemples de slices
 #####################
 
 """
@@ -172,11 +173,12 @@ Exemple d'utilisation : afficher les premiers éléments d'une liste pour avoir
 un aperçu, sans risquer d'erreur si elle est plus courte que prévu.
 """
 notes = [12, 15, 9]
-print(f"Les 5 premières notes : {notes[:5]}")  # => Les 5 premières notes : [12, 15, 9]
+print(f"Les 5 premières notes : {notes[:5]}")
+# => Les 5 premières notes : [12, 15, 9] (seulement 3 notes : pas d'erreur)
 
 
-# Pas (Step) dans les Slices
-#############################
+# Le pas (step) dans les slices
+################################
 
 """
 Le troisième paramètre, le pas, permet de ne prendre qu'un élément sur deux,
@@ -333,9 +335,9 @@ print(ma_chaine[trois_premiers])  # => Pyt
 #################################
 
 """
-Rappel (cf. chap. 16 et chap. 19) : l'affectation "b = a" ne copie pas une
-liste ! Les deux variables désignent alors la MÊME liste : modifier l'une
-modifie l'autre.
+Rappel (cf. chap. 24) : l'affectation "b = a" ne copie pas une liste ! Les
+deux variables désignent alors la MÊME liste : modifier l'une modifie
+l'autre.
 """
 ma_liste = [i for i in range(10)]
 meme_liste = ma_liste      # pas une copie : un deuxième nom pour la même liste
@@ -353,7 +355,7 @@ print(copie_liste[0])  # => 100
 print(ma_liste[0])     # => 0 (la liste originale est inchangée)
 
 # On peut le vérifier avec l'opérateur "is", qui teste si deux variables
-# désignent le même objet (cf. chap. 15) :
+# désignent le même objet (cf. chap. 21) :
 print(copie_liste is ma_liste)  # => False
 autre_nom = ma_liste      # pas une copie, comme meme_liste plus haut
 print(autre_nom is ma_liste)    # => True
@@ -377,7 +379,7 @@ print(matrice)  # => [[999, 2], [3, 4]] (…cette fois, l'original n'a pas chang
 
 """
 Pour copier aussi les sous-listes, on peut utiliser une compréhension
-(cf. chap. 23), ou la fonction deepcopy() du module copy (cf. chap. 22) :
+(cf. chap. 23), ou la fonction deepcopy() du module copy (cf. chap. 24) :
 """
 matrice = [[1, 2], [3, 4]]
 copie_profonde = [ligne[:] for ligne in matrice]

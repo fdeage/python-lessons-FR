@@ -251,7 +251,8 @@ try:
     import pytest
 except ImportError:
     pytest = None
-    print("pytest n'est pas installé : python3 -m pip install pytest")
+    print("pytest n'est pas installé : uv add --dev pytest (ou : python3 -m "
+          "pip install pytest)")
 
 if pytest is not None:
     entete = "import pytest\n" + "\n".join(
@@ -267,7 +268,8 @@ if pytest is not None:
         sys.dont_write_bytecode = False
 # => (avec pytest) .......                                    [100%]
 #                  7 passed in 0.01s
-# => (sans pytest) pytest n'est pas installé : python3 -m pip install pytest
+# => (sans pytest) pytest n'est pas installé : uv add --dev pytest (ou :
+#                  python3 -m pip install pytest)
 """
 (On utilise le module inspect pour recopier le code source des fonctions à
 tester dans le fichier temporaire : c'est un détail technique, normalement

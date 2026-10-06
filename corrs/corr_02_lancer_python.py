@@ -122,7 +122,8 @@ print("Python")  # => Python
 print("Python")  # => Python
 """
 Notez qu'on ne retrouve pas les guillemets de 'Python' : pour les voir, il
-faudrait afficher la "représentation" de la chaîne avec repr() (cf. chap. 7) :
+faudrait afficher la "représentation" de la chaîne avec repr() (cf. chap. 34
+pour les détails) :
 """
 print(repr("Python"))  # => 'Python'
 

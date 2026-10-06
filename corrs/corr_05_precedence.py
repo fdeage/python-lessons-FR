@@ -129,17 +129,20 @@ print(1000 + 2000 + 3000
       + 7000 + 8000 + 9000)  # => 45000
 
 # Avec des backslashs : le \ doit être le TOUT DERNIER caractère de la ligne.
-print(1000 + 2000 + 3000 + \
-      4000 + 5000 + 6000 + \
-      7000 + 8000 + 9000)  # => 45000
+# Attention : à l'intérieur des parenthèses de print(), le \ serait inutile !
+# On calcule donc d'abord le total HORS de toute parenthèse (les variables
+# seront vues au chap. 10) :
+total = 1000 + 2000 + 3000 \
+    + 4000 + 5000 + 6000 \
+    + 7000 + 8000 + 9000
+print(total)  # => 45000
 
-"""
-18. Les parenthèses sont recommandées car :
-    - un simple espace oublié après le \\ provoque une erreur de syntaxe,
-      invisible à l'œil nu ;
-    - on ne peut pas mettre de commentaire après un \\ ;
-    - les parenthèses délimitent clairement le début et la fin de l'expression.
-"""
+# 18. Les parenthèses sont recommandées car :
+#     - une simple espace oubliée après le \ provoque une erreur de syntaxe,
+#       invisible à l'œil nu ;
+#     - on ne peut pas mettre de commentaire après un \ ;
+#     - les parenthèses délimitent clairement le début et la fin de
+#       l'expression.
 
 
 #######################################

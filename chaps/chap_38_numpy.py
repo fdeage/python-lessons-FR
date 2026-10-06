@@ -66,17 +66,18 @@ l'identique avec NumPy 1.x.
 """
 Comme pandas, NumPy ne fait pas partie de la bibliothèque standard : il faut
 l'installer une fois (cf. chap. 0 et chap. 22) :
-    ?> pip install numpy
+    ?> uv add numpy          (recommandé, cf. chap. 47)
 ou
-    ?> conda install numpy
+    ?> pip install numpy
 
 On l'importe ensuite, par convention, sous l'alias "np". Tout le monde utilise
 cet alias : vous le retrouverez dans toutes les documentations et tous les
 tutoriels.
 
-Comme au chap. 39, on protège l'import avec try … except (cf. chap. 26) : si
-NumPy n'est pas installé, le programme affiche un message et s'arrête
-proprement au lieu de crasher.
+On protège l'import avec try … except (cf. chap. 26), comme on le fera dans
+tous les chapitres qui utilisent un paquet externe : si NumPy n'est pas
+installé, le programme affiche un message et s'arrête proprement au lieu de
+crasher.
 """
 import sys
 import timeit
@@ -85,8 +86,8 @@ try:
     import numpy as np
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
-    print("NumPy n'est pas installé : lancez \"pip install numpy\" (ou")
-    print("\"conda install numpy\"), puis relancez ce programme.")
+    print("NumPy n'est pas installé : lancez \"uv add numpy\" (ou")
+    print("\"pip install numpy\"), puis relancez ce programme.")
     sys.exit(0)
 
 print(np.__version__)  # => 2.5.3 (variable : dépend de votre installation)
@@ -252,7 +253,7 @@ print(a.shape)        # => (5,)  (un tuple d'un seul élément, cf. chap. 17)
 
 """
 Les types les plus courants :
-    - int64   : entiers sur 64 bits (int32 sur certains Windows),
+    - int64   : entiers sur 64 bits (int32 sous Windows avec NumPy 1.x),
     - float64 : nombres à virgule, comme les floats de Python,
     - bool    : booléens,
     - <U5     : chaînes Unicode d'au plus 5 caractères.
@@ -546,7 +547,7 @@ mais en plus court et plus rapide.
 Pour combiner plusieurs conditions, ATTENTION : on n'utilise PAS and, or et
 not (qui ne fonctionnent pas sur des tableaux), mais les opérateurs bit à bit
 &, | et ~ (cf. chap. 21). Et les parenthèses autour de chaque condition sont
-OBLIGATOIRES, car & est prioritaire sur >= (cf. chap. 5).
+OBLIGATOIRES, car & est prioritaire sur >= (cf. chap. 5 et 21).
 """
 print(notes[(notes >= 10) & (notes < 15)])  # => [12 11]
 print(notes[(notes < 8) | (notes > 15)])    # => [17  6]

@@ -221,7 +221,8 @@ Notes :
       une f-string, cf. chap. 8).
     - Le format standard des dates en informatique est l'ISO 8601
       ("%Y-%m-%d %H:%M:%S", c'est-à-dire 2026-10-06 18:42:07) : il se trie
-      dans l'ordre chronologique. C'est le format par défaut de asctime.
+      dans l'ordre chronologique. C'est le format par défaut de asctime,
+      suivi des millisecondes (2026-10-06 18:42:07,123).
 
 Pour la suite du chapitre, on revient à un format sans date, pour que les
 "# =>" restent identiques à chaque exécution :
@@ -398,7 +399,7 @@ generer_rapport(0)
 # => >> WARNING - Rapport vide
 
 # Dans le fichier (handler "fichier", niveau DEBUG) : on le relit.
-fichier.flush()   # force l'écriture sur le disque (cf. chap. 28)
+fichier.flush()   # force l'écriture sur le disque (simple précaution)
 with open("rapport.log", encoding="utf-8") as f:
     print(f.read(), end="")
 # => DEBUG    rapport:generer_rapport : Début, 0 lignes à traiter

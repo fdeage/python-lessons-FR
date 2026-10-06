@@ -26,9 +26,8 @@
 ########################
 
 """
-Une variable est un espace mémoire où l'utilisateur peut stocker une valeur.
-Cet espace mémoire est nommé par l'utilisateur pour pouvoir être référencé
-plus tard.
+Une variable est un espace mémoire où l'on peut stocker une valeur. On donne
+un nom à cet espace mémoire pour pouvoir y faire référence plus tard.
 
 Ex :
 """
@@ -46,7 +45,7 @@ GAUCHE : "range la valeur 2 dans la variable nombre_voitures".
            |          +------ le signe d'affectation
            +----------------- le nom de la variable
 
-L'utilisateur peut ensuite lire le contenu de la variable et le modifier
+On peut ensuite lire le contenu de la variable et le modifier
 pendant l'exécution du programme.
 
 Lecture du contenu avec print() :
@@ -94,8 +93,8 @@ même erreur. Si vous voyez une NameError, vérifiez d'abord l'orthographe !
 # Une variable peut contenir tous les types proposés par Python :
 un_super_entier = 3                      # => int
 un_super_flottant = 46.2                 # => float
-une_super_chaine_de_caractere = "pouet"  # => string
-un_super_booleen = False                 # => boolean
+une_super_chaine_de_caractere = "pouet"  # => str (string)
+un_super_booleen = False                 # => bool (booléen)
 une_super_liste = [True, 46.2, "pouet"]  # => list (cf. chap. 16)
 # ... et beaucoup d'autres.
 
@@ -266,7 +265,7 @@ pas qu'il est bien de faire n'importe quoi !
 
 Il y a deux styles principaux (ou conventions) :
     1. le "Snake Case" (minuscules et underscores),
-    2. le "Camel Case" (majuscules au début de chaque mot)
+    2. le "Camel Case" (majuscule au début de chaque mot, sauf le premier)
 
 Il est fortement recommandé de se tenir à un seul style. Ce tutoriel utilise la
 convention "Snake Case", qui est celle recommandée par le guide de style
@@ -279,7 +278,8 @@ uneVariableEnCamelCase = 7          # 👍 (mais pas la convention Python)
 une_Variable_Moche = 2              # moche
 uNeVrAIEMocheté = 666               # atroce
 
-# On n'utilisera que des majuscules pour les variables globales (voir chap. 19)
+# On écrit en majuscules les constantes, des variables globales dont la valeur
+# ne change pas (voir chap. 19)
 VARIABLE_GLOBALE = "Des majuscules partout !"
 
 """
@@ -294,9 +294,10 @@ prix_ttc = 3.5 * 4   # 👍 on comprend tout de suite
 Les noms d'une seule lettre (i, j, x, n…) sont réservés aux cas où leur sens
 est évident : un compteur de boucle (cf. chap. 13), une coordonnée, etc.
 
-Python accepte tous les caractères pour les variables, mais il est
-déconseillé de s'écarter des caractères ASCII : prenez l'habitude d'écrire
-avec les 26 lettres minuscules, les 10 chiffres, et les underscore ("_")
+Python accepte les lettres accentuées (et celles de tous les alphabets) dans
+les noms de variables, mais il est déconseillé de s'écarter des caractères
+ASCII : prenez l'habitude d'écrire avec les 26 lettres minuscules, les 10
+chiffres et l'underscore ("_")
 """
 àêïœú = 34              # ça fonctionne mais c'est moche
 
@@ -316,7 +317,7 @@ professionnels. Ce cours utilise le français pour faciliter la lecture.
 # Quelques fonctions sur les variables
 #######################################
 
-# Prenons des variables toute bêtes :
+# Prenons des variables toutes bêtes :
 a = 2
 b = "test"
 c = False
@@ -332,7 +333,7 @@ print(str(b))  # => test
 print(str(c))  # => False
 print(type(str(a)))  # => <class 'str'>
 
-# Note : print() appelle toujours str() sur les variables passées en paramètre.
+# Note : print() appelle toujours str() sur les valeurs passées en paramètre.
 # Les deux lignes suivantes impriment donc exactement la même chose :
 print(a)       # => 2
 print(str(a))  # => 2
@@ -373,7 +374,8 @@ On verra plus loin que la valeur à droite est un "tuple" (chap. 17).
 Il doit y avoir exactement autant de variables que de valeurs :
 """
 try:
-    a, b = 1, 2, 3  # => ValueError: too many values to unpack (expected 2)
+    a, b = 1, 2, 3  # => ValueError: too many values to unpack (expected 2,
+    #                                got 3)
 except ValueError as err:
     print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 

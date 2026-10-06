@@ -36,8 +36,8 @@ Les modules sont des fichiers contenant du code Python que l'on peut récupérer
 Ce code peut se trouver sous les trois formes suivantes :
     1. fonctions
     2. variables
-    3. objets (hors programme de ce cours : vous en croiserez sans le savoir,
-       par exemple les dates du chap. 30)
+    3. objets (on apprendra à créer les siens au chap. 34 ; vous en croiserez
+       avant sans le savoir, par exemple les dates du chap. 30)
 
 Le but des modules est donc de permettre d'utiliser du code défini à un
 autre endroit, par une autre personne, et même dans un autre projet. Plutôt
@@ -186,13 +186,13 @@ Quelques règles de capitalisation (cf. PEP 8, chap. 20) que vous retrouverez
 dans tous les modules :
     1. les fichiers (donc les modules) commencent par une *minuscule* :
        `person.py`, `car.py`, `my_module.py`
-    2. les classes (que l'on ne verra pas dans ce cours) commencent par une
-       *majuscule* : `class Person:`, `class Car(Vehicle):`
-    3. les fonctions/méthodes commencent par une *minuscule* : `def compute(param):`,
-       `def run(self):`
-    4. les constantes d'un module sont en majuscules : `math.pi` est une
-       exception historique, mais on trouve par ex. `sys.maxsize` ou
-       `string.ascii_letters`
+    2. les classes (cf. chap. 34) commencent par une *majuscule* :
+       `class Person:`, `class Car(Vehicle):`
+    3. les fonctions/méthodes commencent par une *minuscule* :
+       `def compute(param):`, `def run(self):`
+    4. les constantes d'un module sont en majuscules : `re.IGNORECASE`,
+       `logging.DEBUG`… La bibliothèque standard, plus ancienne que la PEP 8,
+       a des exceptions historiques : `math.pi`, `sys.maxsize`…
 
 IMPT : un nom de module doit être un nom de variable valide : pas d'espace,
 pas de tiret, pas de point, ne commence pas par un chiffre. "mon-module.py" ou
@@ -226,17 +226,17 @@ print(math.cos.__doc__)  # => Return the cosine of x (measured in radians).
 # module définit
 print(dir(math))
 """
- => ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__',
- 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil',
- 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc',
- 'exp', 'exp2', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum',
+ => ['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos',
+ 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil', 'comb',
+ 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp',
+ 'exp2', 'expm1', 'fabs', 'factorial', 'floor', 'fma', 'fmod', 'frexp', 'fsum',
  'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan',
  'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf',
  'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder',
- 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+ 'sin', 'sinh', 'sqrt', 'sumprod', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
 
-(la liste exacte dépend de votre version de Python : chaque version ajoute
-quelques fonctions)
+(liste obtenue avec Python 3.14 : la liste exacte dépend de votre version de
+Python, chaque version ajoutant quelques fonctions)
 """
 
 # Les noms entourés de "__" (on dit "dunder", pour "double underscore") sont
@@ -266,9 +266,9 @@ comme ceci :
 
 import my_module  # => (my_module est en train d'être importé)
 result = my_module.my_function()
-print(result)                # => Bonjour depuis my_module !
-print(my_module.doubler(21)) # => 42
-print(my_module.VERSION)     # => 1.0
+print(result)                 # => Bonjour depuis my_module !
+print(my_module.doubler(21))  # => 42
+print(my_module.VERSION)      # => 1.0
 
 # On le réimporte : rien ne s'affiche, car le module n'est exécuté qu'une fois
 import my_module
@@ -316,7 +316,7 @@ C'est une construction extrêmement courante, en fin de module :
     if __name__ == "__main__":
         print("Ce fichier a été lancé directement")
 
-Essayez : ?> python my_module.py affiche un message de plus que
+Essayez : ?> python my_module.py affiche deux lignes de plus que
 "import my_module".
 """
 
@@ -367,7 +367,8 @@ Les mêmes syntaxes que pour les modules fonctionnent, avec un point pour
 séparer le package du module :
 """
 import my_package.module1               # → my_package.module1.some_function()
-print(my_package.module1.some_function())  # => Résultat de module1.some_function()
+print(my_package.module1.some_function())
+# => Résultat de module1.some_function()
 
 from my_package.module1 import some_function  # → some_function()
 print(some_function())  # => Résultat de module1.some_function()
@@ -380,8 +381,9 @@ print(my_package.NOM_DU_PACKAGE)  # => my_package
 
 """
 Les grandes bibliothèques sont des packages, souvent avec des sous-packages.
-Ex. : os.path est le module "path" du package "os", et "matplotlib.pyplot"
-est le module "pyplot" du package "matplotlib".
+Ex. : "urllib.request" est le module "request" du package "urllib" (dans la
+bibliothèque standard), et "matplotlib.pyplot" est le module "pyplot" du
+package "matplotlib".
 
 En résumé, un module est un fichier Python unique, tandis qu'un package est un
 répertoire qui peut contenir plusieurs modules connexes, organisés dans une
@@ -412,13 +414,13 @@ console Python) :
 ?> python3 -m pip install numpy           # installer un paquet
 ?> python3 -m pip install numpy pandas    # en installer plusieurs
 ?> python3 -m pip install --upgrade numpy # mettre à jour
+?> python3 -m pip uninstall numpy         # désinstaller
+?> python3 -m pip list                    # lister les paquets installés
+?> python3 -m pip show numpy              # infos sur un paquet installé
 
 (Aujourd'hui, on préfère l'outil uv, plus rapide et plus complet :
 ?> uv add numpy
 cf. chap. 47.)
-?> python3 -m pip uninstall numpy         # désinstaller
-?> python3 -m pip list                    # lister les paquets installés
-?> python3 -m pip show numpy              # infos sur un paquet installé
 
 Remarque : on peut souvent taper simplement "pip install …", mais
 "python3 -m pip" garantit qu'on installe le paquet pour LE Python que l'on
@@ -441,7 +443,7 @@ L'option "-m" de python :
 d'outils Python s'utilisent ainsi :
 
 ?> python3 -m pip install …      # l'installeur de paquets
-?> python3 -m venv .venv         # créer un environnement virtuel (voir plus bas)
+?> python3 -m venv .venv         # créer un environnement virtuel (cf. plus bas)
 ?> python3 -m http.server        # un petit serveur web dans le dossier courant
 ?> python3 -m timeit "sum(range(100))"   # chronométrer une instruction
 ?> python3 -m this               # le Zen of Python (cf. chap. 20)
@@ -486,10 +488,10 @@ import os        # pour accéder aux commandes du système d'exploitation
 import sys       # pour gérer des paramètres que l'on passe au programme
 import zlib      # pour la compression de données
 import time      # heure, date et chronomètre (cf. chap. 30)
-import datetime  # pour manipuler des dates, créer des intervalles (cf. chap. 30)
+import datetime  # manipuler des dates, créer des intervalles (cf. chap. 30)
 import re        # pour utiliser les expressions régulières (cf. chap. 42)
 import logging   # journaliser les événements d'un programme (cf. chap. 44)
-import timeit    # mesurer le temps d’exécution d’une fonction.
+import timeit    # mesurer le temps d'exécution d'un morceau de code
 import statistics  # moyenne, médiane, écart-type…
 import collections  # des types construits supplémentaires (Counter…)
 import csv       # lire et écrire des fichiers CSV (cf. chap. 28)
@@ -522,8 +524,7 @@ except ImportError:
 ###################
 
 """
-On rappelle que le module random permet de générer des nombres de façon
-pseudo-aléatoire.
+Le module random permet de générer des nombres de façon pseudo-aléatoire.
 
 "Pseudo"-aléatoire, car un ordinateur ne sait pas vraiment tirer au hasard :
 il calcule une suite de nombres qui en a l'air, à partir d'un nombre de départ
@@ -593,7 +594,7 @@ shuffle(entiers)
 print(entiers)          # => [5, 4, 2, 1, 3] (par exemple)
 shuffle(entiers)
 print(entiers)          # => [1, 4, 5, 3, 2]
-print(shuffle(entiers))  # => None : le résultat est dans entiers, pas retourné !
+print(shuffle(entiers))  # => None : la liste est modifiée, pas retournée
 
 # HP : sample(liste, n) va prélever aléatoirement n valeurs de la liste
 print(sample(entiers, 2))  # => [3, 4] (par exemple)
@@ -628,7 +629,7 @@ Le module sys permet d'accéder aux paramètres que l'on "passe" au programme.
 On donne des paramètres au programme en les écrivant à la suite après le nom du
 fichier :
 
-> python chap_22_modules.py  123   "ab"  2.4
+?> python chap_22_modules.py  123   "ab"  2.4
 
 On les récupère ensuite via sys.argv, qui contient la liste des paramètres.
 
@@ -659,7 +660,7 @@ Lancez ce fichier avec les paramètres ci-dessus pour voir la différence.
 
 # sys donne aussi des informations sur Python lui-même
 print(sys.version_info >= (3, 6))  # => True (comparaison de tuples, chap. 17)
-print(sys.version)   # => 3.12.3 (main, …) : votre version de Python
+print(sys.version)   # => 3.14.4 (main, …) : votre version de Python
 print(sys.platform)  # => linux (ou win32, darwin pour macOS…)
 print(sys.path[0])   # => le dossier de ce fichier (cf. "Écrire ses propres
 #                       modules" plus haut)
@@ -685,7 +686,7 @@ utiliser help() et dir(), et à consulter la documentation officielle.
 """
 
 #   1. math : on a vu sqrt, sin, cos, log, floor, ceil, gcd, factorial…
-print(math.isclose(0.1 + 0.2, 0.3))  # => True (comparer des floats, cf. chap. 4)
+print(math.isclose(0.1 + 0.2, 0.3))  # => True (comparer des floats, chap. 4)
 print(math.inf > 10 ** 100)          # => True (l'infini)
 
 #   2. statistics : statistiques descriptives de base
@@ -739,7 +740,7 @@ print(json.loads('{"x": 1}')["x"])  # => 1
 
 """
 Il en existe beaucoup d'autres : string, itertools, functools, pathlib,
-datetime (chap. 30), csv (chap. 28), unittest (pour les tests, cf. chap. 29),
+datetime (chap. 30), csv (chap. 28), unittest (pour les tests, cf. chap. 37),
 sqlite3 (bases de données SQL), urllib (Internet), etc.
 
 Avant d'écrire une fonction compliquée, ayez le réflexe de chercher si elle

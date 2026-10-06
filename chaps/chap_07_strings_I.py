@@ -16,19 +16,22 @@
 #  - Accéder à un caractère
 #  - Caractères spéciaux et échappement
 #  - Imprimer avec print()
-#  - Fonctions de base
+#  - Opérations de base : len(), +, * et str()
+#  - Une première méthode : .upper() et .lower()
 #
 ###########################################
 
-# Déclarer des strings (ou chaînes de caractères)
-##################################################
+# Déclarer des strings
+#######################
 
 """
 Les chaînes (ou "strings", ou str) sont une suite de caractères
 représentant du texte. Elles ne peuvent pas être modifiées une fois créées.
 """
 
-# Elles sont créées avec " " ou ' '
+# Elles sont créées avec " " ou ' '. Ci-dessous, on range chaque chaîne dans
+# une "variable" (s1, s2…) pour pouvoir la réutiliser : `s1 = …` donne le nom
+# s1 à la chaîne. Les variables seront détaillées au chap. 10.
 s1 = "Ceci est une chaîne."
 s2 = 'Et ceci est une chaîne aussi.'
 s3 = ""  # => la chaîne vide (de longueur 0)
@@ -65,7 +68,8 @@ Si on a besoin d'insérer des doubles quotes DANS des doubles quotes, ou
 l'inverse, il faudra ÉCHAPPER ces quotes avec le caractère "backslash" : \
 """
 print('J\'aime l\'aligot d\'Émile')        # => J'aime l'aligot d'Émile
-print("Je lui ai dit : \"Fonce, Michel !\"")  # => Je lui ai dit : "Fonce, Michel !"
+print("Je lui ai dit : \"Fonce, Michel !\"")
+# => Je lui ai dit : "Fonce, Michel !"
 
 # Sans échappement, Python croirait que la chaîne s'arrête au 2e guillemet, et
 # le reste de la ligne n'aurait aucun sens : ce serait une SyntaxError (une
@@ -152,7 +156,7 @@ except TypeError as err:
 """
 On dit que les strings sont "immuables" (en anglais : "immutable"). Pour
 "modifier" une chaîne, il faudra en fait en créer une nouvelle (par exemple
-avec les méthodes vues plus bas, ou au chap. 8).
+avec les méthodes vues à la fin de ce chapitre et au chap. 8).
 """
 
 
@@ -192,7 +196,8 @@ Ces caractères spéciaux utilisent souvent le caractère backslash : \
 Note : dans vos programmes Python, "\n" suffit pour faire un saut de ligne, quel
 que soit votre système d'exploitation (Linux, Mac ou Windows).
 """
-print("Colonne 1\tColonne 2\nValeur 1\tValeur 2")  # => Intercale des tabulations
+# Intercale des tabulations :
+print("Colonne 1\tColonne 2\nValeur 1\tValeur 2")
 """
 Résultat (les colonnes sont alignées par les tabulations) :
 
@@ -214,18 +219,18 @@ print("C:\\Users\\michel")  # => C:\Users\michel
 Pour éviter de doubler tous les backslashs, on peut aussi préfixer la chaîne
 par un "r" (pour "raw", "brut") : les backslashs ne sont alors plus
 interprétés. C'est pratique pour les chemins de fichiers Windows, ou pour les
-expressions régulières (cf. chap. 22).
+expressions régulières (cf. chap. 42).
 """
 print(r"C:\nouveau\dossier")  # => C:\nouveau\dossier (le \n n'est pas un saut
 #                                de ligne ici !)
 
 # Enfin, on peut insérer n'importe quel caractère Unicode avec son code
-# hexadécimal (cf. chap. 6), avec \u suivi de 4 chiffres :
+# hexadécimal (cf. chap. 6), avec \u suivi de 4 chiffres hexadécimaux :
 print("caf\u00e9")  # => café
 
 
-# Imprimer avec `print()`
-##########################
+# Imprimer avec print()
+########################
 
 # Python propose la fonction intégrée `print()` pour imprimer du texte à l'écran
 print("Salut, monde !")  # => Salut, monde !
@@ -237,7 +242,7 @@ print([True, "pouet", 150, 2.3, range(4), [1]])  # => [True, 'pouet', 150, 2.3,
 #                                                       range(0, 4), [1]]
 
 # On peut passer plusieurs valeurs à print(), séparées par des virgules : elles
-# seront imprimées à la suite, séparées par un espace
+# seront imprimées à la suite, séparées par une espace
 print("Il fait", 21, "degrés")  # => Il fait 21 degrés
 
 # Le paramètre sep permet de choisir un autre séparateur que l'espace
@@ -293,15 +298,15 @@ print("terminé !")
 # => Chargement... terminé !
 
 
-# Fonctions de base
-####################
+# Opérations de base : len(), +, * et str()
+#############################################
 
 """
-On verra plus en détail les manipulations de strings au chap. 8. Voici déjà
-les outils de base.
+Voici les outils de base pour travailler avec des chaînes. Toutes les autres
+manipulations (chercher, remplacer, découper, formater…) sont au chap. 8.
 """
 
-#   1. On utilise la fonction intégrée `len()` pour afficher la longueur d'une
+#   1. On utilise la fonction intégrée `len()` pour obtenir la longueur d'une
 #      chaîne (c'est-à-dire son nombre de caractères)
 print(len("Ceci est une chaîne"))  # => 19
 print(len(""))  # => 0
@@ -328,71 +333,46 @@ print("-" * 20)  # => -------------------- (pratique pour tracer des lignes !)
 
 # Attention, on ne peut dupliquer qu'avec des ints
 try:
-    "Pouet " * 3.2  # => TypeError: can't multiply sequence by non-int of type 'float'
+    "Pouet " * 3.2  # => TypeError: can't multiply sequence by non-int of type
+    #                                'float'
 except TypeError as err:
     print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 
 """
-Les outils suivants sont des "méthodes" : ce sont des fonctions "attachées" à
-une valeur, que l'on appelle avec un point : `valeur.methode()`.
-
-IMPT : comme les chaînes sont immuables, ces méthodes ne modifient JAMAIS la
-chaîne d'origine : elles retournent une NOUVELLE chaîne.
-
-    4. `.lower()` et `.upper()` servent à mettre en minuscules/majuscules, et
-       `.capitalize()` met une majuscule au premier mot seulement.
-"""
-s = "Salut, Monde!"
-
-print(s.lower())       # => salut, monde!
-print(s.upper())       # => SALUT, MONDE!
-print(s.capitalize())  # => Salut, monde!
-print(s)               # => Salut, Monde! (s n'a pas été modifiée)
-
-
-"""
-    5. `.count(str)` compte les occurrences d'une chaîne dans une autre.
-       Attention, les majuscules comptent.
-"""
-s = "Salut, salut, salut !"
-print(s.count("salut"))  # => 2 (le premier "Salut" a une majuscule)
-print(s.count("alut"))   # => 3
-
-
-"""
-    6. `.find(str)` retourne l'index (ou rang) de la première occurrence d'une
-       chaîne dans une autre (et -1 si la chaîne n'existe pas).
-"""
-s = "Salut, Monde !"
-print(s.find("Salut"))  # => 0
-print(s.find("Monde"))  # => 7
-print(s.find("monde"))  # => -1 (pas trouvé : les majuscules comptent)
-
-
-"""
-    7. `.replace(ancienne, nouvelle)` remplace toutes les occurrences d'une
-       chaîne par une autre
-"""
-s = "Salut, Monde !"
-print(s.replace("Monde", "Python"))  # => Salut, Python !
-
-
-"""
-    8. `.strip()` retire le whitespace (espaces, tabs, sauts de ligne…) en
-       début et fin d'une chaîne. `.lstrip()` et `.rstrip()` les enlèvent à
-       gauche et à droite respectivement.
-"""
-s = "   Salut, Monde !         "
-print(s.strip())   # => Salut, Monde !
-print(s.lstrip())  # => Salut, Monde !         (les espaces de droite restent)
-print(s.rstrip())  # =>    Salut, Monde !
-
-
-"""
-  9. Enfin, on utilise la fonction intégrée `str()` pour convertir une valeur
-     en string (cf. chap. 6), ce qui permet ensuite de la concaténer.
+    4. Enfin, on utilise la fonction intégrée `str()` pour convertir une valeur
+       en string (cf. chap. 6), ce qui permet ensuite de la concaténer.
 """
 print("Hello " + str(42))             # => Hello 42
 print("This is " + str(False))        # => This is False
 print("I like brackets: " + str([]))  # => I like brackets: []
+
+
+# Une première méthode : .upper() et .lower()
+##############################################
+
+"""
+Les chaînes possèdent aussi des "méthodes" : ce sont des fonctions "attachées"
+à une valeur, que l'on appelle avec un point : `valeur.methode()`.
+
+Par exemple, `.upper()` met une chaîne en majuscules et `.lower()` en
+minuscules :
+"""
+s = "Salut, Monde!"
+
+print(s.upper())  # => SALUT, MONDE!
+print(s.lower())  # => salut, monde!
+print(s)          # => Salut, Monde! (s n'a pas été modifiée)
+
+"""
+IMPT : comme les chaînes sont immuables, les méthodes de str ne modifient
+JAMAIS la chaîne d'origine : elles retournent une NOUVELLE chaîne. Pour garder
+le résultat, il faut le stocker dans une variable :
+"""
+s_maj = s.upper()
+print(s_maj)  # => SALUT, MONDE!
+
+"""
+Il existe des dizaines d'autres méthodes : .find(), .count(), .replace(),
+.strip(), .split()… Elles sont toutes présentées au chap. 8.
+"""

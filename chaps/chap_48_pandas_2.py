@@ -1217,7 +1217,7 @@ Règle pratique :
        logique compliquée, une fonction d'une autre bibliothèque…),
     3. n'écrivez jamais de boucle for sur les lignes d'un DataFrame (avec
        .iterrows() par exemple) sans y être obligé.
-On reparlera du coût des algorithmes au chap. 45 (complexité).
+Sur le coût des algorithmes, revoyez le chap. 45 (complexité).
 """
 
 

@@ -25,7 +25,7 @@
 
 """
 Python est un langage de programmation créé à la fin des années 80 par
-Guido van Rossum (GVR). Il a été rendu public en 1991, sous license
+Guido van Rossum (GVR). Il a été rendu public en 1991, sous licence
 open-source (n'importe qui peut lire le code de Python puis le modifier pour
 lui-même, le redistribuer, etc.).
 
@@ -37,7 +37,7 @@ Les objectifs du langage, d'après GVR :
     - être open-source, pour que chacun puisse proposer des contributions
     - pouvoir être utilisé pour les petites tâches de tous les jours (scripting)
 
-C'est un des langage les plus populaires au monde, utilisé dans énormément
+C'est un des langages les plus populaires au monde, utilisé dans énormément
 de domaines : sciences, statistiques, finance, robotique, scripting, réseau,
 Web, traitement d'images, IA…
 
@@ -81,8 +81,11 @@ exclusivement Python 3.
 
 """
 Python est un langage dit "interprété" : il est parcouru ligne à ligne par un
-programme (l'"interpréteur") qui va lire les instructions (le "code-source" et
-l'exécuter en même temps. Cela permet plus de flexibilité, au détriment de la
+programme (l'"interpréteur") qui va lire les instructions (le "code-source")
+et les exécuter dans la foulée, sans étape de compilation préalable à lancer
+soi-même. (En réalité, l'interpréteur traduit d'abord le fichier en
+"bytecode", une forme intermédiaire, mais cela se fait automatiquement et ne
+change rien pour vous.) Cela permet plus de flexibilité, au détriment de la
 performance.
 
 Ainsi, même si l'interpréteur Python est lui-même programmé en C (un des
@@ -124,14 +127,14 @@ En conséquence, il y aura dans ce tutoriel trois types d'apprentissage :
 Vous avez besoin, au minimum :
     - d'un ordinateur (avec clavier/souris/écran)
     - d'un système d'exploitation (Linux/macOS/Windows/autre) : préférez les
-      OS de type UNIX, comme Linux ou macOS (sur Windows, essayer de travailler
-      dans un environnement POSIX avec MinGW ou docker)
+      OS de type UNIX, comme Linux ou macOS (sur Windows, essayez de travailler
+      dans un environnement de type UNIX, par exemple avec WSL)
     - d'un éditeur de texte
-    - d'une version de Python3 fonctionnelle.
+    - d'une version de Python 3 fonctionnelle.
 
-Idéalement, vous aurez aussi besoin d'un gestionnaire de packages : `pip` ou
-`conda`, par exemple. Assurez-vous que les packages installés sont utilisables
-depuis votre éditeur de texte !
+Idéalement, vous aurez aussi besoin d'un gestionnaire de packages : `pip`,
+`conda` ou `uv` (recommandé au chap. 47), par exemple. Assurez-vous que les
+packages installés sont utilisables depuis votre éditeur de texte !
 
 Un "package" (ou "bibliothèque", "library" en anglais) est un ensemble de code
 écrit par d'autres, que l'on peut réutiliser dans ses propres programmes. Le

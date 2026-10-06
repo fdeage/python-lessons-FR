@@ -134,8 +134,8 @@ for code in codes:
 """
 "syntaxe correcte" ne veut pas dire "pas d'erreur" : b, d et g sont du Python
 valide, mais échoueront À L'EXÉCUTION.
-(Note : {code!r:32} affiche le repr() de code sur 32 caractères, pour aligner
-les colonnes, cf. chap. 8.)
+(Note : {code!r:32} affiche code avec ses guillemets ("!r", cf. chap. 26),
+sur 32 caractères pour aligner les colonnes (":32", cf. chap. 8).)
 """
 
 # 6. Pourquoi ce try est inutile :

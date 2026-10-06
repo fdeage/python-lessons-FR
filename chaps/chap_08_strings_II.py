@@ -28,6 +28,10 @@ Rappel : dans ce cours, une valeur écrite seule sur une ligne (sans print())
 est suivie de son résultat tel que l'afficherait l'interpréteur interactif,
 c'est-à-dire avec des guillemets pour les strings (cf. chap. 7). Testez ces
 lignes dans l'interpréteur !
+
+Rappel (cf. chap. 7) : les méthodes s'appellent avec un point
+(`chaine.methode()`), et comme les chaînes sont immuables, elles ne modifient
+JAMAIS la chaîne d'origine : elles retournent une nouvelle valeur.
 """
 
 # Chercher et remplacer dans une chaîne
@@ -51,6 +55,7 @@ s = "abcdefgh"
 s.find("cd")  # => 2
 s.find("gh")  # => 6
 s.find("hi")  # => -1
+"Salut, Monde !".find("monde")  # => -1 (pas trouvé : les majuscules comptent)
 
 # Si la sous-chaîne apparaît plusieurs fois, c'est le rang de la PREMIÈRE
 # occurrence qui est renvoyé. `.rfind()` renvoie celui de la dernière.
@@ -66,7 +71,8 @@ s.find("hi")  # => -1
 "J'aime les pommes".replace("e", "z")  # => "J'aimz lzs pommzs"
 #       …ou de la supprimer complètement (on passe une chaîne vide)
 "J'aime les pommes".replace("e", "")  # => "J'aim ls pomms"
-"Les chiens sont adorables.".replace("chiens", "lapins")  # => 'Les lapins sont adorables.'
+"Les chiens sont adorables.".replace("chiens", "lapins")
+# => 'Les lapins sont adorables.'
 
 # Un 3e paramètre (optionnel) limite le nombre de remplacements
 "a-b-c-d".replace("-", "+", 2)  # => 'a+b+c-d'
@@ -154,13 +160,16 @@ s2.capitalize()  # => 'Abcdefgh'
 
 
 """
-    5. Les méthodes .lstrip(), .rstrip() et .strip() enlèvent les espaces à
-       droite et à gauche d'une chaîne (lstrip : left, rstrip : right, strip :
-       les deux)
+    5. Les méthodes .lstrip(), .rstrip() et .strip() enlèvent le whitespace
+       (espaces, tabulations, sauts de ligne…) au début et à la fin d'une
+       chaîne (lstrip : à gauche, "left" ; rstrip : à droite, "right" ;
+       strip : des deux côtés). Le whitespace au MILIEU de la chaîne est
+       conservé.
 """
 "    des espaces  ".rstrip()    # => '    des espaces'
 "    des espaces  ".lstrip()    # => 'des espaces  '
 "    des espaces     ".strip()  # => 'des espaces'
+"\tdeux  mots\n".strip()       # => 'deux  mots' (l'espace du milieu reste)
 
 # On peut aussi leur indiquer quels caractères enlever :
 "...Bonjour !!!".strip(".!")  # => 'Bonjour '
@@ -185,8 +194,14 @@ print("Kiwis".ljust(10) + "12".rjust(5))
 
 """
     7. La méthode .count(str) compte le nombre de sous-chaînes dans une chaîne.
+       Attention, les majuscules comptent.
 """
-"Python est un langage Pythonique et puissant. Ô Python !".count("Python")  # => 3
+"Python est un langage Pythonique et puissant. Ô Python !".count("Python")
+# => 3 ("Pythonique" contient aussi "Python")
+s = "Salut, salut, salut !"
+s.count("salut")  # => 2 (le premier "Salut" a une majuscule)
+s.count("alut")   # => 3
+s.lower().count("salut")  # => 3 (en mettant tout en minuscules d'abord)
 
 
 # Tester le contenu d'une chaîne
@@ -226,7 +241,7 @@ avant de la convertir en nombre (cf. chap. 11).
 ########################
 
 """
-L'interpolation sert à insérer des variables dans des chaînes de caractère.
+L'interpolation sert à insérer des variables dans des chaînes de caractères.
 C'est très utile car un texte affiché par un programme doit souvent varier en
 fonction d'une saisie utilisateur, d'une variable du programme, etc.
 """
@@ -269,8 +284,8 @@ Il y a deux méthodes pour interpoler une chaîne de caractères :
 # donc on n'aura pas besoin d'utiliser str() !
 "Une string et {}".format(5)  # => 'Une string et 5'
 
-# Même si cela ne se fait plus trop, on peut aussi référencer les variables par
-# leur index…
+# Même si cela ne se fait plus trop, on peut aussi référencer les paramètres
+# par leur position (en commençant à 0)…
 "Je m'appelle {1} et j'ai {0} ans.".format(age, nom)  # => "Je m'appelle
 #                                                     Michelle et j'ai 15 ans."
 # …ou par un nom :
@@ -289,7 +304,8 @@ print(f"Je m'appelle {nom} et j'ai {age} ans.")
 
 # Entre les accolades, on peut mettre n'importe quelle expression Python : un
 # calcul, un appel de méthode…
-print(f"L'an prochain, j'aurai {age + 1} ans.")  # => L'an prochain, j'aurai 16 ans.
+print(f"L'an prochain, j'aurai {age + 1} ans.")
+# => L'an prochain, j'aurai 16 ans.
 print(f"EN MAJUSCULES : {nom.upper()}")  # => EN MAJUSCULES : MICHELLE
 
 # Depuis Python 3.8, écrire "=" après l'expression affiche aussi son nom :
@@ -410,7 +426,7 @@ chr(ord("a") + 1)  # => 'b'
 # On peut combiner avec hex() (cf. chap. 6) pour retrouver le code \u… du
 # chap. 7 :
 hex(ord("é"))  # => '0xe9'
-print("é")  # => é
+print("\u00e9")  # => é
 
 
 # Chaînes longues
@@ -454,7 +470,11 @@ query = "SELECT action.descr as \"action\", " \
 
 # L'impression se fera sur une seule ligne
 print(query)
-# => SELECT action.descr as "action", role.id as role_id, role.descr as role FROM public.role, public.record_def, public.action WHERE role.id = role_action_def.role_id AND record_def.id = role_action_def.def_id;
+# => SELECT action.descr as "action", role.id as role_id, role.descr as role
+#    FROM public.role, public.record_def, public.action WHERE role.id =
+#    role_action_def.role_id AND record_def.id = role_action_def.def_id;
+# (coupé ici en trois lignes pour la lisibilité : print() l'affiche sur UNE
+# seule ligne)
 
 """
 Sans les espaces en fin de morceau, on obtiendrait par exemple

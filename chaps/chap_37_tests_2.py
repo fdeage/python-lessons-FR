@@ -467,7 +467,8 @@ try:
 except ImportError:
     pytest = None
     print("pytest n'est pas installé : la démonstration est ignorée.")
-    print("Pour l'installer : python3 -m pip install pytest")
+    print("Pour l'installer : uv add --dev pytest (ou : python3 -m pip "
+          "install pytest)")
 
 if pytest is not None:
     with tempfile.TemporaryDirectory() as dossier:
@@ -482,7 +483,7 @@ if pytest is not None:
         sys.dont_write_bytecode = False
     print("code de retour de pytest :", int(code_retour))
 # => (si pytest est installé, quelque chose comme :)
-#    ...F                                                          [100%]
+#    ....F                                                         [100%]
 #    =================================== FAILURES ===========================
 #    ________________________ test_moyenne_cas[liste2-2] ____________________
 #    ...
@@ -494,7 +495,8 @@ if pytest is not None:
 #    code de retour de pytest : 1
 # => (sinon :)
 #    pytest n'est pas installé : la démonstration est ignorée.
-#    Pour l'installer : python3 -m pip install pytest
+#    Pour l'installer : uv add --dev pytest (ou : python3 -m pip install
+#    pytest)
 
 """
 Remarquez :
@@ -503,8 +505,9 @@ Remarquez :
       (on compte à partir de 0, cf. chap. 16), valeur attendue 2 ;
     - "where 1.5 = moyenne([1, 2])" : pytest détaille même le calcul ;
     - le code de retour vaut 0 si tout passe, 1 s'il y a des échecs. Les
-      outils d'intégration continue (cf. chap. 20) s'en servent pour
-      refuser du code qui casse les tests.
+      hooks git (cf. chap. 20) et les outils d'"intégration continue" (qui
+      relancent les tests à chaque envoi de code sur un serveur) s'en
+      servent pour refuser du code qui casse les tests.
 """
 
 

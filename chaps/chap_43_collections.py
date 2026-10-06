@@ -125,7 +125,8 @@ en dessous (ici, les poires).
 
 .total() (Python 3.10+) renvoie la somme de tous les comptes :
 """
-print(sum(stock.values()))   # => 22 : fonctionne dans toutes les versions
+print(stock.total())         # => 22
+print(sum(stock.values()))   # => 22 : l'équivalent avant Python 3.10
 
 
 # Des valeurs par défaut : defaultdict
@@ -336,7 +337,7 @@ Avant Python 3.7, les dictionnaires ne garantissaient pas l'ordre de leurs
 clés. OrderedDict était alors LE moyen d'avoir un dictionnaire ordonné.
 
 Depuis Python 3.7, les dict normaux conservent l'ordre d'insertion (cf.
-chap. 27) : OrderedDict est donc beaucoup moins utile. Vous le croiserez
+chap. 18) : OrderedDict est donc beaucoup moins utile. Vous le croiserez
 surtout dans du code ancien.
 
 Il garde deux petites particularités :

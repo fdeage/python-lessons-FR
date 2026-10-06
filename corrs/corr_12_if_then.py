@@ -17,7 +17,7 @@
 ##############
 
 """
-0. écrire du code qui affiche si un nombre est pair, et sinon ne fait rien.
+0. Écrire du code qui affiche si un nombre est pair, et sinon ne fait rien.
 """
 n = 7
 if n % 2 == 0:
@@ -25,7 +25,7 @@ if n % 2 == 0:
 # (rien n'est affiché ici : 7 est impair. Essayez avec n = 8 !)
 
 """
-1. écrire du code qui teste si un nombre est un multiple de 3 ou de 5, et
+1. Écrire du code qui teste si un nombre est un multiple de 3 ou de 5, et
 affiche le texte correspondant.
 """
 n = 7
@@ -39,7 +39,7 @@ else:
 
 
 """
-2. écrire du code qui teste si un nombre est un multiple de 3, de 5 ou de 15.
+2. Écrire du code qui teste si un nombre est un multiple de 3, de 5 ou de 15.
 Pour le texte affiché :
   - au lieu de "est multiple de 3", on affiche "Fizz"
   - au lieu de "est multiple de 5", on affiche "Buzz"
@@ -48,7 +48,8 @@ Pour le texte affiché :
 De combien de conditions avez-vous besoin ?
 """
 
-# On peut fonctionner avec une seule condition :
+# Trois conditions suffisent (15, puis 3, puis 5), dans une seule structure
+# if … elif … else :
 n = 7
 if n % 15 == 0:
     # L'ordre est capital ! Sinon on passe dans la condition 3 ou 5
@@ -80,44 +81,8 @@ else:
     print(n, "n'est multiple ni de 3 ni de 5")
     # => 7 n'est multiple ni de 3 ni de 5
 
-
-"""
-3. Écrire du code qui, pour tous les entiers de 1 à 100, affiche :
-    - Fizz si le nombre est multiple de 3,
-    - Buzz si le nombre est multiple de 5,
-    - FizzBuzz si le nombre est multiple de 15,
-    - le nombre lui-même dans les autres cas.
-"""
-
-# Cette partie et la suivante utilisent une boucle "for", qui ne sera vue
-# qu'au chap. 13 : revenez-y après l'avoir lu.
-# range(1, 101) parcourt les entiers de 1 à 100 : le premier paramètre évite
-# de commencer à 0, et la borne de fin (101) est EXCLUE (cf. chap. 13).
-for i in range(1, 101):
-    if i % 15 == 0:
-        print("FizzBuzz")
-    elif i % 3 == 0:
-        print("Fizz")
-    elif i % 5 == 0:
-        print("Buzz")
-    else:
-        print(i)
-
-
-"""
-4. écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100 qui
-sont multiples de 3, 5 ou 15.
-"""
-s = 0
-for i in range(1, 101):
-    # Dans les deux cas, on ajoutera le nombre au total : plus besoin de
-    # différencier !
-    if i % 3 == 0 or i % 5 == 0:
-        s += i
-    # pas de clause else, car on ne fait rien s'il n'est pas multiple
-
-print(s)  # => 2418
-
+# (Parties 3 et 4 : à la fin de ce fichier, car elles ont besoin d'une boucle
+# "for", vue au chap. 13.)
 
 #########################
 #  La structure "if"    #
@@ -367,8 +332,53 @@ x = 7
 y = "pair" if x % 2 == 0 else "impair"
 print(y)  # => impair
 
-# 22. Le "s" n'est ajouté que si nb_chats est supérieur à 1 :
+# 22. Le "s" n'est ajouté que si nb_chats est différent de 1 :
 nb_chats = 1
 print(nb_chats, "chat" if nb_chats == 1 else "chats")  # => 1 chat
 nb_chats = 4
 print(nb_chats, "chat" if nb_chats == 1 else "chats")  # => 4 chats
+
+
+#####################################################
+#  FizzBuzz, suite : à faire APRÈS le chap. 13      #
+#####################################################
+
+"""
+Les deux dernières parties de FizzBuzz ont besoin d'une boucle "for", qui
+permet de répéter un bloc de code pour chaque entier de 1 à 100. Les boucles
+ne sont vues qu'au chap. 13 : lisez-le d'abord, puis revenez ici.
+"""
+"""
+3. Écrire du code qui, pour tous les entiers de 1 à 100, affiche :
+    - Fizz si le nombre est multiple de 3,
+    - Buzz si le nombre est multiple de 5,
+    - FizzBuzz si le nombre est multiple de 15,
+    - le nombre lui-même dans les autres cas.
+"""
+
+# range(1, 101) parcourt les entiers de 1 à 100 : le premier paramètre évite
+# de commencer à 0, et la borne de fin (101) est EXCLUE (cf. chap. 13).
+for i in range(1, 101):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+
+
+"""
+4. Écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100
+   qui sont multiples de 3, 5 ou 15.
+"""
+s = 0
+for i in range(1, 101):
+    # Dans les deux cas, on ajoutera le nombre au total : plus besoin de
+    # différencier !
+    if i % 3 == 0 or i % 5 == 0:
+        s += i
+    # pas de clause else, car on ne fait rien s'il n'est pas multiple
+
+print(s)  # => 2418

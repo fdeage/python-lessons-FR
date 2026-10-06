@@ -35,7 +35,8 @@ try:
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
     print("Ces exercices ont besoin de NumPy et de matplotlib : lancez")
-    print("\"pip install numpy matplotlib\", puis relancez ce programme.")
+    print("\"uv add numpy matplotlib\" (ou \"pip install numpy matplotlib\"),")
+    print("puis relancez ce programme.")
     sys.exit(0)
 
 matplotlib.use("Agg")  # pas de fenêtre (cf. chapitre)

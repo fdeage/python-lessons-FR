@@ -403,6 +403,8 @@ try:
     encodeur.transform(hybride)
 except ValueError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
+# => 2: (Sans ce try: … except …, cette ligne créerait : Found unknown
+#    categories ['hybride'] in column 0 during transform)
 
 encodeur_souple = OneHotEncoder(handle_unknown="ignore").fit(cinq)
 print(encodeur_souple.transform(hybride).toarray())  # => [[0. 0. 0.]]

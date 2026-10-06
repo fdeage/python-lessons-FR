@@ -58,8 +58,8 @@ structures pour créer des boucles :
 
     2. la structure "for" (pour tout … dans …) permet d'itérer (= répéter à
        l'identique) un nombre connu de fois. On peut itérer sur les valeurs
-       d'un ensemble (liste, dictionnaire, tuples…), ou bien itérer sur une
-       suite d'entiers choisis.
+       d'une collection (string, liste, tuple, dictionnaire…), ou bien itérer
+       sur une suite d'entiers choisis.
 
 Vocabulaire : chaque passage dans une boucle s'appelle une "itération".
 
@@ -166,7 +166,7 @@ else:
 # boucle "while True" avec le mot-clé "break".
 
 """
-IMPT: attention, il est fréquent quand on commence la programmation d'écrire
+IMPT : attention, il est fréquent quand on commence la programmation d'écrire
 des boucles infinies involontaires ! Si vous ne modifiez pas de variable
 dans la boucle, celle-ci n'a aucune chance de s'arrêter…
 """
@@ -179,7 +179,7 @@ i = 0
 # Cette boucle tournera à l'infini.
 
 """
-IMPT : Pour interrompre un programme, il faut presser "ctrl + C". Autrement, une
+IMPT : pour interrompre un programme, il faut presser "ctrl + C". Autrement, une
 boucle infinie dans votre programme prendra tout le CPU disponible sur votre
 ordinateur… jusqu'à ce que vous l'arrêtiez !
 
@@ -204,7 +204,7 @@ UNE SEULE chaque terme d'un ensemble que l'on devra lui fournir.
 Il y a deux façons d'itérer avec for :
     1. avec un ensemble de valeurs contenu dans une variable (liste,
        dictionnaire, tuple…), qu'on appellera une "collection"
-    2. avec une liste de valeurs retournée par la fonction range()
+    2. avec une suite d'entiers produite par la fonction range()
 
 On s'intéresse ici au premier cas : avec une collection, c'est-à-dire un
 ensemble de valeurs.
@@ -299,7 +299,7 @@ Python propose une solution intéressante : la fonction range().
 range(n) va retourner un itérable de n valeurs, allant de 0 à n - 1, sur lequel
 "for" pourra itérer.
 """
-range(5)  # => retourne l'itérable [0 - 1 - 2 - 3 - 4]
+range(5)  # => range(0, 5) : un itérable qui produira 0, 1, 2, 3 et 4
 
 for i in range(5):
     print(i)
@@ -384,9 +384,9 @@ list(range(10))         # => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 list(range(1, 11))      # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 list(range(0, 30, 5))   # => [0, 5, 10, 15, 20, 25]
 list(range(0, 10, 3))   # => [0, 3, 6, 9]
-list(range(0, -10, -1)) # => [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+list(range(0, -10, -1))  # => [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 list(range(0))          # => []
-list(range(1, 0))       # => [] (on ne peut pas aller de 1 à 0 avec un pas de +1)
+list(range(1, 0))       # => [] (impossible d'aller de 1 à 0 avec un pas de +1)
 
 # range() n'accepte que des entiers :
 try:

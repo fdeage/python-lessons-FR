@@ -43,9 +43,9 @@ print(2 ** 100)  # => 1267650600228229401496703205376
 # sont "arbitrairement grands" : la seule limite est la mémoire de votre
 # ordinateur.)
 
-# On peut utiliser le underscore (`_`) pour séparer les milliers, millions,
-# et les puissances de 1000 en général. Python l'ignore : il ne sert qu'à
-# rendre le nombre plus lisible pour un humain (Python 3.6+).
+# On peut utiliser le tiret bas (`_`, "underscore") pour séparer les milliers,
+# les millions, et les puissances de 1000 en général. Python l'ignore : il ne
+# sert qu'à rendre le nombre plus lisible pour un humain (Python 3.6+).
 print(12_345)      # => 12345
 print(12_345_678)  # => 12345678
 
@@ -80,7 +80,8 @@ print(-2.3e-04)  # => -0.00023
 print(3e0)       # => 3.0 (3 × 10^0 = 3 × 1)
 
 # Les floats ne sont pas arbitrairement grands, contrairement aux ints : au-delà
-# d'environ 1.8e308, Python utilise une valeur spéciale, "inf" (infini)
+# d'environ 1.8e308, une multiplication donne une valeur spéciale, "inf"
+# (infini). Mais d'autres calculs provoquent une erreur (cf. plus bas).
 print(1e308 * 10)  # => inf
 
 
@@ -157,15 +158,16 @@ print(2 + 3 * 4)  # => 14
 print(35 // 5)        # => 7
 print(type(35 // 5))  # => <class 'int'> (type() sera vu au chap. 6)
 
-# Les résultats de divisions entières sont tronqués à l'entier inférieur…
+# Les résultats de divisions entières sont arrondis à l'entier inférieur…
 print(5 // 3)  # => 1
 
 # …y compris pour les nombres négatifs ! -5 / 3 vaut -1.666…, et l'entier
 # inférieur ("floor", le "plancher") est -2, pas -1
 print(-5 // 3)  # => -2
 
-# Diviser par un float retournera toujours un float… tout en tronquant
-# quand même le quotient à l'entier (c'est rarement ce que l'on cherche !)
+# Diviser par un float retournera toujours un float… tout en arrondissant
+# quand même le quotient à l'entier inférieur (c'est rarement ce que l'on
+# cherche !)
 print(5.0 // 3.0)  # => 1.0
 print(-5.0 // 3.0)  # => -2.0
 
@@ -219,8 +221,9 @@ try:
 except ZeroDivisionError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
-# De même, un calcul dont le résultat est trop grand pour un float provoque
-# une erreur "OverflowError" ("débordement")
+# Enfin, une puissance (**) dont le résultat est trop grand pour un float
+# provoque une erreur "OverflowError" ("débordement"), au lieu de donner "inf"
+# comme la multiplication (cf. plus haut)
 try:
     print(10.0 ** 400)
 except OverflowError as err:
@@ -260,9 +263,9 @@ print(round(3.5))  # => 4
 """
 print(round(2.675, 2))  # => 2.67 (et non 2.68)
 
-# Note : round() permet d'AFFICHER un nombre arrondi, mais ne résout pas les
-# problèmes de précision. Pour faire de la comptabilité exacte, on utilise le
-# module `decimal` (les modules seront vus au chap. 22).
+# Note : round() donne une valeur arrondie, pratique pour l'affichage, mais ne
+# résout pas les problèmes de précision. Pour faire de la comptabilité exacte,
+# on utilise le module `decimal` (les modules seront vus au chap. 22).
 
 # On verra au chap. 6 qu'on peut aussi "tronquer" un float (supprimer sa partie
 # décimale, sans arrondir) en le convertissant en int avec int()

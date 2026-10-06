@@ -103,7 +103,7 @@ for i in range(3):
 #      parcours n'y est pas garanti.
 
 """
-    7. Enfin, un descripteur de fichier ("file descriptor") retourné par open()
+    7. Enfin, l'objet fichier ("file object", cf. chap. 28) retourné par open()
        est aussi un itérable : on le parcourt LIGNE PAR LIGNE.
        Voici le contenu du fichier "exemple.txt" créé plus haut :
 aaaa
@@ -163,7 +163,8 @@ au plus UNE FOIS (le parcours s'arrête dès que l'élément est trouvé).
 
 IMPT : de nombreuses fonctions intégrées acceptent N'IMPORTE QUEL itérable en
 argument, et pas seulement des listes : list(), tuple(), set(), sum(), min(),
-max(), sorted(), len() (pour la plupart), etc.
+max(), sorted(), etc. (Mais pas len() : un fichier ouvert, par exemple, n'a
+pas de longueur connue à l'avance.)
 """
 print(list("abc"))       # => ['a', 'b', 'c']
 print(tuple(range(4)))   # => (0, 1, 2, 3)
@@ -371,7 +372,7 @@ print(l7_boucle == l7)  # => True
 Attention à ne pas confondre avec le "if … else …" sur une ligne vu au
 chap. 12, qui se place À GAUCHE, dans l'expression :
 
-[ <valeur si vrai> if <condition> else <valeur si faux> for <var> in <itérable> ]
+[ <val. si vrai> if <condition> else <val. si faux> for <var> in <itérable> ]
 
 Ici on ne filtre rien : on garde TOUS les éléments, mais on choisit quoi
 mettre dans la nouvelle liste.
@@ -452,7 +453,7 @@ print(transposee)  # => [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 """
 Il est à noter que l'on peut "chaîner" les compréhensions, càd avoir des
 itérations sur deux variables en même temps dans la même compréhension
-(attention, noeuds au cerveau possibles).
+(attention, nœuds au cerveau possibles).
 
 Toutes les possibilités seront alors parcourues : si l'on a une itération sur
 5 valeurs, puis sur 4 valeurs, la partie à gauche sera évaluée 20 fois.

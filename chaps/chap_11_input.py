@@ -103,8 +103,8 @@ print(f"Tu mesures {taille * 100:.0f} cm.")  # => Tu mesures … cm. (":.0f" :
 #                                              sans décimale, cf. chap. 8)
 
 """
-Note : la fonction raw_input() ne sert que pour Python2, elle n'est plus
-utilisée en Python3. Vous la croiserez peut-être dans de vieux tutoriels.
+Note : la fonction raw_input() n'existait qu'en Python 2 ; elle n'existe plus
+en Python 3. Vous la croiserez peut-être dans de vieux tutoriels.
 """
 
 
@@ -229,7 +229,7 @@ carré de la taille (en m).
 poids = float(input("> Ton poids (en kg) ? ").strip().replace(",", "."))
 taille = float(input("> Ta taille (en m) ? ").strip().replace(",", "."))
 
-imc = poids / taille ** 2  # la puissance passe avant la division (chap. 5)
+imc = poids / taille ** 2  # la puissance passe avant la division (cf. chap. 5)
 print(f"Ton IMC est de {imc:.1f}.")  # => Ton IMC est de … (ex. : 22.9 pour
 #                                       70 kg et 1.75 m)
 

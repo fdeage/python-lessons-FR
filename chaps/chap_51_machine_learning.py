@@ -459,17 +459,17 @@ print(knn.predict_proba(fleur))  # => [[1. 0. 0.]]
 # Classification : l'arbre de décision
 #######################################
 
-"""
+r"""
 Deuxième classifieur : l'arbre de décision. Il apprend une suite de
 questions du type "la largeur du pétale est-elle ≤ 0.8 cm ?", comme un
 jeu des "20 questions" ou un organigramme de if/else (cf. chap. 12) :
 
                   largeur pétale ≤ 0.8 ?
-                    /                 \\
+                    /                 \
                  oui                   non
                   |                     |
                setosa         largeur pétale ≤ 1.75 ?
-                                /             \\
+                                /             \
                              oui               non
                               |                 |
                           versicolor         virginica
@@ -734,6 +734,8 @@ try:
     encodeur.transform(pd.DataFrame({"quartier": ["est"]}))
 except ValueError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
+# => 2: (Sans ce try: … except …, cette ligne créerait : Found unknown
+#    categories ['est'] in column 0 during transform)
 """
 La solution : OneHotEncoder(handle_unknown="ignore"), qui encode une
 catégorie inconnue par une ligne de 0.
@@ -1065,7 +1067,7 @@ Ce chapitre n'est qu'un début. Pour continuer :
     - la documentation de scikit-learn, avec un excellent guide utilisateur
       et des exemples : https://scikit-learn.org/stable/user_guide.html
     - le MOOC gratuit "Machine learning in Python with scikit-learn",
-      créé par l'Inria (les développeurs de scikit-learn) :
+      créé par l'Inria (l'un des principaux contributeurs de scikit-learn) :
       https://inria.github.io/scikit-learn-mooc/
     - le Deep Learning (réseaux de neurones : images, texte, son), avec
       PyTorch ou Keras, une fois les bases de ce chapitre maîtrisées,

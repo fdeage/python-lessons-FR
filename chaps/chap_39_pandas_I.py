@@ -132,7 +132,7 @@ print(notes["Bob"])  # => 15 (on accède à une valeur par son index)
 """
 L'intérêt d'une Series : on peut appliquer une opération à TOUTES les valeurs
 d'un coup, sans boucle ni compréhension (on dit que l'opération est
-"vectorisée") :
+"vectorisée", comme avec les tableaux NumPy du chap. 38) :
 """
 print(notes + 1)
 # => Alice    13
@@ -544,7 +544,8 @@ print(df.isna().sum())
 #    dtype: int64
 
 # Quels cinémas n'ont pas de note ?
-print(df[df["note"].isna()]["nom"].tolist())  # => ['Mk2 Quai de Loire', 'Les Variétés']
+print(df[df["note"].isna()]["nom"].tolist())
+# => ['Mk2 Quai de Loire', 'Les Variétés']
 
 """
 Attention : NaN n'est égal à rien, même pas à lui-même ! On ne peut donc pas
@@ -686,7 +687,8 @@ print(df_trie.loc[0]["nom"])   # => Gaumont Bellecour (la ligne d'INDEX 0)
 
 # On peut trier sur plusieurs colonnes : d'abord par ville, puis par note
 # décroissante au sein de chaque ville. Les NaN sont placés à la fin.
-print(df.sort_values(["ville", "note"], ascending=[True, False])[["ville", "nom", "note"]])
+tri = df.sort_values(["ville", "note"], ascending=[True, False])
+print(tri[["ville", "nom", "note"]])
 # =>        ville                nom  note
 #    6       Lyon           Comoedia   4.6
 #    0       Lyon  Gaumont Bellecour   4.1
@@ -698,7 +700,8 @@ print(df.sort_values(["ville", "note"], ascending=[True, False])[["ville", "nom"
 #    3      Paris  Mk2 Quai de Loire   NaN
 
 # .nlargest(n, colonne) est un raccourci pour obtenir les n plus grandes valeurs
-print(df.nlargest(2, "nb_salles")["nom"].tolist())  # => ['Pathé Wepler', 'UGC George V']
+print(df.nlargest(2, "nb_salles")["nom"].tolist())
+# => ['Pathé Wepler', 'UGC George V']
 
 
 # Regrouper : groupby
@@ -748,7 +751,7 @@ print(df.groupby("ville").agg(
 #    Lyon                2             450           8
 #    Marseille           1             180           5
 #    Paris               5            1950          14
-# (Cette syntaxe d'.agg() nécessite pandas 0.25+.)
+# (Cette syntaxe de .agg() nécessite pandas 0.25 ou plus récent.)
 
 # On peut regrouper selon une colonne calculée, comme notre "categorie" :
 print(df.groupby("categorie")["nb_salles"].sum())

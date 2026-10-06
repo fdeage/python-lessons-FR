@@ -46,7 +46,7 @@ except TypeError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 ensemble = {1, 2, 3}
 try:
-    c = ensemble[0]  # Python 3.14 repère même {1, 2, 3}[0] AVANT l'exécution
+    c = ensemble[0]  # {1, 2, 3}[0] serait même signalé AVANT l'exécution
 except TypeError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 try:
@@ -55,7 +55,7 @@ except TypeError as err:
     print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
 """
 - b et d : une liste est mutable, elle ne peut pas être élément d'un ensemble
-  (TypeError: unhashable type: 'list'). Pour d, c'est la même chose : set()
+  (TypeError: … unhashable type: 'list'). Pour d, c'est la même chose : set()
   essaie d'ajouter chaque sous-liste dans l'ensemble.
 - c : un ensemble n'est pas ordonné, ses éléments n'ont donc pas d'indice
   (TypeError: 'set' object is not subscriptable).
@@ -65,7 +65,7 @@ except TypeError as err:
 lettres_vues = set()
 for lettre in "banane":
     lettres_vues.add(lettre)
-print(len(lettres_vues))     # => 3
+print(len(lettres_vues))     # => 4
 print(sorted(lettres_vues))  # => ['a', 'b', 'e', 'n']
 """
 Les "a" et "n", ajoutés plusieurs fois, ne sont gardés qu'une seule fois.

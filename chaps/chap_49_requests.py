@@ -349,7 +349,8 @@ reponse = requests.get(BASE + "/api/stations", params={"ville": "Lyon"},
 print(reponse.url.split("/", 3)[3])         # => api/stations?ville=Lyon
 print([s["nom"] for s in reponse.json()])  # => ['Lyon-Bron', 'Lyon-St-Exupéry']
 
-# Les caractères spéciaux sont encodés automatiquement ("%20" pour l'espace) :
+# Les caractères spéciaux sont encodés automatiquement ("+" pour l'espace,
+# "%C3%89" pour le É) :
 reponse = requests.get(BASE + "/api/stations",
                        params={"ville": "Saint Étienne"}, timeout=5)
 print(reponse.url.split("?")[1])  # => ville=Saint+%C3%89tienne
@@ -478,7 +479,8 @@ scannent GitHub en permanence). On la range dans une VARIABLE D'ENVIRONNEMENT,
 définie hors du code :
     ?> export METEO_API_KEY="…"      # Linux / macOS (ou dans un fichier .env
                                       #   jamais commité, cf. .gitignore)
-et on la lit avec os.environ (cf. chap. 22) :
+et on la lit avec os.environ, qui se manipule comme un dictionnaire des
+variables d'environnement (cf. chap. 41) :
 """
 os.environ.setdefault("METEO_API_KEY", CLE_SECRETE)  # pour la démo seulement
 cle = os.environ.get("METEO_API_KEY")
@@ -568,7 +570,8 @@ Une API est un service partagé. Règles de politesse (et de survie) :
 reponse = requests.get(BASE + "/api/quota", timeout=5)
 print(reponse.status_code)                 # => 429
 attente = int(reponse.headers.get("Retry-After", "5"))
-print(f"On attend {attente} s avant de réessayer")  # => On attend 1 s avant…
+print(f"On attend {attente} s avant de réessayer")
+# => On attend 1 s avant de réessayer
 
 """
 Pour les SITES Web (pas les API), le fichier /robots.txt indique ce que les

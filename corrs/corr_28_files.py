@@ -127,7 +127,7 @@ print(contenu.count("e"))         # => 14
 #  Lecture ligne à ligne  #
 ###########################
 
-# 8. Lignes numérotées : enumerate() (cf. chap. 24) et .rstrip("\n").
+# 8. Lignes numérotées : enumerate() (cf. chap. 24) et .rstrip().
 with open("exo28_poeme.txt", "r", encoding="utf-8") as fo:
     for numero, ligne in enumerate(fo, start=1):
         print(f"{numero}: {ligne.rstrip()}")

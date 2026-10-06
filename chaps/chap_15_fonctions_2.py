@@ -69,9 +69,11 @@ anglais "is_" ou "has_") : est_pair(n), a_le_permis(personne)…
 ###############################
 
 """
-cf. https://docs.python.org/3/faq/programming.html#what-is-the-difference-between-arguments-and-parameters
+cf. la FAQ de Python (en anglais) :
+https://docs.python.org/3/faq/programming.html
+(question "What is the difference between arguments and parameters?")
 
-Quelle différence existe-t-il entre arguments ou paramètres ? Vous entendrez
+Quelle différence existe-t-il entre arguments et paramètres ? Vous entendrez
 et lirez parfois les deux… Il y a en fait une confusion à éviter : on parle
 de paramètres pendant la définition de la fonction, et d'arguments au moment
 de l'appel.
@@ -109,8 +111,8 @@ def saluer(nom, salutation="Bonjour"):
     print(f"{salutation} {nom} !")
 
 
-saluer("Ada")           # => Bonjour Ada !     (valeur par défaut)
-saluer("Ada", "Salut")  # => Salut Ada !       (on remplace la valeur par défaut)
+saluer("Ada")           # => Bonjour Ada !  (valeur par défaut)
+saluer("Ada", "Salut")  # => Salut Ada !    (on remplace la valeur par défaut)
 
 """
 Vous connaissez déjà une fonction avec des paramètres par défaut : print() !
@@ -120,8 +122,8 @@ Son paramètre "end" vaut "\n" (saut de ligne) par défaut, et "sep" vaut " "
 IMPT : les paramètres avec valeur par défaut doivent être placés APRÈS les
 paramètres sans valeur par défaut. Ceci est une erreur de syntaxe :
 
-def saluer(salutation="Bonjour", nom):  # SyntaxError: non-default argument
-    …                                   # follows default argument
+def saluer(salutation="Bonjour", nom):  # SyntaxError: parameter without
+    …                         # a default follows parameter with a default
 """
 
 """
@@ -135,9 +137,12 @@ def decrire_animal(espece, nom, age):
     print(f"{nom} est un {espece} de {age} ans")
 
 
-decrire_animal("chat", "Félix", 3)                # => Félix est un chat de 3 ans
-decrire_animal(nom="Félix", age=3, espece="chat")  # => Félix est un chat de 3 ans
-decrire_animal("chat", age=3, nom="Félix")         # => Félix est un chat de 3 ans
+decrire_animal("chat", "Félix", 3)
+# => Félix est un chat de 3 ans
+decrire_animal(nom="Félix", age=3, espece="chat")
+# => Félix est un chat de 3 ans (l'ordre ne compte plus)
+decrire_animal("chat", age=3, nom="Félix")
+# => Félix est un chat de 3 ans
 
 """
 Les arguments nommés rendent l'appel plus lisible, surtout quand une fonction
@@ -170,7 +175,8 @@ print(calculer_prix(100, taux_tva=0.055))  # => 105.5
 Attention : n'utilisez jamais une liste (ou un autre type modifiable, cf.
 chap. 16) comme valeur par défaut : la même liste serait partagée entre tous
 les appels, ce qui crée des bugs surprenants. On utilisera None à la place
-(voir la section suivante).
+(la valeur None est présentée dans la section suivante, et ce piège est
+détaillé au chap. 41).
 """
 
 
@@ -181,7 +187,7 @@ les appels, ce qui crée des bugs surprenants. On utilisera None à la place
 None est une valeur particulière en Python : elle désigne… l'absence de valeur.
 
 On obtient la valeur None quand une fonction ne retourne rien :
-    - soit quand il manque le mot-clé "return" à là fin d'une fonction,
+    - soit quand il manque le mot-clé "return" à la fin d'une fonction,
     - soit quand ce mot-clé n'est pas associé à une valeur.
 """
 
@@ -233,8 +239,8 @@ print(None == 0)  # => False
 print(None == False)  # => False
 
 """
-Attention : si None est testé dans une expression booléenne, il sera converti en
-False, comme le montre l'exemple suivant
+Attention : si None est testé dans une condition, il est considéré comme faux
+(comme 0 ou la chaîne vide, cf. chap. 21), comme le montre l'exemple suivant :
 """
 def f():
     return
@@ -304,7 +310,7 @@ aux fonctions dont le but est justement d'afficher quelque chose.
 def retours_multiples(param):
     if param % 2 == 0:
         return "pair"
-    print("Ceci ne sera pas imprimé si param est pair, car return quitte la fonction")
+    print("Pas imprimé si param est pair, car return quitte la fonction")
     return "impair"
 
 
@@ -313,7 +319,7 @@ retours_multiples(2)
 
 """
 Le deuxième appel imprimera :
-"Ceci ne sera pas imprimé si param est pair, car return quitte la fonction".
+"Pas imprimé si param est pair, car return quitte la fonction".
 
 Remarquez que "impair" ne sera pas imprimé : il est seulement retourné, et
 comme on n'en fait rien, il est "perdu" !
@@ -323,7 +329,7 @@ retours_multiples(3)
 # Pour voir les valeurs retournées, il faut les imprimer :
 print(retours_multiples(2))  # => pair
 print(retours_multiples(3))
-# => Ceci ne sera pas imprimé si param est pair, car return quitte la fonction
+# => Pas imprimé si param est pair, car return quitte la fonction
 # => impair
 
 """
@@ -430,13 +436,13 @@ print(retours[2])  # => 0.6666666666666666
 # Enfin, on peut les affecter directement à plusieurs valeurs
 def retour_multiple_2(parametre):
     valeur1 = parametre < 0
-    valeur2 = f"Ce parametre vaut {parametre}"
-    return valeur1, valeur2  # => les parenthèses autour du tuple sont optionnelles
+    valeur2 = f"Ce paramètre vaut {parametre}"
+    return valeur1, valeur2  # les parenthèses autour du tuple sont optionnelles
 
 
 a, b = retour_multiple_2(-2)
 print(a)  # => True
-print(b)  # => Ce parametre vaut -2
+print(b)  # => Ce paramètre vaut -2
 
 """
 Cette syntaxe "a, b = …" est l'affectation multiple vue au chap. 10 : la
@@ -471,13 +477,14 @@ print(test_adresse)  # => <function test_adresse at 0x1097679d0>
 # (l'adresse change à chaque exécution et selon l'ordinateur)
 
 """
-Explication : sans les parenthèses, on n'imprimera pas la valeur retourné par la
-fonction au moment de l'appel, mais… l'adresse en mémoire où est stockée la
-fonction ! (par convention, cette adresse est écrite en hexadécimal)
+Explication : sans les parenthèses, la fonction n'est pas appelée. On
+n'imprime donc pas une valeur retournée, mais la fonction elle-même, décrite
+par son nom et l'adresse en mémoire où elle est stockée ! (par convention,
+cette adresse est écrite en hexadécimal)
 """
 
-# On verra (cf. chap. 32) que cette adresse peut être affectée à une variable,
-# comme n'importe quelle valeur !
+# La fonction elle-même peut être affectée à une variable, comme n'importe
+# quelle valeur (on approfondira cette idée au chap. 32) !
 a = test_adresse
 print(a)     # => <function test_adresse at 0x1097679d0>
 

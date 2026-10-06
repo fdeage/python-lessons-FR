@@ -163,7 +163,7 @@ Python propose plusieurs modes d'ouverture, dont voici les principaux :
     - "a" (append) : mode ajout. Le pointeur est placé en fin de fichier,
       l'écriture n'écrase pas de données. Crée le fichier s'il n'existe pas.
     - "x" (exclusive) : mode création exclusive, possible seulement si le
-      fichier n'existe pas
+      fichier n'existe pas.
 
 On peut ajouter à ces modes :
     - "+" : pour pouvoir à la fois lire et écrire ("r+", "w+", "a+")
@@ -334,7 +334,7 @@ print(len(lignes))  # => 5 (le nombre de lignes du fichier)
 """
 On peut aussi passer un nombre n à .readlines(n). Attention, ce n'est PAS un
 nombre de lignes, mais un nombre de caractères ("hint") : la méthode lit des
-lignes entières jusqu'à ce que le total lu dépasse n caractères.
+lignes entières jusqu'à ce que le total lu atteigne ou dépasse n caractères.
 
 Ici, avec n = 7 : "aaaa\n" fait 5 caractères (< 7), donc la méthode continue et
 lit aussi "bbbb\n" (total : 10 caractères, >= 7), puis s'arrête.
@@ -466,8 +466,8 @@ except TypeError as err:
     print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 """
-HP : on dit que l'on va "sérialiser" la variable (c'est-à-dire la transformer
-en chaîne de caractères).
+HP (hors programme) : on dit que l'on va "sérialiser" la variable
+(c'est-à-dire la transformer en chaîne de caractères).
 """
 d = {"a": 123, "b": 217}
 with open("nouveau_2.txt", "w") as nouveau_fichier:
@@ -560,8 +560,9 @@ print(os.path.exists("nouveau_3.txt"))  # => True
 
 #   - Pour supprimer un fichier, on utilise remove().
 #
-# WARNING WARNING WARNING : utilisez remove() avec soin, ceci peut supprimer
-# des fichiers sur votre ordinateur… et ils ne passent PAS par la corbeille !
+# ATTENTION ATTENTION ATTENTION : utilisez remove() avec soin, ceci peut
+# supprimer des fichiers sur votre ordinateur… et ils ne passent PAS par la
+# corbeille !
 # Ici, on supprime seulement des fichiers créés par ce programme :
 os.remove("nouveau_3.txt")
 print(os.path.exists("nouveau_3.txt"))  # => False
@@ -577,7 +578,7 @@ except FileNotFoundError as err:
 ###############
 
 """
-Les fichiers CSV ("Comma-Separated Values") contiennent des tables de valeur en
+Les fichiers CSV ("Comma-Separated Values") contiennent des tables de valeurs en
 format texte : chaque ligne du fichier est une ligne de la table, et les
 valeurs ("colonnes") y sont séparées par un séparateur, le plus souvent une
 virgule (parfois un point-virgule, notamment dans Excel en français).
@@ -738,7 +739,8 @@ q = [
     for c in cinemas_2
     if int(c["id"]) % 2 == 0 and c["salles"] > 4 and c["places"] < 500
 ]
-print(q)  # => [{'id': '26', 'nom': 'Gaumont Bellecour'}, {'id': '10', 'nom': 'UGC George V'}]
+print(q)
+# => [{'id': '26', 'nom': 'Gaumont Bellecour'}, {'id': '10', 'nom': 'UGC George V'}]
 
 """
 Comme les nombres sont maintenant de vrais ints, on peut aussi faire des

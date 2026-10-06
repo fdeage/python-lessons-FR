@@ -270,12 +270,12 @@ for x in range(10):
 
 """
 15. Un linter ANALYSE le code et signale les problèmes (style, mais aussi
-    erreurs probables), sans forcément les corriger. Un formatteur RÉÉCRIT la
+    erreurs probables), sans forcément les corriger. Un formateur RÉÉCRIT la
     présentation du code, sans en changer le sens.
       a) variable importée mais inutilisée : le linter (ruff check, flake8) ;
-      b) espaces autour des opérateurs : le formatteur (black, ruff format) ;
-      c) lignes vides avant une fonction : le formatteur ;
-      d) "== None" : le linter (le formatteur ne change jamais le sens du
+      b) espaces autour des opérateurs : le formateur (black, ruff format) ;
+      c) lignes vides avant une fonction : le formateur ;
+      d) "== None" : le linter (le formateur ne change jamais le sens du
          code, or "==" et "is" ne font pas la même chose).
 
 16. "--diff" affiche les modifications que ruff FERAIT, sans toucher au
@@ -325,7 +325,7 @@ for x in range(10):
 """
 20. Un hook git est un programme que git lance automatiquement à un moment
     précis, par exemple juste avant d'enregistrer un commit. Lancer le
-    formatteur à ce moment-là garantit qu'AUCUN code mal formaté n'entre dans
+    formateur à ce moment-là garantit qu'AUCUN code mal formaté n'entre dans
     le dépôt : on ne dépend plus de la mémoire ni de la discipline de chacun.
 
 21. L'ordre est : b) installer pre-commit, c) créer le fichier de

@@ -58,9 +58,9 @@ produites (cf. GARDER_IMAGES ci-dessous) pour les voir.
 
 """
 Comme NumPy et pandas, matplotlib s'installe à part (cf. chap. 22) :
-    ?> pip install matplotlib
+    ?> uv add matplotlib          (recommandé, cf. chap. 47)
 ou
-    ?> conda install matplotlib
+    ?> pip install matplotlib
 
 matplotlib est un gros package. On n'en importe généralement que la partie
 "pyplot" (l'interface de tracé), sous l'alias conventionnel "plt" :
@@ -75,7 +75,8 @@ try:
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
     print("Ce chapitre a besoin de NumPy et de matplotlib : lancez")
-    print("\"pip install numpy matplotlib\", puis relancez ce programme.")
+    print("\"uv add numpy matplotlib\" (ou \"pip install numpy matplotlib\"),")
+    print("puis relancez ce programme.")
     sys.exit(0)
 
 """
@@ -128,8 +129,9 @@ Il y a deux façons de "sortir" un graphique de matplotlib :
        C'est ce qu'on fait pour un rapport, une présentation, un site web…
        Le format est déduit de l'extension : .png, .jpg, .svg, .pdf…
 
-Avec le backend "Agg" choisi plus haut, plt.show() ne fait rien (il n'y a pas
-de fenêtre à ouvrir) : c'est pourquoi ce chapitre utilise savefig(). Dans vos
+Avec le backend "Agg" choisi plus haut, plt.show() n'affiche rien, car il
+n'y a pas de fenêtre à ouvrir (matplotlib émet juste un avertissement,
+"UserWarning") : c'est pourquoi ce chapitre utilise savefig(). Dans vos
 programmes, remplacez simplement enregistrer(fig, "….png") par plt.show().
 
 IMPT : chaque graphique créé occupe de la mémoire tant qu'il n'est pas fermé.

@@ -156,7 +156,7 @@ print(Oiseau("Piaf", 25).nom)  # => Piaf
 #  isinstance() et issubclass()  #
 ##################################
 
-# 6. :
+# 6. isinstance(), issubclass() et type() :
 print(isinstance(Velo("BMX", 30), Vehicule))   # => True (vélo EST UN véhicule)
 print(isinstance(Vehicule("Ford", 150), Velo))  # => False (pas l'inverse)
 print(issubclass(Camion, Vehicule))            # => True
@@ -482,7 +482,8 @@ biblio.ajouter(Livre("Dune", 1965, "Herbert"))
 print(len(biblio))              # => 3
 print(biblio.filtrer(Livre))
 # => [Livre('Germinal', 1885), Livre('Dune', 1965)]
-print(biblio.filtrer(Document))  # => tous les documents (héritage !)
+print(biblio.filtrer(Document))  # tous les documents (héritage !)
+# => [Livre('Germinal', 1885), Film('Metropolis', 1927), Livre('Dune', 1965)]
 print(biblio.chercher("Dune").auteur)  # => Herbert
 for doc in biblio:
     print(doc.annee, doc.titre)

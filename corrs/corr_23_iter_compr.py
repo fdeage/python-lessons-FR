@@ -49,7 +49,7 @@ print("b" in {"a": "b"})    # => False ("in" teste les clés, "b" est une valeur
 print("a" in {"a": "b"})    # => True
 print(sum(range(5)))        # => 10 (0 + 1 + 2 + 3 + 4)
 print(list("123"))          # => ['1', '2', '3'] (des strings, pas des ints !)
-print(max("abricot"))       # => t (le caractère au plus grand code, cf. chap. 8)
+print(max("abricot"))       # => t (le plus grand code de caractère, chap. 8)
 
 # 3. Afficher les articles sans ligne vide :
 # Méthode 1 : chaque ligne contient déjà son "\n", on demande à print() de ne
@@ -204,8 +204,10 @@ print([t for t in temperatures if t >= 0])  # => [3, 0, 7, 12] (filtre)
 """
 "else" ne peut pas être utilisé seul à droite. Selon ce qu'on voulait faire :
 """
-print([x if x > 2 else 0 for x in range(5)])  # => [0, 0, 0, 3, 4] (transformation)
-print([x for x in range(5) if x > 2])         # => [3, 4] (filtre)
+# - une transformation (même longueur) :
+print([x if x > 2 else 0 for x in range(5)])  # => [0, 0, 0, 3, 4]
+# - un filtre (liste plus courte) :
+print([x for x in range(5) if x > 2])         # => [3, 4]
 
 
 #####################################
@@ -216,7 +218,8 @@ notes = [[12, 15, 9], [8, 11, 14], [17, 13, 16]]
 
 # 15. Première note, moyenne et meilleure note de chaque élève :
 print([eleve[0] for eleve in notes])                 # => [12, 8, 17]
-print([sum(eleve) / len(eleve) for eleve in notes])  # => [12.0, 11.0, 15.333333333333334]
+print([sum(eleve) / len(eleve) for eleve in notes])
+# => [12.0, 11.0, 15.333333333333334]
 print([max(eleve) for eleve in notes])               # => [15, 14, 17]
 """
 Chaque élément parcouru (eleve) est une LIGNE de la matrice, donc une liste :

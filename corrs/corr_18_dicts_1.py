@@ -51,11 +51,7 @@ try:
 except KeyError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
-# 6. .get() avec une valeur par défaut :
-print(capitales.get("Espagne", "inconnue"))  # => inconnue
-print(capitales.get("Japon", "inconnue"))    # => Tokyo
-
-# 7. capitales[0] provoque une KeyError : un dictionnaire n'a pas de positions,
+# 6. capitales[0] provoque une KeyError : un dictionnaire n'a pas de positions,
 #    seulement des clés. 0 est cherché comme une CLÉ, qui n'existe pas.
 try:
     capitales[0]
@@ -67,7 +63,7 @@ except KeyError as err:
 #  Ajouter, modifier et supprimer des valeurs  #
 ################################################
 
-# 8. Gestion d'un stock :
+# 7. Gestion d'un stock :
 stock = {"pommes": 10, "poires": 4}
 stock["kiwis"] = 6        # a) nouvelle clé : ajout
 print(stock)  # => {'pommes': 10, 'poires': 4, 'kiwis': 6}
@@ -78,15 +74,15 @@ print(stock)  # => {'pommes': 7, 'poires': 7, 'kiwis': 6}
 del stock["kiwis"]        # d) suppression
 print(stock)  # => {'pommes': 7, 'poires': 7}
 
-# 9. Contenu de d :
+# 8. Contenu de d :
 d = {"a": 1, "b": 2}
 d["a"] = d["b"] + 10  # d["a"] vaut 12
 d["c"] = d["a"] * 2   # nouvelle clé "c", qui vaut 24
 d["b"] = "deux"       # une valeur peut changer de type
 print(d)  # => {'a': 12, 'b': 'deux', 'c': 24}
 
-# 10. Une clé ne peut apparaître qu'une seule fois : la 2e valeur remplace la
-#     1re.
+# 9. Une clé ne peut apparaître qu'une seule fois : la 2e valeur remplace la
+#    1re.
 d = {"x": 1, "x": 2}
 print(len(d), d["x"])  # => 1 2
 
@@ -95,7 +91,7 @@ print(len(d), d["x"])  # => 1 2
 #  Tester la présence d'une clé  #
 ##################################
 
-# 11. ajouter_contact() :
+# 10. ajouter_contact() :
 def ajouter_contact(annuaire, nom, numero):
     """Ajoute nom => numero à l'annuaire, sauf si nom y figure déjà."""
     if nom in annuaire:
@@ -111,11 +107,12 @@ ajouter_contact(annuaire, "Ada", "01 00 00 00 00")  # => Ada existe déjà
 print(annuaire)
 # => {'Ada': '06 12 34 56 78', 'Alan': '07 98 76 54 32'}
 """
-Remarque : la fonction modifie directement le dictionnaire passé en
-paramètre, sans avoir besoin de le retourner (cf. chap. 19).
+Remarque : la fonction modifie directement le CONTENU du dictionnaire passé
+en argument, sans avoir besoin de le retourner (comme une liste globale
+modifiée sans "global", cf. chap. 19).
 """
 
-# 12. "in" teste les CLÉS, pas les valeurs :
+# 11. "in" teste les CLÉS, pas les valeurs :
 print("Paris" in capitales)   # => False ("Paris" est une valeur)
 print("France" in capitales)  # => True
 
@@ -126,7 +123,7 @@ print("France" in capitales)  # => True
 
 notes = {"Alice": 15, "Bob": 9, "Chloé": 12, "David": 18}
 
-# 13. Affichage :
+# 12. Affichage :
 for eleve in notes:
     print(f"{eleve} : {notes[eleve]}/20")
 # => Alice : 15/20
@@ -134,27 +131,27 @@ for eleve in notes:
 # => Chloé : 12/20
 # => David : 18/20
 
-# 14. Moyenne de la classe :
+# 13. Moyenne de la classe :
 somme = 0
 for eleve in notes:
     somme += notes[eleve]
 print(somme / len(notes))  # => 13.5
 
-# 15. Meilleur élève :
+# 14. Meilleur élève :
 meilleur = None
 for eleve in notes:
     if meilleur is None or notes[eleve] > notes[meilleur]:
         meilleur = eleve
 print(meilleur)  # => David
 
-# 16. Élèves qui ont la moyenne :
+# 15. Élèves qui ont la moyenne :
 recus = []
 for eleve in notes:
     if notes[eleve] >= 10:
         recus.append(eleve)
 print(recus)  # => ['Alice', 'Chloé', 'David']
 
-# 17. Appréciations :
+# 16. Appréciations :
 appreciations = {}
 for eleve in notes:
     note = notes[eleve]
@@ -171,7 +168,7 @@ print(appreciations)
 #     'Très bien'}
 
 
-# 18. compter_lettres() :
+# 17. compter_lettres() :
 def compter_lettres(mot):
     """Retourne un dictionnaire lettre => nombre d'occurrences dans mot."""
     compteur = {}
@@ -185,7 +182,7 @@ def compter_lettres(mot):
 
 print(compter_lettres("banane"))  # => {'b': 1, 'a': 2, 'n': 2, 'e': 1}
 
-# 19. Inverser un dictionnaire :
+# 18. Inverser un dictionnaire :
 nombres = {"un": 1, "deux": 2, "trois": 3}
 inverse = {}
 for mot in nombres:
@@ -193,50 +190,20 @@ for mot in nombres:
 print(inverse)  # => {1: 'un', 2: 'deux', 3: 'trois'}
 """
 Attention : si deux clés avaient la même valeur, l'une des deux serait perdue
-dans le dictionnaire inversé (une clé est unique, cf. exercice 10).
+dans le dictionnaire inversé (une clé est unique, cf. exercice 9).
 """
 
-# 20. Traduction mot à mot :
+# 19. Traduction mot à mot :
 fr_en = {"le": "the", "chat": "cat", "mange": "eats", "poisson": "fish"}
 traduction = []
 for mot in "le chat mange le poisson".split():
-    traduction.append(fr_en.get(mot, mot))  # le mot lui-même s'il est inconnu
-print(" ".join(traduction))  # => the cat eats the fish
-
-
-#############################
-#  Dictionnaires imbriqués  #
-#############################
-
-eleves = {
-    "Alice": {"age": 15, "notes": [15, 17, 12]},
-    "Bob": {"age": 16, "notes": [9, 11, 8]},
-}
-
-# 21. Accès imbriqués :
-print(eleves["Bob"]["age"])       # => 16
-print(eleves["Alice"]["notes"][1])  # => 17
-
-# 22. Ajouts :
-eleves["Bob"]["notes"].append(14)
-eleves["Chloé"] = {"age": 15, "notes": []}
-print(eleves["Bob"])    # => {'age': 16, 'notes': [9, 11, 8, 14]}
-print(eleves["Chloé"])  # => {'age': 15, 'notes': []}
-
-# 23. Moyenne de chaque élève :
-for eleve in eleves:
-    liste_notes = eleves[eleve]["notes"]
-    if len(liste_notes) == 0:
-        print(f"{eleve} : pas de note")
+    if mot in fr_en:
+        traduction.append(fr_en[mot])
     else:
-        somme = 0
-        for note in liste_notes:
-            somme += note
-        print(f"{eleve} : {somme / len(liste_notes):.1f}")
-# => Alice : 14.7
-# => Bob : 10.5
-# => Chloé : pas de note
+        traduction.append(mot)  # le mot lui-même s'il est inconnu
+print(" ".join(traduction))  # => the cat eats the fish
 """
-Sans le test sur la longueur, on diviserait par 0 pour Chloé :
-ZeroDivisionError.
+(On verra au chap. 27 la méthode .get(), qui permet d'écrire le if/else en
+une seule ligne : traduction.append(fr_en.get(mot, mot)).)
 """
+

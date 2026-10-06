@@ -25,7 +25,7 @@
 ######################
 
 """
-En Python, les ensembles (sets) servent à stocker des ensembles non-ordonnés
+En Python, les ensembles (sets) servent à stocker des ensembles non ordonnés
 de valeurs. Le but est de travailler sur des ensembles au sens mathématique
 (appartenance ou non, inclusion, différence). On ne se souciera pas de l'ordre
 ni des doublons.
@@ -60,12 +60,12 @@ print(len(set("abracadabra")))  # => 5 (les lettres a, b, r, c, d)
 ensemble_varie = {"abc", 13, False, 4.2}
 
 # …sauf les habituelles valeurs à problèmes, mutables, comme les listes et les
-# dictionnaires ("non-hashable values", cf. chap. 18 : ce sont les mêmes
+# dictionnaires (valeurs "unhashable", cf. chap. 18 : ce sont les mêmes
 # restrictions que pour les clés de dictionnaires)
 ensemble_ok = {(1, 2), 1}  # valide car les tuples sont immuables
 
 try:
-    ensemble_ko = {[1, 2], 1}  # => TypeError: unhashable type: 'list'
+    ensemble_ko = {[1, 2], 1}  # => TypeError: … (unhashable type: 'list')
 except TypeError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 
@@ -94,7 +94,7 @@ print([1, 2, 3] == [3, 2, 1])  # => False (pour les listes, l'ordre compte)
 ###############################
 
 #   1. On unit un ensemble à un autre avec .union()
-set1 = {"1", "2" , "3"}
+set1 = {"1", "2", "3"}
 set2 = {1, 2, 3}
 print(set1.union(set2))  # => {1, 2, 3, '1', '2', '3'} (ordre non garanti)
 # Note : "1" (une string) et 1 (un int) sont deux valeurs différentes !
@@ -224,7 +224,7 @@ Attention : ce n'est pas tout à fait un test d'anagramme ! Comme les ensembles
 "oublient" les doublons, "aab" et "abb" seraient considérés comme anagrammes
 alors qu'ils n'ont pas le même nombre de "a".
 """
-print(ont_memes_lettres("aab", "abb"))  # => True… mais ce ne sont pas des anagrammes
+print(ont_memes_lettres("aab", "abb"))  # => True… mais pas des anagrammes !
 
 # Un vrai test d'anagramme compare les lettres TRIÉES (cf. chap. 24) : on
 # garde ainsi les doublons.
@@ -306,7 +306,7 @@ print(a)  # => {3, 4}
 python = {"ana", "bob", "chloé", "djamel"}
 sql = {"bob", "djamel", "emma"}
 print(sorted(python & sql))  # => ['bob', 'djamel'] (inscrits aux deux)
-print(sorted(python | sql))  # => ['ana', 'bob', 'chloé', 'djamel', 'emma'] (tous)
+print(sorted(python | sql))  # => ['ana', 'bob', 'chloé', 'djamel', 'emma']
 print(sorted(python - sql))  # => ['ana', 'chloé'] (Python uniquement)
 print(sorted(python ^ sql))  # => ['ana', 'chloé', 'emma'] (un seul atelier)
 

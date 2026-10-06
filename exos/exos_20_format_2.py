@@ -179,7 +179,7 @@ Les corrigés sont dans le fichier corrs/corr_20_format_2.py.
 
 """
 15. Quelle est la différence entre un linter (flake8, pylint, "ruff check")
-    et un formatteur (black, "ruff format") ? Lequel des deux :
+    et un formateur (black, "ruff format") ? Lequel des deux :
       a) signale une variable importée mais jamais utilisée ?
       b) remet les bons espaces autour des opérateurs ?
       c) ajoute les deux lignes vides avant une fonction ?
@@ -191,7 +191,7 @@ Les corrigés sont dans le fichier corrs/corr_20_format_2.py.
     programme de l'exercice 22 dans un fichier brouillon.py, et lancez :
         ?> ruff check brouillon.py
         ?> ruff format --diff brouillon.py
-    Que signifie la ligne "--diff" ? Que fait la commande sans cette option ?
+    Que signifie l'option "--diff" ? Que fait la commande sans cette option ?
 
 17. Dans un projet, on trouve ces lignes dans le fichier pyproject.toml :
 
@@ -227,7 +227,7 @@ Les corrigés sont dans le fichier corrs/corr_20_format_2.py.
 
 """
 20. Qu'est-ce qu'un "hook" git ? Pourquoi est-il utile de lancer le
-    formatteur juste avant chaque commit, plutôt que "quand on y pense" ?
+    formateur juste avant chaque commit, plutôt que "quand on y pense" ?
 
 21. Dans quel ordre faut-il taper ces commandes pour que ruff s'exécute
     à chaque commit ?

@@ -315,7 +315,7 @@ print(repr(ligne))  # => 'Paris\n'
 repr() révèle le saut de ligne "\n" à la fin : "Paris\n" n'est pas égal à
 "Paris". C'est un piège classique quand on lit un fichier ligne par ligne
 (cf. chap. 28). Correction : enlever les espaces et sauts de ligne en début
-et fin de chaîne avec .strip() (cf. chap. 7).
+et fin de chaîne avec .strip() (cf. chap. 8).
 """
 if ligne.strip() in villes_connues:
     print("Ville trouvée")
@@ -727,7 +727,7 @@ print(appliquer_remise_faux(100, 0.2))  # => None
 
 """
 La fonction calcule nouveau_prix, mais ne le RENVOIE pas : sans return, une
-fonction renvoie None (cf. chap. 14). nouveau_prix est une variable locale,
+fonction renvoie None (cf. chap. 15). nouveau_prix est une variable locale,
 perdue à la fin de la fonction (cf. chap. 19).
 """
 

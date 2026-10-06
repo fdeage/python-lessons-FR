@@ -86,7 +86,7 @@ Les corrigés sont dans le fichier corrs/corr_03_comm.py.
    triples guillemets ? Donnez deux conséquences pratiques.
 
 9. Sans exécuter : le code suivant est-il valide ? Pourquoi ?
-       print(5)  \"\"\"affiche cinq\"\"\"
+       print(5)  '''affiche cinq'''
 
 10. Écrivez une docstring (sur une seule ligne) pour la fonction ci-dessous,
     puis affichez-la avec __doc__ (comme dans le cours) :

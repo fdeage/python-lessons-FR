@@ -169,9 +169,9 @@ etudiants = pd.DataFrame({
 print(etudiants.shape)  # => (300, 5)
 print(etudiants.head(3))
 # =>   filiere annee  heures  ecran  note
-# => 0     Bio    L2     0.6    2.8   2.3
-# => 1   Maths    L3    13.3    3.3  14.1
-# => 2     Bio    L3    10.6    2.7  10.8
+#    0     Bio    L2     0.6    2.8   2.3
+#    1   Maths    L3    13.3    3.3  14.1
+#    2     Bio    L3    10.6    2.7  10.8
 
 
 # Des données "tidy" (format long)
@@ -208,9 +208,9 @@ temperatures = temperatures_larges.melt(
 print(temperatures.shape)  # => (36, 3)
 print(temperatures.head(3))
 # =>    mois  ville  temperature
-# => 0     1  Paris            5
-# => 1     2  Paris            6
-# => 2     3  Paris           10
+#    0     1  Paris            5
+#    1     2  Paris            6
+#    2     3  Paris           10
 
 """
 On a maintenant 36 lignes (12 mois × 3 villes) et 3 colonnes : "mois",
@@ -298,7 +298,8 @@ enregistrer(fig, "chap50_histplot.png")
 Un histogramme dépend du nombre d'intervalles choisi. La KDE trace à la place
 une courbe lisse, comme si on "lissait" l'histogramme : l'aire sous la courbe
 vaut 1. On l'utilise souvent pour COMPARER des distributions, avec hue= :
-une courbe par groupe.
+une courbe par groupe. (Par défaut, c'est alors la SOMME des aires qui vaut 1 :
+chaque courbe est proportionnelle à l'effectif de son groupe.)
 """
 fig, ax = plt.subplots()
 sns.kdeplot(data=etudiants, x="note", hue="filiere", ax=ax)
@@ -609,14 +610,15 @@ La corrélation entre deux variables est un nombre entre -1 et 1 :
     -  0 : pas de lien LINÉAIRE,
     - -1 : quand l'une augmente, l'autre diminue (lien parfait).
 
-DataFrame.corr() calcule toutes les corrélations deux à deux (cf. chap. 39) :
+La méthode .corr() d'un DataFrame (cf. chap. 39 pour les DataFrames) calcule
+toutes les corrélations deux à deux :
 """
 correlations = etudiants[["heures", "ecran", "note"]].corr().round(2)
 print(correlations)
 # =>         heures  ecran  note
-# => heures    1.00  -0.12  0.83
-# => ecran    -0.12   1.00 -0.28
-# => note      0.83  -0.28  1.00
+#    heures    1.00  -0.12  0.83
+#    ecran    -0.12   1.00 -0.28
+#    note      0.83  -0.28  1.00
 
 """
 Lecture : la note est fortement liée aux heures de révision (0.83), un peu
@@ -701,7 +703,7 @@ ax.set_title("Notes par année et par filière", fontsize=14)
 ax.set_xlabel("Année d'études")
 ax.set_ylabel("Note à l'examen (/20)")
 ax.set_ylim(0, 20)  # une note est sur 20 : on montre toute l'échelle
-ax.axhline(10, color="red", linestyle="--", linewidth=1)  # la moyenne
+ax.axhline(10, color="red", linestyle="--", linewidth=1)  # 10/20
 ax.legend(title="Filière", loc="upper left", bbox_to_anchor=(1, 1))
 sns.despine(ax=ax)  # retire les bordures haute et droite, plus épuré
 print(ax.get_ylim())  # => (np.float64(0.0), np.float64(20.0))

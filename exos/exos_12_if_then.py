@@ -41,16 +41,8 @@ Cet exercice se compose de cinq parties.
 
    De combien de conditions avez-vous besoin ?
 
-Les parties 3 et 4 nécessitent une boucle : revenez-y après le chap. 13.
-
-3. Écrire du code qui teste les entiers de 1 à 100, et affiche :
-    - Fizz si le nombre est multiple de 3,
-    - Buzz si le nombre est multiple de 5,
-    - FizzBuzz si le nombre est multiple de 15,
-    - le nombre lui-même dans les autres cas.
-
-4. Écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100
-   qui sont multiples de 3, 5 ou 15.
+Les parties 3 et 4 ont besoin d'une boucle "for" (chap. 13) : elles sont à
+la fin de ce fichier.
 """
 
 
@@ -198,4 +190,24 @@ Les parties 3 et 4 nécessitent une boucle : revenez-y après le chap. 13.
 
 22. Affichez "1 chat" ou "N chats" selon la valeur d'une variable nb_chats,
     avec un seul print() et une expression conditionnelle.
+"""
+
+
+#####################################################
+#  FizzBuzz, suite : à faire APRÈS le chap. 13      #
+#####################################################
+
+"""
+Les deux dernières parties de FizzBuzz ont besoin d'une boucle "for", qui
+permet de répéter un bloc de code pour chaque entier de 1 à 100. Les boucles
+ne sont vues qu'au chap. 13 : lisez-le d'abord, puis revenez ici.
+
+3. Écrire du code qui teste les entiers de 1 à 100, et affiche :
+    - Fizz si le nombre est multiple de 3,
+    - Buzz si le nombre est multiple de 5,
+    - FizzBuzz si le nombre est multiple de 15,
+    - le nombre lui-même dans les autres cas.
+
+4. Écrire du code qui calcule la somme des nombres inférieurs ou égaux à 100
+   qui sont multiples de 3, 5 ou 15.
 """

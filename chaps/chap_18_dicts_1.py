@@ -19,7 +19,6 @@
 #  - Ajouter, modifier et supprimer des valeurs
 #  - Tester la présence d'une clé
 #  - Parcourir un dictionnaire
-#  - Dictionnaires imbriqués
 #  - En bref
 #
 ##################################################
@@ -32,7 +31,7 @@ Un dictionnaire est une structure de données qui ASSOCIE DES CHOSES À
 D'AUTRES CHOSES.
 
 Les choses que l'on cherche sont appelées des CLÉS, et les choses associées
-sont les VALEURS. Un dictionnaire est donc une variable de type construit
+sont les VALEURS. Un dictionnaire est donc une valeur de type construit
 contenant des "couples CLÉ-VALEUR".
 
 IMPT : chaque clé est toujours unique au sein d'un même dictionnaire : on est
@@ -59,7 +58,8 @@ Python a, au fond, deux structures de données fondamentales :
     1. la liste,
     2. le dictionnaire.
 
-Ce sont deux types construits, càd qu'ils servent à stocker plusieurs éléments.
+Ce sont deux types construits, c'est-à-dire qu'ils servent à stocker plusieurs
+éléments.
 La plupart des autres structures Python en découlent ou en sont des variantes.
 
 À quoi servent ces deux structures ?
@@ -91,8 +91,10 @@ Rappel :
 Note sur l'ordre : depuis Python 3.7, un dictionnaire se "souvient" de l'ordre
 dans lequel on a ajouté les clés (quand on l'affiche ou qu'on le parcourt, les
 clés apparaissent dans cet ordre). Mais cet ordre n'a pas de SENS : on n'accède
-jamais à une valeur par sa position, seulement par sa clé.
+jamais à une valeur par sa position, seulement par sa clé. Deux dictionnaires
+qui contiennent les mêmes couples dans un ordre différent sont donc égaux :
 """
+print({"a": 1, "b": 2} == {"b": 2, "a": 1})  # => True
 
 
 # Cas d'usage
@@ -100,12 +102,12 @@ jamais à une valeur par sa position, seulement par sa clé.
 
 """
 On a vu qu'on utilisait en général la liste pour stocker un nombre indéfini
-d'éléments identiques, et le dictionnaire pour un nombre connu d'éléments
+d'éléments de même nature, et le dictionnaire pour un nombre connu d'éléments
 différents.
 
 Exemple :
-    - On a ici un nombre inconnu au départ de joueurs (éléments
-      identiques entre eux) : on utilise une liste
+    - On a ici un nombre inconnu au départ de joueurs (éléments de même
+      nature) : on utilise une liste
     - Chaque joueur a une structure connue et sans doublon : un dictionnaire
 """
 joueurs = []
@@ -170,7 +172,7 @@ d[1] = "b"
 d[2] = "c"
 
 """
-Ils y a deux différences fondamentales dans leur indexation :
+Il y a deux différences fondamentales dans leur indexation :
     1. la liste nomme forcément ses clés avec des entiers croissants (elle
        les "indexe" en ordre croissant), alors que le dictionnaire peut
        avoir comme clé (presque) n'importe quoi
@@ -193,10 +195,16 @@ print(piege)  # => {1: 'vrai'}
 # Une liste peut contenir des doublons
 lancers_de = [2, 3, 4, 5, 2]
 
-# …alors que si on répète une clé dans un dictionnaire, seule la dernière
-# valeur est conservée (cf. chap. 27)
+# …alors que si on répète une clé dans un dictionnaire, seule la DERNIÈRE
+# association est conservée : elle écrase les précédentes
 notes = {"maths": 12, "maths": 15}
 print(notes)  # => {'maths': 15}
+
+# En revanche, des clés DIFFÉRENTES peuvent être associées à la même valeur
+# sans aucun problème : ce sont les clés qui doivent être uniques, pas les
+# valeurs
+memes_valeurs = {"lundi": "cours", "mardi": "cours", "mercredi": "repos"}
+print(len(memes_valeurs))  # => 3
 
 """
 Note sur les clés des dictionnaires :
@@ -213,16 +221,18 @@ Ceci exclut : les listes, les dictionnaires et les ensembles (voir chap. 25)
 """
 
 try:
-    dict_avec_mauvaise_cle = {[1, 2]: 2}  # => TypeError: unhashable type: 'list'
+    # => TypeError: cannot use 'list' as a dict key (unhashable type: 'list')
+    dict_avec_mauvaise_cle = {[1, 2]: 2}
     # (le texte exact du message dépend de votre version de Python)
 except TypeError as err:
     print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 
 # En revanche, les VALEURS peuvent être absolument tout ce que l'on veut,
 # sans restriction
-valeurs_variees = {0: [1, 2, 3], 1: {1: "pouet"}, 2: {1, 2, 3}}
+valeurs_variees = {0: [1, 2, 3], 1: {1: "pouet"}, 2: (1, 2, 3)}
 print(valeurs_variees[0])     # => [1, 2, 3]
 print(valeurs_variees[1][1])  # => pouet (on "enchaîne" les crochets)
+# (On détaillera ces dictionnaires "imbriqués" au chap. 27.)
 
 """
 IMPT : la recherche d'une clé dans un dictionnaire est quasi instantanée, même
@@ -312,47 +322,9 @@ for pays in capitales:
 # => Japon : capitale Tokyo
 
 # Note : on verra au chap. 27 la méthode .items(), qui permet de récupérer
-# directement la clé ET la valeur à chaque tour de boucle.
-
-"""
-Attention : on ne doit pas ajouter ou supprimer de clés dans un dictionnaire
-PENDANT qu'on le parcourt :
-"""
-try:
-    for pays in capitales:
-        capitales["Pérou"] = "Lima"  # ajout pendant le parcours…
-except RuntimeError as err:
-    print(f"5: (Sans ce try: … except …, cette ligne créerait : {err})")
-
-
-# Dictionnaires imbriqués
-##########################
-
-"""
-Comme les valeurs peuvent être n'importe quoi, on peut ranger des dictionnaires
-dans des dictionnaires (ou des listes dans des dictionnaires, etc.). C'est très
-pratique pour représenter des données structurées.
-"""
-eleves = {
-    "alice": {"age": 15, "notes": [12, 17, 14]},
-    "bob": {"age": 16, "notes": [9, 11]},
-}
-
-# On enchaîne les crochets, de l'extérieur vers l'intérieur
-print(eleves["alice"]["age"])      # => 15
-print(eleves["bob"]["notes"])      # => [9, 11]
-print(eleves["bob"]["notes"][0])   # => 9
-
-# On peut modifier une valeur "profonde" de la même façon
-eleves["bob"]["notes"].append(15)
-print(eleves["bob"])  # => {'age': 16, 'notes': [9, 11, 15]}
-
-"""
-Astuce : pour lire une telle ligne, décomposez-la :
-    eleves["bob"]                => {"age": 16, "notes": [9, 11, 15]}
-    eleves["bob"]["notes"]       => [9, 11, 15]
-    eleves["bob"]["notes"][0]    => 9
-"""
+# directement la clé ET la valeur à chaque tour de boucle, ainsi que les
+# autres façons de parcourir un dictionnaire (et le piège qui consiste à le
+# modifier pendant le parcours).
 
 
 # En bref

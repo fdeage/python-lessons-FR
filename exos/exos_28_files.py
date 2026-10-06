@@ -118,8 +118,8 @@ with open("exo28_notes.csv", "w", encoding="utf-8") as f:
    qui commencent par "La".
 
 10. Avec .readlines(), construisez la liste des lignes SANS les sauts de
-    ligne, puis affichez la plus longue ligne du poème (cf. chap. 24 pour
-    max() et key=).
+    ligne, puis affichez la plus longue ligne du poème (max() avec key=,
+    cf. chap. 24 et 27).
 """
 
 

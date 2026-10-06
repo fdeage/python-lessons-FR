@@ -32,8 +32,8 @@ try:
     import pandas as pd
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
-    print("pandas n'est pas installé : lancez \"pip install pandas\" (ou")
-    print("\"conda install pandas\"), puis relancez ce programme.")
+    print("pandas n'est pas installé : lancez \"uv add pandas\" (ou")
+    print("\"pip install pandas\"), puis relancez ce programme.")
     sys.exit(0)
 
 
@@ -193,9 +193,9 @@ with open("exo_pandas_eleves.csv", "w", encoding="utf-8") as f:
            notes (axis=1 : on calcule la moyenne de chaque LIGNE, en ignorant
            les NaN). Arrondissez à 2 décimales.
 
-16. Avec .apply() et une fonction mention(moyenne) (cf. chap. 29), ajoutez
-    une colonne mention ("Très bien" si >= 16, "Bien" si >= 14, "Assez bien"
-    si >= 12, "Passable" si >= 10, "Insuffisant" sinon).
+16. Avec .apply() et une fonction mention(moyenne) (cf. l'exercice 6 du
+    chap. 29), ajoutez une colonne mention ("Très bien" si >= 16, "Bien" si
+    >= 14, "Assez bien" si >= 12, "Passable" si >= 10, "Insuffisant" sinon).
 
 17. Renommez la colonne francais en français, puis supprimez la colonne age.
     Affichez la liste des colonnes.

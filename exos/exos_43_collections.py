@@ -93,7 +93,7 @@ from enum import Enum
    Créez-en trois, puis calculez la valeur totale du stock
    (somme de prix * quantite).
 
-10. Sans exécuter, qu'affiche ce programme ? Lequel des print() provoque une
+10. Sans exécuter, qu'affiche ce programme ? Quelle ligne provoque une
     erreur ?
         Point = namedtuple("Point", "x y")
         p = Point(1, 2)

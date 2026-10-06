@@ -30,7 +30,7 @@ Les corrigés sont dans le fichier corrs/corr_34_poo_1.py.
        print(type(3.0))
        print(type(None))
        print(type(len))
-       print(isinstance(True, int))
+       print(type(True))
 
 2. Les lignes suivantes appellent des méthodes. Pour chacune, dites sur quel
    objet la méthode est appelée, et si elle MODIFIE cet objet ou RETOURNE un

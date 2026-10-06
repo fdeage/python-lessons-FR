@@ -613,7 +613,7 @@ avantages :
        sans mettre son nom entre guillemets (le "Compteur" plus haut).
 
 Démontrons-le : on exécute un petit programme avec et sans cette ligne
-(exec() exécute du code contenu dans une chaîne, cf. chap. 26).
+(exec() exécute du code contenu dans une chaîne, cf. chap. 5).
 """
 code = """
 def f(x: int) -> int:
@@ -673,7 +673,7 @@ print(chercher("69001").upper())
 '''
 
 if mypy_api is not None:
-    with tempfile.TemporaryDirectory() as dossier:   # cf. chap. 36
+    with tempfile.TemporaryDirectory() as dossier:   # cf. chap. 37
         chemin = os.path.join(dossier, "exemple.py")
         with open(chemin, "w", encoding="utf-8") as f:
             f.write(programme_avec_erreurs)

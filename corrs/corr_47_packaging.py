@@ -83,7 +83,10 @@ def lire_requirements(texte):
                 position = ligne.index(operateur)
                 resultat[ligne[:position]] = ligne[position:]
                 break
-        else:  # le "else" d'un for : aucun "break" n'a eu lieu (cf. chap. 13)
+        else:
+            # Le "else" d'un for (syntaxe rare, cf. chap. 13 pour break) ne
+            # s'exécute que si la boucle n'a PAS été interrompue par "break" :
+            # ici, si aucun opérateur n'a été trouvé.
             resultat[ligne] = ""
     return resultat
 

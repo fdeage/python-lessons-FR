@@ -147,7 +147,7 @@ for i in range(len(prix)):
 print(prix)  # => [20, 40, 60]
 """
 prix[i] = … modifie la case numéro i de la liste elle-même. C'est le cas où on
-a besoin de l'indice (méthode 2 du chapitre) plutôt que de la valeur seule.
+a besoin de l'indice (méthode 1 du chapitre) plutôt que de la valeur seule.
 """
 
 # 10. Hausse ou baisse :
@@ -404,7 +404,7 @@ print(lettres)  # => ['b', 'c']
 """
 On compte d'abord les occurrences, puis on appelle .remove() autant de fois.
 La fonction ne retourne rien : elle modifie la liste reçue, qui est le même
-objet que celui de l'appelant (cf. chap. 19).
+objet que celui de l'appelant (cf. le bonus 2 du chapitre).
 """
 
 # 24. File d'attente :

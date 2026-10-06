@@ -175,7 +175,8 @@ p.prix est bien plus lisible que p[1] : c'est tout l'intérêt de namedtuple.
 """
 
 r"""
-10. Sans exécuter, qu'affiche ce programme ? Lequel provoque une erreur ?
+10. Sans exécuter, qu'affiche ce programme ? Quelle ligne provoque une
+    erreur ?
 """
 Point = namedtuple("Point", "x y")
 p = Point(1, 2)

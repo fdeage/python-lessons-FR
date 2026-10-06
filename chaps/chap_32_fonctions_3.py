@@ -518,8 +518,8 @@ classement = sorted(eleves, key=lambda e: e["note"], reverse=True)
 print([e["nom"] for e in classement])  # => ['Grace', 'Ada', 'Alan']
 
 """
-min() et max() acceptent aussi key= : ils renvoient l'ÉLÉMENT (entier) pour
-lequel la clé est minimale ou maximale.
+min() et max() acceptent aussi key= : ils renvoient l'ÉLÉMENT lui-même (et
+non la valeur de sa clé) pour lequel la clé est minimale ou maximale.
 """
 print(max(eleves, key=lambda e: e["note"]))  # => {'nom': 'Grace', 'note': 19}
 print(min(villes, key=lambda v: v[2])[0])  # => Lyon (plus petite superficie)

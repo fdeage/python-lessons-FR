@@ -23,8 +23,8 @@ try:
     import numpy as np
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
-    print("NumPy n'est pas installé : lancez \"pip install numpy\" (ou")
-    print("\"conda install numpy\"), puis relancez ce programme.")
+    print("NumPy n'est pas installé : lancez \"uv add numpy\" (ou")
+    print("\"pip install numpy\"), puis relancez ce programme.")
     sys.exit(0)
 
 

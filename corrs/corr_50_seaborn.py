@@ -125,9 +125,9 @@ ventes = ventes_larges.melt(id_vars="mois", var_name="magasin",
 print(ventes.shape)  # => (36, 3)
 print(ventes.head(3))
 # =>    mois magasin  ventes
-# => 0     1    Lyon      42
-# => 1     2    Lyon      40
-# => 2     3    Lyon      45
+#    0     1    Lyon      42
+#    1     2    Lyon      40
+#    2     3    Lyon      45
 # 12 mois × 3 magasins = 36 lignes. id_vars désigne la colonne gardée telle
 # quelle ; les anciens noms de colonnes deviennent les valeurs de "magasin".
 
@@ -359,9 +359,9 @@ enregistrer(grille.figure, "exo50_facettes.png")
 correlations = clients[["age", "panier", "satisfaction"]].corr().round(2)
 print(correlations)
 # =>                age  panier  satisfaction
-# => age           1.00    0.68         -0.02
-# => panier        0.68    1.00          0.03
-# => satisfaction -0.02    0.03          1.00
+#    age           1.00    0.68         -0.02
+#    panier        0.68    1.00          0.03
+#    satisfaction -0.02    0.03          1.00
 fig, ax = plt.subplots()
 sns.heatmap(correlations, annot=True, cmap="vlag", center=0, vmin=-1,
             vmax=1, square=True, ax=ax)
@@ -379,10 +379,10 @@ tableau = clients.pivot_table(index="region", columns="canal",
                               values="panier", aggfunc="mean").round(1)
 print(tableau)
 # => canal   boutique   web
-# => region
-# => Nord        52.3  69.4
-# => Ouest       59.4  69.2
-# => Sud         56.4  67.2
+#    region
+#    Nord        52.3  69.4
+#    Ouest       59.4  69.2
+#    Sud         56.4  67.2
 fig, ax = plt.subplots()
 sns.heatmap(tableau, annot=True, fmt=".1f", cmap="rocket_r", ax=ax)
 enregistrer(fig, "exo50_pivot.png")

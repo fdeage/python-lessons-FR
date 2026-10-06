@@ -562,7 +562,8 @@ exécuter d'une traite un programme truffé de points d'arrêt.
 PYTHONBREAKPOINT=ipdb.set_trace pour ipdb, un pdb plus confortable.)
 
 breakpoint() relit cette variable à CHAQUE appel. On peut donc la modifier
-depuis le programme lui-même, via os.environ (cf. chap. 22) :
+depuis le programme lui-même, via os.environ : un dictionnaire (ou presque)
+des variables d'environnement, fourni par le module os (cf. chap. 22) :
 """
 import os
 
@@ -791,7 +792,7 @@ print(abs((0.1 + 0.2) - 0.3) < 1e-9)  # => True (on compare à une tolérance)
 # (math.isclose(0.1 + 0.2, 0.3) fait la même chose proprement, cf. chap. 22)
 
 
-# 10. Copier une liste avec "=" (cf. chap. 19 et 24)
+# 10. Copier une liste avec "=" (cf. chap. 24 et 34)
 #     Symptôme : modifier la "copie" modifie aussi l'original.
 originale = [1, 2, 3]
 copie = originale          # pas une copie : un 2e nom pour la même liste

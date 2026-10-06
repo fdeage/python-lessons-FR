@@ -411,8 +411,8 @@ print(min(produits, key=lambda p: len(p[0]))[0])  # => stylo
   n'avoir que le nom en d).
 - En d), "stylo" et "gomme" ont 5 lettres : min() renvoie le premier
   rencontré, "stylo".
-- round(…, 2) en b) évite d'afficher des valeurs comme 180.00000000000003
-  (cf. chap. 4).
+- round(…, 2) en b) est une précaution : un produit de floats peut donner
+  une valeur comme 180.00000000000003 (cf. chap. 4).
 """
 
 

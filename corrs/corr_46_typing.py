@@ -355,7 +355,7 @@ print(t.maximum())   # => 17.0
 # - On n'annote pas self.
 # - __init__ renvoie toujours None.
 # - valeurs vaut None par défaut (pour éviter le piège de la liste mutable
-#   par défaut, cf. chap. 34) : son type est donc "list[float] | None".
+#   par défaut, cf. chap. 15 et 41) : son type est donc "list[float] | None".
 # - maximum() renvoie None si aucune valeur n'a été ajoutée.
 
 """

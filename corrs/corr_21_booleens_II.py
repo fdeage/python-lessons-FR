@@ -121,6 +121,7 @@ print(taille >= 1.20 and age >= 8)     # => True
 #  Calculs avec les booléens et conversions  #
 ##############################################
 
+# 8. True vaut 1 et False vaut 0 dans un calcul :
 print(True + True + True)    # => 3
 print(True * 10 - False)     # => 10 (1 * 10 - 0)
 print((3 > 2) + (2 > 3))     # => 1 (True + False)
@@ -265,6 +266,7 @@ Note : écrire 'nom is "Ada"' provoque d'ailleurs un SyntaxWarning
 #  all() et any()  #
 ####################
 
+# 19. Valeurs des expressions :
 print(all([True, True, False]))   # => False
 print(any([False, False, True]))  # => True
 print(all([1, 2, 3]))             # => True (aucun zéro)

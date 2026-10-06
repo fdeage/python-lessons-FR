@@ -54,19 +54,19 @@ donc on ne va pas y écrire de longs programmes très sophistiqués).
 On lance le shell Python depuis le shell de l'ordinateur :
 > python
 Python 3.12.3 (main, Apr 10 2024, 05:33:47)
->>> <votre code suivi de return>
+>>> <votre code, suivi de la touche Entrée>
 
 Selon votre système, la commande s'appelle `python`, `python3` ou, sur
 Windows, `py`. Essayez-les dans cet ordre si la première ne fonctionne pas.
 
 IMPT : il faut utiliser Python 3 pour vos projets. Tapez cette commande dans
-un terminal pour connaître votre version
+un terminal pour connaître votre version :
 > python --version
 
 Si la version retournée est 2.X.YY, essayez de lancer Python 3 avec
 > python3
 
-Si Python3 n'est pas installé, installez-le ! Vous perdrez beaucoup moins de
+Si Python 3 n'est pas installé, installez-le ! Vous perdrez beaucoup moins de
 temps qu'en devant gérer les différences entre Python 2 et Python 3…
 (Téléchargement officiel : https://www.python.org/downloads ; sur Linux, passez
 plutôt par le gestionnaire de paquets de votre distribution.)
@@ -98,8 +98,8 @@ Quelques astuces dans l'interpréteur :
       pour sortir de l'aide),
     - Ctrl + C interrompt un calcul trop long ou un programme "bloqué".
 
-Note : Pour quitter l'interpréteur Python, on utilise quit() (ou Ctrl + D sur
-Linux/macOS, Ctrl + Z puis Entrée sur Windows)
+Note : pour quitter l'interpréteur Python, on utilise quit() (ou Ctrl + D sur
+Linux/macOS, Ctrl + Z puis Entrée sur Windows) :
 >>> quit()
 …et on revient au shell de l'ordinateur.
 """

@@ -23,13 +23,14 @@ import math
 print(type(3.0))              # => <class 'float'>
 print(type(None))             # => <class 'NoneType'>
 print(type(len))              # => <class 'builtin_function_or_method'>
-print(isinstance(True, int))  # => True
+print(type(True))             # => <class 'bool'>
 """
 - None a lui aussi un type : NoneType (cf. chap. 15).
 - Les fonctions sont des objets comme les autres ; len, écrite en C dans
   Python, est une "builtin_function_or_method".
-- True est une instance de int : bool hérite de int (cf. chap. 21 ; on verra
-  l'héritage au chap. 35). C'est pourquoi True + True vaut 2.
+- True est de type bool. En réalité, bool est une variante de int (cf.
+  chap. 21 ; on verra cette notion d'"héritage" au chap. 35). C'est pourquoi
+  True + True vaut 2.
 """
 
 # 2. Méthodes :
@@ -57,8 +58,8 @@ print(nom)                  # => ada … et nom n'a pas changé
    b) list est la classe, [3, 1, 2] une instance de list.
    c) le plan est la "classe" (le modèle), la voiture réelle une "instance".
 """
-print(isinstance("bonjour", str))  # => True
-print(isinstance([3, 1, 2], list))  # => True
+print(type("bonjour"))   # => <class 'str'>
+print(type([3, 1, 2]))   # => <class 'list'>
 
 
 # 4. Classe vide :

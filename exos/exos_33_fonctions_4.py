@@ -167,8 +167,8 @@ Les corrigés sont dans le fichier corrs/corr_33_fonctions_4.py.
 20. (Problème) On monte un escalier de n marches, en faisant à chaque pas une
     OU deux marches. De combien de façons peut-on monter l'escalier ?
     (Pour 3 marches : 1+1+1, 1+2, 2+1 → 3 façons.)
-    Écrivez une fonction récursive façons(n) (sans cédille dans le nom !),
-    mémoïsée, et calculez-la pour n = 4, 10 et 50.
+    Écrivez une fonction récursive facons(n) (sans cédille : on évite les
+    accents dans les noms), mémoïsée, et calculez-la pour n = 4, 10 et 50.
 """
 
 

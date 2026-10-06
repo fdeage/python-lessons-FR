@@ -443,8 +443,8 @@ print(re.findall(r"\d+.\d+", "Prix : 3.50 ou 4x50"))   # => ['3.50', '4x50']
 
 r"""
 Dans une classe [], la plupart des caractères spéciaux perdent leur sens :
-[.+*] signifie "un point, un plus ou une étoile". Seuls ^ (au début), - (au
-milieu) et ] gardent un sens particulier.
+[.+*] signifie "un point, un plus ou une étoile". Seuls \, ^ (au début),
+- (au milieu) et ] gardent un sens particulier.
 
 Quand le texte à chercher vient d'une variable (une saisie de l'utilisateur,
 par exemple), on ne sait pas s'il contient des caractères spéciaux.
@@ -663,8 +663,9 @@ r"""
 par Python : c'est pratique pour couper une regex longue sur plusieurs
 lignes, cf. chap. 8.)
 
-4. Valider des données avant de les utiliser : on garde les codes postaux
-valides, et on met de côté les autres pour les vérifier à la main.
+4. Valider des données avant de les utiliser : on garde les codes de commune
+(les "codes INSEE", à ne pas confondre avec les codes postaux) bien formés,
+et on met de côté les autres pour les vérifier à la main.
 """
 codes = ["69007", "7500", "13 001", "33000", "2A004"]
 valides = [c for c in codes if re.fullmatch(r"\d{5}|2[AB]\d{3}", c)]
@@ -673,7 +674,8 @@ print(valides)     # => ['69007', '33000', '2A004']
 print(invalides)   # => ['7500', '13 001']
 
 r"""
-(Les codes de la Corse commencent par 2A ou 2B : d'où l'alternance.)
+(Les codes INSEE des communes de Corse commencent par 2A ou 2B, alors que
+leurs codes postaux commencent par 20 : d'où l'alternance.)
 
 5. Avec pandas : les colonnes de texte ont des méthodes .str qui acceptent
 des regex (cf. chap. 39 et 48) :

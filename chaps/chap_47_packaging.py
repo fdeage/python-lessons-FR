@@ -263,8 +263,8 @@ except ValueError as err:
 #    int() with base 10: '0rc1')
 
 """
-Dans un vrai programme, on utilise le paquet "packaging" (celui qu'utilisent
-pip et uv), qui implémente toute la PEP 440. Il n'est pas toujours installé :
+Dans un vrai programme, on utilise le paquet "packaging" (celui qu'utilise
+pip), qui implémente toute la PEP 440. Il n'est pas toujours installé :
 on protège donc l'import (cf. chap. 26).
 """
 try:
@@ -494,7 +494,8 @@ installe les paquets du lock, puis lance le programme.
 Essais ponctuels, sans rien ajouter au projet :
     ?> uv run --with pandas python      # un Python où pandas est disponible
     ?> uv run --with requests mon_script.py
-C'est ce que nous utilisons pour vérifier les chapitres 38 à 40 de ce cours.
+(Ce dépôt, lui, déclare ses paquets dans son propre pyproject.toml : il
+suffit de taper "uv run python chaps/chap_40_matplotlib.py".)
 
 Compatibilité : pour les habitués de pip, uv propose les mêmes commandes,
 en beaucoup plus rapide :
@@ -518,6 +519,11 @@ démonstration fonctionne sans connexion Internet (option --offline).
 
 Le module subprocess (bibliothèque standard) lance une commande du terminal
 depuis Python : run() attend la fin de la commande et récupère sa sortie.
+
+Le module pathlib (bibliothèque standard, cité au chap. 22) représente un
+chemin par un objet Path : l'opérateur "/" assemble deux morceaux de chemin,
+.write_text() et .read_text() écrivent et lisent un fichier texte, et
+.iterdir() parcourt le contenu d'un dossier.
 """
 PYPROJECT_DEMO = """\
 [project]

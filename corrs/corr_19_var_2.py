@@ -163,7 +163,7 @@ print(a)  # => [1, 2, 3, 4]
 print(b)  # => [0, 5]
 
 
-# 11. compteur() avec nonlocal :
+# 11. compteur_appels() avec nonlocal :
 def compteur_appels():
     nb_appels = 0
 

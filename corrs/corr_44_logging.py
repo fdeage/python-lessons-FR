@@ -486,7 +486,8 @@ arguments, logging ne construit le message que s'il passe le filtre de
 niveau.
 
 (%s : n'importe quelle valeur convertie en texte ; %d : un entier ; %.2f :
-un float à 2 décimales. C'est l'ancienne syntaxe de formatage, cf. chap. 8.)
+un float à 2 décimales. C'est l'ancienne syntaxe de formatage avec %, cf.
+le cours, section "Le format des messages".)
 """
 
 """

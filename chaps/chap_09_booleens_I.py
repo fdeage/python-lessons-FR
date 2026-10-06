@@ -26,12 +26,12 @@
 #####################
 
 """
-Un booléen est un type de variable qui ne peut prendre que deux
-valeurs : "vrai" ou "faux".
+Un booléen est un type de valeur qui ne peut prendre que deux valeurs : "vrai"
+ou "faux".
 
 Leur nom vient du mathématicien et philosophe britannique George Boole
-(1815-1864), qui s'est intéressé à l'algèbre booléenne, utilisant uniquement
-ces deux valeurs.
+(1815-1864), qui a fondé l'algèbre dite "booléenne", n'utilisant que ces deux
+valeurs.
 
 Les booléens sont TRÈS utilisés en informatique (on peut même dire que
 toute l'informatique est juste une utilisation massive et judicieuse des
@@ -48,7 +48,7 @@ print(type(False))  # => <class 'bool'>
 
 # Notez qu'ils s'écrivent sans guillemets : ce sont des valeurs, pas du texte.
 
-# Les booléens sont "sensibles à la casse" (càd aux majuscules et minuscules)
+# Les booléens sont "sensibles à la casse" (aux majuscules et minuscules).
 # Ainsi le booléen True et la variable true sont deux choses différentes…
 try:
     true  # => NameError: name 'true' is not defined
@@ -77,7 +77,7 @@ print(1 == 1)  # => True
 # On peut tester l'égalité de toutes sortes de valeurs :
 "abc" == "abc"  # => True
 "abc" == "ABC"  # => False (les majuscules comptent)
-1 == 1.0        # => True (même valeur, même si les types diffèrent, cf. chap. 6)
+1 == 1.0        # => True (même valeur, types différents : cf. chap. 6)
 2 + 2 == 4      # => True (le calcul est fait AVANT la comparaison, cf. chap. 5)
 
 # Ce signe "==" revient donc à poser la question : "est-ce que 1 est égal à 1 ?"
@@ -111,9 +111,9 @@ note = 14
 0 <= note <= 20  # => True ("note est-elle comprise entre 0 et 20 ?")
 
 
-#   4. Il y a d'autres opérateurs booléens, comme "… in …", "… is …",
-#      que l'on verra plus loin ("in" au chap. 8 pour les strings et au
-#      chap. 16 pour les listes, None au chap. 15, "is" au chap. 19)
+#   4. D'autres opérateurs retournent un booléen, comme "… in …" ou "… is …".
+#      On les verra plus loin ("in" au chap. 8 pour les strings et au
+#      chap. 16 pour les listes, None au chap. 15, "is" au chap. 21)
 "ab" in "abcd"     # => True
 "ab" in "def"      # => False
 a = None
@@ -181,7 +181,7 @@ abs((0.1 + 0.2) - 0.3) < 0.000001  # => True
 #####################################
 
 """
-Il existe 3 opérateurs booléens pour travailler avec des variables booléennes :
+Il existe 3 opérateurs booléens pour travailler avec des valeurs booléennes :
     1. "not", pour obtenir la négation d'un booléen
     2. "and", pour obtenir une expression vraie si les DEUX termes sont vrais
     3. "or", pour obtenir une expression vraie si AU MOINS UN terme est vrai
@@ -190,7 +190,7 @@ Il existe 3 opérateurs booléens pour travailler avec des variables booléennes
 #   1. On obtient la négation, "l'opposé" d'un booléen avec l'opérateur "not"
 not True   # => False
 not False  # => True
-not 1 == 2 # => True
+not 1 == 2  # => True
 
 
 #   2. "and" combine deux valeurs booléennes et retourne True si les deux sont
@@ -218,8 +218,8 @@ True or True  # => True
 """
 On notera que "not", "and" et "or" aussi sont sensibles à la casse (ces lignes
 sont dans une chaîne, car une SyntaxError empêcherait le fichier de se lancer) :
-Not False             # => SyntaxError: invalid syntax (Not)
-True And False        # => SyntaxError: invalid syntax (And)
+Not False             # => SyntaxError: invalid syntax. Did you mean 'not'?
+True And False        # => SyntaxError: invalid syntax. Did you mean 'and'?
 
 Notez aussi qu'on ne peut pas utiliser les symboles "&&", "||" ou "!" que
 l'on trouve dans d'autres langages (C, Java, JavaScript…) : en Python, on écrit
@@ -229,7 +229,7 @@ les mots "and", "or" et "not".
 """
 Note : on appelle parfois "or" et "and" des "opérateurs coupe-circuit"
 ("short-circuit operators") : en effet, dans certains cas, la deuxième condition
-ne sera pas exécutée.
+ne sera même pas évaluée.
 """
 
 # Exemple (les fonctions seront vues au chap. 14 : retenez juste que

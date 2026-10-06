@@ -25,8 +25,8 @@ try:
     import pandas as pd
 except ImportError as err:
     print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
-    print("pandas n'est pas installé : lancez \"pip install pandas\" (ou")
-    print("\"conda install pandas\"), puis relancez ce programme.")
+    print("pandas n'est pas installé : lancez \"uv add pandas\" (ou")
+    print("\"pip install pandas\"), puis relancez ce programme.")
     sys.exit(0)
 
 

@@ -12,13 +12,13 @@
 #               #                                                              #
 ################################################################################
 #
-#   - Tester ses fonctions avec "assert"
-#   - Les 5 effets d'une fonction
-#   - Implémenter assert
-#   - Exemple : la fonction my_pop()
-#   - La méthode "Think-Red-Green-Refactor"
-#   - Les docstrings
-#   - Les annotations de type
+#  - Tester ses fonctions avec "assert"
+#  - Les 5 effets d'une fonction
+#  - Implémenter assert
+#  - Exemple : la fonction my_pop()
+#  - La méthode "Think-Red-Green-Refactor"
+#  - Les docstrings
+#  - Les annotations de type
 #
 #############################################
 
@@ -30,14 +30,14 @@ Un test est un morceau de code qui va comparer une valeur du programme à une
 valeur attendue.
 C'est donc UN PROGRAMME QUI TESTE UN AUTRE PROGRAMME (Inception !).
 
-Dans 99% des cas, les tests vont se trouver dans une partie à part du programme,
-et tester une fonction en particulier. On évitera de mélanger test et
-comportement normal du programme.
+Dans 99 % des cas, les tests vont se trouver dans une partie à part du
+programme, et tester une fonction en particulier. On évitera de mélanger test
+et comportement normal du programme.
 
 Une fonction peut avoir plusieurs effets sur le comportement d'un programme,
 il y aura donc plusieurs façons de la tester.
 
-On utilisera le mot-clé assert suivie d'une expression booléenne pour tester ses
+On utilisera le mot-clé assert suivi d'une expression booléenne pour tester ses
 programmes.
 """
 assert 2 + 2 == 4  # pas d'erreur
@@ -96,7 +96,7 @@ programme :
        Attention, cela peut être source de confusion et de bugs.
 
     4. en modifiant une variable dite "globale". On évitera ces fonctions car
-       elles sont complexes à tester correctement
+       elles sont complexes à tester correctement.
 
     5. en soulevant une erreur pendant l'exécution
 
@@ -151,7 +151,7 @@ compute_and_print_result_2(3, 2)  # => Résultat : 3
 
 """
 L'implémentation de assert est simplissime : assert se contente de créer une
-erreur si la valeur qu'on lui passe évalue à False.
+erreur si la valeur qu'on lui passe est évaluée à False.
 
 On peut donc la recoder avec une fonction, un "if" (cf. chap. 12) et le mot-clé
 "raise" (qui soulève une erreur, cf. chap. 26) :
@@ -213,7 +213,7 @@ chacune une fonction. On comparera ensuite automatiquement les listes obtenues.
 def my_pop(l):
     if len(l) == 0:
         raise IndexError("Trying to pop() from empty list!")
-    last = l[-1]   # raccourci pour liste[len(liste) - 1]
+    last = l[-1]   # raccourci pour l[len(l) - 1]
     del l[-1]
     return last
 
@@ -254,10 +254,9 @@ def test_my_pop(pop_native, pop_custom):
 
     assert error_raised_native == True
 
-
     error_raised_custom = False
     try:
-        ret_custom = my_pop(pop_custom)  # IndexError: pop from empty list
+        ret_custom = my_pop(pop_custom)  # IndexError: Trying to pop()…
     except IndexError as err:
         print(f"5: (Sans ce try: … except …, cette ligne créerait : {err})")
         error_raised_custom = True
@@ -265,8 +264,9 @@ def test_my_pop(pop_native, pop_custom):
     assert error_raised_custom == True
     print("Test: my_pop()… OK")
 
-pop_native = [2, True, "Pouet", 5.4]  # => pour tester l.pop()
-pop_custom = [2, True, "Pouet", 5.4]  # => pour tester my_pop(l)
+
+pop_native = [2, True, "Pouet", 5.4]  # pour tester l.pop()
+pop_custom = [2, True, "Pouet", 5.4]  # pour tester my_pop(l)
 test_my_pop(pop_native, pop_custom)
 # => Test: my_pop()…
 #    4: (Sans ce try: … except …, cette ligne créerait : pop from empty list)
@@ -301,7 +301,8 @@ ret_a = liste_a.pop()
 ret_b = my_pop_bugge(liste_b)
 assert ret_a == ret_b  # OK : les deux retournent 3…
 try:
-    assert liste_a == liste_b, f"{liste_a} != {liste_b}"  # … mais les listes diffèrent
+    # … mais les listes diffèrent :
+    assert liste_a == liste_b, f"{liste_a} != {liste_b}"
 except AssertionError as err:
     print(f"6: (Sans ce try: … except …, cette ligne créerait : {err})")
 
@@ -329,8 +330,8 @@ code.
    Pensez aux cas-limites, bizarres, etc. : listes vides, valeurs négatives,
    None, string vide…
 
-4. "Refactor" : une fois les tests passés, on commence à se soucier de la qualité
-   du code.
+4. "Refactor" : une fois les tests passés, on commence à se soucier de la
+   qualité du code.
    D'abord, allez faire un tour, soufflez, prenez du recul sur votre code.
    Ensuite, réfléchissez ! Renommez vos variables et vos fonctions, harmonisez
    leurs noms, utilisez des structures de données plus adaptées, voyez si vous
@@ -370,7 +371,8 @@ def test_est_palindrome():
 try:
     test_est_palindrome()
 except AssertionError:
-    print("7: (Sans ce try: … except …, cette ligne créerait une AssertionError)")
+    print("7: (Sans ce try: … except …, cette ligne créerait une "
+          "AssertionError)")
 
 """
 3. Green : on écrit le code jusqu'à ce que les tests passent. On rappelle que
@@ -411,7 +413,8 @@ print("Tests de est_palindrome() après refactoring : OK")
 
 """
 (Note : on a redéfini trois fois la fonction est_palindrome() : à chaque fois,
-la nouvelle définition remplace l'ancienne, cf. chap. 14.)
+la nouvelle définition remplace l'ancienne, comme pour une variable que
+l'on réaffecte, cf. chap. 10.)
 
 Au chap. 37 (Tests II), on verra comment automatiser ces tests avec pytest.
 """
@@ -435,10 +438,10 @@ rattache à la fonction : on peut l'afficher avec help(fonction), ou avec
 l'attribut __doc__ (cf. chap. 3).
 """
 
-# Ex. avec une qui fonction prend une string et retourne un booléen :
+# Ex. avec une fonction qui prend une string et retourne un booléen :
 def fn_exemple_1(s):
     """(str) -> bool
-    Cette fonction retourne True si la chaîne est non-nulle, et False sinon.
+    Cette fonction retourne True si la chaîne est non vide, et False sinon.
     """
     return len(s) > 0
 
@@ -455,7 +458,8 @@ print(fn_exemple_1("abc"))   # => True
 print(fn_exemple_2(5, 3))    # => (8, 2)
 print(fn_exemple_1.__doc__)
 # => (str) -> bool
-#    Cette fonction retourne True si la chaîne est non-nulle, et False sinon.
+#    Cette fonction retourne True si la chaîne est non vide, et False sinon.
+#    (suivi d'une ligne vide : la docstring se termine par un saut de ligne)
 # (Avant Python 3.13, l'indentation de la 2e ligne est conservée à l'affichage.)
 
 
@@ -498,7 +502,8 @@ print(comparer_listes([2, 5, 8], [3, 7]))  # => True
 Remarque : une annotation de type suppose que votre fonction retourne des
 valeurs de type homogène…
 
-Ainsi, cette fonction n'est pas annotable :
+Ainsi, cette fonction n'est pas annotable simplement (il faudrait écrire
+"str | bool | int", une notation vue au chap. 46) :
 """
 def une_fonction_bizarre(par1, par2):
     """(????) -> (????)."""
@@ -511,8 +516,8 @@ def une_fonction_bizarre(par1, par2):
 
 
 """
-Selon ses paramètres, elle retourne une string, un booléen ou un int : il est
-impossible de lui donner un type de retour unique. C'est le signe d'une
+Selon ses paramètres, elle retourne une string, un booléen ou un int : on ne
+peut pas lui donner un type de retour unique. C'est le signe d'une
 fonction mal conçue, difficile à utiliser… et à tester !
 """
 print(une_fonction_bizarre("abc", ""))        # => la chaîne est vide
@@ -520,7 +525,7 @@ print(une_fonction_bizarre("abc", "abcdefg"))  # => False
 print(une_fonction_bizarre("abc", "ab"))       # => 3
 
 """
-Les types utilisables pour les annotations sont :
+Les types les plus courants pour les annotations sont :
    - None (ne retourne rien)
    - int
    - float
@@ -536,8 +541,8 @@ contenu avec la syntaxe "type[type]":
    - tuple[str, int] (pour un tuple ayant toujours comme première valeur une
      string, et comme deuxième un int)
 
-Attention, les valeurs contenues dans le type construit doivent toutes être de
-même nature.
+Attention : list[int] annonce que TOUS les éléments de la liste sont des ints,
+alors que tuple[str, int] donne le type de chaque position du tuple.
 
 Note : cette syntaxe list[int], tuple[str, int]… n'est disponible qu'à partir
 de Python 3.9. Avec une version plus ancienne, la définition de fonction

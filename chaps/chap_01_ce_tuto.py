@@ -25,7 +25,7 @@
 """
 Ce tutoriel a vocation à être lu sur un ordinateur, pour pouvoir exécuter et
 tester directement le code proposé. Il vous faut donc un ordinateur, idéalement
-sous Linux, BSD ou Mac.
+sous Linux, BSD ou macOS.
 
 Le tutoriel est aussi pensé pour être ouvert depuis un éditeur de texte
 proposant une coloration syntaxique (vim, Emacs, Sublime Text, PyCharm, VS
@@ -35,12 +35,12 @@ Nous rappelons que Microsoft Word n'est pas un éditeur de texte, mais un
 éditeur de MISE EN FORME de texte. Vous ne pouvez pas vous en servir pour
 écrire du code.
 
-Les fichiers de ce cours sont exécutables, càd que vous pouvez les lancer avec
-un interpréteur Python (cf. chap. 2, méthode 2) via la commande :
-?> python ce_fichier.py
+Les fichiers de ce cours sont exécutables, c'est-à-dire que vous pouvez les
+lancer avec un interpréteur Python (cf. chap. 2, méthode 2) via la commande :
+?> python3 ce_fichier.py
 
-Enfin, tout ce cours utilise Python 3.6+ (c'est-à-dire la version 3, et au moins
-la sous-version 6).
+Enfin, tout ce cours utilise Python 3.10+ (c'est-à-dire la version 3, et au
+moins la sous-version 10). Il a été testé avec Python 3.14.
 """
 
 
@@ -70,7 +70,7 @@ print(["une", "liste"])  # => ['une', 'liste']
 
 """
 Note 2 : dans certains fichiers, des erreurs intentionnelles ont été laissées
-dans le code. Elles sont signalées dans le code. On utilise un mécanisme de
+dans le code, et elles y sont signalées. On utilise un mécanisme de
 gestion d'erreurs ("try … except …") pour empêcher ces erreurs
 d'interrompre le programme. Ce mécanisme n'est pas à connaître au début : il
 sera abordé en détail au chap. 26.
@@ -87,7 +87,8 @@ identifier plus tard dans la console.
 
 Note 3 : les points importants sont notés "IMPT" et vous devez absolument les
 connaître. Certains points ne sont pas indispensables, mais ils sont laissés
-pour votre curiosité.
+pour votre curiosité : ils sont notés "HP" ("hors programme"). Vous pouvez les
+sauter en première lecture.
 
 Note 4 : dans les explications, deux "invites de commande" (cf. chap. 2)
 apparaissent :
@@ -157,8 +158,8 @@ Quel que soit l'éditeur que vous choisissez, il est indispensable de le
 maîtriser. Par "maîtriser", on entend "pouvoir traiter toutes les tâches simples
 de façon efficiente", ce qui implique de savoir le faire au clavier grâce à une
 combinaison de touches. On appelle ces combinaisons des "raccourcis clavier".
-Connaître beaucoup de raccourcis clavier fera de vous un.e meilleur.e
-programmeur.se.
+Connaître beaucoup de raccourcis clavier fera de vous un·e meilleur·e
+programmeur·se.
 
 Vous devriez petit à petit avoir des raccourcis clavier pour TOUTES les tâches
 suivantes :
@@ -167,13 +168,13 @@ suivantes :
 -   déplacer le curseur en début/fin de fichier,
 -   supprimer le texte avant ou après le curseur jusqu'à la fin du mot,
 -   supprimer le texte après le curseur jusqu'à la fin de la ligne,
--   déplacer verticalement une ligne ou un ensemble de ligne,
+-   déplacer verticalement une ligne ou un ensemble de lignes,
 -   sélectionner du texte et étendre la sélection dans toutes les directions,
 -   étendre une sélection jusqu'au curseur,
 -   ajouter une sélection à la sélection courante,
 -   faire une sélection multiple (avec plusieurs curseurs),
 -   commenter/décommenter la sélection ou la ligne courante,
--   changer l'indentation d'un bloc de code (cf. chap. 12).
+-   changer l'indentation d'un bloc de code (cf. chap. 5 et 12),
 -   exécuter le code du fichier courant,
 -   afficher/masquer la console pour voir les erreurs d'exécution,
 -   rechercher du texte dans le fichier courant,
@@ -184,7 +185,7 @@ suivantes :
 C'est un minimum : vous êtes bien sûr invité·e·s à y ajouter vos propres
 raccourcis.
 
-Plus vous maitriserez de raccourcis, plus vous serez rapides et vous prendrez
+Plus vous maîtriserez de raccourcis, plus vous serez rapides et vous prendrez
 confiance en vous. L'objectif est de ne pas être limité par vos mains, mais par
 votre vitesse de réflexion. Codez à la vitesse de votre pensée, pas de votre
 souris !

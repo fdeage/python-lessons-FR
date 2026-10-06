@@ -297,7 +297,7 @@ def afficher_prix_ttc(prix_ht):
 
 afficher_prix_ttc(prix_livre)  # => 12.0
 afficher_prix_ttc(prix_stylo)  # => 2.4
-# (la notion de paramètre, ici prix_ht, est détaillée juste en-dessous)
+# (la notion de paramètre, ici prix_ht, est détaillée juste en dessous)
 
 
 # Fonctions avec paramètres
@@ -364,8 +364,8 @@ en arguments : ci-dessus, la variable "longueur" est passée, mais dans la
 fonction, sa valeur s'appelle "parametre1". (La "portée" des variables sera
 détaillée au chap. 19.)
 
-Comme Python ne vérifie pas les types, une même fonction peut marcher avec
-plusieurs types… ou planter :
+Comme Python ne vérifie pas le type des arguments au moment de l'appel, une
+même fonction peut marcher avec plusieurs types… ou planter en cours de route :
 """
 ma_deuxieme_fonction(1.5, 2)  # fonctionne avec des floats
 # => 1er paramètre : 1.5, 2ème : 2
@@ -402,14 +402,14 @@ Au moment où on exécute le programme, ce mot-clé "return" :
 
 # Exemple 1 : une fonction qui retourne toujours 5
 def fonction_sans_parametre():
-    print("Cette fonction n'est pas très intéressante… elle retourne toujours 5.")
+    print("Pas très intéressante… elle retourne toujours 5.")
     return 5
 
 
 # On appelle ensuite la fonction : l'exécution "passe dans la fonction"
 a = fonction_sans_parametre()
-# => Cette fonction n'est pas très intéressante… elle retourne toujours 5.
-print(a)  # => 5 (l'appel de la fonction est remplacé par la valeur qu'elle retourne)
+# => Pas très intéressante… elle retourne toujours 5.
+print(a)  # => 5 (l'appel est remplacé par la valeur que la fonction retourne)
 
 # Exemple 2 : on va essayer de faire retourner une valeur différente qui varie
 # suivant les paramètres qui sont passés à la fonction
@@ -451,7 +451,7 @@ print(ajouter_nombres(ajouter_nombres(1, 1), 10))
 
 """
 IMPT : il faut noter que "return" interrompt toujours l'exécution de la
-fonction : les lignes situées en-dessous ne seront pas exécutées !
+fonction : les lignes situées en dessous ne seront pas exécutées !
 
 Exemple 3 : du code inutile (non-exécuté)
 """
@@ -463,10 +463,7 @@ def dire_si_negatif(a):
     else:
         return False
         print(f"{a} est positif ou nul")  # Celui-ci est inutile aussi
-    print(
-        'Comme chaque branche du "if" ci-dessus contient un return, ce \
-    code ne sera jamais exécuté'
-    )
+    print("Chaque branche du if contient un return : jamais exécuté")
 
 
 # Les deux appels ci-dessous n'imprimeront rien

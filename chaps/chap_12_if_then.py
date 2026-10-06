@@ -87,7 +87,7 @@ une_variable = 15
 if une_variable > 10:
     print("une_variable est plus grande que 10")  # => imprimé
     print("…et cette ligne aussi est dans le bloc")  # => imprimé
-    une_variable = une_variable - 10  # un bloc peut contenir n'importe quel code
+    une_variable = une_variable - 10  # un bloc peut contenir tout type de code
 print(une_variable)  # => 5 (toujours exécuté, hors du bloc)
 
 # La condition peut utiliser tous les opérateurs de comparaison du chap. 9 :
@@ -107,8 +107,8 @@ erreur de syntaxe (SyntaxError) : le programme refusera même de démarrer.
 C'est pour cette raison que cet exemple n'est pas dans un try … except …
 (cf. chap. 26) : il est simplement laissé en commentaire.
 """
-# if mot = "python":   # SyntaxError: invalid syntax
-#     print("…")
+# if mot = "python":   # SyntaxError: invalid syntax. Maybe you meant '==' or
+#     print("…")       # ':=' instead of '='?
 
 """
 Note : on peut combiner plusieurs conditions dans un "if" avec les opérateurs
@@ -156,7 +156,7 @@ Donc, toujours utiliser des booléens avec "if" !
 ####################
 
 # On peut faire plus sophistiqué et rajouter un bloc exécuté si la condition
-# N'EST PAS remplie. On utilisera alors "if …: … else: …""
+# N'EST PAS remplie. On utilisera alors "if …: … else: …"
 une_variable = 12
 
 if une_variable > 10:
@@ -210,8 +210,8 @@ else:                         # SyntaxError: invalid syntax
 
 """
 Enfin, on peut compléter cette structure avec "elif". "elif" permet d'ajouter
-une autre condition à tester, alors qu'avec "else" le bloc qui est exécuté
-quand aucune condition n'est remplie : c'est le cas "par défaut".
+une autre condition à tester, alors que "else" introduit le bloc exécuté quand
+aucune condition n'est remplie : c'est le cas "par défaut".
 
 Exemple avec cette fonction mathématique f définie par morceaux :
          / 2x + 3   si x < 0
@@ -245,8 +245,8 @@ print(f(2))   # => 1    (x = 2 n'est pas < 2 : on tombe dans le "else")
 Notes :
     - "elif" est la contraction de "else if" ("sinon, si…"),
     - "elif" sert quand on a plus de deux cas possibles,
-    - il n'y a pas de limites au nombre de "elif" dans une structure if,
-    - on peut utiliser "elif:" sans "else:" : dans ce cas-là il sera possible
+    - il n'y a pas de limite au nombre de "elif" dans une structure if,
+    - on peut utiliser "elif" sans "else" : dans ce cas-là il sera possible
       qu'aucune clause ne soit exécutée.
 
 IMPT : les conditions sont testées DANS L'ORDRE, de haut en bas, et seul le
@@ -297,8 +297,8 @@ if x > 20_000:
 elif x < 0.001:
     print("x est tout petit")
 """
-Ici rien ne s'affichera car x n'est ni grand ni petit ! pour couvrir le cas
-"par défaut" , il faudra ajouter une clause "else".
+Ici rien ne s'affichera car x n'est ni grand ni petit ! Pour couvrir le cas
+"par défaut", il faudra ajouter une clause "else".
 """
 
 
@@ -310,8 +310,8 @@ En Python, l'indentation sert à identifier quand on "entre dans" un bloc.
 Remarquez que l'indentation augmente après chaque ":".
 
 L'indentation en Python est donc visuelle ET sémantique : utiliser la mauvaise
-identation peut créer une erreur pendant l'exécution, voire pire, changer
-subtilement le sens du programme !
+indentation peut empêcher le programme de démarrer (IndentationError), voire
+pire, changer subtilement le sens du programme !
 
 Rappels (cf. chap. 5) :
     - la convention (PEP 8) est d'indenter avec 4 espaces,
@@ -325,7 +325,7 @@ def lancer_missile():
     # (la définition de fonction crée aussi une nouvelle indentation)
     print("Boom !")
 
-code_saisi = input("Rentrez le code secret pour lancer le missile : ")
+code_saisi = input("Entrez le code secret pour lancer le missile : ")
 
 if code_saisi == "123456":
     print("Code de lancement correct")
@@ -359,7 +359,7 @@ if code_saisi == "123456":
 
 if code_saisi == "123456":
 print("Code de lancement correct")   # IndentationError: expected an indented
-                                     # block after 'if' statement
+                                     # block after 'if' statement on line …
 """
 
 
@@ -445,8 +445,8 @@ else:
 
 """
 Sans "pass", ce code soulèverait une IndentationError: expected an indented
-block. "pass" sert aussi pour les fonctions (cf. chap. 14) ou les boucles
-(cf. chap. 13) que l'on n'a pas encore écrites.
+block after 'if' statement… "pass" sert aussi pour les fonctions (cf.
+chap. 14) ou les boucles (cf. chap. 13) que l'on n'a pas encore écrites.
 """
 
 
@@ -461,7 +461,8 @@ Récapitulatif des erreurs les plus courantes avec "if" :
                          # les versions antérieures disent "invalid syntax")
 
     2. Utiliser "=" au lieu de "==" :
-       if x = 3:         # SyntaxError: invalid syntax
+       if x = 3:         # SyntaxError: invalid syntax. Maybe you meant '=='
+                         # or ':=' instead of '='?
 
     3. Se tromper d'indentation (voir l'exemple du missile plus haut).
 
@@ -495,7 +496,8 @@ saisie = "18"  # comme si cette valeur venait de input()
 if saisie == 18:
     print("Jamais imprimé : on compare une string et un int")
 if int(saisie) == 18:
-    print("Après conversion avec int(), la comparaison fonctionne")  # => imprimé
+    print("Après conversion avec int(), la comparaison fonctionne")
+    # => imprimé
 
 
 # Les "one-liner" avec if
@@ -536,9 +538,11 @@ valeur_absolue = x if x >= 0 else -x
 print(valeur_absolue)  # => 8
 
 nb_pommes = 1
-print(f"J'ai {nb_pommes} pomme{'s' if nb_pommes > 1 else ''}")  # => J'ai 1 pomme
+print(f"J'ai {nb_pommes} pomme{'s' if nb_pommes > 1 else ''}")
+# => J'ai 1 pomme
 nb_pommes = 3
-print(f"J'ai {nb_pommes} pomme{'s' if nb_pommes > 1 else ''}")  # => J'ai 3 pommes
+print(f"J'ai {nb_pommes} pomme{'s' if nb_pommes > 1 else ''}")
+# => J'ai 3 pommes
 
 """
 On peut enchaîner les expressions conditionnelles, mais cela devient vite

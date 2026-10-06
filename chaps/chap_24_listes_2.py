@@ -35,12 +35,12 @@ constituées d'ints ou de floats uniquement) :
 # Rappel : list(range(5)) crée la liste des entiers de 0 à 4 (cf. chap. 13 et
 # plus bas)
 liste_entiers_croissants = list(range(5))
-print(liste_entiers_croissants)      # => [0, 1, 2, 3, 4]
+print(liste_entiers_croissants)       # => [0, 1, 2, 3, 4]
 
-print(len(liste_entiers_croissants)) # => 5
-print(max(liste_entiers_croissants)) # => 4
-print(min(liste_entiers_croissants)) # => 0
-print(sum(liste_entiers_croissants)) # => 10
+print(len(liste_entiers_croissants))  # => 5
+print(max(liste_entiers_croissants))  # => 4
+print(min(liste_entiers_croissants))  # => 0
+print(sum(liste_entiers_croissants))  # => 10
 
 # Ainsi, pour calculer la moyenne des notes suivantes…
 notes = [17, 12, 14, 9, 19, 11, 14, 14]
@@ -62,8 +62,9 @@ except ValueError as err:
 """
 Note : len(), max() et min() fonctionnent aussi sur des listes de strings
 (l'ordre utilisé est alors l'ordre "alphabétique" des codes des caractères,
-cf. chap. 8). En revanche, sum() ne fonctionne qu'avec des nombres, et aucune
-de ces fonctions n'accepte un mélange de nombres et de strings.
+cf. chap. 8). En revanche, sum() ne fonctionne qu'avec des nombres, et ni
+max() ni min() n'acceptent un mélange de nombres et de strings (len(), qui ne
+fait que compter, accepte tout).
 """
 print(max(["pomme", "banane", "kiwi"]))  # => pomme
 print(min(["pomme", "banane", "kiwi"]))  # => banane
@@ -147,7 +148,7 @@ print(dict(zip(prenoms, ages)))  # => {'Ada': 36, 'Alan': 41, 'Grace': 85}
 # Pour déclarer une liste d'éléments identiques, on utilise l'opérateur "*"
 print(["a"] * 4)  # => ['a', 'a', 'a', 'a']
 print([0] * 5)    # => [0, 0, 0, 0, 0] (pratique pour initialiser des compteurs)
-print([1, 2] * 3) # => [1, 2, 1, 2, 1, 2]
+print([1, 2] * 3)  # => [1, 2, 1, 2, 1, 2]
 
 # On peut appliquer la fonction intégrée list() sur un itérable (cf. chap. 23) :
 #   - avec un argument range() pour déclarer une liste d'entiers croissants
@@ -315,9 +316,9 @@ Lire matrice[1][2] de gauche à droite :
 """
 
 # Pour avoir les dimensions de la matrice, on va utiliser len()
-print(len(matrice))     # => 3, la "hauteur" de la matrice (son nombre de lignes)
+print(len(matrice))     # => 3, la "hauteur" de la matrice (nb de lignes)
 print(len(matrice[0]))  # => 3, la "largeur" de la première ligne (le nombre de
-# colonnes).
+#                            colonnes)
 
 """
 On supposera que la largeur de la première ligne sera identique aux largeurs
@@ -358,7 +359,7 @@ print(liste_3d[1][0][1])  # => 5
 """
 IMPT : piège classique ! Pour créer une matrice remplie de 0, on pourrait être
 tenté d'écrire [[0] * 3] * 3… mais les 3 lignes sont alors LA MÊME liste
-(elles ont la même adresse mémoire, cf. chap. 19) :
+(c'est le même objet en mémoire, cf. "is" au chap. 21) :
 """
 piege = [[0] * 3] * 3
 piege[0][0] = 1
@@ -436,7 +437,8 @@ def derniere_lettre(mot):
     return mot[-1]
 
 
-print(sorted(mots, key=derniere_lettre))  # => ['fraise', 'kiwi', 'ananas', 'noix']
+print(sorted(mots, key=derniere_lettre))
+# => ['fraise', 'kiwi', 'ananas', 'noix']
 
 # Trier des strings sans tenir compte des majuscules :
 print(sorted(["banane", "Pomme", "abricot"], key=str.lower))
@@ -522,7 +524,7 @@ print(copie)  # => ['pomme', 'cerise', 'banane', 'kiwi']
 #   7. .clear() vide la liste
 copie.clear()
 print(copie)   # => []
-print(fruits)  # => ['pomme', 'cerise', 'banane', 'kiwi'] (l'original est intact)
+print(fruits)  # => ['pomme', 'cerise', 'banane', 'kiwi'] (original intact)
 
 """
 Résumé :
@@ -550,7 +552,7 @@ Résumé :
 1. Copier une liste : "=" ne copie PAS !
 
 L'affectation b = a ne crée pas une nouvelle liste : a et b désignent la MÊME
-liste en mémoire (cf. chap. 19). Modifier l'une modifie donc "l'autre".
+liste en mémoire (cf. chap. 21). Modifier l'une modifie donc "l'autre".
 """
 a = [1, 2, 3]
 b = a
@@ -625,9 +627,10 @@ print(reste)    # => [2, 3, 4]
 *debut, dernier = [1, 2, 3, 4]
 print(debut, dernier)  # => [1, 2, 3] 4
 
-# "*" permet aussi de passer les éléments d'une liste comme arguments séparés :
-print(*[1, 2, 3])           # => 1 2 3 (équivaut à print(1, 2, 3))
-print(*["a", "b"], sep="-") # => a-b
+# "*" permet aussi de passer les éléments d'une liste comme arguments séparés
+# (cf. chap. 32 pour les détails) :
+print(*[1, 2, 3])            # => 1 2 3 (équivaut à print(1, 2, 3))
+print(*["a", "b"], sep="-")  # => a-b
 
 """
 5. Transformer une liste en string avec .join()

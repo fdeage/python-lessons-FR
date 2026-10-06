@@ -28,9 +28,9 @@
 #########################
 
 """
-Les tuples sont des séquences d'éléments, comme des listes : la seule différence
-est qu'ils sont persistants ("immutable" en anglais) : on ne peut pas les
-modifier une fois créés.
+Les tuples sont des séquences d'éléments, comme des listes. La principale
+différence est qu'ils sont immuables ("immutable" en anglais), comme les
+strings (cf. chap. 7) : on ne peut pas les modifier une fois créés.
 
 À l'inverse des listes, dont la taille peut varier à l'infini, les tuples
 sont utilisés quand on souhaite manipuler des ensembles de valeurs de taille
@@ -63,8 +63,9 @@ print(tup_alternatif)  # => (4, 5, 6)
 
 print(type((1)))   # => <class 'int'>
 print(type((1,)))  # => <class 'tuple'>
-print(type(1,))    # => <class 'int'> (ici la virgule sépare les arguments de
-#                    type() : il faut bien les parenthèses autour de "1,")
+print(type(1,))    # => <class 'int'> (ici, la virgule finale est celle de la
+#                    liste des arguments de type(), et Python l'ignore : il
+#                    faut bien des parenthèses autour de "1,")
 
 # Attention donc à la virgule oubliée en fin de ligne, source de bugs étranges :
 prix = 12.5,       # oups, une virgule en trop…
@@ -167,8 +168,9 @@ print(pouet.count(42))  # => 2 (nombre d'apparitions de 42 dans le tuple)
 # Note : .index() et .count() sont les deux SEULES méthodes des tuples (une
 # liste en a beaucoup plus, car la plupart servent à la modifier)
 
-# Comme pour les listes, "+" concatène deux tuples et "*" répète un tuple. Ces
-# opérations ne modifient pas les tuples d'origine : elles en créent un NOUVEAU
+# Comme pour les strings (cf. chap. 7) et les listes, "+" concatène deux tuples
+# et "*" répète un tuple. Ces opérations ne modifient pas les tuples
+# d'origine : elles en créent un NOUVEAU
 print((1, 2) + (3, 4))  # => (1, 2, 3, 4)
 print((0,) * 5)         # => (0, 0, 0, 0, 0)
 print(("a", "b") * 2)   # => ('a', 'b', 'a', 'b')
@@ -189,9 +191,9 @@ print(x, y)  # => 3 2
 
 """
 Comment ça marche ? Python évalue d'abord tout le côté DROIT du "=" : il crée
-le tuple (x, y), càd (2, 3). Puis il "déballe" ce tuple dans les variables du
-côté GAUCHE : y reçoit 2 et x reçoit 3. Dans beaucoup d'autres langages, il
-faudrait passer par une variable temporaire :
+le tuple (x, y), c'est-à-dire (2, 3). Puis il "déballe" ce tuple dans les
+variables du côté GAUCHE : y reçoit 2 et x reçoit 3. Dans beaucoup d'autres
+langages, il faudrait passer par une variable temporaire :
     temp = x
     x = y
     y = temp
@@ -331,7 +333,7 @@ print(pouet)  # => (3.5, ('autre', 'tuple!'), False, [15, 5, True], 42, 42)
 """
 Le tuple garantit seulement que ses "cases" désignent toujours les mêmes
 objets. Si l'un de ces objets est lui-même modifiable (une liste), il peut
-changer. Un tel tuple ne peut d'ailleurs plus servir de clé de dictionnaire.
+changer. Un tel tuple ne peut d'ailleurs pas servir de clé de dictionnaire.
 """
 
 # 2. On peut réaffecter le nom d'un tuple à une autre valeur

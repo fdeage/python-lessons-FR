@@ -219,8 +219,9 @@ IMPT : un algorithme exponentiel est inutilisable dès que n dépasse quelques
 dizaines. Un algorithme quadratique devient pénible au-delà de quelques
 dizaines de milliers d'éléments.
 
-Ces nombres sont si grands que Python lui-même refuse (depuis la version
-3.11) de convertir en texte un entier de plus de 4300 chiffres, par sécurité :
+Ces nombres sont si grands que Python lui-même refuse (depuis les versions
+3.11 et 3.10.7) de convertir en texte un entier de plus de 4300 chiffres, par
+sécurité :
 """
 try:
     print(str(2 ** 20_000))   # 2^20000 a 6021 chiffres
@@ -229,7 +230,8 @@ except ValueError as err:
 # => 1: (Sans ce try: … except …, cette ligne créerait : Exceeds the limit
 #    (4300 digits) for integer string conversion; use
 #    sys.set_int_max_str_digits() to increase the limit)
-# (Avant Python 3.11, la conversion fonctionne et affiche les 6021 chiffres.)
+# (Avant Python 3.10.7, la conversion fonctionne et affiche les 6021
+# chiffres.)
 
 
 # Analyser une boucle
@@ -362,7 +364,8 @@ pour ajouter et retirer aux deux bouts en O(1) : cf. chap. 43.)
 Pourquoi "in" est-il O(1) sur un set ou un dict ? Grâce au "hachage" (cf.
 chap. 18) : Python calcule directement, à partir de la valeur, la case où
 elle devrait se trouver. Pas besoin de tout parcourir. ("En moyenne", car
-dans des cas très rares plusieurs valeurs tombent dans la même case.)
+plusieurs valeurs peuvent tomber dans la même case ; le pire cas, où presque
+toutes y tombent, est extrêmement rare.)
 
 IMPT : si vous testez souvent "x in collection" sur de grandes données,
 utilisez un set ou un dict, pas une liste.
@@ -590,7 +593,8 @@ utilisez sorted() ou .sort(). Les implémenter soi-même reste un excellent
 exercice pour comprendre la complexité.
 
 Note : on démontre qu'aucun tri qui ne fait que COMPARER des éléments ne peut
-faire mieux que O(n log n) dans le pire cas. Timsort est donc optimal.
+faire mieux que O(n log n) dans le pire cas. Timsort est donc optimal, à une
+constante près.
 """
 
 
@@ -688,7 +692,7 @@ générateur (cf. chap. 36) les produit un par un, à la demande.
 liste_carres = [x ** 2 for x in range(1_000_000)]
 generateur_carres = (x ** 2 for x in range(1_000_000))
 print(sys.getsizeof(liste_carres))       # => 8448728 (variable)
-print(sys.getsizeof(generateur_carres))  # => 208 (variable)
+print(sys.getsizeof(generateur_carres))  # => 200 (variable)
 print(sum(liste_carres) == sum(generateur_carres))  # => True
 
 """

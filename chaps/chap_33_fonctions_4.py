@@ -328,7 +328,7 @@ pour la section suivante.
 Voici où la récursivité devient vraiment utile : les données IMBRIQUÉES,
 dont on ne connaît pas la profondeur à l'avance. Exemples réels :
     - des dossiers qui contiennent des fichiers et d'autres dossiers,
-    - des données JSON (cf. chap. 22 et 28) : des dictionnaires qui
+    - des données JSON (cf. chap. 28) : des dictionnaires qui
       contiennent des listes qui contiennent des dictionnaires…
     - un arbre généalogique, un organigramme, un menu à sous-menus…
 
@@ -500,7 +500,8 @@ for n in [5, 10, 20, 25]:
 """
 Le nombre d'appels explose (il est multiplié par environ 1,6 à chaque fois
 que n augmente de 1) : fib(40) demanderait plus de 300 millions d'appels,
-et fib(100) des milliards d'années ! IMPT : une récursivité avec plusieurs
+et fib(100) plus de 10^21 appels, soit des centaines de milliers d'années de
+calcul ! IMPT : une récursivité avec plusieurs
 appels sur des sous-problèmes qui se recoupent peut devenir catastrophique.
 """
 
@@ -539,8 +540,8 @@ print(fib_memo(100))  # => 354224848179261915075 (instantané !)
 print(len(memo))      # => 101 (fib(0) à fib(100) : chacun calculé UNE fois)
 
 """
-Chaque fib(k) n'est plus calculé qu'une seule fois : on passe de milliards
-d'appels à environ 200.
+Chaque fib(k) n'est plus calculé qu'une seule fois : pour fib(100), on passe
+de plus de 10^21 appels à environ 200.
 
 Bonus : Python fournit un outil tout fait qui mémoïse automatiquement une
 fonction : functools.lru_cache (ou functools.cache depuis Python 3.9). Il

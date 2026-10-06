@@ -91,7 +91,16 @@ print(stock)                          # => {'poires': 0, 'cerises': 5}
 - .get() et .pop() n'ajoutent jamais de clé : "kiwis" n'est pas dans stock.
 """
 
-# 6. Copie ou alias :
+# 6. .get() avec une valeur par défaut, au lieu d'une KeyError :
+capitales = {"France": "Paris", "Italie": "Rome", "Japon": "Tokyo"}
+print(capitales.get("Espagne", "inconnue"))  # => inconnue
+print(capitales.get("Japon", "inconnue"))    # => Tokyo
+"""
+Si la clé existe, .get() retourne la valeur associée ; sinon, la valeur par
+défaut (et le dictionnaire n'est pas modifié).
+"""
+
+# 7. Copie ou alias :
 a = {"x": 1}
 b = a
 c = a.copy()
@@ -104,7 +113,7 @@ c est une copie indépendante : elle a gardé l'ancienne valeur de "x", et la
 clé "y" n'apparaît que dans c.
 """
 
-# 7. Réglages :
+# 8. Réglages :
 defaut = {"langue": "fr", "theme": "clair", "taille": 12}
 choix = {"theme": "sombre", "taille": 14}
 reglages = defaut.copy()
@@ -120,7 +129,7 @@ Python 3.9, on peut aussi écrire defaut | choix.
 """
 
 
-# 8. Stock restant :
+# 9. Stock restant :
 def stock_restant(stock, produit):
     return stock.get(produit, 0)
 
@@ -135,18 +144,18 @@ print(stock_restant({"pain": 4}, "lait"))  # => 0
 
 notes = {"Ana": 15, "Bob": 9, "Chloé": 17, "Djamel": 11}
 
-# 9. a) Liste des prénoms :
+# 10. a) Liste des prénoms :
 print(list(notes.keys()))  # => ['Ana', 'Bob', 'Chloé', 'Djamel']
 # (list(notes) donne le même résultat : parcourir un dict, c'est parcourir
 # ses clés.)
 
-# 9. b) Moyenne de la classe :
+# 10. b) Moyenne de la classe :
 print(sum(notes.values()) / len(notes))  # => 13.0
 
-# 9. c) Meilleure note :
+# 10. c) Meilleure note :
 print(max(notes.values()))  # => 17
 
-# 9. d) Chaque élève avec sa note :
+# 10. d) Chaque élève avec sa note :
 for eleve, note in notes.items():
     print(f"{eleve} : {note}/20")
 # => Ana : 15/20
@@ -154,16 +163,16 @@ for eleve, note in notes.items():
 # => Chloé : 17/20
 # => Djamel : 11/20
 
-# 9. e) Ordre alphabétique inverse :
+# 10. e) Ordre alphabétique inverse :
 print(sorted(notes, reverse=True))  # => ['Djamel', 'Chloé', 'Bob', 'Ana']
 
-# 10. Élèves qui ont la moyenne, et élèves en échec :
+# 11. Élèves qui ont la moyenne, et élèves en échec :
 admis = [eleve for eleve, note in notes.items() if note >= 10]
 echecs = {eleve: note for eleve, note in notes.items() if note < 10}
 print(admis)   # => ['Ana', 'Chloé', 'Djamel']
 print(echecs)  # => {'Bob': 9}
 
-# 11. Les vues sont dynamiques :
+# 12. Les vues sont dynamiques :
 d = {"a": 1}
 cles = d.keys()
 d["b"] = 2
@@ -174,7 +183,7 @@ dictionnaire : elle reflète toutes les modifications faites ensuite. Pour
 obtenir une photo des clés à un instant donné, il faut écrire list(d.keys()).
 """
 
-# 12. Supprimer pendant le parcours :
+# 13. Supprimer pendant le parcours :
 prix = {"pain": 1.2, "fromage": 7.5, "vin": 12.0, "lait": 0.9}
 try:
     for produit in prix:
@@ -202,7 +211,7 @@ print(prix)  # => {'pain': 1.2, 'lait': 0.9}
 #  Exemple : compter des occurrences  #
 #######################################
 
-# 13. Compter les lettres :
+# 14. Compter les lettres :
 def compter_lettres(texte):
     compteur = {}
     for lettre in texte:
@@ -218,7 +227,7 @@ compteur.get(lettre, 0) vaut 0 la première fois qu'on rencontre une lettre
 (elle n'est pas encore une clé), puis le nombre d'apparitions déjà comptées.
 """
 
-# 14. Lettre la plus fréquente :
+# 15. Lettre la plus fréquente :
 compte = compter_lettres("abracadabra")
 print(compte)
 # => {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
@@ -230,7 +239,7 @@ pour chaque clé, c'est-à-dire les nombres d'apparitions.
 """
 
 
-# 15. Regrouper par initiale :
+# 16. Regrouper par initiale :
 def regrouper_par_initiale(mots):
     groupes = {}
     for mot in mots:
@@ -261,7 +270,7 @@ carnet = {
     "chloe": {"tel": "0699887766", "ville": "Lyon", "age": 22},
 }
 
-# 16. Accès imbriqués :
+# 17. Accès imbriqués :
 print(carnet["bob"]["ville"])  # => Paris
 print(len(carnet["ana"]))      # => 3
 try:
@@ -274,13 +283,13 @@ n'est pas une clé de carnet : la KeyError se produit dès le 1er crochet, et le
 message indique la clé fautive ('djamel').
 """
 
-# 17. Modifier et ajouter :
+# 18. Modifier et ajouter :
 carnet["bob"]["ville"] = "Marseille"
 carnet["djamel"] = {"tel": "0700000000", "ville": "Paris", "age": 41}
 print(carnet["bob"]["ville"])  # => Marseille
 print(len(carnet))             # => 4
 
-# 18. Contacts lyonnais et âge moyen :
+# 19. Contacts lyonnais et âge moyen :
 for prenom, infos in carnet.items():
     if infos["ville"] == "Lyon":
         print(prenom)
@@ -294,7 +303,7 @@ imbriqué du contact. Pour l'âge moyen, seules les valeurs nous intéressent :
 on parcourt carnet.values().
 """
 
-# 19. Nombre de contacts par ville :
+# 20. Nombre de contacts par ville :
 par_ville = {}
 for infos in carnet.values():
     ville = infos["ville"]
@@ -302,11 +311,46 @@ for infos in carnet.values():
 print(par_ville)  # => {'Lyon': 2, 'Marseille': 1, 'Paris': 1}
 
 
+eleves = {
+    "Alice": {"age": 15, "notes": [15, 17, 12]},
+    "Bob": {"age": 16, "notes": [9, 11, 8]},
+}
+
+# 21. Accès imbriqués :
+print(eleves["Bob"]["age"])       # => 16
+print(eleves["Alice"]["notes"][1])  # => 17
+
+# 22. Ajouts :
+eleves["Bob"]["notes"].append(14)
+eleves["Chloé"] = {"age": 15, "notes": []}
+print(eleves["Bob"])    # => {'age': 16, 'notes': [9, 11, 8, 14]}
+print(eleves["Chloé"])  # => {'age': 15, 'notes': []}
+
+# 23. Moyenne de chaque élève :
+for eleve in eleves:
+    liste_notes = eleves[eleve]["notes"]
+    if len(liste_notes) == 0:
+        print(f"{eleve} : pas de note")
+    else:
+        somme = 0
+        for note in liste_notes:
+            somme += note
+        print(f"{eleve} : {somme / len(liste_notes):.1f}")
+# => Alice : 14.7
+# => Bob : 10.5
+# => Chloé : pas de note
+"""
+Sans le test sur la longueur, on diviserait par 0 pour Chloé :
+ZeroDivisionError. (Avec .items(), on écrirait plus simplement :
+for eleve, infos in eleves.items(), puis sum(infos["notes"]).)
+"""
+
+
 ##############################################
 #  Dictionnaires et paramètres de fonctions  #
 ##############################################
 
-# 20. Cadre avec options :
+# 24. Cadre avec options :
 def cadre(texte, options=None):
     if options is None:
         options = {}
@@ -334,7 +378,7 @@ appels, ce qui provoque des bugs surprenants dès qu'on la modifie).
 """
 
 
-# 21. Déballer un dictionnaire avec "**" :
+# 25. Déballer un dictionnaire avec "**" :
 def adresse(rue, ville, code_postal):
     return f"{rue}, {code_postal} {ville}"
 
@@ -350,7 +394,7 @@ aux noms des paramètres, sinon on obtient une TypeError.
 """
 
 
-# 22. Profil avec **infos :
+# 26. Profil avec **infos :
 def creer_profil(nom, **infos):
     profil = {"nom": nom}
     profil.update(infos)

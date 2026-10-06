@@ -47,7 +47,7 @@ une_variable = {}
 
 """
 En effet, il faudrait intervertir les deux lignes ci-dessus pour déclarer la
-variable une_variable  AVANT de l'utiliser : l'association ("binding") entre
+variable une_variable AVANT de l'utiliser : l'association ("binding") entre
 le symbole "une_variable" et un dictionnaire vide n'existe pas tant qu'on ne
 l'a pas créée.
 """
@@ -95,20 +95,21 @@ Considérons maintenant ces portées dans le détail :
        chose. Notamment, il devient difficile de :
          - simuler le fonctionnement du programme dans sa tête
          - identifier la ligne de code qui pose problème en cas de bug
-           ("débugger" le programme)
+           ("déboguer" le programme, cf. chap. 41)
          - réutiliser une fonction ailleurs, puisqu'elle dépend d'une variable
            qui n'existe que dans ce fichier
 """
 
 
 # Par exemple, cette variable est globale, c'est-à-dire accessible dans tout le
-# code écrit en-dessous d'elle.
+# code écrit en dessous d'elle.
 GLOB = 3
 # Note : on écrira souvent les variables globales en majuscules (cf. chap. 10).
-# Ce sont en général des CONSTANTES, càd des valeurs qu'on ne modifie jamais.
+# Ce sont en général des CONSTANTES, c'est-à-dire des valeurs qu'on ne modifie
+# jamais.
 
 """
-    2. Les arguments d'une fonction, tout comme les variables définies à
+    2. Les paramètres d'une fonction, tout comme les variables définies à
        l'intérieur de celle-ci, n'ont pas de signification en dehors de la
        fonction.
 """
@@ -188,7 +189,7 @@ except NameError as err:
 """
 
 def exterieure():
-    message = "bonjour"  # locale pour exterieure(), englobante pour interieure()
+    message = "bonjour"  # locale à exterieure(), englobante pour interieure()
 
     def interieure():
         print(message)   # trouvée dans la portée englobante (le "E" de LEGB)
@@ -256,7 +257,7 @@ pas encore de valeur au moment de la lecture.
 compteur_global = 0
 
 def incrementer():
-    compteur_global = compteur_global + 1  # lecture d'un local pas encore défini
+    compteur_global = compteur_global + 1  # lit un local encore sans valeur
 
 try:
     incrementer()
@@ -333,7 +334,8 @@ VALEURS : c'est en fait… un dictionnaire (cf. chap. 18) ! Chaque portée vue
 plus haut correspond à un namespace :
 
     - le namespace "built-in", créé au démarrage de Python
-    - le namespace global d'un fichier (on dit aussi "d'un module", cf. chap. 22)
+    - le namespace global d'un fichier (on dit aussi "d'un module", cf.
+      chap. 22)
     - un namespace local, créé à CHAQUE appel de fonction, et détruit à la fin
       de l'appel
 
@@ -355,7 +357,7 @@ def montrer_locales(p):
 montrer_locales(10)  # => {'p': 10, 'v': 20}
 
 """
-La fonction intégrée dir(), appelée sans paramètre, donne la liste des noms
+La fonction intégrée dir(), appelée sans argument, donne la liste des noms
 définis dans la portée courante.
 """
 def petite_fonction():

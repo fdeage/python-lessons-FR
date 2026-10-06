@@ -72,7 +72,7 @@ débat Snake Case / Camel Case pour Python :
 | variables, fonctions       | snake_case         | prix_total, calculer()|
 | constantes (globales)      | MAJUSCULES         | TAUX_TVA = 0.2        |
 | modules (fichiers .py)     | minuscules courtes | outils.py, mon_jeu.py |
-| classes (hors programme)   | CapWords           | CompteBancaire        |
+| classes (cf. chap. 34)     | CapWords           | CompteBancaire        |
 
 À éviter :
     - les noms d'une seule lettre "l" (L minuscule), "O" (o majuscule) et "I"
@@ -243,9 +243,9 @@ print(salaire_net)  # => 2320
 # Les longues chaînes peuvent être coupées : deux chaînes côte à côte sont
 # automatiquement collées (le chap. 8, "Chaînes longues", le fait avec des
 # antislashs : les parenthèses sont plus sûres, voir ci-dessous)
-phrase = ("Python colle automatiquement les chaînes "
+phrase = ("Python colle les chaînes "
           "écrites côte à côte.")
-print(phrase)  # => Python colle automatiquement les chaînes écrites côte à côte.
+print(phrase)  # => Python colle les chaînes écrites côte à côte.
 
 """
 On peut aussi couper une ligne avec un antislash "\" en fin de ligne, mais
@@ -287,6 +287,8 @@ présenter au moment où on en parle : ne le faites pas dans vos projets.)
     - on ne compare pas un booléen à True ou False : "if est_valide:" plutôt
       que "if est_valide == True:"
     - on écrit "if x not in liste:" plutôt que "if not x in liste:"
+    - pour tester si une liste est vide, on écrit "if not liste:" plutôt que
+      "if len(liste) == 0:" (cf. les valeurs "fausses", chap. 21)
 """
 est_valide = True
 valeur = None
@@ -354,7 +356,8 @@ Quelques aphorismes à méditer (traduits) :
 
 """
 Respecter toutes ces règles à la main est fastidieux. Heureusement, des outils
-le font pour nous. On en distingue deux familles :
+le font pour nous. On en distingue deux familles (et un outil qui fait les
+deux) :
 
     1. Les LINTERS ("vérificateurs") analysent le code SANS LE MODIFIER, et
        signalent les écarts à la PEP 8 et les erreurs probables (variable
@@ -363,7 +366,7 @@ le font pour nous. On en distingue deux familles :
          - flake8 : pycodestyle + détection d'erreurs simples (pyflakes)
          - pylint : très complet (et très bavard), donne une note sur 10
 
-    2. Les FORMATTEURS RÉÉCRIVENT le code automatiquement dans un style
+    2. Les FORMATEURS RÉÉCRIVENT le code automatiquement dans un style
        standard. Ex. :
          - black : le plus répandu, presque pas configurable (c'est voulu :
            "on ne discute plus du style"). Il coupe les lignes à 88 caractères
@@ -371,7 +374,7 @@ le font pour nous. On en distingue deux familles :
          - autopep8, yapf : plus configurables
          - isort : trie uniquement les imports
 
-    3. ruff, plus récent, fait les deux (linter ET formatteur) : il remplace
+    3. ruff, plus récent, fait les deux (linter ET formateur) : il remplace
        flake8, isort et black, et il est extrêmement rapide. C'est aujourd'hui
        un bon choix par défaut.
 
@@ -391,7 +394,7 @@ mon_fichier.py:3:6: E225 missing whitespace around operator
 
 ?> ruff check mon_fichier.py     # linter
 ?> ruff check --fix .            # corrige automatiquement ce qui peut l'être
-?> ruff format .                 # formatteur (style quasi identique à black)
+?> ruff format .                 # formateur (style quasi identique à black)
 
 Dans la sortie de flake8 ci-dessus, "3:6" désigne la ligne 3, colonne 6, et
 "E225" le code de la règle enfreinte : on peut chercher ce code sur Internet
@@ -426,7 +429,7 @@ L'idéal est que le formatage se fasse tout seul, sans y penser. Tous les bons
     - afficher le whitespace et supprimer les espaces de fin de ligne
     - remplacer les tabulations par 4 espaces
     - souligner en direct les erreurs signalées par le linter
-    - lancer le formatteur à chaque enregistrement ("format on save")
+    - lancer le formateur à chaque enregistrement ("format on save")
 
 Exemples :
 

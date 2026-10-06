@@ -163,10 +163,6 @@ print(liste_vide)     # => []
 nombre = int("42")    # on instancie la classe int à partir d'une chaîne
 print(nombre)         # => 42
 
-# isinstance(objet, classe) teste si un objet est une instance d'une classe :
-print(isinstance(nombre, int))  # => True
-print(isinstance(nombre, str))  # => False
-
 
 # Définir une classe : le mot-clé "class"
 ##########################################
@@ -197,7 +193,6 @@ medor = Chien()
 
 print(type(rex))         # => <class '__main__.Chien'>
 print(rex == medor)      # => False (deux objets distincts, cf. chap. 21)
-print(isinstance(rex, Chien))  # => True
 
 """
 "__main__" est le nom du module courant, c'est-à-dire du fichier exécuté
@@ -653,7 +648,8 @@ appelle repr(), et quand l'objet est DANS un conteneur (liste, dict…) :
 print(repr(livre))  # => Livre('Les Misérables', 'Victor Hugo', 1862)
 bibliotheque = [livre, Livre("Germinal", "Émile Zola", 1885)]
 print(bibliotheque)
-# => [Livre('Les Misérables', 'Victor Hugo', 1862), Livre('Germinal', 'Émile Zola', 1885)]
+# => [Livre('Les Misérables', 'Victor Hugo', 1862),
+#     Livre('Germinal', 'Émile Zola', 1885)]
 
 """
 Le "!r" dans la f-string de __repr__ applique repr() à la valeur : c'est ce
@@ -814,7 +810,7 @@ except ValueError as err:
 
 """
 Remarquez :
-    - la docstring de la classe et des méthodes (cf. chap. 14), que l'on
+    - la docstring de la classe et des méthodes (cf. chap. 29), que l'on
       retrouve avec help(Releve) ;
     - key=self.moyenne : une méthode passée en argument, SANS parenthèses
       (on donne la méthode elle-même, max() l'appellera pour chaque matière) ;

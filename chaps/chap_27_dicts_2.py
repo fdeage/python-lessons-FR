@@ -53,7 +53,8 @@ print(dict(couples))  # => {'un': 1, 'deux': 2, 'trois': 3}
 #      (cf. chap. 24)
 pays = ["Espagne", "Portugal"]
 villes = ["Madrid", "Lisbonne"]
-print(dict(zip(pays, villes)))  # => {'Espagne': 'Madrid', 'Portugal': 'Lisbonne'}
+print(dict(zip(pays, villes)))
+# => {'Espagne': 'Madrid', 'Portugal': 'Lisbonne'}
 
 #   6. La méthode dict.fromkeys() crée un dictionnaire dont toutes les clés ont
 #      la même valeur de départ (pratique pour initialiser des compteurs)
@@ -71,20 +72,17 @@ print(copie_capitales == capitales)  # => True
 # D'autres méthodes sur les dictionnaires
 ##########################################
 
-# On peut créer un dictionnaire vide avec {}…
+"""
+Les bases (lire avec [], ajouter, modifier, supprimer avec del, tester une clé
+avec in, len()…) ont été vues au chap. 18. On rappelle que lire une clé
+absente avec [] crée une KeyError.
+"""
 dict_vide = {}
-
-# …puis le remplir avec des couples clé/valeur
 dict_vide["zéro"] = 0
 print(dict_vide)  # => {'zéro': 0}
 
-# Tenter d'accéder à une clé non-existante crée une erreur
-try:
-    dict_vide["?"]  # => KeyError: '?'
-except KeyError as err:
-    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
-
-# Note : on peut utiliser .get() pour éviter cette erreur
+# 1. .get() permet de lire une clé SANS risquer de KeyError : si la clé est
+#    absente, il retourne None
 print(dict_vide.get("?"))      # => None
 # .get() peut prendre une valeur par défaut
 value = dict_vide.get("?", 0)
@@ -101,47 +99,19 @@ Attention : .get() n'ajoute PAS la clé au dictionnaire.
 """
 print(dict_vide)  # => {'zéro': 0}
 
-# On peut aussi remplir le dictionnaire avec ".update()" en lui passant un
-# dictionnaire
+# 2. On peut aussi remplir le dictionnaire avec ".update()" en lui passant un
+#    dictionnaire
 dict_vide.update({"un": 1})
 print(dict_vide)  # => {'zéro': 0, 'un': 1}
 
 # .update() peut ajouter OU remplacer un couple clé/valeur :
 dict_vide.update({"un": 3})
-print(dict_vide)  # => {'zéro': 0, 'un': 3}, on remplace l'ancienne valeur associée
+print(dict_vide)  # => {'zéro': 0, 'un': 3} : l'ancienne valeur est remplacée
 dict_vide.update({"deux": 2})
 print(dict_vide)  # => {'zéro': 0, 'un': 3, 'deux': 2}
 
-"""
-IMPT : on rappelle que chaque clé doit être unique au sein d'un même
-dictionnaire. S'il y a un doublon de clé, la valeur retenue sera celle de la
-dernière association
-"""
-dict_avec_doublons = {"un": 1, "deux": 2, "deux": 42, "trois": 3}
-print(dict_avec_doublons["deux"])  # => 42 (vient après 2 dans la déclaration)
-
-# En revanche, des clés différentes peuvent être associées à la même valeur
-# sans problème
-dict_avec_memes_valeurs = {0: "Pouet", 1: "Pouet", 2: "Pouet"}
-
-# L'accès à une clé non-existante lève une KeyError
-try:
-    dict_avec_doublons["quatre"]  # KeyError
-except KeyError as err:
-    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
-
-# On vérifie la présence d'une clé dans un dictionnaire avec "in"
-print("un" in dict_avec_doublons)  # => True
-print(1 in dict_avec_doublons)     # => False ("in" teste les clés, pas les valeurs)
-
-# len() donne le nombre de couples clé/valeur
-print(len(dict_avec_doublons))  # => 3
-
-# On peut enlever des clés d'un dictionnaire avec del
-del dict_avec_doublons["un"]  # Supprime la clé "un"
-print(dict_avec_doublons)  # => {'deux': 42, 'trois': 3}
-
-# … ou avec .pop(), qui supprime la clé ET retourne la valeur associée
+# 3. Au chap. 18, on supprimait une clé avec del. La méthode .pop() supprime la
+#    clé ET retourne la valeur associée
 stock = {"pommes": 3, "poires": 5, "kiwis": 0}
 nb_kiwis = stock.pop("kiwis")
 print(nb_kiwis)  # => 0
@@ -152,29 +122,30 @@ print(stock)     # => {'pommes': 3, 'poires': 5}
 try:
     stock.pop("mangues")
 except KeyError as err:
-    print(f"3: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"1: (Sans ce try: … except …, cette ligne créerait : {err})")
 print(stock.pop("mangues", 0))  # => 0
 
-# .setdefault() retourne la valeur d'une clé si elle existe ; sinon, il AJOUTE
-# la clé avec la valeur par défaut, et retourne celle-ci
+# 4. .setdefault() retourne la valeur d'une clé si elle existe ; sinon, il
+#    AJOUTE la clé avec la valeur par défaut, et retourne celle-ci
 print(stock.setdefault("pommes", 100))  # => 3 (la clé existe, rien ne change)
 print(stock.setdefault("cerises", 10))  # => 10 (la clé est ajoutée)
 print(stock)  # => {'pommes': 3, 'poires': 5, 'cerises': 10}
 
-# .copy() crée une copie (superficielle, cf. chap. 24) du dictionnaire. Comme
-# pour les listes, "=" ne copie PAS : il donne un second nom au même objet.
+# 5. .copy() crée une copie (superficielle, cf. chap. 24) du dictionnaire.
+#    Comme pour les listes, "=" ne copie PAS : il donne un second nom au même
+#    objet.
 alias = stock
 copie = stock.copy()
 stock["pommes"] = 0
 print(alias["pommes"])  # => 0 (alias et stock sont le même dictionnaire)
 print(copie["pommes"])  # => 3 (la copie est indépendante)
 
-# .clear() vide le dictionnaire
+# 6. .clear() vide le dictionnaire
 copie.clear()
 print(copie)  # => {}
 
-# On peut fusionner deux dictionnaires avec l'opérateur "|" (Python 3.9+) :
-# en cas de clé commune, c'est la valeur de DROITE qui l'emporte.
+# 7. On peut fusionner deux dictionnaires avec l'opérateur "|" (Python 3.9+) :
+#    en cas de clé commune, c'est la valeur de DROITE qui l'emporte.
 defaut = {"couleur": "noir", "taille": 12}
 choix = {"taille": 14}
 print(defaut | choix)  # => {'couleur': 'noir', 'taille': 14}
@@ -187,35 +158,28 @@ print({**defaut, **choix})  # => {'couleur': 'noir', 'taille': 14}
 
 # Ces trois méthodes de dictionnaire sont à bien connaître.
 
-print(dict_avec_doublons)  # => {'deux': 42, 'trois': 3}
+nombres = {"deux": 42, "trois": 3}
 
 #   1. On obtient toutes les clés d'un dictionnaire avec la méthode .keys().
-print(dict_avec_doublons.keys())  # => dict_keys(['deux', 'trois'])
+print(nombres.keys())  # => dict_keys(['deux', 'trois'])
 
 # Attention, il faut passer ces clés à list() pour avoir une liste.
-print(list(dict_avec_doublons.keys()))  # => ['deux', 'trois']
+print(list(nombres.keys()))  # => ['deux', 'trois']
 
-"""
-Note sur l'ordre : depuis Python 3.7, un dictionnaire CONSERVE L'ORDRE
-D'INSERTION des clés (c'était déjà le cas en pratique en 3.6). Les clés
-sortent donc dans l'ordre où elles ont été ajoutées. Mais attention, cet ordre
-n'a pas de "sens" : on ne peut pas accéder à un élément par sa position
-(dict_avec_doublons[0] cherche la CLÉ 0), et deux dictionnaires avec les mêmes
-couples dans un ordre différent sont égaux.
-"""
-print({"a": 1, "b": 2} == {"b": 2, "a": 1})  # => True
+# (Les clés sortent dans leur ordre d'insertion, cf. chap. 18.)
 
 #   2. On obtient toutes les valeurs d'un dict avec ".values()".
-print(dict_avec_doublons.values())  # => dict_values([42, 3])
+print(nombres.values())  # => dict_values([42, 3])
 
 # Là aussi, il faut ensuite le passer à list() pour avoir une liste.
-print(list(dict_avec_doublons.values()))  # => [42, 3]
+print(list(nombres.values()))  # => [42, 3]
 
 # On peut appliquer directement sum(), max(), etc. sur les valeurs
-print(sum(dict_avec_doublons.values()))  # => 45
+print(sum(nombres.values()))  # => 45
 
-# Pour savoir si une VALEUR est présente, on utilise "in" sur .values()
-print(42 in dict_avec_doublons.values())  # => True
+# "in" seul teste les CLÉS (cf. chap. 18). Pour savoir si une VALEUR est
+# présente, on utilise "in" sur .values()
+print(42 in nombres.values())  # => True
 
 #   3. Enfin, pour itérer sur toutes les paires clé/valeur, on utilise .items()
 calories = {"pomme": 52, "banane": 89, "chocolat": 546}
@@ -287,7 +251,7 @@ try:
         if calories[aliment] > 500:
             del calories[aliment]
 except RuntimeError as err:
-    print(f"4: (Sans ce try: … except …, cette ligne créerait : {err})")
+    print(f"2: (Sans ce try: … except …, cette ligne créerait : {err})")
 # (Notez que "chocolat" a quand même été supprimé avant que l'erreur ne
 # survienne, au tour de boucle suivant : le dictionnaire est dans un état
 # "à moitié modifié", ce qui est justement le danger.)
@@ -305,20 +269,13 @@ print(calories)  # => {'pomme': 52, 'banane': 89}
 Un usage très fréquent des dictionnaires : compter combien de fois apparaît
 chaque élément (des mots dans un texte, des catégories dans des données…).
 Les éléments sont les clés, et les compteurs les valeurs.
+
+Au chap. 18, on a compté les lettres d'un mot avec un test "in" : si la clé
+existe, on ajoute 1, sinon on la crée. Avec .get() et une valeur par défaut de
+0, plus besoin de tester : une clé absente "vaut" 0.
 """
 texte = "le chat et le chien et le poisson"
 
-# Version 1 : avec un test "in"
-compteur = {}
-for mot in texte.split():
-    if mot in compteur:
-        compteur[mot] += 1
-    else:
-        compteur[mot] = 1
-print(compteur)
-# => {'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'poisson': 1}
-
-# Version 2 : plus courte, avec .get() et une valeur par défaut de 0
 compteur = {}
 for mot in texte.split():
     compteur[mot] = compteur.get(mot, 0) + 1
@@ -326,7 +283,8 @@ print(compteur)
 # => {'le': 3, 'chat': 1, 'et': 2, 'chien': 1, 'poisson': 1}
 
 # Pour trouver le mot le plus fréquent, on passe la méthode .get au paramètre
-# key de max() (cf. chap. 24) : max() compare alors les VALEURS associées.
+# key de max() (comme key= pour sorted(), cf. chap. 24) : max() compare alors
+# les VALEURS associées aux clés, et non les clés elles-mêmes.
 print(max(compteur, key=compteur.get))  # => le
 
 """
@@ -339,23 +297,33 @@ fait tout ce travail automatiquement : collections.Counter(texte.split()).
 ##########################
 
 """
-Les valeurs d'un dictionnaire peuvent être n'importe quoi, y compris des
-listes ou d'autres dictionnaires (cf. chap. 18). C'est ainsi qu'on représente
-des données structurées (c'est d'ailleurs très proche du format JSON, très
-utilisé sur le Web).
+Les valeurs d'un dictionnaire peuvent être n'importe quoi (cf. chap. 18), y
+compris des listes ou d'autres dictionnaires. On peut donc ranger des
+dictionnaires dans des dictionnaires : c'est ainsi qu'on représente des données
+structurées (c'est d'ailleurs très proche du format JSON, très utilisé sur le
+Web, cf. chap. 49).
 """
 eleves = {
     "ana": {"age": 17, "notes": [12, 15, 18]},
     "bob": {"age": 16, "notes": [9, 11]},
 }
 
-# On enchaîne les crochets, de gauche à droite :
+# On enchaîne les crochets, de l'extérieur vers l'intérieur (de gauche à
+# droite) :
 print(eleves["ana"]["age"])       # => 17
+print(eleves["bob"]["notes"])     # => [9, 11]
 print(eleves["bob"]["notes"][0])  # => 9
 
-# On modifie une valeur imbriquée de la même façon
+# On modifie une valeur "profonde" de la même façon
 eleves["bob"]["notes"].append(14)
 print(eleves["bob"])  # => {'age': 16, 'notes': [9, 11, 14]}
+
+"""
+Astuce : pour lire une telle ligne, décomposez-la :
+    eleves["bob"]                => {"age": 16, "notes": [9, 11, 14]}
+    eleves["bob"]["notes"]       => [9, 11, 14]
+    eleves["bob"]["notes"][0]    => 9
+"""
 
 # Parcours : le nom de chaque élève, avec sa moyenne
 for nom, infos in eleves.items():
@@ -365,7 +333,7 @@ for nom, infos in eleves.items():
 ana : 15.00
 bob : 11.33
 
-(":.2f" dans l'interpolation affiche le nombre avec 2 décimales.)
+(":.2f" dans l'interpolation affiche le nombre avec 2 décimales, cf. chap. 8.)
 """
 
 

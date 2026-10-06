@@ -65,7 +65,12 @@ Les corrigés sont dans le fichier corrs/corr_27_dicts_2.py.
        print(stock.setdefault("cerises", 5))
        print(stock)
 
-6. Sans exécuter, qu'affiche ce programme ?
+6. On pose : capitales = {"France": "Paris", "Italie": "Rome", "Japon": "Tokyo"}
+   On a vu au chap. 18 que capitales["Espagne"] crée une KeyError. Utilisez
+   .get() pour récupérer la capitale de l'Espagne sans erreur, en retournant
+   "inconnue" si le pays n'est pas dans le dictionnaire.
+
+7. Sans exécuter, qu'affiche ce programme ?
        a = {"x": 1}
        b = a
        c = a.copy()
@@ -73,14 +78,14 @@ Les corrigés sont dans le fichier corrs/corr_27_dicts_2.py.
        c["y"] = 3
        print(a, b, c)
 
-7. Des réglages par défaut et des réglages choisis par l'utilisateur :
+8. Des réglages par défaut et des réglages choisis par l'utilisateur :
        defaut = {"langue": "fr", "theme": "clair", "taille": 12}
        choix = {"theme": "sombre", "taille": 14}
    Construisez le dictionnaire des réglages finaux (les choix l'emportent sur
    les valeurs par défaut) SANS modifier defaut, de deux façons : avec .copy()
    puis .update(), et avec {**…, **…}.
 
-8. Écrivez une fonction stock_restant(stock, produit) qui retourne la quantité
+9. Écrivez une fonction stock_restant(stock, produit) qui retourne la quantité
    d'un produit, ou 0 s'il n'est pas dans le stock, en une seule ligne.
 """
 
@@ -93,23 +98,23 @@ Les corrigés sont dans le fichier corrs/corr_27_dicts_2.py.
 On considère les notes d'une classe :
     notes = {"Ana": 15, "Bob": 9, "Chloé": 17, "Djamel": 11}
 
-9. Affichez :
+10. Affichez :
        a) la liste des prénoms,
        b) la moyenne de la classe,
        c) la meilleure note,
        d) chaque élève avec sa note, au format "Ana : 15/20",
        e) les élèves dans l'ordre alphabétique inverse.
 
-10. Construisez la liste des élèves qui ont la moyenne (note >= 10), puis le
+11. Construisez la liste des élèves qui ont la moyenne (note >= 10), puis le
     dictionnaire des élèves en échec avec leur note.
 
-11. Sans exécuter, qu'affiche ce programme ? Pourquoi ?
+12. Sans exécuter, qu'affiche ce programme ? Pourquoi ?
         d = {"a": 1}
         cles = d.keys()
         d["b"] = 2
         print(list(cles))
 
-12. On veut supprimer d'un dictionnaire de prix tous les produits à plus de
+13. On veut supprimer d'un dictionnaire de prix tous les produits à plus de
     5 €. Le programme suivant plante : pourquoi ? Corrigez-le.
         prix = {"pain": 1.2, "fromage": 7.5, "vin": 12.0, "lait": 0.9}
         for produit in prix:
@@ -123,14 +128,14 @@ On considère les notes d'une classe :
 #######################################
 
 """
-13. Écrivez une fonction compter_lettres(texte) qui retourne un dictionnaire
+14. Écrivez une fonction compter_lettres(texte) qui retourne un dictionnaire
     {lettre: nombre d'apparitions}, en ignorant les espaces. Utilisez .get().
         compter_lettres("la lune")  → {'l': 2, 'a': 1, 'u': 1, 'n': 1, 'e': 1}
 
-14. Trouvez la lettre la plus fréquente de "abracadabra" à l'aide de votre
+15. Trouvez la lettre la plus fréquente de "abracadabra" à l'aide de votre
     fonction et de max() avec le paramètre key.
 
-15. Écrivez une fonction regrouper_par_initiale(mots) qui retourne un
+16. Écrivez une fonction regrouper_par_initiale(mots) qui retourne un
     dictionnaire {initiale: liste des mots qui commencent par cette lettre}.
         regrouper_par_initiale(["pomme", "kiwi", "poire", "banane", "kaki"])
         → {'p': ['pomme', 'poire'], 'k': ['kiwi', 'kaki'], 'b': ['banane']}
@@ -150,17 +155,34 @@ On représente un petit carnet d'adresses :
         "chloe": {"tel": "0699887766", "ville": "Lyon", "age": 22},
     }
 
-16. Sans exécuter, que valent carnet["bob"]["ville"] et
+17. Sans exécuter, que valent carnet["bob"]["ville"] et
     len(carnet["ana"]) ? Que se passe-t-il avec carnet["djamel"]["tel"] ?
 
-17. Bob déménage à Marseille : modifiez sa ville. Ajoutez ensuite un contact
+18. Bob déménage à Marseille : modifiez sa ville. Ajoutez ensuite un contact
     "djamel" (tel "0700000000", ville "Paris", age 41).
 
-18. Affichez le prénom de tous les contacts qui habitent à Lyon, puis l'âge
+19. Affichez le prénom de tous les contacts qui habitent à Lyon, puis l'âge
     moyen des contacts.
 
-19. Construisez un dictionnaire {ville: nombre de contacts} à partir du
+20. Construisez un dictionnaire {ville: nombre de contacts} à partir du
     carnet.
+"""
+
+
+"""
+On pose :
+    eleves = {
+        "Alice": {"age": 15, "notes": [15, 17, 12]},
+        "Bob": {"age": 16, "notes": [9, 11, 8]},
+    }
+
+21. Affichez l'âge de Bob, puis la deuxième note d'Alice.
+
+22. Ajoutez la note 14 à Bob, puis ajoutez une élève "Chloé" de 15 ans, sans
+    aucune note.
+
+23. Affichez la moyenne de chaque élève (attention à Chloé, qui n'a pas de
+    note !).
 """
 
 
@@ -169,7 +191,7 @@ On représente un petit carnet d'adresses :
 ##############################################
 
 """
-20. Écrivez une fonction cadre(texte, options) qui affiche texte encadré.
+24. Écrivez une fonction cadre(texte, options) qui affiche texte encadré.
     options est un dictionnaire facultatif pouvant contenir "bord" (caractère
     du cadre, "#" par défaut) et "marge" (nombre d'espaces de chaque côté du
     texte, 1 par défaut).
@@ -181,7 +203,7 @@ On représente un petit carnet d'adresses :
     lignes du haut et du bas ont la même longueur. Testez aussi cadre("Salut")
     sans options (pensez à une valeur par défaut pour le paramètre options).
 
-21. On a :
+25. On a :
         def adresse(rue, ville, code_postal):
             return f"{rue}, {code_postal} {ville}"
         infos = {"ville": "Lyon", "rue": "3 rue Mercière",
@@ -189,7 +211,7 @@ On représente un petit carnet d'adresses :
     Appelez adresse() en lui passant infos avec "**". Pourquoi l'ordre des
     clés dans infos n'a-t-il pas d'importance ?
 
-22. Écrivez une fonction creer_profil(nom, **infos) qui retourne un
+26. Écrivez une fonction creer_profil(nom, **infos) qui retourne un
     dictionnaire contenant le nom et toutes les informations optionnelles
     passées en arguments nommés.
         creer_profil("Ada", age=36, ville="Londres")

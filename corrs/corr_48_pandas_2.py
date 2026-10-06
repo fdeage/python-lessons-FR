@@ -210,8 +210,9 @@ Le trajet 7 (station S9) a disparu : S9 n'existe pas dans stations, et une
 jointure "inner" ne garde que les lignes qui ont une correspondance des deux
 côtés.
 
-Remarquez aussi que l'ORDRE des lignes a changé : pandas regroupe les lignes
-par clé (S1, puis S2…). Si l'ordre compte, triez ensuite avec .sort_values().
+Remarquez aussi l'index : il a été renuméroté de 0 à 8. Les lignes gardent
+l'ordre de la table de gauche ; si l'ordre compte vraiment, triez tout de même
+ensuite avec .sort_values().
 """
 
 """
@@ -942,7 +943,7 @@ print(par_quartier)
 #    Presqu'île     4      13.75           0.5
 """
 La moyenne d'une colonne de booléens est la PROPORTION de True (True vaut 1,
-False vaut 0) : à la Croix-Rousse, tous les trajets (1.00) ont été faits par
+False vaut 0) : à la Croix-Rousse, tous les trajets (1.0) ont été faits par
 des abonnés.
 
     d) Le nombre de trajets par quartier et par semaine :

@@ -23,6 +23,7 @@
 #  - Expressions génératrices
 #  - Bonus : les décorateurs
 #  - Bonus : "with" et les gestionnaires de contexte
+#  - Nettoyage
 #
 ##########################################################
 
@@ -300,7 +301,7 @@ générateurs infinis :
 print(list(itertools.islice(fibonacci(), 10)))
 # => [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-# islice accepte aussi un début et un pas, comme les slices :
+# islice accepte aussi un début et une fin (et même un pas), comme les slices :
 print(list(itertools.islice(fibonacci(), 10, 15)))  # => [55, 89, 144, 233, 377]
 
 print(list(itertools.islice(itertools.count(100, 5), 4)))
@@ -515,7 +516,7 @@ Exemple : "aplatir" une liste de listes de listes… quelle que soit la
 profondeur.
 """
 def aplatir(element):
-    if isinstance(element, list):    # isinstance(x, type) : cf. chap. 34
+    if isinstance(element, list):    # isinstance(x, type) : cf. chap. 33, 35
         for sous_element in element:
             yield from aplatir(sous_element)   # appel récursif
     else:
@@ -682,9 +683,9 @@ print(somme_carres.__doc__)   # => Somme des carrés de 0 à n - 1.
 On peut empiler plusieurs décorateurs : ils s'appliquent de bas en haut (le
 plus proche du def en premier).
 
-Vous rencontrerez des décorateurs partout : @functools.lru_cache (mémoriser
+Vous rencontrerez des décorateurs partout : @functools.lru_cache (mémoïser
 les résultats d'une fonction, cf. chap. 33), @property, @staticmethod et
-@classmethod dans les classes (cf. chap. 34-35), @pytest.mark.parametrize
+@classmethod dans les classes (cf. chap. 35), @pytest.mark.parametrize
 dans les tests (cf. chap. 37), et dans de nombreuses bibliothèques web.
 """
 
