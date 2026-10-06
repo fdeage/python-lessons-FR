@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -17,7 +17,7 @@
 vérifier. Changez les valeurs des variables pour tester TOUS les cas de vos
 conditions (chaque branche "if", "elif" et "else").
 
-Les corrigés sont dans le fichier corr_12_if_then.py.
+Les corrigés sont dans le fichier corrs/corr_12_if_then.py.
 """
 
 

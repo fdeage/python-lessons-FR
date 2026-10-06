@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -18,7 +18,7 @@ vérifier. Pour les exercices "sans exécuter", demandez-vous à chaque appel de
 méthode dans quelle classe Python va la trouver (l'objet, sa classe, puis les
 classes parentes).
 
-Les corrigés sont dans le fichier corr_35_poo_2.py.
+Les corrigés sont dans le fichier corrs/corr_35_poo_2.py.
 """
 
 

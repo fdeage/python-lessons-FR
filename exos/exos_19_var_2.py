@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -18,7 +18,7 @@ exécuter le code, déterminez ce qu'il affiche (ou quelle erreur il
 provoque), en appliquant la règle LEGB. Vérifiez ensuite en le recopiant
 dans un fichier ou dans l'interpréteur.
 
-Les corrigés sont dans le fichier corr_19_var_2.py.
+Les corrigés sont dans le fichier corrs/corr_19_var_2.py.
 """
 
 

@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -17,7 +17,7 @@ Ces exercices se font surtout DANS UN TERMINAL : lisez l'énoncé, essayez, puis
 notez votre réponse en commentaire sous l'énoncé. Quand un exercice demande du
 code, écrivez-le directement dans ce fichier et exécutez-le pour vérifier.
 
-Les corrigés sont dans le fichier corr_02_lancer_python.py.
+Les corrigés sont dans le fichier corrs/corr_02_lancer_python.py.
 """
 
 

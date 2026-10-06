@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -21,7 +21,7 @@ Rappel : un assert qui échoue arrête le programme. Pour que ce fichier reste
 exécutable, protégez avec try: … except AssertionError: … les assert dont vous
 voulez montrer l'échec (cf. chap. 26).
 
-Les corrigés sont dans le fichier corr_29_tests_1.py.
+Les corrigés sont dans le fichier corrs/corr_29_tests_1.py.
 """
 
 

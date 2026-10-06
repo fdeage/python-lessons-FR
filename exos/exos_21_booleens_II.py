@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -17,7 +17,7 @@
 vérifier. Pour les exercices "sans exécuter", déroulez le programme dans votre
 tête (cf. chap. 1) avant de vérifier avec print().
 
-Les corrigés sont dans le fichier corr_21_booleens_II.py.
+Les corrigés sont dans le fichier corrs/corr_21_booleens_II.py.
 """
 
 

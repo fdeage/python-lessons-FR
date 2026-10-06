@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -20,7 +20,7 @@ avant de lancer le programme.
 Ces exercices nécessitent NumPy (cf. chapitre, section "Installer et importer
 NumPy").
 
-Les corrigés sont dans le fichier corr_38_numpy.py.
+Les corrigés sont dans le fichier corrs/corr_38_numpy.py.
 """
 
 import sys

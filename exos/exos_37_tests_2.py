@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -23,7 +23,7 @@ demandent du code pytest, deux possibilités :
       installé pytest, cf. chap. 22 et 37) ;
     - ou écrivez-le ici en commentaire, ou dans une chaîne de caractères.
 
-Les corrigés sont dans le fichier corr_37_tests_2.py.
+Les corrigés sont dans le fichier corrs/corr_37_tests_2.py.
 
 Voici les fonctions à tester dans les exercices :
 """

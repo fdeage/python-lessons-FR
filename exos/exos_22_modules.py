@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -18,7 +18,8 @@ vérifier. Pour les exercices "sans exécuter", déroulez le programme dans votr
 tête (cf. chap. 1) avant de vérifier.
 
 N'utilisez que la bibliothèque standard de Python (rien à installer), sauf
-mention contraire. Les corrigés sont dans le fichier corr_22_modules.py.
+mention contraire.
+Les corrigés sont dans le fichier corrs/corr_22_modules.py.
 """
 
 
@@ -99,9 +100,9 @@ mention contraire. Les corrigés sont dans le fichier corr_22_modules.py.
 ################################
 
 """
-9. Le fichier my_module.py se trouve à la racine du cours, et non dans le
+9. Le fichier my_module.py se trouve dans le dossier chaps/, et non dans le
    dossier exos/. Pourquoi "import my_module" échoue-t-il quand on lance
-   python3 exos/exos_22_modules.py ? Ajoutez le dossier parent à sys.path,
+   python3 exos/exos_22_modules.py ? Ajoutez le dossier chaps/ à sys.path,
    puis importez my_module et utilisez sa fonction doubler() et sa variable
    VERSION.
    Indice : os.path.abspath(__file__) donne le chemin complet du fichier en

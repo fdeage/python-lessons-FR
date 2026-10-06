@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -23,7 +23,7 @@ fonction enregistrer() définie ci-dessous, puis supprimés à la fin. Pour les
 regarder, passez GARDER_IMAGES à True. (Dans vos propres programmes, vous
 pouvez utiliser plt.show() à la place.)
 
-Les corrigés sont dans le fichier corr_40_matplotlib.py.
+Les corrigés sont dans le fichier corrs/corr_40_matplotlib.py.
 """
 
 import os

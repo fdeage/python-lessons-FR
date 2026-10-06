@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -20,7 +20,7 @@ commentaire.
 Les variables ne sont vues qu'au chap. 10 : écrivez donc directement vos
 calculs dans des print(), par exemple print(3 + 4).
 
-Les corrigés sont dans le fichier corr_04_arithm.py.
+Les corrigés sont dans le fichier corrs/corr_04_arithm.py.
 """
 
 

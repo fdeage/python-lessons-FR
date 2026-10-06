@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -19,7 +19,7 @@ tête (cf. chap. 1), notez votre réponse, PUIS vérifiez avec print().
 
 Attention aux générateurs infinis : n'appelez jamais list() dessus !
 
-Les corrigés sont dans le fichier corr_36_generateurs.py.
+Les corrigés sont dans le fichier corrs/corr_36_generateurs.py.
 """
 
 

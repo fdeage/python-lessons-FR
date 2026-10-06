@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -24,7 +24,7 @@ Attention au conflit de noms vu dans le chapitre : si vous faites
 "import time", le nom time ne désigne plus datetime.time. Importez par exemple
 "from datetime import time as heure".
 
-Les corrigés sont dans le fichier corr_30_date_time.py.
+Les corrigés sont dans le fichier corrs/corr_30_date_time.py.
 """
 
 

@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -17,7 +17,7 @@
 vérifier. Pour parcourir un dictionnaire, utilisez "for cle in dico" (les
 méthodes .keys(), .values() et .items() seront vues au chap. 27).
 
-Les corrigés sont dans le fichier corr_18_dicts_1.py.
+Les corrigés sont dans le fichier corrs/corr_18_dicts_1.py.
 """
 
 

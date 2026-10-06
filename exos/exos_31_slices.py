@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -20,7 +20,7 @@ tête (cf. chap. 1) : écrivez d'abord les indices sous chaque élément.
 Dans tout ce fichier (sauf mention contraire) :
     l = [10, 20, 30, 40, 50, 60, 70]
 
-Les corrigés sont dans le fichier corr_31_slices.py.
+Les corrigés sont dans le fichier corrs/corr_31_slices.py.
 """
 
 

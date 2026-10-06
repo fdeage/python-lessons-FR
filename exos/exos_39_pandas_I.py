@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -22,7 +22,7 @@ pandas"). Le fichier exo_pandas_eleves.csv est créé juste en dessous
 ("Préparation"), et tous les fichiers créés sont supprimés tout à la fin
 ("Nettoyage").
 
-Les corrigés sont dans le fichier corr_39_pandas_I.py.
+Les corrigés sont dans le fichier corrs/corr_39_pandas_I.py.
 """
 
 import os

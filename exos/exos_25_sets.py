@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Félix Déage - 2026                    #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -20,7 +20,7 @@ tête (cf. chap. 1) avant de vérifier.
 Rappel : l'ordre d'affichage d'un ensemble n'est pas garanti. Pour comparer
 vos résultats, affichez-les triés avec sorted() (cf. chap. 24).
 
-Les corrigés sont dans le fichier corr_25_sets.py.
+Les corrigés sont dans le fichier corrs/corr_25_sets.py.
 """
 
 

@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -17,7 +17,7 @@
 vérifier. Pour les exercices "sans exécuter", déroulez le programme dans votre
 tête (cf. chap. 1) en notant la valeur de chaque paramètre à chaque appel.
 
-Les corrigés sont dans le fichier corr_32_fonctions_3.py.
+Les corrigés sont dans le fichier corrs/corr_32_fonctions_3.py.
 """
 
 

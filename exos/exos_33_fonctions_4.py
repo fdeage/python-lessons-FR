@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
-# ██████  ███████           ██████     Data Science with Python - v.0.9        #
-# ██   ██ ██                ██   ██    © Félix Déage - 2024                    #
+# ██████  ███████           ██████     Data Science with Python - v.1.0        #
+# ██   ██ ██                ██   ██    © Claude Opus 5.5 - 2026                #
 # ██   ██ ███████ ██  █  ██ ██████     License CC BY-SA 4.0 FR                 #
 # ██   ██      ██ ██ ███ ██ ██                                                 #
 # ██████  ███████  ███ ███  ██         inspired by learnxinyminutes.com        #
@@ -18,7 +18,7 @@ vérifier. Pour chaque fonction récursive, commencez TOUJOURS par vous
 demander : quel est le cas de base ? comment se ramener à un problème plus
 petit ? (cf. la méthode du chap. 33).
 
-Les corrigés sont dans le fichier corr_33_fonctions_4.py.
+Les corrigés sont dans le fichier corrs/corr_33_fonctions_4.py.
 """
 
 
